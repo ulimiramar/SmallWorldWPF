@@ -49,8 +49,8 @@
             this.vegetableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.animalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vegetableBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.dgvEntities = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.tbAttack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbDefense)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iKingdomBindingSource)).BeginInit();
@@ -58,6 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.vegetableBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.animalBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vegetableBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEntities)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCreateEntity
@@ -214,15 +215,6 @@
             // 
             this.vegetableBindingSource2.DataSource = typeof(SmallWorld.src.Model.Reino.Vegetable);
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(362, 285);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(266, 121);
-            this.listBox1.TabIndex = 16;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(76, 352);
@@ -233,13 +225,21 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // dgvEntities
+            // 
+            this.dgvEntities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEntities.Location = new System.Drawing.Point(362, 259);
+            this.dgvEntities.Name = "dgvEntities";
+            this.dgvEntities.Size = new System.Drawing.Size(416, 150);
+            this.dgvEntities.TabIndex = 18;
+            // 
             // TestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dgvEntities);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.lblDefensePoints);
             this.Controls.Add(this.lblAttackPoints);
             this.Controls.Add(this.tbDefense);
@@ -264,6 +264,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.vegetableBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.animalBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vegetableBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEntities)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,7 +292,7 @@
         private System.Windows.Forms.BindingSource iKingdomBindingSource;
         private System.Windows.Forms.BindingSource animalBindingSource;
         private System.Windows.Forms.BindingSource vegetableBindingSource2;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dgvEntities;
     }
 }

@@ -13,5 +13,9 @@ namespace SmallWorld.src.Model.Dieta
         {
             return "Omnivoro";
         }
+        public override string ToString()
+        {
+            return "Omnívoro";
+        }
     }
 }

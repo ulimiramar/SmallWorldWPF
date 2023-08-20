@@ -13,5 +13,9 @@ namespace SmallWorld.src.Model.Reino
         {
             return "Animal";
         }
+        public override string ToString()
+        {
+            return "Animal";
+        }
     }
 }

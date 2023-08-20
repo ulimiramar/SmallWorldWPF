@@ -13,5 +13,9 @@ namespace SmallWorld.src.Model.Reino
         {
             return "Maquina";
         }
+        public override string ToString()
+        {
+            return "Máquina";
+        }
     }
 }

@@ -13,5 +13,9 @@ namespace SmallWorld.src.Model.Habitat
         {
             return "Acuático";
         }
+        public override string ToString()
+        {
+            return "Acuático";
+        }
     }
 }
