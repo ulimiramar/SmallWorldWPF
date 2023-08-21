@@ -9,6 +9,8 @@ namespace SmallWorld.src.Model.Reino
 {
     internal class Alien : IKingdom
     {
+        public string Name => "Alien";
+
         public string GetKingdomName()
         {
             return "Alien";

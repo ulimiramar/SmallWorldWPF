@@ -13,7 +13,7 @@ namespace SmallWorld.src.Controllers
     {
         private readonly static EntityController EntitiesController = new EntityController();
 
-        private readonly List<Entity>Entities= new List<Entity>();
+        private readonly List<Entity>Entities = new List<Entity>();
 
         private EntityController () { }
         public static EntityController GetController()

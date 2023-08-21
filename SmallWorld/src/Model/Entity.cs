@@ -9,22 +9,38 @@ namespace SmallWorld.src.Model
 {
     internal class Entity
     {
-        private IKingdom Kingdom { get; set; }
-        private string Name { get; set; }
-        private IDiet Diet { get; set; }
-        private IHabitat Habitat { get; set; }
+        IKingdom kingdom;
+        string name;
+        IDiet diet;
+        IHabitat habitat;
 
-        private int MaxEnergy = 100;
-        private int CurrentEnergy = 100;
+        int maxEnergy = 100;
+        int currentEnergy = 100;
+        int maxLife = 3;
+        int currentLife = 3;
 
-        private int MaxLife = 3;
-        private int CurrentLife = 3;
+        int attackPoints;
+        int defensePoints;
+        int attackRange;
 
-        private int AvailablePoints = 100;
-        private int AttackPoints { get; set; }
-        private int DefensePoints { get; set; }
-        private int AttackRange { get; set; }
+        //properties
 
+        internal IKingdom Kingdom { get { return kingdom; } set => kingdom = value; }
+        public string KingdomName { get { return kingdom.ToString(); } }
+        public string Name { get => name; set => name = value; }
+        internal IDiet Diet { get => diet; set => diet = value; }
+        public string DietName { get { return diet.ToString(); } }
+        internal IHabitat Habitat { get => habitat; set => habitat = value; }
+        public string HabitatName { get { return habitat.ToString(); } }
+        public int MaxEnergy { get => maxEnergy; set => maxEnergy = value; }
+        public int MaxLife { get => maxLife; set => maxLife = value; }
+        public int CurrentLife { get => currentLife; set => currentLife = value; }
+        public int AttackPoints { get => attackPoints; set => attackPoints = value; }
+        public int DefensePoints { get => defensePoints; set => defensePoints = value; }
+        public int AttackRange { get => attackRange; set => attackRange = value; }
+        public int CurrentEnergy { get => currentEnergy; set => currentEnergy = value; }
+
+        //constructor
         public Entity(IKingdom kingdom, string name, IDiet diet, IHabitat habitat, int attackPoints, int defensePoints, int attackRange)
         {
             Kingdom = kingdom;
@@ -36,14 +52,12 @@ namespace SmallWorld.src.Model
             AttackRange = attackRange;
         }
         public Entity() { }
-        public int currentEnergy
-        {
-            get { return CurrentEnergy; }
-            set { CurrentEnergy = value; }
-        }
+
+        
+
         public void Attack(Entity entity)
         {
-            entity.currentEnergy -= AttackPoints; 
+            entity.CurrentEnergy -= AttackPoints; 
         }
 
         public void Feed()
@@ -65,6 +79,9 @@ namespace SmallWorld.src.Model
         {
             throw new NotImplementedException();
         }
+
+
+
 
 
         public override string ToString()

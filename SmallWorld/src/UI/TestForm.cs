@@ -111,6 +111,7 @@ namespace SmallWorld.src.UI
         {
             entityController.ReadEntities();
             //TODO: la línea de abajo no muestra la entidad completa, no muestra el ToString de la clase Entity
+            //dgvEntities.AutoGenerateColumns = true;
             dgvEntities.DataSource = entityController.getEntities();
         }
     }
