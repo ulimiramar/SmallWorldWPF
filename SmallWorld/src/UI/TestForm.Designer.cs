@@ -44,21 +44,28 @@
             this.tbDefense = new System.Windows.Forms.TrackBar();
             this.lblAttackPoints = new System.Windows.Forms.Label();
             this.lblDefensePoints = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dgvEntities = new System.Windows.Forms.DataGridView();
+            this.cbSelectAttackEntity = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbSelectDefenseEntity = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnAttack = new System.Windows.Forms.Button();
+            this.dgvWarResults = new System.Windows.Forms.DataGridView();
             this.iKingdomBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vegetableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vegetableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.animalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vegetableBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.button1 = new System.Windows.Forms.Button();
-            this.dgvEntities = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.tbAttack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbDefense)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEntities)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWarResults)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iKingdomBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vegetableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vegetableBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.animalBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vegetableBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEntities)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCreateEntity
@@ -155,6 +162,7 @@
             this.tbAttack.Minimum = 10;
             this.tbAttack.Name = "tbAttack";
             this.tbAttack.Size = new System.Drawing.Size(104, 45);
+            this.tbAttack.SmallChange = 10;
             this.tbAttack.TabIndex = 11;
             this.tbAttack.Value = 10;
             this.tbAttack.Scroll += new System.EventHandler(this.tbAttack_Scroll);
@@ -176,6 +184,7 @@
             this.tbDefense.Maximum = 100;
             this.tbDefense.Name = "tbDefense";
             this.tbDefense.Size = new System.Drawing.Size(104, 45);
+            this.tbDefense.SmallChange = 10;
             this.tbDefense.TabIndex = 13;
             this.tbDefense.Value = 90;
             // 
@@ -194,6 +203,76 @@
             this.lblDefensePoints.Name = "lblDefensePoints";
             this.lblDefensePoints.Size = new System.Drawing.Size(0, 13);
             this.lblDefensePoints.TabIndex = 15;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(76, 352);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(197, 23);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "Mostrar Entidades Por Consola";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dgvEntities
+            // 
+            this.dgvEntities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEntities.Location = new System.Drawing.Point(362, 259);
+            this.dgvEntities.Name = "dgvEntities";
+            this.dgvEntities.Size = new System.Drawing.Size(416, 150);
+            this.dgvEntities.TabIndex = 18;
+            // 
+            // cbSelectAttackEntity
+            // 
+            this.cbSelectAttackEntity.FormattingEnabled = true;
+            this.cbSelectAttackEntity.Location = new System.Drawing.Point(51, 484);
+            this.cbSelectAttackEntity.Name = "cbSelectAttackEntity";
+            this.cbSelectAttackEntity.Size = new System.Drawing.Size(121, 21);
+            this.cbSelectAttackEntity.TabIndex = 19;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(51, 465);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(148, 13);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Seleccionar Entidad Atacante";
+            // 
+            // cbSelectDefenseEntity
+            // 
+            this.cbSelectDefenseEntity.FormattingEnabled = true;
+            this.cbSelectDefenseEntity.Location = new System.Drawing.Point(258, 484);
+            this.cbSelectDefenseEntity.Name = "cbSelectDefenseEntity";
+            this.cbSelectDefenseEntity.Size = new System.Drawing.Size(121, 21);
+            this.cbSelectDefenseEntity.TabIndex = 21;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(234, 465);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(145, 13);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Seleccionar Entidad a Atacar";
+            // 
+            // btnAttack
+            // 
+            this.btnAttack.Location = new System.Drawing.Point(418, 484);
+            this.btnAttack.Name = "btnAttack";
+            this.btnAttack.Size = new System.Drawing.Size(75, 23);
+            this.btnAttack.TabIndex = 23;
+            this.btnAttack.Text = "Atacar";
+            this.btnAttack.UseVisualStyleBackColor = true;
+            this.btnAttack.Click += new System.EventHandler(this.btnAttack_Click);
+            // 
+            // dgvWarResults
+            // 
+            this.dgvWarResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvWarResults.Location = new System.Drawing.Point(509, 432);
+            this.dgvWarResults.Name = "dgvWarResults";
+            this.dgvWarResults.Size = new System.Drawing.Size(279, 150);
+            this.dgvWarResults.TabIndex = 24;
             // 
             // iKingdomBindingSource
             // 
@@ -215,29 +294,17 @@
             // 
             this.vegetableBindingSource2.DataSource = typeof(SmallWorld.src.Model.Reino.Vegetable);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(76, 352);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(197, 23);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Mostrar Entidades Por Consola";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // dgvEntities
-            // 
-            this.dgvEntities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEntities.Location = new System.Drawing.Point(362, 259);
-            this.dgvEntities.Name = "dgvEntities";
-            this.dgvEntities.Size = new System.Drawing.Size(416, 150);
-            this.dgvEntities.TabIndex = 18;
-            // 
             // TestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 621);
+            this.Controls.Add(this.dgvWarResults);
+            this.Controls.Add(this.btnAttack);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.cbSelectDefenseEntity);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.cbSelectAttackEntity);
             this.Controls.Add(this.dgvEntities);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lblDefensePoints);
@@ -259,12 +326,13 @@
             this.Text = "TestForm";
             ((System.ComponentModel.ISupportInitialize)(this.tbAttack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbDefense)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEntities)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvWarResults)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iKingdomBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vegetableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vegetableBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.animalBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vegetableBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEntities)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,5 +362,11 @@
         private System.Windows.Forms.BindingSource vegetableBindingSource2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dgvEntities;
+        private System.Windows.Forms.ComboBox cbSelectAttackEntity;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.ComboBox cbSelectDefenseEntity;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnAttack;
+        private System.Windows.Forms.DataGridView dgvWarResults;
     }
 }

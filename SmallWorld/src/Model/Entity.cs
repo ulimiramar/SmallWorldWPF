@@ -55,10 +55,7 @@ namespace SmallWorld.src.Model
 
         
 
-        public void Attack(Entity entity)
-        {
-            entity.CurrentEnergy -= AttackPoints; 
-        }
+        
 
         public void Feed()
         {

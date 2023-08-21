@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SmallWorld.src.Controllers
 {
@@ -35,6 +36,10 @@ namespace SmallWorld.src.Controllers
         {
             return Entities;
         }
+        public List<Entity> getEntitiesAlternative()
+        {
+            return Entities;
+        }
 
         public void ReadEntities()
         {
@@ -49,6 +54,66 @@ namespace SmallWorld.src.Controllers
                 Console.WriteLine(Entity.ToString());
             }
             
+        }
+
+        public void Attack(Entity AttackingEntity, Entity DefendingEntity)
+        {
+            if (DefendingEntity.DefensePoints > 0)
+            {
+                DefendingEntity.DefensePoints -= AttackingEntity.AttackPoints;
+                VerifyDefenseStatus(DefendingEntity);
+            }
+            else if (DefendingEntity.DefensePoints <= 0 && DefendingEntity.CurrentEnergy > 0)
+            {
+                DefendingEntity.CurrentEnergy -= AttackingEntity.AttackPoints;
+                VerifyEnergyStatus(DefendingEntity);
+            }
+            
+        }
+
+        public void VerifyDefenseStatus(Entity DefendingEntity)
+        {
+            if (DefendingEntity.DefensePoints <= 0)
+            {
+                DefendingEntity.CurrentEnergy += DefendingEntity.DefensePoints;
+                DefendingEntity.DefensePoints = 0;
+                MessageBox.Show($"El escudo de {DefendingEntity.Name} ha sido destrudo");
+            }
+        }
+
+        public void VerifyEnergyStatus(Entity DefendingEntity)
+        {
+            if (DefendingEntity.CurrentEnergy <= 0)
+            {
+                if (VerifyAmountOfLivesAvailable(DefendingEntity))
+                {
+                    DefendingEntity.CurrentLife--;
+                    DefendingEntity.CurrentEnergy = 100;
+                    MessageBox.Show($"{DefendingEntity.Name} Ha perdido una vida");
+                }
+                else
+                {
+                    MessageBox.Show($"{DefendingEntity.Name} Ha sido exterminado");
+                }
+            }
+        }
+
+        public bool VerifyAmountOfLivesAvailable(Entity DefendingEntity)
+        {
+            if (DefendingEntity.CurrentLife < 1)
+            {
+                return false;
+            }
+            else { return true; }
+        }
+
+        public string VerifyIfTheDefenseIsDestroy(Entity DefendingEntity)
+        {
+            if (DefendingEntity.DefensePoints <=0)
+            { 
+            return $"El escudo de {DefendingEntity.Name} ha sido destrudo";
+            }
+            return null;
         }
 
         /*static public List<string> ReadEntity()

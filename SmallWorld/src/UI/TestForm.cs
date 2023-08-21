@@ -91,7 +91,7 @@ namespace SmallWorld.src.UI
             int AttackPoints = tbAttack.Value;
             int DefensePoints = 100 - AttackPoints;
             tbDefense.Value = DefensePoints;
-            lblDefensePoints.Text = Convert.ToString(DefensePoints);
+            lblDefensePoints.Text = Convert.ToString(tbDefense.Value);
 
         }
 
@@ -99,7 +99,8 @@ namespace SmallWorld.src.UI
 
         private void btnCreateEntity_Click(object sender, EventArgs e)
         {
-                entityController.AddEntity(new Entity((IKingdom)cbKingdom.SelectedItem, txtName.Text, (IDiet)cbDiet.SelectedItem, (IHabitat)cbHabitat.SelectedItem, tbAttack.Value, tbDefense.Value, 40));
+            entityController.AddEntity(new Entity((IKingdom)cbKingdom.SelectedItem, txtName.Text, (IDiet)cbDiet.SelectedItem, (IHabitat)cbHabitat.SelectedItem, tbAttack.Value, tbDefense.Value, 40));
+            Console.WriteLine($"ataque:{tbAttack.Value} defensa:{tbDefense.Value}");
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -110,9 +111,16 @@ namespace SmallWorld.src.UI
         private void button1_Click(object sender, EventArgs e)
         {
             entityController.ReadEntities();
-            //TODO: la línea de abajo no muestra la entidad completa, no muestra el ToString de la clase Entity
-            //dgvEntities.AutoGenerateColumns = true;
             dgvEntities.DataSource = entityController.getEntities();
+            //TODO: Arreglar error de que los dos combobox seleccionan el mismo item
+            cbSelectAttackEntity.DataSource = entityController.getEntities();
+            cbSelectDefenseEntity.DataSource = entityController.getEntitiesAlternative();
+        }
+
+        private void btnAttack_Click(object sender, EventArgs e)
+        {
+            entityController.Attack((Entity)cbSelectAttackEntity.SelectedItem, (Entity)cbSelectDefenseEntity.SelectedItem);
+            dgvWarResults.DataSource = entityController.getEntities();
         }
     }
 }
