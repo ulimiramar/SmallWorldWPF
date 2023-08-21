@@ -112,9 +112,8 @@ namespace SmallWorld.src.UI
         {
             entityController.ReadEntities();
             dgvEntities.DataSource = entityController.getEntities();
-            //TODO: Arreglar error de que los dos combobox seleccionan el mismo item
-            cbSelectAttackEntity.DataSource = entityController.getEntities();
-            cbSelectDefenseEntity.DataSource = entityController.getEntitiesAlternative();
+            cbSelectAttackEntity.DataSource = entityController.getEntitiesCopy1();
+            cbSelectDefenseEntity.DataSource = entityController.getEntitiesCopy2();
         }
 
         private void btnAttack_Click(object sender, EventArgs e)

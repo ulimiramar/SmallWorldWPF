@@ -36,9 +36,15 @@ namespace SmallWorld.src.Controllers
         {
             return Entities;
         }
-        public List<Entity> getEntitiesAlternative()
+        public List<Entity> getEntitiesCopy1()
         {
-            return Entities;
+            List<Entity> ListForComboBox1 = new List<Entity>(Entities);
+            return ListForComboBox1;
+        }
+        public List<Entity> getEntitiesCopy2()
+        {
+            List<Entity> ListForComboBox2 = new List<Entity>(Entities);
+            return ListForComboBox2;
         }
 
         public void ReadEntities()
@@ -77,7 +83,7 @@ namespace SmallWorld.src.Controllers
             {
                 DefendingEntity.CurrentEnergy += DefendingEntity.DefensePoints;
                 DefendingEntity.DefensePoints = 0;
-                MessageBox.Show($"El escudo de {DefendingEntity.Name} ha sido destrudo");
+                MessageBox.Show($"El escudo de {DefendingEntity.Name} ha sido destruido");
             }
         }
 
@@ -88,11 +94,12 @@ namespace SmallWorld.src.Controllers
                 if (VerifyAmountOfLivesAvailable(DefendingEntity))
                 {
                     DefendingEntity.CurrentLife--;
-                    DefendingEntity.CurrentEnergy = 100;
+                    DefendingEntity.CurrentEnergy = 100 + DefendingEntity.CurrentEnergy;
                     MessageBox.Show($"{DefendingEntity.Name} Ha perdido una vida");
                 }
                 else
                 {
+                    DefendingEntity.CurrentEnergy = 0;
                     MessageBox.Show($"{DefendingEntity.Name} Ha sido exterminado");
                 }
             }
