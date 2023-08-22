@@ -1,6 +1,8 @@
 ﻿using SmallWorld.src.Interfaces;
+using SmallWorld.src.Model.Map;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +25,9 @@ namespace SmallWorld.src.Model
         int defensePoints;
         int attackRange;
 
+        Terrain currentTerrain;
+        //Point position;
+
         //properties
 
         internal IKingdom Kingdom { get { return kingdom; } set => kingdom = value; }
@@ -39,6 +44,9 @@ namespace SmallWorld.src.Model
         public int DefensePoints { get => defensePoints; set => defensePoints = value; }
         public int AttackRange { get => attackRange; set => attackRange = value; }
         public int CurrentEnergy { get => currentEnergy; set => currentEnergy = value; }
+        //public Terrain CurrentTerrain { get => currentTerrain; set => currentTerrain = value; }
+
+        //public Point Position { get => position; set => position = value; }
 
         //constructor
         public Entity(IKingdom kingdom, string name, IDiet diet, IHabitat habitat, int attackPoints, int defensePoints, int attackRange)
@@ -50,6 +58,8 @@ namespace SmallWorld.src.Model
             AttackPoints = attackPoints;
             DefensePoints = defensePoints;
             AttackRange = attackRange;
+            //CurrentTerrain = currentTerrain;
+            //Position = position;
         }
         public Entity() { }
 
@@ -76,6 +86,12 @@ namespace SmallWorld.src.Model
         {
             throw new NotImplementedException();
         }
+
+        /*public void Move(Terrain DestinyTerrain)
+        {
+            //TODO: validacion de si el habitat coincide con el terreno
+            CurrentTerrain = DestinyTerrain;
+        }*/
 
 
 

@@ -74,6 +74,7 @@
     <Compile Include="src\Model\Kingdom\Alien.cs" />
     <Compile Include="src\Model\Kingdom\Machine.cs" />
     <Compile Include="src\Model\Kingdom\Vegetable.cs" />
+    <Compile Include="src\Model\Map\Terrain.cs" />
     <Compile Include="src\Model\Map\Map.cs" />
     <Compile Include="src\Model\Terrain\Water.cs" />
     <Compile Include="src\Model\Terrain\Air.cs" />
@@ -98,6 +99,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="src\UI\TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>
@@ -119,6 +121,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Hexagon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\HexagonEarth.png" />
+    <Content Include="Resources\HexagonWater.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

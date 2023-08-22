@@ -9,9 +9,15 @@ namespace SmallWorld.src.Model.Terreno
 {
     internal class Earth : ITerrain
     {
+        private string ImageRute = $@"I:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\Resources\HexagonEarth.png";
+
         public string getTerrainName()
         {
             return "Tierra";
+        }
+        public string getTerrainImageRute()
+        {
+            return ImageRute;
         }
     }
 }

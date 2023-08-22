@@ -9,6 +9,11 @@ namespace SmallWorld.src.Model.Terreno
 {
     internal class Air : ITerrain
     {
+        public string getTerrainImageRute()
+        {
+            throw new NotImplementedException();
+        }
+
         public string getTerrainName()
         {
             return "Aire";

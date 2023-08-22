@@ -9,5 +9,6 @@ namespace SmallWorld.src.Interfaces
     internal interface ITerrain
     {
         string getTerrainName();
+        string getTerrainImageRute();
     }
 }

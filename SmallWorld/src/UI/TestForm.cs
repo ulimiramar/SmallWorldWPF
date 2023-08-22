@@ -22,6 +22,7 @@ namespace SmallWorld.src.UI
     public partial class TestForm : Form
     {
         private EntityController entityController = EntityController.GetController();
+        private MapController mapController = MapController.GetController();
         public TestForm()
         {
             InitializeComponent();
@@ -99,7 +100,7 @@ namespace SmallWorld.src.UI
 
         private void btnCreateEntity_Click(object sender, EventArgs e)
         {
-            entityController.AddEntity(new Entity((IKingdom)cbKingdom.SelectedItem, txtName.Text, (IDiet)cbDiet.SelectedItem, (IHabitat)cbHabitat.SelectedItem, tbAttack.Value, tbDefense.Value, 40));
+            entityController.AddEntity(new Entity((IKingdom)cbKingdom.SelectedItem, txtName.Text, (IDiet)cbDiet.SelectedItem, (IHabitat)cbHabitat.SelectedItem, tbAttack.Value, tbDefense.Value, 1));
             Console.WriteLine($"ataque:{tbAttack.Value} defensa:{tbDefense.Value}");
         }
 
@@ -120,6 +121,25 @@ namespace SmallWorld.src.UI
         {
             entityController.Attack((Entity)cbSelectAttackEntity.SelectedItem, (Entity)cbSelectDefenseEntity.SelectedItem);
             dgvWarResults.DataSource = entityController.getEntities();
+        }
+
+        private void btnCreateMap_Click(object sender, EventArgs e)
+        {
+            mapController.GenerateMap();
+        }
+
+        private void btnShowMap_Click(object sender, EventArgs e)
+        {
+            //TODO:Como rellenar aleatoriamente todos los pictureBox, como si todos estuvieran en una lista, o talvez generar los picturebox yo 
+            System.Drawing.Image image = System.Drawing.Image.FromFile(mapController.GetTerrainsImageRute());
+            System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap(image);
+            bitmap.MakeTransparent();
+
+            System.Windows.Forms.PictureBox pictureBox = new System.Windows.Forms.PictureBox();
+            pictureBox1.Image = bitmap;
+            //pictureBox1.Width = image.Width;
+            //pictureBox1.Height = image.Height;
+            //pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
         }
     }
 }
