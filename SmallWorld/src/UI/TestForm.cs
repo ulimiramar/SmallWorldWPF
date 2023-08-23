@@ -134,13 +134,14 @@ namespace SmallWorld.src.UI
 
         private void btnShowMap_Click(object sender, EventArgs e)
         {
-            
+            //TODO: Muy importante. Hacer que los hexágonos sean transparentes y verificar de alguna forma si son limítrofes.
+
             List<string> imagesRutes = new List<string>();
             List<PictureBox> PicturesBoxs = new List<PictureBox>();
 
             foreach (var terrain in mapController.GetTerrains())
             {
-                imagesRutes.Add(terrain.TerrainType.getTerrainImageRute());
+                imagesRutes.Add(terrain.getTerrainImageRute());
                 Console.WriteLine(imagesRutes.Count);
             }
 
@@ -251,8 +252,7 @@ namespace SmallWorld.src.UI
 
 
 
-            //TODO:Como rellenar aleatoriamente todos los pictureBox, como si todos estuvieran en una lista, o talvez generar los picturebox yo 
-
+            
             //System.Drawing.Image image = System.Drawing.Image.FromFile(mapController.GetTerrainsImageRute());
             //System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap(image);
             //bitmap.MakeTransparent();
