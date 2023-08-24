@@ -63,6 +63,26 @@ namespace SmallWorld.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cover_image {
+            get {
+                object obj = ResourceManager.GetObject("cover-image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EarthGreen {
+            get {
+                object obj = ResourceManager.GetObject("EarthGreen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Hexagon {
             get {
                 object obj = ResourceManager.GetObject("Hexagon", resourceCulture);
@@ -86,6 +106,26 @@ namespace SmallWorld.Properties {
         internal static System.Drawing.Bitmap HexagonWater {
             get {
                 object obj = ResourceManager.GetObject("HexagonWater", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap textura_campo_cesped__1_ {
+            get {
+                object obj = ResourceManager.GetObject("textura-campo-cesped (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap waterSea {
+            get {
+                object obj = ResourceManager.GetObject("waterSea", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

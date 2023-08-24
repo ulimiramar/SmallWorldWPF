@@ -80,7 +80,7 @@
     <Compile Include="src\Model\Terrain\Water.cs" />
     <Compile Include="src\Model\Terrain\Air.cs" />
     <Compile Include="src\Model\Terrain\Earth.cs" />
-    <Compile Include="src\UI\HexagonControl\HexagonControl.cs">
+    <Compile Include="src\UI\CustomControls\HexagonControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="src\UI\TestForm.cs">
@@ -130,6 +130,10 @@
     <None Include="Resources\Hexagon.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\textura-campo-cesped %281%29.jpg" />
+    <None Include="Resources\waterSea.jpg" />
+    <None Include="Resources\cover-image.png" />
+    <None Include="Resources\EarthGreen.jpg" />
     <Content Include="Resources\HexagonEarth.png" />
     <Content Include="Resources\HexagonWater.png" />
   </ItemGroup>

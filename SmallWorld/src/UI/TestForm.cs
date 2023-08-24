@@ -6,6 +6,7 @@ using SmallWorld.src.Model.Habitat;
 using SmallWorld.src.Model.Map;
 using SmallWorld.src.Model.Reino;
 using SmallWorld.src.Model.Terreno;
+using SmallWorld.src.UI.CustomControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,14 +26,14 @@ namespace SmallWorld.src.UI
     {
         private EntityController entityController = EntityController.GetController();
         private MapController mapController = MapController.GetController();
+        List<HexagonControl> HexagonsList = new List<HexagonControl>();
 
-        
         public TestForm()
         {
             InitializeComponent();
 
 
-            
+
             cbKingdom.Items.Add(new Alien());
             cbKingdom.Items.Add(new Animal());
             cbKingdom.Items.Add(new Machine());
@@ -136,9 +137,85 @@ namespace SmallWorld.src.UI
 
         private void btnShowMap_Click(object sender, EventArgs e)
         {
-            //TODO: Muy importante. Hacer que los hexágonos sean transparentes y verificar de alguna forma si son limítrofes.
+            //TODO: Hacer que los hexagonos sean limitrofes y que la generacion de su posicion sea aleatoria y no sea un panal
+            List<Bitmap> imagesRutes = new List<Bitmap>();
 
-            List<string> imagesRutes = new List<string>();
+
+
+            int hexagonSize = 60;
+            int horizontalSpacing = (int)(1.5 * hexagonSize);
+            int verticalSpacing = (int)(Math.Sqrt(3) * hexagonSize);
+
+            foreach (var terrain in mapController.GetTerrains())
+            {
+                imagesRutes.Add(terrain.getTerrainImageRute());
+                Console.WriteLine(imagesRutes.Count);
+            }
+
+            Random random = new Random();
+
+            foreach (var imageRute in imagesRutes)
+            {
+                // Crear un nuevo PictureBox para cada imagen
+                HexagonControl Hexagon = new HexagonControl()
+                {
+                    BackgroundImage = imageRute,
+                    BackColor = System.Drawing.Color.Transparent,
+                    BackgroundImageLayout = System.Windows.Forms.ImageLayout.None,
+                    //Location = new System.Drawing.Point(319, 346);
+                    //Name = "hexagonControl1";
+                    Size = new System.Drawing.Size(60, 60)
+                    //TabIndex = 29;
+                };
+                HexagonsList.Add(Hexagon);
+            }
+            for (int i = 0; i < 20; i++)
+            {
+                // Posiciona los hexágonos en una cuadrícula hexagonal
+                int row = i / 5; // Se ajusta según el número de columnas que desees
+                int col = i % 5; // Se ajusta según el número de columnas que desees
+
+                int x, y;
+
+                if (row % 2 == 0)
+                {
+                    x = col * horizontalSpacing;
+                }
+                else
+                {
+                    x = col * horizontalSpacing + (horizontalSpacing / 2);
+                }
+
+                y = row * verticalSpacing;
+
+                HexagonsList[i].Location = new Point(x, y);
+
+                // Agrega el hexágono al Panel
+                panelMap.Controls.Add(HexagonsList[i]);
+            }
+        
+
+
+
+            /*
+            // Obtener coordenadas X e Y aleatorias dentro del Panel
+            int x = random.Next(panelMap.Width - Hexagon.Width); // Asegura que el PictureBox no se desborde horizontalmente
+            int y = random.Next(panelMap.Height - Hexagon.Height); // Asegura que el PictureBox no se desborde verticalmente
+
+            // Asignar la ubicación al PictureBox
+            Hexagon.Location = new Point(x, y);
+
+            // Agregar el PictureBox al Panel
+            panelMap.Controls.Add(Hexagon);
+
+            // Agregar el PictureBox a la lista
+            HexagonsList.Add(Hexagon);
+            */
+        
+
+
+            /*
+            //Codigo para generar PicturesBox argandoles imagenes de hexagonos
             List<PictureBox> PicturesBoxs = new List<PictureBox>();
 
             foreach (var terrain in mapController.GetTerrains())
@@ -174,7 +251,7 @@ namespace SmallWorld.src.UI
                 // Agregar el PictureBox a la lista
                 PicturesBoxs.Add(pictureBox);
             }
-
+            */
 
 
 
@@ -207,7 +284,7 @@ namespace SmallWorld.src.UI
                         }
                     }
                 }
-                
+
             }
 
             /*for (int i = 0; i<imagesRutes.Count; i++)
@@ -246,15 +323,15 @@ namespace SmallWorld.src.UI
                 image = System.Drawing.Image.FromFile();
             }
 
-            
+
             foreach (var pictureBox in PicturesBoxs)
             {
-                
+
             }*/
 
 
 
-            
+
             //System.Drawing.Image image = System.Drawing.Image.FromFile(mapController.GetTerrainsImageRute());
             //System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap(image);
             //bitmap.MakeTransparent();

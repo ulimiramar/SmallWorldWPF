@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SmallWorld.src.UI.HexagonControl
+namespace SmallWorld.src.UI.CustomControls
 {
     internal class HexagonControl :  UserControl
 {

@@ -55,6 +55,8 @@
             this.btnCreateMap = new System.Windows.Forms.Button();
             this.btnShowMap = new System.Windows.Forms.Button();
             this.panelMap = new System.Windows.Forms.Panel();
+            this.hexagonControl2 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagonControl1 = new SmallWorld.src.UI.CustomControls.HexagonControl();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -63,7 +65,6 @@
             this.vegetableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.animalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vegetableBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.hexagonControl1 = new SmallWorld.src.UI.HexagonControl.HexagonControl();
             ((System.ComponentModel.ISupportInitialize)(this.tbAttack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbDefense)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntities)).BeginInit();
@@ -313,6 +314,25 @@
             this.panelMap.Size = new System.Drawing.Size(534, 182);
             this.panelMap.TabIndex = 28;
             // 
+            // hexagonControl2
+            // 
+            this.hexagonControl2.BackColor = System.Drawing.Color.Transparent;
+            this.hexagonControl2.BackgroundImage = global::SmallWorld.Properties.Resources.EarthGreen;
+            this.hexagonControl2.Location = new System.Drawing.Point(194, 424);
+            this.hexagonControl2.Name = "hexagonControl2";
+            this.hexagonControl2.Size = new System.Drawing.Size(150, 150);
+            this.hexagonControl2.TabIndex = 30;
+            // 
+            // hexagonControl1
+            // 
+            this.hexagonControl1.BackColor = System.Drawing.Color.Transparent;
+            this.hexagonControl1.BackgroundImage = global::SmallWorld.Properties.Resources.waterSea;
+            this.hexagonControl1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.hexagonControl1.Location = new System.Drawing.Point(319, 346);
+            this.hexagonControl1.Name = "hexagonControl1";
+            this.hexagonControl1.Size = new System.Drawing.Size(150, 150);
+            this.hexagonControl1.TabIndex = 29;
+            // 
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
@@ -363,20 +383,12 @@
             // 
             this.vegetableBindingSource2.DataSource = typeof(SmallWorld.src.Model.Reino.Vegetable);
             // 
-            // hexagonControl1
-            // 
-            this.hexagonControl1.BackColor = System.Drawing.Color.IndianRed;
-            this.hexagonControl1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.hexagonControl1.Location = new System.Drawing.Point(232, 346);
-            this.hexagonControl1.Name = "hexagonControl1";
-            this.hexagonControl1.Size = new System.Drawing.Size(150, 150);
-            this.hexagonControl1.TabIndex = 29;
-            // 
             // TestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1212, 701);
+            this.Controls.Add(this.hexagonControl2);
             this.Controls.Add(this.hexagonControl1);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.panelMap);
@@ -462,6 +474,7 @@
         private System.Windows.Forms.Button btnCreateMap;
         private System.Windows.Forms.Button btnShowMap;
         private System.Windows.Forms.Panel panelMap;
-        private HexagonControl.HexagonControl hexagonControl1;
+        private CustomControls.HexagonControl hexagonControl1;
+        private CustomControls.HexagonControl hexagonControl2;
     }
 }
