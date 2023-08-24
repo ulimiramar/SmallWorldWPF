@@ -57,6 +57,7 @@
     <Compile Include="src\Controllers\EntityController.cs" />
     <Compile Include="src\Controllers\MapController.cs" />
     <Compile Include="src\Interfaces\IDiet.cs" />
+    <Compile Include="src\Interfaces\IEntity.cs" />
     <Compile Include="src\Interfaces\IHabitat.cs" />
     <Compile Include="src\Interfaces\IInteractable.cs" />
     <Compile Include="src\Interfaces\IKingdom.cs" />
@@ -79,6 +80,9 @@
     <Compile Include="src\Model\Terrain\Water.cs" />
     <Compile Include="src\Model\Terrain\Air.cs" />
     <Compile Include="src\Model\Terrain\Earth.cs" />
+    <Compile Include="src\UI\HexagonControl\HexagonControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="src\UI\TestForm.cs">
       <SubType>Form</SubType>
     </Compile>

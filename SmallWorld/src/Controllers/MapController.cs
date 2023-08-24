@@ -20,7 +20,7 @@ namespace SmallWorld.src.Controllers
 
         //TODO:creo que la primera lista no la voy a usar, es mejor la lista de ITerrain
         //TODO:veificar en EntityController si también es mejor usar una interface en vez de una clase
-        private readonly List<Terrain> Terrains = new List<Terrain>();
+        
         private readonly List<ITerrain> Hexagons = new List<ITerrain>();
         
 
@@ -34,6 +34,8 @@ namespace SmallWorld.src.Controllers
             return MapsController;
         }
 
+
+        //Aqui uso reflexion para obtener las clases que usan ITerrain
         public List<Type> GetTerrainTypes()
         {
             var terrainTypes = Assembly.GetExecutingAssembly()
@@ -42,10 +44,11 @@ namespace SmallWorld.src.Controllers
             .ToList();
             return terrainTypes;
         }
+
         public void GenerateMap()
         {
-            //Aqui uso reflexion para obtener las clases que usan ITerrain
-            //en el bucle for instancio 20 clases de forma aleatoria
+            
+            //en el bucle for instancio 20 clases que usan ITerrain de forma aleatoria
 
             var random = new Random();
             
@@ -67,11 +70,7 @@ namespace SmallWorld.src.Controllers
         {
             return Hexagons;
         }
-        public string GetTerrainsImageRute()
-        {
-           
-            return Terrains[0].TerrainType.getTerrainImageRute();
-        }
+        
 
         public void ShowMap()
         {

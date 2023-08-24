@@ -31,6 +31,8 @@ namespace SmallWorld.src.UI
         {
             InitializeComponent();
 
+
+            
             cbKingdom.Items.Add(new Alien());
             cbKingdom.Items.Add(new Animal());
             cbKingdom.Items.Add(new Machine());
@@ -262,6 +264,11 @@ namespace SmallWorld.src.UI
             //pictureBox1.Width = image.Width;
             //pictureBox1.Height = image.Height;
             //pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+        }
+
+        private void hexagonPictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

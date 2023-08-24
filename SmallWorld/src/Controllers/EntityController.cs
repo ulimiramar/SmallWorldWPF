@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace SmallWorld.src.Controllers
 {
     internal class EntityController
     {
+        
         private readonly static EntityController EntitiesController = new EntityController();
 
         private readonly List<Entity>Entities = new List<Entity>();
@@ -26,11 +28,7 @@ namespace SmallWorld.src.Controllers
         {
             Entities.Add(entity);
         }
-        /*static public void CreateEntity(IKingdom Kingdom, string Name, IDiet Diet, IHabitat Habitat, int AttackPoints, int DefensePoints, int AttackRange)
-        {
-            Entities.Add(new Entity(Kingdom, Name, Diet, Habitat, AttackPoints, DefensePoints, AttackRange));
-            Console.WriteLine("Entity added.");
-        }*/
+        
 
         public List<Entity> getEntities()
         {
@@ -47,6 +45,9 @@ namespace SmallWorld.src.Controllers
             return ListForComboBox2;
         }
 
+        /// <summary>
+        /// Solo para mostrar por consola la lista de entidades creadas
+        /// </summary>
         public void ReadEntities()
         {
             if (Entities.Count == 0)
@@ -61,6 +62,20 @@ namespace SmallWorld.src.Controllers
             }
             
         }
+
+        //TODO: lanzamiento de dados.
+
+        /// <summary>
+        /// Logica del ataque: primero se lanzarían los dados (que eso todavía no lo hice)
+        /// el que gane será el atacante.La lógica es que la entidad atacante
+        /// le resta la misma cantidad que tiene de su fuerza de ataque a la entidad que se defiende
+        /// la entidad que se defiende tiene 3 capas de defensa.Primero tiene su escudo de defensa.
+        /// una vez destruido el escudo de defensa, se empieza a disminuir su energía actual
+        /// cuando su energía actual llega a 0, pierde una vida de las vidas actuales y se reestablece
+        /// a 100 su energia actual.
+        /// cuando pierde todas las vidas la entidad muere.
+        /// </summary>
+
 
         public void Attack(Entity AttackingEntity, Entity DefendingEntity)
         {
@@ -114,23 +129,6 @@ namespace SmallWorld.src.Controllers
             else { return true; }
         }
 
-        public string VerifyIfTheDefenseIsDestroy(Entity DefendingEntity)
-        {
-            if (DefendingEntity.DefensePoints <=0)
-            { 
-            return $"El escudo de {DefendingEntity.Name} ha sido destrudo";
-            }
-            return null;
-        }
-
-        /*static public List<string> ReadEntity()
-        {
-            List<string> EntitiesData = new List<string>();
-            foreach (var Entity in Entities)
-            {
-                EntitiesData.Add(Entity.ToString());
-            }
-            return EntitiesData;
-        }*/
+        
     }
 }
