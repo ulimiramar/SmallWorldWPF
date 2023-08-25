@@ -9,10 +9,6 @@ namespace SmallWorld.src.Model.Habitat
 {
     internal class Aquatic : IHabitat
     {
-        public string getHabitatName()
-        {
-            return "Acuático";
-        }
         public override string ToString()
         {
             return "Acuático";

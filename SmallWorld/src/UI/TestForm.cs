@@ -120,6 +120,8 @@ namespace SmallWorld.src.UI
         {
             entityController.ReadEntities();
             dgvEntities.DataSource = entityController.getEntities();
+
+            //TODO: aca pensaba hacer un foreach para que cargue solo los nombres de las entidades en los combobox pero nose como hacer para que no se cargue solo un string y sí la instancia
             cbSelectAttackEntity.DataSource = entityController.getEntitiesCopy1();
             cbSelectDefenseEntity.DataSource = entityController.getEntitiesCopy2();
         }
@@ -137,10 +139,8 @@ namespace SmallWorld.src.UI
 
         private void btnShowMap_Click(object sender, EventArgs e)
         {
-            //TODO: Hacer que los hexagonos sean limitrofes y que la generacion de su posicion sea aleatoria y no sea un panal
             List<Bitmap> imagesRutes = new List<Bitmap>();
-
-
+            List<HexagonControl> HexagonsList = new List<HexagonControl>();
 
             int hexagonSize = 60;
             int horizontalSpacing = (int)(1.5 * hexagonSize);
@@ -153,197 +153,197 @@ namespace SmallWorld.src.UI
             }
 
             Random random = new Random();
+            List<Point> occupiedPositions = new List<Point>(); // Lista para rastrear posiciones ocupadas
 
-            foreach (var imageRute in imagesRutes)
-            {
-                // Crear un nuevo PictureBox para cada imagen
-                HexagonControl Hexagon = new HexagonControl()
-                {
-                    BackgroundImage = imageRute,
-                    BackColor = System.Drawing.Color.Transparent,
-                    BackgroundImageLayout = System.Windows.Forms.ImageLayout.None,
-                    //Location = new System.Drawing.Point(319, 346);
-                    //Name = "hexagonControl1";
-                    Size = new System.Drawing.Size(60, 60)
-                    //TabIndex = 29;
-                };
-                HexagonsList.Add(Hexagon);
-            }
             for (int i = 0; i < 20; i++)
             {
-                // Posiciona los hexágonos en una cuadrícula hexagonal
-                int row = i / 5; // Se ajusta según el número de columnas que desees
-                int col = i % 5; // Se ajusta según el número de columnas que desees
-
-                int x, y;
-
-                if (row % 2 == 0)
+                // Genera una nueva posición hasta encontrar una disponible
+                Point newPosition;
+                bool positionIsOccupied;
+                do
                 {
-                    x = col * horizontalSpacing;
-                }
-                else
+                    int x = random.Next(panelMap.Width - hexagonSize); // Asegura que el PictureBox no se desborde horizontalmente
+                    int y = random.Next(panelMap.Height - hexagonSize); // Asegura que el PictureBox no se desborde verticalmente
+                    newPosition = new Point(x, y);
+
+                    // Verifica si la posición ya está ocupada
+                    positionIsOccupied = occupiedPositions.Any(pos =>
+                        Math.Abs(pos.X - newPosition.X) < horizontalSpacing / 2 &&
+                        Math.Abs(pos.Y - newPosition.Y) < verticalSpacing / 2);
+
+                } while (positionIsOccupied);
+
+                // Crea el hexágono en la nueva posición
+                HexagonControl Hexagon = new HexagonControl()
                 {
-                    x = col * horizontalSpacing + (horizontalSpacing / 2);
-                }
-
-                y = row * verticalSpacing;
-
-                HexagonsList[i].Location = new Point(x, y);
-
-                // Agrega el hexágono al Panel
-                panelMap.Controls.Add(HexagonsList[i]);
-            }
-        
-
-
-
-            /*
-            // Obtener coordenadas X e Y aleatorias dentro del Panel
-            int x = random.Next(panelMap.Width - Hexagon.Width); // Asegura que el PictureBox no se desborde horizontalmente
-            int y = random.Next(panelMap.Height - Hexagon.Height); // Asegura que el PictureBox no se desborde verticalmente
-
-            // Asignar la ubicación al PictureBox
-            Hexagon.Location = new Point(x, y);
-
-            // Agregar el PictureBox al Panel
-            panelMap.Controls.Add(Hexagon);
-
-            // Agregar el PictureBox a la lista
-            HexagonsList.Add(Hexagon);
-            */
-        
-
-
-            /*
-            //Codigo para generar PicturesBox argandoles imagenes de hexagonos
-            List<PictureBox> PicturesBoxs = new List<PictureBox>();
-
-            foreach (var terrain in mapController.GetTerrains())
-            {
-                imagesRutes.Add(terrain.getTerrainImageRute());
-                Console.WriteLine(imagesRutes.Count);
-            }
-
-            Random random = new Random();
-
-            foreach (var imageRute in imagesRutes)
-            {
-                // Crear un nuevo PictureBox para cada imagen
-                PictureBox pictureBox = new PictureBox
-                {
-                    Image = System.Drawing.Image.FromFile(imageRute),
-                    BackColor = Color.Transparent,
-                    SizeMode = PictureBoxSizeMode.Zoom,
-                    Size = new Size(60, 60)
+                    BackgroundImage = imagesRutes[random.Next(imagesRutes.Count)],
+                    BackColor = System.Drawing.Color.Transparent,
+                    BackgroundImageLayout = System.Windows.Forms.ImageLayout.None,
+                    Size = new System.Drawing.Size(hexagonSize, hexagonSize)
                 };
 
+                Hexagon.Location = newPosition;
 
-                // Obtener coordenadas X e Y aleatorias dentro del Panel
-                int x = random.Next(panelMap.Width - pictureBox.Width); // Asegura que el PictureBox no se desborde horizontalmente
-                int y = random.Next(panelMap.Height - pictureBox.Height); // Asegura que el PictureBox no se desborde verticalmente
+                // Agrega la posición ocupada a la lista
+                occupiedPositions.Add(newPosition);
 
-                // Asignar la ubicación al PictureBox
-                pictureBox.Location = new Point(x, y);
-
-                // Agregar el PictureBox al Panel
-                panelMap.Controls.Add(pictureBox);
-
-                // Agregar el PictureBox a la lista
-                PicturesBoxs.Add(pictureBox);
+                // Agrega el hexágono al Panel
+                panelMap.Controls.Add(Hexagon);
+                HexagonsList.Add(Hexagon);
             }
-            */
+        
 
 
 
 
 
+        /*
+        // Obtener coordenadas X e Y aleatorias dentro del Panel
+        int x = random.Next(panelMap.Width - Hexagon.Width); // Asegura que el PictureBox no se desborde horizontalmente
+        int y = random.Next(panelMap.Height - Hexagon.Height); // Asegura que el PictureBox no se desborde verticalmente
+
+        // Asignar la ubicación al PictureBox
+        Hexagon.Location = new Point(x, y);
+
+        // Agregar el PictureBox al Panel
+        panelMap.Controls.Add(Hexagon);
+
+        // Agregar el PictureBox a la lista
+        HexagonsList.Add(Hexagon);
+        */
 
 
-            /*
 
-            List<string> imagesRutes = new List<string>();
-            List<System.Drawing.Image> images = new List<System.Drawing.Image>();
-            List<Bitmap> bitmaps = new List<Bitmap>();
-            List<PictureBox> PicturesBoxs = new List<PictureBox>();
+        /*
+        //Codigo para generar PicturesBox argandoles imagenes de hexagonos
+        List<PictureBox> PicturesBoxs = new List<PictureBox>();
 
-            foreach (var terrain in mapController.GetTerrains())
+        foreach (var terrain in mapController.GetTerrains())
+        {
+            imagesRutes.Add(terrain.getTerrainImageRute());
+            Console.WriteLine(imagesRutes.Count);
+        }
+
+        Random random = new Random();
+
+        foreach (var imageRute in imagesRutes)
+        {
+            // Crear un nuevo PictureBox para cada imagen
+            PictureBox pictureBox = new PictureBox
             {
-                imagesRutes.Add(terrain.TerrainType.getTerrainImageRute());
-                foreach(var imageRute in imagesRutes)
+                Image = System.Drawing.Image.FromFile(imageRute),
+                BackColor = Color.Transparent,
+                SizeMode = PictureBoxSizeMode.Zoom,
+                Size = new Size(60, 60)
+            };
+
+
+            // Obtener coordenadas X e Y aleatorias dentro del Panel
+            int x = random.Next(panelMap.Width - pictureBox.Width); // Asegura que el PictureBox no se desborde horizontalmente
+            int y = random.Next(panelMap.Height - pictureBox.Height); // Asegura que el PictureBox no se desborde verticalmente
+
+            // Asignar la ubicación al PictureBox
+            pictureBox.Location = new Point(x, y);
+
+            // Agregar el PictureBox al Panel
+            panelMap.Controls.Add(pictureBox);
+
+            // Agregar el PictureBox a la lista
+            PicturesBoxs.Add(pictureBox);
+        }
+        */
+
+
+
+
+
+
+
+        /*
+
+        List<string> imagesRutes = new List<string>();
+        List<System.Drawing.Image> images = new List<System.Drawing.Image>();
+        List<Bitmap> bitmaps = new List<Bitmap>();
+        List<PictureBox> PicturesBoxs = new List<PictureBox>();
+
+        foreach (var terrain in mapController.GetTerrains())
+        {
+            imagesRutes.Add(terrain.TerrainType.getTerrainImageRute());
+            foreach(var imageRute in imagesRutes)
+            {
+                images.Add(System.Drawing.Image.FromFile(imageRute));
+                foreach(var image in images)
                 {
-                    images.Add(System.Drawing.Image.FromFile(imageRute));
-                    foreach(var image in images)
+                    bitmaps.Add(new Bitmap(image));
+                    foreach(var bitmap in bitmaps)
                     {
-                        bitmaps.Add(new Bitmap(image));
-                        foreach(var bitmap in bitmaps)
+                        foreach(var pictureBox in PicturesBoxs)
                         {
-                            foreach(var pictureBox in PicturesBoxs)
-                            {
-                                pictureBox.Image = bitmap;
-                            }
+                            pictureBox.Image = bitmap;
                         }
                     }
                 }
-
             }
 
-            /*for (int i = 0; i<imagesRutes.Count; i++)
-            {
-                images.Add(System.Drawing.Image.FromFile(imagesRutes[i]));
-                bitmaps.Add(new Bitmap(images[i]));
-                bitmaps[i].MakeTransparent();
-                PicturesBoxs.Image = bitmaps[i];
-
-            }*/
-            /*
-            Random random = new Random();
-
-            foreach (PictureBox pictureBox in PicturesBoxs)
-            {
-                // Obtener coordenadas X e Y aleatorias dentro del Panel
-                int x = random.Next(panelMap.Width - pictureBox.Width); // Asegura que el PictureBox no se desborde horizontalmente
-                int y = random.Next(panelMap.Height - pictureBox.Height); // Asegura que el PictureBox no se desborde verticalmente
-
-                // Asignar la ubicación al PictureBox
-                pictureBox.Location = new Point(x, y);
-
-                // Agregar el PictureBox al Panel
-                panelMap.Controls.Add(pictureBox);
-            }
-            */
-
-            /* acá queria hacer una rellenada de clases con metodos
-            foreach (var terrain in mapController.GetTerrains())
-            {
-                imagesRutes.Add(terrain.TerrainType.getTerrainImageRute());
-            }
-
-            foreach (var image in images)
-            {
-                image = System.Drawing.Image.FromFile();
-            }
-
-
-            foreach (var pictureBox in PicturesBoxs)
-            {
-
-            }*/
-
-
-
-
-            //System.Drawing.Image image = System.Drawing.Image.FromFile(mapController.GetTerrainsImageRute());
-            //System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap(image);
-            //bitmap.MakeTransparent();
-
-            //System.Windows.Forms.PictureBox pictureBox = new System.Windows.Forms.PictureBox();
-            //pictureBox1.Image = bitmap;
-            //pictureBox1.Width = image.Width;
-            //pictureBox1.Height = image.Height;
-            //pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
         }
 
-        private void hexagonPictureBox1_Click(object sender, EventArgs e)
+        /*for (int i = 0; i<imagesRutes.Count; i++)
+        {
+            images.Add(System.Drawing.Image.FromFile(imagesRutes[i]));
+            bitmaps.Add(new Bitmap(images[i]));
+            bitmaps[i].MakeTransparent();
+            PicturesBoxs.Image = bitmaps[i];
+
+        }*/
+        /*
+        Random random = new Random();
+
+        foreach (PictureBox pictureBox in PicturesBoxs)
+        {
+            // Obtener coordenadas X e Y aleatorias dentro del Panel
+            int x = random.Next(panelMap.Width - pictureBox.Width); // Asegura que el PictureBox no se desborde horizontalmente
+            int y = random.Next(panelMap.Height - pictureBox.Height); // Asegura que el PictureBox no se desborde verticalmente
+
+            // Asignar la ubicación al PictureBox
+            pictureBox.Location = new Point(x, y);
+
+            // Agregar el PictureBox al Panel
+            panelMap.Controls.Add(pictureBox);
+        }
+        */
+
+        /* acá queria hacer una rellenada de clases con metodos
+        foreach (var terrain in mapController.GetTerrains())
+        {
+            imagesRutes.Add(terrain.TerrainType.getTerrainImageRute());
+        }
+
+        foreach (var image in images)
+        {
+            image = System.Drawing.Image.FromFile();
+        }
+
+
+        foreach (var pictureBox in PicturesBoxs)
+        {
+
+        }*/
+
+
+
+
+        //System.Drawing.Image image = System.Drawing.Image.FromFile(mapController.GetTerrainsImageRute());
+        //System.Drawing.Bitmap bitmap = new System.Drawing.Bitmap(image);
+        //bitmap.MakeTransparent();
+
+        //System.Windows.Forms.PictureBox pictureBox = new System.Windows.Forms.PictureBox();
+        //pictureBox1.Image = bitmap;
+        //pictureBox1.Width = image.Width;
+        //pictureBox1.Height = image.Height;
+        //pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+    }
+
+    private void hexagonPictureBox1_Click(object sender, EventArgs e)
         {
 
         }

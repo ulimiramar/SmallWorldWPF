@@ -45,6 +45,15 @@ namespace SmallWorld.src.Controllers
             return ListForComboBox2;
         }
 
+
+        //TODO: hacer funcion que obtenga solo la información de los puntos
+        /*
+        public List<Entity> getNameAndPointsInformation()
+        {
+            List<Entity> EntityList = new List<Entity>(Entities);
+            
+        }*/
+
         /// <summary>
         /// Solo para mostrar por consola la lista de entidades creadas
         /// </summary>

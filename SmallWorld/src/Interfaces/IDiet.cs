@@ -8,6 +8,5 @@ namespace SmallWorld.src.Interfaces
 {
     internal interface IDiet
     {
-        string getDietName();
     }
 }

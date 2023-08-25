@@ -8,7 +8,5 @@ namespace SmallWorld.src.Interfaces
 {
     internal interface IKingdom
     {
-        string Name { get; }
-        string GetKingdomName();
     }
 }

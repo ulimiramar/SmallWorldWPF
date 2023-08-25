@@ -12,7 +12,7 @@ namespace SmallWorld.src.Model.Terreno
     {
         private Bitmap ImageRute = global::SmallWorld.Properties.Resources.waterSea;
 
-        public string getTerrainName()
+        public override string ToString()
         {
             return "Agua";
         }

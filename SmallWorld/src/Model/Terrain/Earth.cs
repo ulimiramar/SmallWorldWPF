@@ -14,7 +14,7 @@ namespace SmallWorld.src.Model.Terreno
 
         //private string ImageRute = $@"I:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\Resources\EarthGreen.jpg";
 
-        public string getTerrainName()
+        public override string ToString()
         {
             return "Tierra";
         }

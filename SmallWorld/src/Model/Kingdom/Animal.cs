@@ -9,11 +9,6 @@ namespace SmallWorld.src.Model.Reino
 {
     internal class Animal : IKingdom
     {
-        public string Name => "Animal";
-        public string GetKingdomName()
-        {
-            return "Animal";
-        }
         public override string ToString()
         {
             return "Animal";

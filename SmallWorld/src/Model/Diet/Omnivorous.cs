@@ -9,10 +9,6 @@ namespace SmallWorld.src.Model.Dieta
 {
     internal class Omnivorous : IDiet
     {
-        public string getDietName()
-        {
-            return "Omnivoro";
-        }
         public override string ToString()
         {
             return "Omnívoro";

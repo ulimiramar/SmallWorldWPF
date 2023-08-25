@@ -55,11 +55,6 @@
             this.btnCreateMap = new System.Windows.Forms.Button();
             this.btnShowMap = new System.Windows.Forms.Button();
             this.panelMap = new System.Windows.Forms.Panel();
-            this.hexagonControl2 = new SmallWorld.src.UI.CustomControls.HexagonControl();
-            this.hexagonControl1 = new SmallWorld.src.UI.CustomControls.HexagonControl();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.iKingdomBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vegetableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vegetableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -69,9 +64,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbDefense)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntities)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWarResults)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iKingdomBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vegetableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vegetableBindingSource1)).BeginInit();
@@ -289,7 +281,7 @@
             // 
             // btnCreateMap
             // 
-            this.btnCreateMap.Location = new System.Drawing.Point(58, 459);
+            this.btnCreateMap.Location = new System.Drawing.Point(875, 66);
             this.btnCreateMap.Name = "btnCreateMap";
             this.btnCreateMap.Size = new System.Drawing.Size(75, 23);
             this.btnCreateMap.TabIndex = 26;
@@ -299,7 +291,7 @@
             // 
             // btnShowMap
             // 
-            this.btnShowMap.Location = new System.Drawing.Point(161, 459);
+            this.btnShowMap.Location = new System.Drawing.Point(978, 66);
             this.btnShowMap.Name = "btnShowMap";
             this.btnShowMap.Size = new System.Drawing.Size(112, 23);
             this.btnShowMap.TabIndex = 27;
@@ -309,59 +301,10 @@
             // 
             // panelMap
             // 
-            this.panelMap.Location = new System.Drawing.Point(282, 507);
+            this.panelMap.Location = new System.Drawing.Point(820, 95);
             this.panelMap.Name = "panelMap";
-            this.panelMap.Size = new System.Drawing.Size(534, 182);
+            this.panelMap.Size = new System.Drawing.Size(310, 331);
             this.panelMap.TabIndex = 28;
-            // 
-            // hexagonControl2
-            // 
-            this.hexagonControl2.BackColor = System.Drawing.Color.Transparent;
-            this.hexagonControl2.BackgroundImage = global::SmallWorld.Properties.Resources.EarthGreen;
-            this.hexagonControl2.Location = new System.Drawing.Point(194, 424);
-            this.hexagonControl2.Name = "hexagonControl2";
-            this.hexagonControl2.Size = new System.Drawing.Size(150, 150);
-            this.hexagonControl2.TabIndex = 30;
-            // 
-            // hexagonControl1
-            // 
-            this.hexagonControl1.BackColor = System.Drawing.Color.Transparent;
-            this.hexagonControl1.BackgroundImage = global::SmallWorld.Properties.Resources.waterSea;
-            this.hexagonControl1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.hexagonControl1.Location = new System.Drawing.Point(319, 346);
-            this.hexagonControl1.Name = "hexagonControl1";
-            this.hexagonControl1.Size = new System.Drawing.Size(150, 150);
-            this.hexagonControl1.TabIndex = 29;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.BackgroundImage = global::SmallWorld.Properties.Resources.HexagonEarth;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox3.Location = new System.Drawing.Point(124, 591);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(67, 86);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 25;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(124, 535);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(64, 50);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 25;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(51, 587);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(64, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 25;
-            this.pictureBox1.TabStop = false;
             // 
             // iKingdomBindingSource
             // 
@@ -387,15 +330,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1212, 701);
-            this.Controls.Add(this.hexagonControl2);
-            this.Controls.Add(this.hexagonControl1);
-            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.panelMap);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnShowMap);
             this.Controls.Add(this.btnCreateMap);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgvWarResults);
             this.Controls.Add(this.btnAttack);
             this.Controls.Add(this.label8);
@@ -425,9 +364,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.tbDefense)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntities)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvWarResults)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iKingdomBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vegetableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vegetableBindingSource1)).EndInit();
@@ -468,13 +404,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnAttack;
         private System.Windows.Forms.DataGridView dgvWarResults;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button btnCreateMap;
         private System.Windows.Forms.Button btnShowMap;
         private System.Windows.Forms.Panel panelMap;
-        private CustomControls.HexagonControl hexagonControl1;
-        private CustomControls.HexagonControl hexagonControl2;
     }
 }

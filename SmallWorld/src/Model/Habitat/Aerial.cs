@@ -9,10 +9,6 @@ namespace SmallWorld.src.Model.Habitat
 {
     internal class Aerial : IHabitat
     {
-        public string getHabitatName()
-        {
-            return "Aéreo";
-        }
         public override string ToString()
         {
             return "Aéreo";

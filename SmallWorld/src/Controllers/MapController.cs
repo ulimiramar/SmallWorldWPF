@@ -18,7 +18,6 @@ namespace SmallWorld.src.Controllers
 
         private readonly static MapController MapsController = new MapController();
 
-        //TODO:creo que la primera lista no la voy a usar, es mejor la lista de ITerrain
         //TODO:veificar en EntityController si también es mejor usar una interface en vez de una clase
         
         private readonly List<ITerrain> Hexagons = new List<ITerrain>();
@@ -70,11 +69,6 @@ namespace SmallWorld.src.Controllers
         {
             return Hexagons;
         }
-        
-
-        public void ShowMap()
-        {
-            
-        }
+       
     }
 }
