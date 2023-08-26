@@ -107,7 +107,7 @@ namespace SmallWorld.src.UI
 
         private void btnCreateEntity_Click(object sender, EventArgs e)
         {
-            entityController.AddEntity(new Entity((IKingdom)cbKingdom.SelectedItem, txtName.Text, (IDiet)cbDiet.SelectedItem, (IHabitat)cbHabitat.SelectedItem, tbAttack.Value, tbDefense.Value, 1));
+            entityController.AddEntity((IKingdom)cbKingdom.SelectedItem, txtName.Text, (IDiet)cbDiet.SelectedItem, (IHabitat)cbHabitat.SelectedItem, tbAttack.Value, tbDefense.Value, 1);
             Console.WriteLine($"ataque:{tbAttack.Value} defensa:{tbDefense.Value}");
         }
 
@@ -128,6 +128,9 @@ namespace SmallWorld.src.UI
 
         private void btnAttack_Click(object sender, EventArgs e)
         {
+            //TODO: solucionar como llamar a la función atacar de la propia entidad.
+            //entityController.getEntities().
+
             entityController.Attack((Entity)cbSelectAttackEntity.SelectedItem, (Entity)cbSelectDefenseEntity.SelectedItem);
             dgvWarResults.DataSource = entityController.getEntities();
         }

@@ -65,8 +65,6 @@ namespace SmallWorld.src.Model
 
         
 
-        
-
         public void Feed()
         {
             throw new NotImplementedException();
@@ -87,6 +85,17 @@ namespace SmallWorld.src.Model
             throw new NotImplementedException();
         }
 
+        public void Attack(Entity EntityToAttack)
+        {
+            EntityToAttack.TakeDamage(this.attackPoints);
+        }
+
+        public void TakeDamage(int AttackPointsOfTheAttackingEntity)
+        {
+            this.defensePoints -= AttackPointsOfTheAttackingEntity;
+        }
+
+
         /*public void Move(Terrain DestinyTerrain)
         {
             //TODO: validacion de si el habitat coincide con el terreno
@@ -99,7 +108,8 @@ namespace SmallWorld.src.Model
 
         public override string ToString()
         {
-            return $"Reino:{Kingdom}, Nombre:{Name}, Dieta:{Diet}, Habitat:{Habitat}, Energía actual:{CurrentEnergy}, Energía Máxima:{MaxEnergy}, Vida Actual:{CurrentLife}, Vida Máxima:{MaxLife}, Puntos de Ataque:{AttackPoints}, Escudo de Defensa:{DefensePoints}, Fuerza del ataque a distancia:{AttackRange}";
+            return name;
+            //return $"Reino:{Kingdom}, Nombre:{Name}, Dieta:{Diet}, Habitat:{Habitat}, Energía actual:{CurrentEnergy}, Energía Máxima:{MaxEnergy}, Vida Actual:{CurrentLife}, Vida Máxima:{MaxLife}, Puntos de Ataque:{AttackPoints}, Escudo de Defensa:{DefensePoints}, Fuerza del ataque a distancia:{AttackRange}";
         }
     }
 }

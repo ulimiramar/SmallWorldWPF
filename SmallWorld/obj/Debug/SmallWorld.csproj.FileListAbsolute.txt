@@ -9,3 +9,14 @@ I:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\bin\Debug\SmallWorld.exe
 I:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\bin\Debug\SmallWorld.pdb
 I:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.exe
 I:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.pdb
+D:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\bin\Debug\SmallWorld.exe.config
+D:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\bin\Debug\SmallWorld.exe
+D:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\bin\Debug\SmallWorld.pdb
+D:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.csproj.AssemblyReference.cache
+D:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.csproj.SuggestedBindingRedirects.cache
+D:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.Properties.Resources.resources
+D:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.src.UI.TestForm.resources
+D:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.csproj.GenerateResource.cache
+D:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.csproj.CoreCompileInputs.cache
+D:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.exe
+D:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.pdb

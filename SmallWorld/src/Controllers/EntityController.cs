@@ -24,9 +24,9 @@ namespace SmallWorld.src.Controllers
             return EntitiesController;
         }
 
-        public void AddEntity(Entity entity)
-        {
-            Entities.Add(entity);
+        public void AddEntity(IKingdom kingdom, string name,IDiet diet, IHabitat habitat, int atkPonints, int defPoints, int range)
+        {            
+            Entities.Add(new Entity(kingdom, name, diet, habitat, atkPonints, defPoints, range));
         }
         
 
@@ -88,6 +88,8 @@ namespace SmallWorld.src.Controllers
 
         public void Attack(Entity AttackingEntity, Entity DefendingEntity)
         {
+            
+            //TODO: pasar esta funcion a la entidad, y hacer otra funcion que sea recibir daño Atack(IEntity entidad){entidad.RecibirDaño(this.atkPoints)}  también fijarse que atacar tiene un costo de energia, y si no tiene mucha energia no puede atacar 
             if (DefendingEntity.DefensePoints > 0)
             {
                 DefendingEntity.DefensePoints -= AttackingEntity.AttackPoints;
