@@ -129,9 +129,10 @@ namespace SmallWorld.src.UI
         private void btnAttack_Click(object sender, EventArgs e)
         {
             //TODO: solucionar como llamar a la función atacar de la propia entidad.
-            //entityController.getEntities().
+            ((Entity)cbSelectAttackEntity.SelectedItem).Attack((Entity)cbSelectDefenseEntity.SelectedItem);
+          
 
-            entityController.Attack((Entity)cbSelectAttackEntity.SelectedItem, (Entity)cbSelectDefenseEntity.SelectedItem);
+            //entityController.Attack((Entity)cbSelectAttackEntity.SelectedItem, (Entity)cbSelectDefenseEntity.SelectedItem);
             dgvWarResults.DataSource = entityController.getEntities();
         }
 

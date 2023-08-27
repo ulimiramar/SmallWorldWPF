@@ -1,4 +1,5 @@
 ﻿using SmallWorld.src.Interfaces;
+using SmallWorld.src.Model.Interactable;
 using SmallWorld.src.Model.Map;
 using System;
 using System.Collections.Generic;
@@ -18,8 +19,8 @@ namespace SmallWorld.src.Model
 
         int maxEnergy = 100;
         int currentEnergy = 100;
-        int maxLife = 3;
-        int currentLife = 3;
+        int maxLife = 100;
+        int currentLife = 100;
 
         int attackPoints;
         int defensePoints;
@@ -87,12 +88,17 @@ namespace SmallWorld.src.Model
 
         public void Attack(Entity EntityToAttack)
         {
-            EntityToAttack.TakeDamage(this.attackPoints);
+            int DicePoints = Dice.ThroughDice();
+            Console.WriteLine(DicePoints);
+            EntityToAttack.TakeDamage(AttackPoints, DicePoints);
         }
 
-        public void TakeDamage(int AttackPointsOfTheAttackingEntity)
+        public void TakeDamage(int AttackPointsOfTheAttackingEntity, int AttackDicePoints)
         {
-            this.defensePoints -= AttackPointsOfTheAttackingEntity;
+            int DicePoints2 = Dice.ThroughDice();
+            Console.WriteLine(DicePoints2);
+            CurrentLife = CurrentLife - ((DefensePoints - DicePoints2) - (AttackPointsOfTheAttackingEntity - AttackDicePoints));
+            
         }
 
 
