@@ -34,6 +34,7 @@
             this.btnDeleteKingdom = new System.Windows.Forms.Button();
             this.btnUpdateKingdom = new System.Windows.Forms.Button();
             this.dgvKingdoms = new System.Windows.Forms.DataGridView();
+            this.btnGetKingdoms = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKingdoms)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,11 +91,22 @@
             this.dgvKingdoms.Size = new System.Drawing.Size(240, 150);
             this.dgvKingdoms.TabIndex = 5;
             // 
+            // btnGetKingdoms
+            // 
+            this.btnGetKingdoms.Location = new System.Drawing.Point(293, 29);
+            this.btnGetKingdoms.Name = "btnGetKingdoms";
+            this.btnGetKingdoms.Size = new System.Drawing.Size(75, 23);
+            this.btnGetKingdoms.TabIndex = 6;
+            this.btnGetKingdoms.Text = "Ver Reinos";
+            this.btnGetKingdoms.UseVisualStyleBackColor = true;
+            this.btnGetKingdoms.Click += new System.EventHandler(this.btnGetKingdoms_Click);
+            // 
             // KingdomsCrudForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnGetKingdoms);
             this.Controls.Add(this.dgvKingdoms);
             this.Controls.Add(this.btnUpdateKingdom);
             this.Controls.Add(this.btnDeleteKingdom);
@@ -117,5 +129,6 @@
         private System.Windows.Forms.Button btnDeleteKingdom;
         private System.Windows.Forms.Button btnUpdateKingdom;
         private System.Windows.Forms.DataGridView dgvKingdoms;
+        private System.Windows.Forms.Button btnGetKingdoms;
     }
 }

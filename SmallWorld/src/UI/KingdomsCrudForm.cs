@@ -18,13 +18,12 @@ namespace SmallWorld.src.UI
         public KingdomsCrudForm()
         {
             InitializeComponent();
-            dgvKingdoms.DataSource = kingdomController.GetKingdoms();
+            
         }
 
         private void btnCreateKingdom_Click(object sender, EventArgs e)
         {
             kingdomController.CreateKingdom(txtKingdomName.Text);
-            dgvKingdoms.DataSource = kingdomController.GetKingdoms();
         }
 
         private void btnDeleteKingdom_Click(object sender, EventArgs e)
@@ -47,5 +46,11 @@ namespace SmallWorld.src.UI
             }
         }
 
+        private void btnGetKingdoms_Click(object sender, EventArgs e)
+        {
+	    //TODO: todavía no funciona este botón, si lo apreto no trae la lista de kingdoms
+            dgvKingdoms.DataSource = kingdomController.GetKingdoms();
+            dgvKingdoms.Refresh();
+        }
     }
 }

@@ -21,6 +21,7 @@ namespace SmallWorld.src.Model
         {
             Id = ++lastId;
             Name = name;
+            Deleted = false;
         }
     }
 }
