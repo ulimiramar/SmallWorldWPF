@@ -14,11 +14,11 @@ namespace SmallWorld.src.Controllers
         
         private static KingdomController instance;
 
-        private readonly List<IKingdom> Kingdoms = new List<IKingdom>();
+        private readonly List<Kingdom> Kingdoms = new List<Kingdom>();
 
         private KingdomController() { }
 
-        public static KingdomController GetController()
+        public static KingdomController GetInstance()
         {
             if (instance == null)
             {
@@ -27,24 +27,28 @@ namespace SmallWorld.src.Controllers
             return instance;
         }
 
-        public void CreateKingdom(IKingdom kingdom)
+        public List<Kingdom> GetKingdoms()
         {
-            Kingdoms.Add(kingdom);
+            return Kingdoms;
         }
-        public IKingdom ReadKingdom(int id)
+        public void CreateKingdom(string kingdomName)
+        {
+            Kingdoms.Add(new Kingdom(kingdomName));
+        }
+        public Kingdom ReadKingdom(int id)
         {
             return Kingdoms.Find(kingdom => kingdom.Id == id);
         }
-        public void UpdateDiet(IKingdom kingdomUpdated)
+        public void UpdateKingdom(Kingdom kingdomUpdated)
         {
-            IKingdom KingdomFound = Kingdoms.FirstOrDefault(k => k.Id == kingdomUpdated.Id);
+            Kingdom KingdomFound = Kingdoms.FirstOrDefault(k => k.Id == kingdomUpdated.Id);
             if (KingdomFound != null)
             {
                 KingdomFound.Name = kingdomUpdated.Name;
             }
             else MessageBox.Show("Reino no encontrado");
         }
-        public void DeleteDiet(IKingdom kingdom)
+        public void DeleteKingdom(Kingdom kingdom)
         {
             kingdom.Deleted = true;
         }

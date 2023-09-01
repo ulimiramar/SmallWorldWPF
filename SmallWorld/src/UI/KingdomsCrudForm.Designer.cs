@@ -1,6 +1,6 @@
 ﻿namespace SmallWorld.src.UI
 {
-    partial class KingdomsCrud
+    partial class KingdomsCrudForm
     {
         /// <summary>
         /// Required designer variable.
@@ -61,6 +61,7 @@
             this.btnCreateKingdom.TabIndex = 2;
             this.btnCreateKingdom.Text = "Crear";
             this.btnCreateKingdom.UseVisualStyleBackColor = true;
+            this.btnCreateKingdom.Click += new System.EventHandler(this.btnCreateKingdom_Click);
             // 
             // btnDeleteKingdom
             // 
@@ -70,6 +71,7 @@
             this.btnDeleteKingdom.TabIndex = 3;
             this.btnDeleteKingdom.Text = "Eliminar";
             this.btnDeleteKingdom.UseVisualStyleBackColor = true;
+            this.btnDeleteKingdom.Click += new System.EventHandler(this.btnDeleteKingdom_Click);
             // 
             // btnUpdateKingdom
             // 
@@ -88,7 +90,7 @@
             this.dgvKingdoms.Size = new System.Drawing.Size(240, 150);
             this.dgvKingdoms.TabIndex = 5;
             // 
-            // KingdomsCrud
+            // KingdomsCrudForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -99,7 +101,7 @@
             this.Controls.Add(this.btnCreateKingdom);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtKingdomName);
-            this.Name = "KingdomsCrud";
+            this.Name = "KingdomsCrudForm";
             this.Text = "KingdomsCrud";
             ((System.ComponentModel.ISupportInitialize)(this.dgvKingdoms)).EndInit();
             this.ResumeLayout(false);

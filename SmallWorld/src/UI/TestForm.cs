@@ -350,5 +350,12 @@ namespace SmallWorld.src.UI
         {
 
         }
+
+        private void btnOpenKingdomCrudForm_Click(object sender, EventArgs e)
+        {
+            KingdomsCrudForm kingdomsCrud = new KingdomsCrudForm();
+            kingdomsCrud.Show();
+        
+        }
     }
 }

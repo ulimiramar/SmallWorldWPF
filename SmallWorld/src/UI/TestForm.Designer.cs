@@ -60,6 +60,7 @@
             this.vegetableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.animalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vegetableBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.btnOpenKingdomCrudForm = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tbAttack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbDefense)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntities)).BeginInit();
@@ -108,7 +109,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(137, 84);
+            this.label2.Location = new System.Drawing.Point(168, 71);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 5;
@@ -326,12 +327,23 @@
             // 
             this.vegetableBindingSource2.DataSource = typeof(SmallWorld.src.Model.Reino.Vegetable);
             // 
+            // btnOpenKingdomCrudForm
+            // 
+            this.btnOpenKingdomCrudForm.Location = new System.Drawing.Point(58, 95);
+            this.btnOpenKingdomCrudForm.Name = "btnOpenKingdomCrudForm";
+            this.btnOpenKingdomCrudForm.Size = new System.Drawing.Size(156, 23);
+            this.btnOpenKingdomCrudForm.TabIndex = 29;
+            this.btnOpenKingdomCrudForm.Text = "CRUD Reinos";
+            this.btnOpenKingdomCrudForm.UseVisualStyleBackColor = true;
+            this.btnOpenKingdomCrudForm.Click += new System.EventHandler(this.btnOpenKingdomCrudForm_Click);
+            // 
             // TestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1212, 701);
+            this.Controls.Add(this.btnOpenKingdomCrudForm);
             this.Controls.Add(this.panelMap);
             this.Controls.Add(this.btnShowMap);
             this.Controls.Add(this.btnCreateMap);
@@ -407,5 +419,6 @@
         private System.Windows.Forms.Button btnCreateMap;
         private System.Windows.Forms.Button btnShowMap;
         private System.Windows.Forms.Panel panelMap;
+        private System.Windows.Forms.Button btnOpenKingdomCrudForm;
     }
 }

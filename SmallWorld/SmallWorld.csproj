@@ -73,6 +73,7 @@
     <Compile Include="src\Model\Interactable\Dice.cs" />
     <Compile Include="src\Model\Interactable\Food.cs" />
     <Compile Include="src\Model\Interactable\Item.cs" />
+    <Compile Include="src\Model\Kingdom.cs" />
     <Compile Include="src\Model\Kingdom\Animal.cs" />
     <Compile Include="src\Model\Kingdom\Alien.cs" />
     <Compile Include="src\Model\Kingdom\Machine.cs" />
@@ -85,11 +86,11 @@
     <Compile Include="src\UI\CustomControls\HexagonControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="src\UI\KingdomsCrud.cs">
+    <Compile Include="src\UI\KingdomsCrudForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="src\UI\KingdomsCrud.Designer.cs">
-      <DependentUpon>KingdomsCrud.cs</DependentUpon>
+    <Compile Include="src\UI\KingdomsCrudForm.Designer.cs">
+      <DependentUpon>KingdomsCrudForm.cs</DependentUpon>
     </Compile>
     <Compile Include="src\UI\TestForm.cs">
       <SubType>Form</SubType>
@@ -113,8 +114,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="src\UI\KingdomsCrud.resx">
-      <DependentUpon>KingdomsCrud.cs</DependentUpon>
+    <EmbeddedResource Include="src\UI\KingdomsCrudForm.resx">
+      <DependentUpon>KingdomsCrudForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\UI\TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>

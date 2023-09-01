@@ -20,3 +20,4 @@ D:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.cspro
 D:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.csproj.CoreCompileInputs.cache
 D:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.exe
 D:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.pdb
+I:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.src.UI.KingdomsCrudForm.resources
