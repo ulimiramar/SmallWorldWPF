@@ -17,7 +17,7 @@ namespace SmallWorld.src.Model.Interactable
             Side = side;
         }
 
-        public static int ThroughDice() 
+        public static int TrowDice() 
         {
             return RandomSide.Next(1, 6);
         }

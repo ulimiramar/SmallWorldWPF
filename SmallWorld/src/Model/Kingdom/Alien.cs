@@ -9,6 +9,10 @@ namespace SmallWorld.src.Model.Reino
 {
     internal class Alien : IKingdom
     {
+        public int Id { get => Id; set => Id = value; }
+        public string Name { get => Name; set => Name = value; }
+        public bool Deleted { get => Deleted; set => Deleted = value; }
+
         public override string ToString()
         {
             return "Alien";

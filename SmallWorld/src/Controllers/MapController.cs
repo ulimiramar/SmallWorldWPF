@@ -18,8 +18,7 @@ namespace SmallWorld.src.Controllers
 
         private readonly static MapController MapsController = new MapController();
 
-        //TODO:veificar en EntityController si también es mejor usar una interface en vez de una clase
-        
+         
         private readonly List<ITerrain> Hexagons = new List<ITerrain>();
         
 

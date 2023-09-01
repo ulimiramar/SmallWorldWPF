@@ -88,14 +88,14 @@ namespace SmallWorld.src.Model
 
         public void Attack(Entity EntityToAttack)
         {
-            int DicePoints = Dice.ThroughDice();
+            int DicePoints = Dice.TrowDice();
             Console.WriteLine(DicePoints);
             EntityToAttack.TakeDamage(AttackPoints, DicePoints);
         }
 
         public void TakeDamage(int AttackPointsOfTheAttackingEntity, int AttackDicePoints)
         {
-            int DicePoints2 = Dice.ThroughDice();
+            int DicePoints2 = Dice.TrowDice();
             Console.WriteLine(DicePoints2);
             CurrentLife = CurrentLife - ((DefensePoints - DicePoints2) - (AttackPointsOfTheAttackingEntity - AttackDicePoints));
             

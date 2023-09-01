@@ -121,14 +121,13 @@ namespace SmallWorld.src.UI
             entityController.ReadEntities();
             dgvEntities.DataSource = entityController.getEntities();
 
-            //TODO: aca pensaba hacer un foreach para que cargue solo los nombres de las entidades en los combobox pero nose como hacer para que no se cargue solo un string y sí la instancia
             cbSelectAttackEntity.DataSource = entityController.getEntitiesCopy1();
             cbSelectDefenseEntity.DataSource = entityController.getEntitiesCopy2();
         }
 
         private void btnAttack_Click(object sender, EventArgs e)
         {
-            //TODO: solucionar como llamar a la función atacar de la propia entidad.
+            
             ((Entity)cbSelectAttackEntity.SelectedItem).Attack((Entity)cbSelectDefenseEntity.SelectedItem);
           
 

@@ -72,7 +72,10 @@ namespace SmallWorld.src.Controllers
             
         }
 
-        //TODO: lanzamiento de dados.
+        
+
+
+        /* Otra idea de lógica de ataque
 
         /// <summary>
         /// Logica del ataque: primero se lanzarían los dados (que eso todavía no lo hice)
@@ -89,7 +92,6 @@ namespace SmallWorld.src.Controllers
         public void Attack(Entity AttackingEntity, Entity DefendingEntity)
         {
             
-            //TODO: pasar esta funcion a la entidad, y hacer otra funcion que sea recibir daño Atack(IEntity entidad){entidad.RecibirDaño(this.atkPoints)}  también fijarse que atacar tiene un costo de energia, y si no tiene mucha energia no puede atacar 
             if (DefendingEntity.DefensePoints > 0)
             {
                 DefendingEntity.DefensePoints -= AttackingEntity.AttackPoints;
@@ -138,7 +140,7 @@ namespace SmallWorld.src.Controllers
                 return false;
             }
             else { return true; }
-        }
+        }*/
 
         
     }
