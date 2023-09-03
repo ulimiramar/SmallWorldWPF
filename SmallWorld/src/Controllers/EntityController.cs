@@ -13,20 +13,30 @@ namespace SmallWorld.src.Controllers
 {
     internal class EntityController
     {
-        
-        private readonly static EntityController EntitiesController = new EntityController();
+        private static EntityController instance;
+        private readonly List<Entity> Entities = new List<Entity>();
+        private EntityController() { }
 
-        private readonly List<Entity>Entities = new List<Entity>();
+        //private readonly static EntityController EntitiesController = new EntityController();
 
-        private EntityController () { }
-        public static EntityController GetController()
+        public static EntityController GetInstance()
         {
-            return EntitiesController;
+            if (instance == null)
+            {
+                instance = new EntityController();
+            }
+            return instance;
         }
 
-        public void AddEntity(IKingdom kingdom, string name,IDiet diet, IHabitat habitat, int atkPonints, int defPoints, int range)
+        /*public static EntityController GetController()
+        {
+            return EntitiesController;
+        }*/
+
+
+        public void AddEntity(IKingdom kingdom, string name,IDiet diet, IHabitat habitat, int atkPonints, int defPoints, bool range, int maxLife, int maxEnergy, int defenseShield)
         {            
-            Entities.Add(new Entity(kingdom, name, diet, habitat, atkPonints, defPoints, range));
+            Entities.Add(new Entity(kingdom, name, diet, habitat, atkPonints, defPoints, range, maxLife, maxEnergy, defenseShield));
         }
         
 

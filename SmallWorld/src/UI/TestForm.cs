@@ -24,7 +24,7 @@ namespace SmallWorld.src.UI
 {
     public partial class TestForm : Form
     {
-        private EntityController entityController = EntityController.GetController();
+        private EntityController entityController = EntityController.GetInstance();
         private MapController mapController = MapController.GetController();
         List<HexagonControl> HexagonsList = new List<HexagonControl>();
 
@@ -48,6 +48,9 @@ namespace SmallWorld.src.UI
             cbHabitat.Items.Add(new Terrestrial());
 
 
+            //TODO: hacer que las elementos del windows forms se actualicen solos cuando haya cambios.
+            //TODO: hacer crud de items y poder usarlos
+            //TODO: hacer cruud de alimentos y poder comerlos
 
             /*
              * Código usando reflexión para traer los nombres de las clases que implementan cierta interfaz
@@ -107,7 +110,8 @@ namespace SmallWorld.src.UI
 
         private void btnCreateEntity_Click(object sender, EventArgs e)
         {
-            entityController.AddEntity((IKingdom)cbKingdom.SelectedItem, txtName.Text, (IDiet)cbDiet.SelectedItem, (IHabitat)cbHabitat.SelectedItem, tbAttack.Value, tbDefense.Value, 1);
+            
+            entityController.AddEntity((IKingdom)cbKingdom.SelectedItem, txtName.Text, (IDiet)cbDiet.SelectedItem, (IHabitat)cbHabitat.SelectedItem, Convert.ToInt32(txtAttackPoints.Text), Convert.ToInt32(txtDefensePoints.Text), chbAttackRange.Checked, Convert.ToInt32(txtMaxLife.Text), Convert.ToInt32(txtMaxEnergy.Text), Convert.ToInt32(txtDefenseShield.Text));
             Console.WriteLine($"ataque:{tbAttack.Value} defensa:{tbDefense.Value}");
         }
 
@@ -123,6 +127,7 @@ namespace SmallWorld.src.UI
 
             cbSelectAttackEntity.DataSource = entityController.getEntitiesCopy1();
             cbSelectDefenseEntity.DataSource = entityController.getEntitiesCopy2();
+            cbSelectUniqueEntity.DataSource = entityController.getEntities();
         }
 
         private void btnAttack_Click(object sender, EventArgs e)
@@ -357,5 +362,26 @@ namespace SmallWorld.src.UI
             kingdomsCrud.Show();
         
         }
+
+        private void chbAttackRange_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRest_Click(object sender, EventArgs e)
+        {
+            ((Entity)cbSelectUniqueEntity.SelectedItem).Rest();
+        }
+
+        private void cbSelectUniqueEntity_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbSelectUniqueEntity.SelectedItem is Entity selectedEntity)
+            {
+                pbCurrentLife.Value = selectedEntity.CurrentLife;
+                pbDefenseShield.Value = selectedEntity.DefenseShield;
+                pbCurrentEnergy.Value = selectedEntity.CurrentEnergy;
+            }
+        }
+
     }
 }

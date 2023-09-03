@@ -8,5 +8,6 @@ namespace SmallWorld.src.Interfaces
 {
     internal interface IInteractable
     {
+        //TODO: las clases que implementan esta interfaz tienen la funcion interactuar
     }
 }

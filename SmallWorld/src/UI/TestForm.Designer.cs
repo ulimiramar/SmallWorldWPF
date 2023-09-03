@@ -55,12 +55,41 @@
             this.btnCreateMap = new System.Windows.Forms.Button();
             this.btnShowMap = new System.Windows.Forms.Button();
             this.panelMap = new System.Windows.Forms.Panel();
+            this.btnOpenKingdomCrudForm = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtAttackPoints = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtDefensePoints = new System.Windows.Forms.TextBox();
+            this.chbAttackRange = new System.Windows.Forms.CheckBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtMaxLife = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtMaxEnergy = new System.Windows.Forms.TextBox();
+            this.btnRest = new System.Windows.Forms.Button();
+            this.cbSelectUniqueEntity = new System.Windows.Forms.ComboBox();
+            this.cbItems = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.btnInteract = new System.Windows.Forms.Button();
+            this.btnItemsCRUD = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnEat = new System.Windows.Forms.Button();
+            this.btnFoodsCRUD = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtDefenseShield = new System.Windows.Forms.TextBox();
+            this.pbCurrentLife = new System.Windows.Forms.ProgressBar();
+            this.pbDefenseShield = new System.Windows.Forms.ProgressBar();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.pbCurrentEnergy = new System.Windows.Forms.ProgressBar();
             this.iKingdomBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vegetableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vegetableBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.animalBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.vegetableBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.btnOpenKingdomCrudForm = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tbAttack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tbDefense)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntities)).BeginInit();
@@ -85,7 +114,7 @@
             // cbKingdom
             // 
             this.cbKingdom.FormattingEnabled = true;
-            this.cbKingdom.Location = new System.Drawing.Point(232, 76);
+            this.cbKingdom.Location = new System.Drawing.Point(234, 51);
             this.cbKingdom.Name = "cbKingdom";
             this.cbKingdom.Size = new System.Drawing.Size(121, 21);
             this.cbKingdom.TabIndex = 2;
@@ -109,7 +138,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(168, 71);
+            this.label2.Location = new System.Drawing.Point(168, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 5;
@@ -118,7 +147,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(424, 83);
+            this.label3.Location = new System.Drawing.Point(418, 54);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 6;
@@ -127,7 +156,7 @@
             // cbDiet
             // 
             this.cbDiet.FormattingEnabled = true;
-            this.cbDiet.Location = new System.Drawing.Point(462, 75);
+            this.cbDiet.Location = new System.Drawing.Point(462, 51);
             this.cbDiet.Name = "cbDiet";
             this.cbDiet.Size = new System.Drawing.Size(121, 21);
             this.cbDiet.TabIndex = 7;
@@ -152,7 +181,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(133, 139);
+            this.label5.Location = new System.Drawing.Point(35, 598);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 13);
             this.label5.TabIndex = 10;
@@ -161,7 +190,7 @@
             // tbAttack
             // 
             this.tbAttack.LargeChange = 10;
-            this.tbAttack.Location = new System.Drawing.Point(230, 139);
+            this.tbAttack.Location = new System.Drawing.Point(132, 598);
             this.tbAttack.Maximum = 90;
             this.tbAttack.Minimum = 10;
             this.tbAttack.Name = "tbAttack";
@@ -174,7 +203,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(416, 139);
+            this.label6.Location = new System.Drawing.Point(318, 598);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(101, 13);
             this.label6.TabIndex = 12;
@@ -184,7 +213,7 @@
             // 
             this.tbDefense.Enabled = false;
             this.tbDefense.LargeChange = 10;
-            this.tbDefense.Location = new System.Drawing.Point(538, 139);
+            this.tbDefense.Location = new System.Drawing.Point(440, 598);
             this.tbDefense.Maximum = 100;
             this.tbDefense.Name = "tbDefense";
             this.tbDefense.Size = new System.Drawing.Size(104, 45);
@@ -195,7 +224,7 @@
             // lblAttackPoints
             // 
             this.lblAttackPoints.AutoSize = true;
-            this.lblAttackPoints.Location = new System.Drawing.Point(136, 156);
+            this.lblAttackPoints.Location = new System.Drawing.Point(38, 615);
             this.lblAttackPoints.Name = "lblAttackPoints";
             this.lblAttackPoints.Size = new System.Drawing.Size(31, 13);
             this.lblAttackPoints.TabIndex = 14;
@@ -204,7 +233,7 @@
             // lblDefensePoints
             // 
             this.lblDefensePoints.AutoSize = true;
-            this.lblDefensePoints.Location = new System.Drawing.Point(416, 156);
+            this.lblDefensePoints.Location = new System.Drawing.Point(318, 615);
             this.lblDefensePoints.Name = "lblDefensePoints";
             this.lblDefensePoints.Size = new System.Drawing.Size(31, 13);
             this.lblDefensePoints.TabIndex = 15;
@@ -239,7 +268,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(55, 351);
+            this.label7.Location = new System.Drawing.Point(55, 360);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(148, 13);
             this.label7.TabIndex = 20;
@@ -256,7 +285,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(244, 351);
+            this.label8.Location = new System.Drawing.Point(244, 360);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(145, 13);
             this.label8.TabIndex = 22;
@@ -264,7 +293,7 @@
             // 
             // btnAttack
             // 
-            this.btnAttack.Location = new System.Drawing.Point(421, 376);
+            this.btnAttack.Location = new System.Drawing.Point(394, 374);
             this.btnAttack.Name = "btnAttack";
             this.btnAttack.Size = new System.Drawing.Size(75, 23);
             this.btnAttack.TabIndex = 23;
@@ -275,7 +304,7 @@
             // dgvWarResults
             // 
             this.dgvWarResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvWarResults.Location = new System.Drawing.Point(515, 351);
+            this.dgvWarResults.Location = new System.Drawing.Point(576, 351);
             this.dgvWarResults.Name = "dgvWarResults";
             this.dgvWarResults.Size = new System.Drawing.Size(279, 150);
             this.dgvWarResults.TabIndex = 24;
@@ -302,10 +331,267 @@
             // 
             // panelMap
             // 
-            this.panelMap.Location = new System.Drawing.Point(820, 95);
+            this.panelMap.Location = new System.Drawing.Point(875, 98);
             this.panelMap.Name = "panelMap";
             this.panelMap.Size = new System.Drawing.Size(310, 331);
             this.panelMap.TabIndex = 28;
+            // 
+            // btnOpenKingdomCrudForm
+            // 
+            this.btnOpenKingdomCrudForm.Location = new System.Drawing.Point(32, 649);
+            this.btnOpenKingdomCrudForm.Name = "btnOpenKingdomCrudForm";
+            this.btnOpenKingdomCrudForm.Size = new System.Drawing.Size(156, 23);
+            this.btnOpenKingdomCrudForm.TabIndex = 29;
+            this.btnOpenKingdomCrudForm.Text = "CRUD Reinos";
+            this.btnOpenKingdomCrudForm.UseVisualStyleBackColor = true;
+            this.btnOpenKingdomCrudForm.Click += new System.EventHandler(this.btnOpenKingdomCrudForm_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(137, 98);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(91, 13);
+            this.label9.TabIndex = 30;
+            this.label9.Text = "Puntos de ataque";
+            // 
+            // txtAttackPoints
+            // 
+            this.txtAttackPoints.Location = new System.Drawing.Point(234, 95);
+            this.txtAttackPoints.Name = "txtAttackPoints";
+            this.txtAttackPoints.Size = new System.Drawing.Size(100, 20);
+            this.txtAttackPoints.TabIndex = 31;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(416, 97);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(98, 13);
+            this.label10.TabIndex = 32;
+            this.label10.Text = "Puntos de Defensa";
+            // 
+            // txtDefensePoints
+            // 
+            this.txtDefensePoints.Location = new System.Drawing.Point(534, 98);
+            this.txtDefensePoints.Name = "txtDefensePoints";
+            this.txtDefensePoints.Size = new System.Drawing.Size(100, 20);
+            this.txtDefensePoints.TabIndex = 33;
+            // 
+            // chbAttackRange
+            // 
+            this.chbAttackRange.AutoSize = true;
+            this.chbAttackRange.Location = new System.Drawing.Point(644, 55);
+            this.chbAttackRange.Name = "chbAttackRange";
+            this.chbAttackRange.Size = new System.Drawing.Size(172, 17);
+            this.chbAttackRange.TabIndex = 34;
+            this.chbAttackRange.Text = "Habilidad de atacar a distancia";
+            this.chbAttackRange.UseVisualStyleBackColor = true;
+            this.chbAttackRange.CheckedChanged += new System.EventHandler(this.chbAttackRange_CheckedChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(38, 568);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(133, 13);
+            this.label11.TabIndex = 35;
+            this.label11.Text = "Cosas que fui descartando";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(140, 132);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(67, 13);
+            this.label12.TabIndex = 36;
+            this.label12.Text = "Vida Máxima";
+            // 
+            // txtMaxLife
+            // 
+            this.txtMaxLife.Location = new System.Drawing.Point(234, 132);
+            this.txtMaxLife.Name = "txtMaxLife";
+            this.txtMaxLife.Size = new System.Drawing.Size(100, 20);
+            this.txtMaxLife.TabIndex = 37;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(419, 138);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(83, 13);
+            this.label13.TabIndex = 38;
+            this.label13.Text = "Energía máxima";
+            // 
+            // txtMaxEnergy
+            // 
+            this.txtMaxEnergy.Location = new System.Drawing.Point(534, 138);
+            this.txtMaxEnergy.Name = "txtMaxEnergy";
+            this.txtMaxEnergy.Size = new System.Drawing.Size(100, 20);
+            this.txtMaxEnergy.TabIndex = 39;
+            // 
+            // btnRest
+            // 
+            this.btnRest.Location = new System.Drawing.Point(41, 454);
+            this.btnRest.Name = "btnRest";
+            this.btnRest.Size = new System.Drawing.Size(75, 23);
+            this.btnRest.TabIndex = 40;
+            this.btnRest.Text = "Descansar";
+            this.btnRest.UseVisualStyleBackColor = true;
+            this.btnRest.Click += new System.EventHandler(this.btnRest_Click);
+            // 
+            // cbSelectUniqueEntity
+            // 
+            this.cbSelectUniqueEntity.FormattingEnabled = true;
+            this.cbSelectUniqueEntity.Location = new System.Drawing.Point(41, 427);
+            this.cbSelectUniqueEntity.Name = "cbSelectUniqueEntity";
+            this.cbSelectUniqueEntity.Size = new System.Drawing.Size(121, 21);
+            this.cbSelectUniqueEntity.TabIndex = 41;
+            this.cbSelectUniqueEntity.SelectedIndexChanged += new System.EventHandler(this.cbSelectUniqueEntity_SelectedIndexChanged);
+            // 
+            // cbItems
+            // 
+            this.cbItems.FormattingEnabled = true;
+            this.cbItems.Location = new System.Drawing.Point(282, 427);
+            this.cbItems.Name = "cbItems";
+            this.cbItems.Size = new System.Drawing.Size(121, 21);
+            this.cbItems.TabIndex = 42;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(38, 411);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(199, 13);
+            this.label14.TabIndex = 43;
+            this.label14.Text = "Seleccionar una entidad para hacer algo";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(282, 412);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(101, 13);
+            this.label15.TabIndex = 44;
+            this.label15.Text = "Seleccionar un Item";
+            // 
+            // btnInteract
+            // 
+            this.btnInteract.Location = new System.Drawing.Point(282, 453);
+            this.btnInteract.Name = "btnInteract";
+            this.btnInteract.Size = new System.Drawing.Size(75, 23);
+            this.btnInteract.TabIndex = 45;
+            this.btnInteract.Text = "Interactuar";
+            this.btnInteract.UseVisualStyleBackColor = true;
+            // 
+            // btnItemsCRUD
+            // 
+            this.btnItemsCRUD.Location = new System.Drawing.Point(282, 477);
+            this.btnItemsCRUD.Name = "btnItemsCRUD";
+            this.btnItemsCRUD.Size = new System.Drawing.Size(107, 23);
+            this.btnItemsCRUD.TabIndex = 46;
+            this.btnItemsCRUD.Text = "CRUD de items";
+            this.btnItemsCRUD.UseVisualStyleBackColor = true;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(428, 411);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(120, 13);
+            this.label16.TabIndex = 47;
+            this.label16.Text = "Seleccionar un alimento";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(431, 428);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 48;
+            // 
+            // btnEat
+            // 
+            this.btnEat.Location = new System.Drawing.Point(431, 455);
+            this.btnEat.Name = "btnEat";
+            this.btnEat.Size = new System.Drawing.Size(75, 23);
+            this.btnEat.TabIndex = 49;
+            this.btnEat.Text = "Comer";
+            this.btnEat.UseVisualStyleBackColor = true;
+            // 
+            // btnFoodsCRUD
+            // 
+            this.btnFoodsCRUD.Location = new System.Drawing.Point(431, 478);
+            this.btnFoodsCRUD.Name = "btnFoodsCRUD";
+            this.btnFoodsCRUD.Size = new System.Drawing.Size(117, 23);
+            this.btnFoodsCRUD.TabIndex = 50;
+            this.btnFoodsCRUD.Text = "CRUD de alimentos";
+            this.btnFoodsCRUD.UseVisualStyleBackColor = true;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(696, 97);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(152, 13);
+            this.label17.TabIndex = 51;
+            this.label17.Text = "Puntos del Escudo de defensa";
+            // 
+            // txtDefenseShield
+            // 
+            this.txtDefenseShield.Location = new System.Drawing.Point(699, 114);
+            this.txtDefenseShield.Name = "txtDefenseShield";
+            this.txtDefenseShield.Size = new System.Drawing.Size(100, 20);
+            this.txtDefenseShield.TabIndex = 52;
+            // 
+            // pbCurrentLife
+            // 
+            this.pbCurrentLife.BackColor = System.Drawing.Color.Red;
+            this.pbCurrentLife.Location = new System.Drawing.Point(31, 510);
+            this.pbCurrentLife.Name = "pbCurrentLife";
+            this.pbCurrentLife.Size = new System.Drawing.Size(100, 23);
+            this.pbCurrentLife.TabIndex = 53;
+            // 
+            // pbDefenseShield
+            // 
+            this.pbDefenseShield.Location = new System.Drawing.Point(171, 510);
+            this.pbDefenseShield.Name = "pbDefenseShield";
+            this.pbDefenseShield.Size = new System.Drawing.Size(100, 23);
+            this.pbDefenseShield.TabIndex = 54;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(31, 491);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(61, 13);
+            this.label18.TabIndex = 55;
+            this.label18.Text = "Vida Actual";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(171, 490);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(101, 13);
+            this.label19.TabIndex = 56;
+            this.label19.Text = "Escudo de Defensa";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(206, 551);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(78, 13);
+            this.label20.TabIndex = 57;
+            this.label20.Text = "Energía Actual";
+            // 
+            // pbCurrentEnergy
+            // 
+            this.pbCurrentEnergy.Location = new System.Drawing.Point(282, 541);
+            this.pbCurrentEnergy.Name = "pbCurrentEnergy";
+            this.pbCurrentEnergy.Size = new System.Drawing.Size(100, 23);
+            this.pbCurrentEnergy.TabIndex = 58;
             // 
             // iKingdomBindingSource
             // 
@@ -327,22 +613,41 @@
             // 
             this.vegetableBindingSource2.DataSource = typeof(SmallWorld.src.Model.Reino.Vegetable);
             // 
-            // btnOpenKingdomCrudForm
-            // 
-            this.btnOpenKingdomCrudForm.Location = new System.Drawing.Point(58, 95);
-            this.btnOpenKingdomCrudForm.Name = "btnOpenKingdomCrudForm";
-            this.btnOpenKingdomCrudForm.Size = new System.Drawing.Size(156, 23);
-            this.btnOpenKingdomCrudForm.TabIndex = 29;
-            this.btnOpenKingdomCrudForm.Text = "CRUD Reinos";
-            this.btnOpenKingdomCrudForm.UseVisualStyleBackColor = true;
-            this.btnOpenKingdomCrudForm.Click += new System.EventHandler(this.btnOpenKingdomCrudForm_Click);
-            // 
             // TestForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1212, 701);
+            this.Controls.Add(this.pbCurrentEnergy);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.pbDefenseShield);
+            this.Controls.Add(this.pbCurrentLife);
+            this.Controls.Add(this.txtDefenseShield);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.btnFoodsCRUD);
+            this.Controls.Add(this.btnEat);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.btnItemsCRUD);
+            this.Controls.Add(this.btnInteract);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.cbItems);
+            this.Controls.Add(this.cbSelectUniqueEntity);
+            this.Controls.Add(this.btnRest);
+            this.Controls.Add(this.txtMaxEnergy);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.txtMaxLife);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.chbAttackRange);
+            this.Controls.Add(this.txtDefensePoints);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.txtAttackPoints);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.btnOpenKingdomCrudForm);
             this.Controls.Add(this.panelMap);
             this.Controls.Add(this.btnShowMap);
@@ -420,5 +725,34 @@
         private System.Windows.Forms.Button btnShowMap;
         private System.Windows.Forms.Panel panelMap;
         private System.Windows.Forms.Button btnOpenKingdomCrudForm;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtAttackPoints;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtDefensePoints;
+        private System.Windows.Forms.CheckBox chbAttackRange;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtMaxLife;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtMaxEnergy;
+        private System.Windows.Forms.Button btnRest;
+        private System.Windows.Forms.ComboBox cbSelectUniqueEntity;
+        private System.Windows.Forms.ComboBox cbItems;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button btnInteract;
+        private System.Windows.Forms.Button btnItemsCRUD;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button btnEat;
+        private System.Windows.Forms.Button btnFoodsCRUD;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txtDefenseShield;
+        private System.Windows.Forms.ProgressBar pbCurrentLife;
+        private System.Windows.Forms.ProgressBar pbDefenseShield;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.ProgressBar pbCurrentEnergy;
     }
 }

@@ -70,7 +70,7 @@
     <Compile Include="src\Model\Habitat\Aquatic.cs" />
     <Compile Include="src\Model\Habitat\Aerial.cs" />
     <Compile Include="src\Model\Habitat\Terrestrial.cs" />
-    <Compile Include="src\Model\Interactable\Dice.cs" />
+    <Compile Include="src\Static\Dice.cs" />
     <Compile Include="src\Model\Interactable\Food.cs" />
     <Compile Include="src\Model\Interactable\Item.cs" />
     <Compile Include="src\Model\Kingdom.cs" />

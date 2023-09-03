@@ -1,5 +1,6 @@
 ﻿using SmallWorld.src.Interfaces;
 using SmallWorld.src.Model.Interactable;
+using SmallWorld.src.Model.Interactuable;
 using SmallWorld.src.Model.Map;
 using System;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace SmallWorld.src.Model
 {
@@ -17,16 +19,19 @@ namespace SmallWorld.src.Model
         IDiet diet;
         IHabitat habitat;
 
-        int maxEnergy = 100;
-        int currentEnergy = 100;
-        int maxLife = 100;
-        int currentLife = 100;
+        int maxEnergy;
+        int currentEnergy;
+        int maxLife;
+        int currentLife;
 
         int attackPoints;
         int defensePoints;
-        int attackRange;
+        bool attackRange;
+        int costToAttack;
 
         Terrain currentTerrain;
+        bool dieStatus;
+        int defenseShield;
         //Point position;
 
         //properties
@@ -43,14 +48,18 @@ namespace SmallWorld.src.Model
         public int CurrentLife { get => currentLife; set => currentLife = value; }
         public int AttackPoints { get => attackPoints; set => attackPoints = value; }
         public int DefensePoints { get => defensePoints; set => defensePoints = value; }
-        public int AttackRange { get => attackRange; set => attackRange = value; }
+        public bool AttackRange { get => attackRange; set => attackRange = value; }
         public int CurrentEnergy { get => currentEnergy; set => currentEnergy = value; }
+        public bool DieStatus { get => dieStatus; set => dieStatus = value; }
+        public int CostToAttack { get => costToAttack; set => costToAttack = value; }
+        public int DefenseShield { get => defenseShield; set => defenseShield = value; }
+
         //public Terrain CurrentTerrain { get => currentTerrain; set => currentTerrain = value; }
 
         //public Point Position { get => position; set => position = value; }
 
         //constructor
-        public Entity(IKingdom kingdom, string name, IDiet diet, IHabitat habitat, int attackPoints, int defensePoints, int attackRange)
+        public Entity(IKingdom kingdom, string name, IDiet diet, IHabitat habitat, int attackPoints, int defensePoints, bool attackRange, int maxLife, int maxEnergy, int defenseShield)
         {
             Kingdom = kingdom;
             Name = name;
@@ -59,6 +68,12 @@ namespace SmallWorld.src.Model
             AttackPoints = attackPoints;
             DefensePoints = defensePoints;
             AttackRange = attackRange;
+            MaxLife = maxLife;
+            CurrentLife = maxLife;
+            MaxEnergy = maxEnergy;
+            CurrentEnergy = maxEnergy;
+            CostToAttack = 30;
+            DefenseShield = defenseShield;
             //CurrentTerrain = currentTerrain;
             //Position = position;
         }
@@ -81,24 +96,114 @@ namespace SmallWorld.src.Model
             throw new NotImplementedException();
         }
 
-        public void Sleep()
+        public void Rest()
         {
-            throw new NotImplementedException();
+            CurrentEnergy += 50;
+            CurrentLife += 100;
+            VerifyMaxEnergy();
+            VerifyMaxLife();
         }
 
+
+        
+
+
+        /// <summary>
+        /// This method does that the attacking entity throw a dice and attack to the
+        /// victim entity with his attack points and the random value of the trowing dice.
+        /// Attack had a cost of energy
+        /// </summary>
+        /// <param name="EntityToAttack"></param>
         public void Attack(Entity EntityToAttack)
         {
-            int DicePoints = Dice.TrowDice();
-            Console.WriteLine(DicePoints);
-            EntityToAttack.TakeDamage(AttackPoints, DicePoints);
+            if (!VerifyIfTheEntityNeedEnergyToDoAnAction(CostToAttack))
+            {
+                int DicePoints = Dice.TrowDice(6);
+                EntityToAttack.TakeDamage(AttackPoints, DicePoints);
+                CurrentEnergy -= CostToAttack;
+                VerifyMinCurrentEnergy();
+            }
         }
+
 
         public void TakeDamage(int AttackPointsOfTheAttackingEntity, int AttackDicePoints)
         {
-            int DicePoints2 = Dice.TrowDice();
-            Console.WriteLine(DicePoints2);
-            CurrentLife = CurrentLife - ((DefensePoints - DicePoints2) - (AttackPointsOfTheAttackingEntity - AttackDicePoints));
+            if (ShieldIsDestroyed())
+            {
+                CurrentLife -= (AttackPointsOfTheAttackingEntity + AttackDicePoints);
+                VerifyMinCurrentLife();
+            }
+            else 
+            { 
+                DefenseShield -= (AttackPointsOfTheAttackingEntity + AttackDicePoints);
+                VerifyStatusOfDefenseShield();
+            }
             
+            
+        }
+
+
+        /*Método TakeDamage con la mecánica de lanzar dados y puntos de defensa. Tuve problemas para implementar esto
+        public void TakeDamage(int AttackPointsOfTheAttackingEntity, int AttackDicePoints)
+        {
+            int DicePoints2 = Dice.TrowDice(6);
+            Console.WriteLine($"Dado atacante: {AttackDicePoints} Dado Victima: {DicePoints2}");
+            MessageBox.Show($"Dado atacante: {AttackDicePoints} Dado Victima: {DicePoints2}");
+            //TODO: resolver problema de negativos y positivos
+
+
+
+            
+            if (DefensePoints > AttackPointsOfTheAttackingEntity)
+            {
+                //Supongamos  VidaActual = 100 - (100 - 50) 
+                //            VidaActual = 50
+                CurrentLife = CurrentLife - ((DefensePoints + DicePoints2) - (AttackPointsOfTheAttackingEntity + AttackDicePoints));
+
+            }
+
+            if (DefensePoints < AttackPointsOfTheAttackingEntity)
+            {
+                //Supongamos  VidaActual = 100 + (50 - 100) 
+                //            VidaActual = 50
+                CurrentLife = CurrentLife + ((DefensePoints + DicePoints2) - (AttackPointsOfTheAttackingEntity + AttackDicePoints));
+
+            }
+            //CurrentLife = CurrentLife - ((DefensePoints + DicePoints2) - (AttackPointsOfTheAttackingEntity + AttackDicePoints));
+           
+            VerifyMaxLife();
+
+        }*/
+
+
+        public bool ShieldIsDestroyed()
+        {
+            bool shieldIsDestroyed = false;
+            if (DefenseShield <= 0)
+            {
+                shieldIsDestroyed = true;
+            }
+            return shieldIsDestroyed;
+        }
+
+
+        /// <summary>
+        /// If after of attack the defense shield had a negative value, 
+        /// this points substract CurrentLife
+        /// </summary>
+        public void VerifyStatusOfDefenseShield()
+        {
+            if (DefenseShield < 0)
+            {
+                CurrentLife += DefenseShield;
+                DefenseShield = 0;
+                VerifyMinCurrentLife();
+            }
+        }
+
+        public void Interact (Item objectInteractable)
+        {
+            CurrentLife = CurrentLife + objectInteractable.Points;
         }
 
 
@@ -109,7 +214,54 @@ namespace SmallWorld.src.Model
         }*/
 
 
+        public void VerifyMaxLife()
+        {
+            if(CurrentLife > MaxLife)
+            {
+                CurrentLife = MaxLife;
+            }
+        }
 
+        public void VerifyMinCurrentLife()
+        {
+            if (CurrentLife <= 0)
+            {
+                CurrentLife = 0;
+                Die();
+            }
+        }
+
+        public void VerifyMaxEnergy()
+        {
+            if (CurrentEnergy > MaxEnergy)
+            {
+                CurrentEnergy = MaxEnergy;
+            }
+        }
+
+        public void VerifyMinCurrentEnergy() 
+        {
+            if (CurrentEnergy <= 0)
+            {
+                CurrentEnergy = 0;
+                MessageBox.Show($"{name} tiene energía 0, debe dormir para recuperar energía");
+            }
+        }
+        public void Die()
+        {
+            DieStatus = true;
+        }
+
+        public bool VerifyIfTheEntityNeedEnergyToDoAnAction(int Action)
+        {
+            bool needEnergy = false;
+            if (Action >= CurrentEnergy)
+            {
+                MessageBox.Show($"{Name}necesita descansar y así recuperar energía antes de hacer esta acción");
+                needEnergy = true;
+            }
+            return needEnergy;
+        }
 
 
         public override string ToString()
