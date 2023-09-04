@@ -82,6 +82,11 @@ namespace SmallWorld.src.Controllers
             
         }
 
+        public void Delete(Entity entity)
+        {
+            Entities.Remove(entity);
+        }
+
         
 
 
