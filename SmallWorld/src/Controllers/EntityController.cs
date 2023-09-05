@@ -34,9 +34,10 @@ namespace SmallWorld.src.Controllers
         }*/
 
 
-        public void AddEntity(IKingdom kingdom, string name,IDiet diet, IHabitat habitat, int atkPonints, int defPoints, bool range, int maxLife, int maxEnergy, int defenseShield)
-        {            
-            Entities.Add(new Entity(kingdom, name, diet, habitat, atkPonints, defPoints, range, maxLife, maxEnergy, defenseShield));
+        public void AddEntity(IKingdom kingdom, string name, IDiet diet, IHabitat habitat, int atkPonints, int defPoints, bool range, int maxLife, int maxEnergy, int defenseShield)
+        {
+            Entity EntityToAdd = new Entity(kingdom, name, diet, habitat, atkPonints, defPoints, range, maxLife, maxEnergy, defenseShield);
+            Entities.Add(EntityToAdd);
         }
         
 

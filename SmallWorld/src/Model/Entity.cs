@@ -34,17 +34,68 @@ namespace SmallWorld.src.Model
         int defenseShield;
         //Point position;
 
+
+
         //properties
 
-        internal IKingdom Kingdom { get { return kingdom; } set => kingdom = value; }
+        internal IKingdom Kingdom 
+        { 
+            get => kingdom;
+            set 
+            {
+                if (kingdom != null) kingdom = value;
+                else throw new InvalidOperationException("Debe seleccionar un Reino");
+            } 
+        }
         public string KingdomName { get { return kingdom.ToString(); } }
-        public string Name { get => name; set => name = value; }
-        internal IDiet Diet { get => diet; set => diet = value; }
+        public string Name
+        {
+            get => name;
+            set
+            {
+                if (name != null) name = value;
+                else throw new InvalidOperationException("Debe especificar un Nombre");
+            }
+        }
+
+        internal IDiet Diet
+        {
+            get => diet;
+            set
+            {
+                if (diet != null) diet = value;
+                else throw new InvalidOperationException("Debe especificar una Dieta");
+            }
+        }
         public string DietName { get { return diet.ToString(); } }
-        internal IHabitat Habitat { get => habitat; set => habitat = value; }
+        internal IHabitat Habitat 
+        { 
+            get => habitat; 
+            set
+            {
+                if (habitat != null) habitat = value;
+                else throw new InvalidOperationException("Debe seleccionar un Habitat");
+            }
+        }
         public string HabitatName { get { return habitat.ToString(); } }
-        public int MaxEnergy { get => maxEnergy; set => maxEnergy = value; }
-        public int MaxLife { get => maxLife; set => maxLife = value; }
+        public int MaxEnergy
+        {
+            get => maxEnergy;
+            set 
+            {
+                if (maxEnergy > 0) maxEnergy = value;
+                else throw new InvalidOperationException("La energía máxima debe ser mayor a 0");
+            }
+        }
+        public int MaxLife { 
+            get => maxLife;
+            //get { return maxLife; }
+            set 
+            { 
+                if (value > 0) maxLife = value;
+                else throw new InvalidOperationException("La vida máxima debe ser mayor a 0");
+            }
+        }
         public int CurrentLife { get => currentLife; set => currentLife = value; }
         public int AttackPoints { get => attackPoints; set => attackPoints = value; }
         public int DefensePoints { get => defensePoints; set => defensePoints = value; }
