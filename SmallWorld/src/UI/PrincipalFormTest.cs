@@ -18,9 +18,9 @@ namespace SmallWorld.src.UI
         public PrincipalFormTest()
         {
             InitializeComponent();
-            cbSelectMyEntity.DataSource = entityController.getEntities();
-            cbSelectEntityFromOtherUser.DataSource = entityController.getEntities();
         }
+
+       
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
@@ -30,27 +30,67 @@ namespace SmallWorld.src.UI
 
         private void btnAttack_Click(object sender, EventArgs e)
         {
-            ((Entity)cbSelectMyEntity.SelectedItem).Attack((Entity)cbSelectEntityFromOtherUser.SelectedItem);
+            ((Entity)cbCurrentPlayerEntities.SelectedItem).Attack((Entity)cbWaitingPlayersEntities.SelectedItem);
+            RefreshEntityValues();
         }
 
         private void cbSelectMyEntity_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbSelectMyEntity.SelectedItem is Entity selectedEntity)
-            {
-                pbCurrentLifeMyEntity.Value = selectedEntity.CurrentLife;
-                pbCurrentEnergyMyEntity.Value = selectedEntity.CurrentEnergy;
-                pbDefenseShieldMyEntity.Value = selectedEntity.DefenseShield;
-            }
+            RefreshEntityValues();
         }
 
         private void cbSelectEntityFromOtherUser_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbSelectEntityFromOtherUser.SelectedItem is Entity selectedEntity)
+            RefreshEntityValues();
+        }
+
+        
+        private void RefreshEntityValues()
+        {
+            if (cbCurrentPlayerEntities.SelectedItem is Entity selectedCurrentPlayerEntity)
             {
-                pbCurrentLifeOtherUser.Value = selectedEntity.CurrentLife;
-                pbCurrentEnergyOtherUser.Value = selectedEntity.CurrentEnergy;
-                pbDefenseShieldOtherUser.Value = selectedEntity.DefenseShield;
+                pbCurrentLifeCurrentPlayerEntity.Value = selectedCurrentPlayerEntity.CurrentLife;
+                pbCurrentEnergyCurrentPlayerEntity.Value = selectedCurrentPlayerEntity.CurrentEnergy;
+                pbDefenseShieldCurrentPlayerEntity.Value = selectedCurrentPlayerEntity.DefenseShield;
             }
+
+            if (cbWaitingPlayersEntities.SelectedItem is Entity selectedWitingPlayerEntity)
+            {
+                pbCurrentLifeWaitingPlayerEntity.Value = selectedWitingPlayerEntity.CurrentLife;
+                pbCurrentEnergyWaitingPlayerEntity.Value = selectedWitingPlayerEntity.CurrentEnergy;
+                pbDefenseShieldWaitingPlayerEntity.Value = selectedWitingPlayerEntity.DefenseShield;
+            }
+        }
+        
+
+        private void btnRefreshData_Click(object sender, EventArgs e)
+        {
+            UpdateEntities();
+        }
+
+        private void UpdateEntities()
+        {
+            bsCurrentPlayerEntities.DataSource = entityController.getEntities();
+            bsWaitingPlayersEntities.DataSource = entityController.getEntities();
+            bsCurrentPlayerEntities.ResetBindings(false);
+            bsWaitingPlayersEntities.ResetBindings(false);
+            cbCurrentPlayerEntities.DataSource = bsCurrentPlayerEntities;
+            cbWaitingPlayersEntities.DataSource = bsWaitingPlayersEntities;
+        }
+
+        private void PrincipalFormTest_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void btnRest_Click(object sender, EventArgs e)
+        {
+            ((Entity)cbCurrentPlayerEntities.SelectedItem).Rest();
+            RefreshEntityValues();
+        }
+
+        private void UpdateProgressEntitiesBars()
+        {
+
         }
     }
 }

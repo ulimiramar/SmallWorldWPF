@@ -37,13 +37,13 @@ namespace SmallWorld.src.Model
 
 
         //properties
-
+        //TODO: hacer validaciones en propiedades, informar de alguna manera si esta muerto y no puede recibir mas ataques, talvez borrandolo de la lista, o que la lista traiga solo los vivos. y los interacts se traigan los muertos para abono.
         internal IKingdom Kingdom 
         { 
             get => kingdom;
             set 
             {
-                if (kingdom != null) kingdom = value;
+                if (value != null) kingdom = value;
                 else throw new InvalidOperationException("Debe seleccionar un Reino");
             } 
         }
@@ -53,7 +53,7 @@ namespace SmallWorld.src.Model
             get => name;
             set
             {
-                if (name != null) name = value;
+                if (value != null) name = value;
                 else throw new InvalidOperationException("Debe especificar un Nombre");
             }
         }
@@ -63,7 +63,7 @@ namespace SmallWorld.src.Model
             get => diet;
             set
             {
-                if (diet != null) diet = value;
+                if (value != null) diet = value;
                 else throw new InvalidOperationException("Debe especificar una Dieta");
             }
         }
@@ -73,7 +73,7 @@ namespace SmallWorld.src.Model
             get => habitat; 
             set
             {
-                if (habitat != null) habitat = value;
+                if (value != null) habitat = value;
                 else throw new InvalidOperationException("Debe seleccionar un Habitat");
             }
         }
@@ -83,7 +83,7 @@ namespace SmallWorld.src.Model
             get => maxEnergy;
             set 
             {
-                if (maxEnergy > 0) maxEnergy = value;
+                if (value > 0) maxEnergy = value;
                 else throw new InvalidOperationException("La energía máxima debe ser mayor a 0");
             }
         }

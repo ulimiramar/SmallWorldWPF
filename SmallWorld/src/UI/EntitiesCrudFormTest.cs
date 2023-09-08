@@ -59,7 +59,7 @@ namespace SmallWorld.src.UI
             try
             {
                 //EntityController.GetInstance().AddEntity()
-                entityController.AddEntity((IKingdom)cbKingdom.SelectedItem, txtName.Text, (IDiet)cbDiet.SelectedItem, (IHabitat)cbHabitat.SelectedItem, Convert.ToInt32(txtAttackPoints.Text), 100, chbAttackRange.Checked, Convert.ToInt32(txtMaxLife.Text), Convert.ToInt32(txtMaxEnergy.Text), Convert.ToInt32(txtDefenseShield.Text));
+                entityController.AddEntity((IKingdom)cbKingdom.SelectedItem, txtName.Text, (IDiet)cbDiet.SelectedItem, (IHabitat)cbHabitat.SelectedItem, Convert.ToInt32(txtAttackPoints.Text), 100, chbAttackRange.Checked, Convert.ToInt32(txtMaxLife.Text), Convert.ToInt32(txtMaxEnergy.Text), Convert.ToInt32(txtDefenseShield.Text));             
                 UpdateDataGridEntities();
             }
             catch(Exception ex) 
@@ -87,9 +87,19 @@ namespace SmallWorld.src.UI
             Random random = new Random();
 
             txtName.Text = GetRandomString(8); // Genera una cadena aleatoria de longitud 8
-            cbKingdom.SelectedItem = random.Next(0, cbKingdom.Items.Count);
-            cbHabitat.SelectedItem = random.Next(0, cbHabitat.Items.Count);
-            cbDiet.SelectedItem = random.Next(0, cbDiet.Items.Count);
+                                              
+            // Seleccionar un índice aleatorio para Kingdom
+            int randomKingdomIndex = random.Next(0, cbKingdom.Items.Count);
+            cbKingdom.SelectedIndex = randomKingdomIndex;
+
+            // Seleccionar un índice aleatorio para Habitat
+            int randomHabitatIndex = random.Next(0, cbHabitat.Items.Count);
+            cbHabitat.SelectedIndex = randomHabitatIndex;
+
+            // Seleccionar un índice aleatorio para Diet
+            int randomDietIndex = random.Next(0, cbDiet.Items.Count);
+            cbDiet.SelectedIndex = randomDietIndex;
+
             txtMaxLife.Text= Convert.ToString(random.Next(10, 100));
             txtMaxEnergy.Text = Convert.ToString(random.Next(10, 100));
             txtAttackPoints.Text = Convert.ToString(random.Next(10, 100));
