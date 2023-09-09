@@ -30,8 +30,16 @@ namespace SmallWorld.src.UI
 
         private void btnAttack_Click(object sender, EventArgs e)
         {
-            ((Entity)cbCurrentPlayerEntities.SelectedItem).Attack((Entity)cbWaitingPlayersEntities.SelectedItem);
-            RefreshEntityValues();
+            try 
+            { 
+                ((Entity)cbCurrentPlayerEntities.SelectedItem).Attack((Entity)cbWaitingPlayersEntities.SelectedItem);
+                RefreshEntityValues();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                RefreshEntityValues();
+            }
         }
 
         private void cbSelectMyEntity_SelectedIndexChanged(object sender, EventArgs e)
@@ -44,28 +52,41 @@ namespace SmallWorld.src.UI
             RefreshEntityValues();
         }
 
-        
+        //Talves sería bueno unir esto al updateEntities, o al revés. pero que quede el refresqueo en una sola función
         private void RefreshEntityValues()
         {
             if (cbCurrentPlayerEntities.SelectedItem is Entity selectedCurrentPlayerEntity)
             {
                 pbCurrentLifeCurrentPlayerEntity.Value = selectedCurrentPlayerEntity.CurrentLife;
                 pbCurrentEnergyCurrentPlayerEntity.Value = selectedCurrentPlayerEntity.CurrentEnergy;
-                pbDefenseShieldCurrentPlayerEntity.Value = selectedCurrentPlayerEntity.DefenseShield;
+                pbDefensePointsCurrentPlayerEntity.Value = selectedCurrentPlayerEntity.DefensePoints;
+                pbAttackPointsCurrentPlayerEntity.Value = selectedCurrentPlayerEntity.AttackPoints;
+
+                lblCurrentLifeCurrentPlayerEntity.Text = Convert.ToString(selectedCurrentPlayerEntity.CurrentLife);
+                lblCurrentEnergyCurrentPlayerEntity.Text = Convert.ToString(selectedCurrentPlayerEntity.CurrentEnergy);
+                lblDefensePointsCurrentPlayerEntity.Text = Convert.ToString(selectedCurrentPlayerEntity.DefensePoints);
+                lblAttackPointsCurrentPlayerEntity.Text = Convert.ToString(selectedCurrentPlayerEntity.AttackPoints);
             }
 
-            if (cbWaitingPlayersEntities.SelectedItem is Entity selectedWitingPlayerEntity)
+            if (cbWaitingPlayersEntities.SelectedItem is Entity selectedWaitingPlayerEntity)
             {
-                pbCurrentLifeWaitingPlayerEntity.Value = selectedWitingPlayerEntity.CurrentLife;
-                pbCurrentEnergyWaitingPlayerEntity.Value = selectedWitingPlayerEntity.CurrentEnergy;
-                pbDefenseShieldWaitingPlayerEntity.Value = selectedWitingPlayerEntity.DefenseShield;
+                pbCurrentLifeWaitingPlayerEntity.Value = selectedWaitingPlayerEntity.CurrentLife;
+                pbCurrentEnergyWaitingPlayerEntity.Value = selectedWaitingPlayerEntity.CurrentEnergy;
+                pbDefensePointsWaitingPlayerEntity.Value = selectedWaitingPlayerEntity.DefensePoints;
+                pbAttackPointsWaitingPlayerEntity.Value = selectedWaitingPlayerEntity.AttackPoints;
+
+                lblCurrentLifeWaitingPlayerEntity.Text = Convert.ToString(selectedWaitingPlayerEntity.CurrentLife);
+                lblCurrentEnergyWaitingPlayerEntity.Text = Convert.ToString(selectedWaitingPlayerEntity.CurrentEnergy);
+                lblDefensePointsWaitingPlayerEntity.Text = Convert.ToString(selectedWaitingPlayerEntity.DefensePoints);
+                lblAttackPointsWaitingPlayerEntity.Text = Convert.ToString(selectedWaitingPlayerEntity.AttackPoints);
             }
         }
         
-
+        
         private void btnRefreshData_Click(object sender, EventArgs e)
         {
             UpdateEntities();
+            RefreshEntityValues();
         }
 
         private void UpdateEntities()

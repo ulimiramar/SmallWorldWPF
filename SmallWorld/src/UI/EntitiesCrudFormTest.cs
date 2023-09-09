@@ -59,7 +59,7 @@ namespace SmallWorld.src.UI
             try
             {
                 //EntityController.GetInstance().AddEntity()
-                entityController.AddEntity((IKingdom)cbKingdom.SelectedItem, txtName.Text, (IDiet)cbDiet.SelectedItem, (IHabitat)cbHabitat.SelectedItem, Convert.ToInt32(txtAttackPoints.Text), 100, chbAttackRange.Checked, Convert.ToInt32(txtMaxLife.Text), Convert.ToInt32(txtMaxEnergy.Text), Convert.ToInt32(txtDefenseShield.Text));             
+                entityController.AddEntity((IKingdom)cbKingdom.SelectedItem, txtName.Text, (IDiet)cbDiet.SelectedItem, (IHabitat)cbHabitat.SelectedItem, Convert.ToInt32(txtAttackPoints.Text), Convert.ToInt32(txtDefensePoints.Text), chbAttackRange.Checked, Convert.ToInt32(txtMaxLife.Text), Convert.ToInt32(txtMaxEnergy.Text), Convert.ToInt32(txtDefenseShield.Text));             
                 UpdateDataGridEntities();
             }
             catch(Exception ex) 
@@ -100,8 +100,12 @@ namespace SmallWorld.src.UI
             int randomDietIndex = random.Next(0, cbDiet.Items.Count);
             cbDiet.SelectedIndex = randomDietIndex;
 
-            txtMaxLife.Text= Convert.ToString(random.Next(10, 100));
-            txtMaxEnergy.Text = Convert.ToString(random.Next(10, 100));
+            //txtMaxLife.Text= Convert.ToString(random.Next(10, 100));
+            //txtMaxEnergy.Text = Convert.ToString(random.Next(10, 100));
+            txtMaxLife.Text = Convert.ToString(100);
+            txtMaxEnergy.Text = Convert.ToString(100);
+
+
             txtAttackPoints.Text = Convert.ToString(random.Next(10, 100));
             txtDefensePoints.Text = Convert.ToString(random.Next(10, 100));
             txtDefenseShield.Text = Convert.ToString(random.Next(10, 100));

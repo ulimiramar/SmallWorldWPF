@@ -118,7 +118,6 @@
             // 
             // txtDefensePoints
             // 
-            this.txtDefensePoints.Enabled = false;
             this.txtDefensePoints.Location = new System.Drawing.Point(340, 127);
             this.txtDefensePoints.Name = "txtDefensePoints";
             this.txtDefensePoints.Size = new System.Drawing.Size(100, 20);

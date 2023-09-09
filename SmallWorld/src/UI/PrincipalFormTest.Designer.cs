@@ -32,12 +32,13 @@
             this.btnAdmin = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblCurrentLifeCurrentPlayerEntity = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cbCurrentPlayerEntities = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pbDefenseShieldCurrentPlayerEntity = new System.Windows.Forms.ProgressBar();
+            this.pbDefensePointsCurrentPlayerEntity = new System.Windows.Forms.ProgressBar();
             this.pbCurrentEnergyCurrentPlayerEntity = new System.Windows.Forms.ProgressBar();
             this.pbCurrentLifeCurrentPlayerEntity = new System.Windows.Forms.ProgressBar();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,7 +49,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.pbCurrentEnergyWaitingPlayerEntity = new System.Windows.Forms.ProgressBar();
-            this.pbDefenseShieldWaitingPlayerEntity = new System.Windows.Forms.ProgressBar();
+            this.pbDefensePointsWaitingPlayerEntity = new System.Windows.Forms.ProgressBar();
             this.pbCurrentLifeWaitingPlayerEntity = new System.Windows.Forms.ProgressBar();
             this.label11 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -64,7 +65,17 @@
             this.btnRefreshData = new System.Windows.Forms.Button();
             this.bsWaitingPlayersEntities = new System.Windows.Forms.BindingSource(this.components);
             this.btnRest = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.pbAttackPointsCurrentPlayerEntity = new System.Windows.Forms.ProgressBar();
+            this.label16 = new System.Windows.Forms.Label();
+            this.pbAttackPointsWaitingPlayerEntity = new System.Windows.Forms.ProgressBar();
+            this.lblCurrentEnergyCurrentPlayerEntity = new System.Windows.Forms.Label();
+            this.lblDefensePointsCurrentPlayerEntity = new System.Windows.Forms.Label();
+            this.lblAttackPointsCurrentPlayerEntity = new System.Windows.Forms.Label();
+            this.lblCurrentLifeWaitingPlayerEntity = new System.Windows.Forms.Label();
+            this.lblCurrentEnergyWaitingPlayerEntity = new System.Windows.Forms.Label();
+            this.lblDefensePointsWaitingPlayerEntity = new System.Windows.Forms.Label();
+            this.lblAttackPointsWaitingPlayerEntity = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -93,19 +104,33 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.lblAttackPointsCurrentPlayerEntity);
+            this.panel1.Controls.Add(this.lblDefensePointsCurrentPlayerEntity);
+            this.panel1.Controls.Add(this.lblCurrentEnergyCurrentPlayerEntity);
+            this.panel1.Controls.Add(this.pbAttackPointsCurrentPlayerEntity);
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.lblCurrentLifeCurrentPlayerEntity);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.cbCurrentPlayerEntities);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.pbDefenseShieldCurrentPlayerEntity);
+            this.panel1.Controls.Add(this.pbDefensePointsCurrentPlayerEntity);
             this.panel1.Controls.Add(this.pbCurrentEnergyCurrentPlayerEntity);
             this.panel1.Controls.Add(this.pbCurrentLifeCurrentPlayerEntity);
             this.panel1.Location = new System.Drawing.Point(61, 120);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(176, 197);
+            this.panel1.Size = new System.Drawing.Size(176, 261);
             this.panel1.TabIndex = 2;
+            // 
+            // lblCurrentLifeCurrentPlayerEntity
+            // 
+            this.lblCurrentLifeCurrentPlayerEntity.AutoSize = true;
+            this.lblCurrentLifeCurrentPlayerEntity.Location = new System.Drawing.Point(128, 82);
+            this.lblCurrentLifeCurrentPlayerEntity.Name = "lblCurrentLifeCurrentPlayerEntity";
+            this.lblCurrentLifeCurrentPlayerEntity.Size = new System.Drawing.Size(31, 13);
+            this.lblCurrentLifeCurrentPlayerEntity.TabIndex = 7;
+            this.lblCurrentLifeCurrentPlayerEntity.Text = "Valor";
             // 
             // label6
             // 
@@ -130,9 +155,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(22, 140);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 13);
+            this.label4.Size = new System.Drawing.Size(98, 13);
             this.label4.TabIndex = 5;
-            this.label4.Text = "Escudo de Defensa";
+            this.label4.Text = "Puntos de Defensa";
             // 
             // label3
             // 
@@ -152,12 +177,12 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Vida Actual";
             // 
-            // pbDefenseShieldCurrentPlayerEntity
+            // pbDefensePointsCurrentPlayerEntity
             // 
-            this.pbDefenseShieldCurrentPlayerEntity.Location = new System.Drawing.Point(22, 156);
-            this.pbDefenseShieldCurrentPlayerEntity.Name = "pbDefenseShieldCurrentPlayerEntity";
-            this.pbDefenseShieldCurrentPlayerEntity.Size = new System.Drawing.Size(100, 23);
-            this.pbDefenseShieldCurrentPlayerEntity.TabIndex = 3;
+            this.pbDefensePointsCurrentPlayerEntity.Location = new System.Drawing.Point(22, 156);
+            this.pbDefensePointsCurrentPlayerEntity.Name = "pbDefensePointsCurrentPlayerEntity";
+            this.pbDefensePointsCurrentPlayerEntity.Size = new System.Drawing.Size(100, 23);
+            this.pbDefensePointsCurrentPlayerEntity.TabIndex = 3;
             // 
             // pbCurrentEnergyCurrentPlayerEntity
             // 
@@ -184,17 +209,23 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.lblAttackPointsWaitingPlayerEntity);
+            this.panel2.Controls.Add(this.lblDefensePointsWaitingPlayerEntity);
+            this.panel2.Controls.Add(this.lblCurrentEnergyWaitingPlayerEntity);
+            this.panel2.Controls.Add(this.lblCurrentLifeWaitingPlayerEntity);
+            this.panel2.Controls.Add(this.pbAttackPointsWaitingPlayerEntity);
+            this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.cbWaitingPlayersEntities);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.pbCurrentEnergyWaitingPlayerEntity);
-            this.panel2.Controls.Add(this.pbDefenseShieldWaitingPlayerEntity);
+            this.panel2.Controls.Add(this.pbDefensePointsWaitingPlayerEntity);
             this.panel2.Controls.Add(this.pbCurrentLifeWaitingPlayerEntity);
             this.panel2.Location = new System.Drawing.Point(461, 120);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(178, 197);
+            this.panel2.Size = new System.Drawing.Size(178, 261);
             this.panel2.TabIndex = 4;
             // 
             // label8
@@ -202,9 +233,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(16, 140);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(101, 13);
+            this.label8.Size = new System.Drawing.Size(98, 13);
             this.label8.TabIndex = 12;
-            this.label8.Text = "Escudo de Defensa";
+            this.label8.Text = "Puntos de Defensa";
             // 
             // cbWaitingPlayersEntities
             // 
@@ -249,12 +280,12 @@
             this.pbCurrentEnergyWaitingPlayerEntity.Size = new System.Drawing.Size(100, 23);
             this.pbCurrentEnergyWaitingPlayerEntity.TabIndex = 10;
             // 
-            // pbDefenseShieldWaitingPlayerEntity
+            // pbDefensePointsWaitingPlayerEntity
             // 
-            this.pbDefenseShieldWaitingPlayerEntity.Location = new System.Drawing.Point(16, 156);
-            this.pbDefenseShieldWaitingPlayerEntity.Name = "pbDefenseShieldWaitingPlayerEntity";
-            this.pbDefenseShieldWaitingPlayerEntity.Size = new System.Drawing.Size(100, 23);
-            this.pbDefenseShieldWaitingPlayerEntity.TabIndex = 9;
+            this.pbDefensePointsWaitingPlayerEntity.Location = new System.Drawing.Point(16, 156);
+            this.pbDefensePointsWaitingPlayerEntity.Name = "pbDefensePointsWaitingPlayerEntity";
+            this.pbDefensePointsWaitingPlayerEntity.Size = new System.Drawing.Size(100, 23);
+            this.pbDefensePointsWaitingPlayerEntity.TabIndex = 9;
             // 
             // pbCurrentLifeWaitingPlayerEntity
             // 
@@ -276,7 +307,7 @@
             // 
             this.panel3.Location = new System.Drawing.Point(243, 120);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 197);
+            this.panel3.Size = new System.Drawing.Size(200, 261);
             this.panel3.TabIndex = 6;
             // 
             // comboBox3
@@ -289,7 +320,7 @@
             // 
             // btnAttack
             // 
-            this.btnAttack.Location = new System.Drawing.Point(508, 323);
+            this.btnAttack.Location = new System.Drawing.Point(503, 387);
             this.btnAttack.Name = "btnAttack";
             this.btnAttack.Size = new System.Drawing.Size(75, 23);
             this.btnAttack.TabIndex = 8;
@@ -299,7 +330,7 @@
             // 
             // btnInteract
             // 
-            this.btnInteract.Location = new System.Drawing.Point(664, 323);
+            this.btnInteract.Location = new System.Drawing.Point(689, 387);
             this.btnInteract.Name = "btnInteract";
             this.btnInteract.Size = new System.Drawing.Size(75, 23);
             this.btnInteract.TabIndex = 14;
@@ -313,7 +344,7 @@
             this.panel4.Controls.Add(this.label14);
             this.panel4.Location = new System.Drawing.Point(645, 120);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(150, 197);
+            this.panel4.Size = new System.Drawing.Size(150, 261);
             this.panel4.TabIndex = 13;
             // 
             // label12
@@ -344,7 +375,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(316, 322);
+            this.button4.Location = new System.Drawing.Point(299, 387);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 15;
@@ -363,7 +394,7 @@
             // 
             // btnRest
             // 
-            this.btnRest.Location = new System.Drawing.Point(112, 323);
+            this.btnRest.Location = new System.Drawing.Point(108, 387);
             this.btnRest.Name = "btnRest";
             this.btnRest.Size = new System.Drawing.Size(75, 23);
             this.btnRest.TabIndex = 17;
@@ -371,14 +402,100 @@
             this.btnRest.UseVisualStyleBackColor = true;
             this.btnRest.Click += new System.EventHandler(this.btnRest_Click);
             // 
-            // label13
+            // label15
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(128, 82);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(41, 13);
-            this.label13.TabIndex = 7;
-            this.label13.Text = "label13";
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(22, 182);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(92, 13);
+            this.label15.TabIndex = 8;
+            this.label15.Text = "Puntos de Ataque";
+            // 
+            // pbAttackPointsCurrentPlayerEntity
+            // 
+            this.pbAttackPointsCurrentPlayerEntity.Location = new System.Drawing.Point(22, 199);
+            this.pbAttackPointsCurrentPlayerEntity.Name = "pbAttackPointsCurrentPlayerEntity";
+            this.pbAttackPointsCurrentPlayerEntity.Size = new System.Drawing.Size(100, 23);
+            this.pbAttackPointsCurrentPlayerEntity.TabIndex = 9;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(16, 182);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(92, 13);
+            this.label16.TabIndex = 10;
+            this.label16.Text = "Puntos de Ataque";
+            // 
+            // pbAttackPointsWaitingPlayerEntity
+            // 
+            this.pbAttackPointsWaitingPlayerEntity.Location = new System.Drawing.Point(17, 199);
+            this.pbAttackPointsWaitingPlayerEntity.Name = "pbAttackPointsWaitingPlayerEntity";
+            this.pbAttackPointsWaitingPlayerEntity.Size = new System.Drawing.Size(100, 23);
+            this.pbAttackPointsWaitingPlayerEntity.TabIndex = 10;
+            // 
+            // lblCurrentEnergyCurrentPlayerEntity
+            // 
+            this.lblCurrentEnergyCurrentPlayerEntity.AutoSize = true;
+            this.lblCurrentEnergyCurrentPlayerEntity.Location = new System.Drawing.Point(128, 114);
+            this.lblCurrentEnergyCurrentPlayerEntity.Name = "lblCurrentEnergyCurrentPlayerEntity";
+            this.lblCurrentEnergyCurrentPlayerEntity.Size = new System.Drawing.Size(31, 13);
+            this.lblCurrentEnergyCurrentPlayerEntity.TabIndex = 10;
+            this.lblCurrentEnergyCurrentPlayerEntity.Text = "Valor";
+            // 
+            // lblDefensePointsCurrentPlayerEntity
+            // 
+            this.lblDefensePointsCurrentPlayerEntity.AutoSize = true;
+            this.lblDefensePointsCurrentPlayerEntity.Location = new System.Drawing.Point(128, 156);
+            this.lblDefensePointsCurrentPlayerEntity.Name = "lblDefensePointsCurrentPlayerEntity";
+            this.lblDefensePointsCurrentPlayerEntity.Size = new System.Drawing.Size(31, 13);
+            this.lblDefensePointsCurrentPlayerEntity.TabIndex = 11;
+            this.lblDefensePointsCurrentPlayerEntity.Text = "Valor";
+            // 
+            // lblAttackPointsCurrentPlayerEntity
+            // 
+            this.lblAttackPointsCurrentPlayerEntity.AutoSize = true;
+            this.lblAttackPointsCurrentPlayerEntity.Location = new System.Drawing.Point(128, 199);
+            this.lblAttackPointsCurrentPlayerEntity.Name = "lblAttackPointsCurrentPlayerEntity";
+            this.lblAttackPointsCurrentPlayerEntity.Size = new System.Drawing.Size(31, 13);
+            this.lblAttackPointsCurrentPlayerEntity.TabIndex = 12;
+            this.lblAttackPointsCurrentPlayerEntity.Text = "Valor";
+            // 
+            // lblCurrentLifeWaitingPlayerEntity
+            // 
+            this.lblCurrentLifeWaitingPlayerEntity.AutoSize = true;
+            this.lblCurrentLifeWaitingPlayerEntity.Location = new System.Drawing.Point(122, 72);
+            this.lblCurrentLifeWaitingPlayerEntity.Name = "lblCurrentLifeWaitingPlayerEntity";
+            this.lblCurrentLifeWaitingPlayerEntity.Size = new System.Drawing.Size(31, 13);
+            this.lblCurrentLifeWaitingPlayerEntity.TabIndex = 13;
+            this.lblCurrentLifeWaitingPlayerEntity.Text = "Valor";
+            // 
+            // lblCurrentEnergyWaitingPlayerEntity
+            // 
+            this.lblCurrentEnergyWaitingPlayerEntity.AutoSize = true;
+            this.lblCurrentEnergyWaitingPlayerEntity.Location = new System.Drawing.Point(122, 114);
+            this.lblCurrentEnergyWaitingPlayerEntity.Name = "lblCurrentEnergyWaitingPlayerEntity";
+            this.lblCurrentEnergyWaitingPlayerEntity.Size = new System.Drawing.Size(31, 13);
+            this.lblCurrentEnergyWaitingPlayerEntity.TabIndex = 14;
+            this.lblCurrentEnergyWaitingPlayerEntity.Text = "Valor";
+            // 
+            // lblDefensePointsWaitingPlayerEntity
+            // 
+            this.lblDefensePointsWaitingPlayerEntity.AutoSize = true;
+            this.lblDefensePointsWaitingPlayerEntity.Location = new System.Drawing.Point(122, 156);
+            this.lblDefensePointsWaitingPlayerEntity.Name = "lblDefensePointsWaitingPlayerEntity";
+            this.lblDefensePointsWaitingPlayerEntity.Size = new System.Drawing.Size(31, 13);
+            this.lblDefensePointsWaitingPlayerEntity.TabIndex = 15;
+            this.lblDefensePointsWaitingPlayerEntity.Text = "Valor";
+            // 
+            // lblAttackPointsWaitingPlayerEntity
+            // 
+            this.lblAttackPointsWaitingPlayerEntity.AutoSize = true;
+            this.lblAttackPointsWaitingPlayerEntity.Location = new System.Drawing.Point(122, 199);
+            this.lblAttackPointsWaitingPlayerEntity.Name = "lblAttackPointsWaitingPlayerEntity";
+            this.lblAttackPointsWaitingPlayerEntity.Size = new System.Drawing.Size(31, 13);
+            this.lblAttackPointsWaitingPlayerEntity.TabIndex = 16;
+            this.lblAttackPointsWaitingPlayerEntity.Text = "Valor";
             // 
             // PrincipalFormTest
             // 
@@ -425,7 +542,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ProgressBar pbDefenseShieldCurrentPlayerEntity;
+        private System.Windows.Forms.ProgressBar pbDefensePointsCurrentPlayerEntity;
         private System.Windows.Forms.ProgressBar pbCurrentEnergyCurrentPlayerEntity;
         private System.Windows.Forms.ProgressBar pbCurrentLifeCurrentPlayerEntity;
         private System.Windows.Forms.Label label5;
@@ -436,7 +553,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ProgressBar pbCurrentEnergyWaitingPlayerEntity;
-        private System.Windows.Forms.ProgressBar pbDefenseShieldWaitingPlayerEntity;
+        private System.Windows.Forms.ProgressBar pbDefensePointsWaitingPlayerEntity;
         private System.Windows.Forms.ProgressBar pbCurrentLifeWaitingPlayerEntity;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel3;
@@ -452,6 +569,17 @@
         private System.Windows.Forms.Button btnRefreshData;
         private System.Windows.Forms.BindingSource bsWaitingPlayersEntities;
         private System.Windows.Forms.Button btnRest;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblCurrentLifeCurrentPlayerEntity;
+        private System.Windows.Forms.ProgressBar pbAttackPointsCurrentPlayerEntity;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ProgressBar pbAttackPointsWaitingPlayerEntity;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lblAttackPointsCurrentPlayerEntity;
+        private System.Windows.Forms.Label lblDefensePointsCurrentPlayerEntity;
+        private System.Windows.Forms.Label lblCurrentEnergyCurrentPlayerEntity;
+        private System.Windows.Forms.Label lblAttackPointsWaitingPlayerEntity;
+        private System.Windows.Forms.Label lblDefensePointsWaitingPlayerEntity;
+        private System.Windows.Forms.Label lblCurrentEnergyWaitingPlayerEntity;
+        private System.Windows.Forms.Label lblCurrentLifeWaitingPlayerEntity;
     }
 }

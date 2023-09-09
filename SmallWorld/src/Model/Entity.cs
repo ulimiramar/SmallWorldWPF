@@ -38,14 +38,14 @@ namespace SmallWorld.src.Model
 
         //properties
         //TODO: hacer validaciones en propiedades, informar de alguna manera si esta muerto y no puede recibir mas ataques, talvez borrandolo de la lista, o que la lista traiga solo los vivos. y los interacts se traigan los muertos para abono.
-        internal IKingdom Kingdom 
-        { 
+        internal IKingdom Kingdom
+        {
             get => kingdom;
-            set 
+            set
             {
                 if (value != null) kingdom = value;
                 else throw new InvalidOperationException("Debe seleccionar un Reino");
-            } 
+            }
         }
         public string KingdomName { get { return kingdom.ToString(); } }
         public string Name
@@ -68,9 +68,9 @@ namespace SmallWorld.src.Model
             }
         }
         public string DietName { get { return diet.ToString(); } }
-        internal IHabitat Habitat 
-        { 
-            get => habitat; 
+        internal IHabitat Habitat
+        {
+            get => habitat;
             set
             {
                 if (value != null) habitat = value;
@@ -81,26 +81,66 @@ namespace SmallWorld.src.Model
         public int MaxEnergy
         {
             get => maxEnergy;
-            set 
+            set
             {
                 if (value > 0) maxEnergy = value;
                 else throw new InvalidOperationException("La energía máxima debe ser mayor a 0");
             }
         }
-        public int MaxLife { 
+        public int MaxLife {
             get => maxLife;
             //get { return maxLife; }
-            set 
-            { 
+            set
+            {
                 if (value > 0) maxLife = value;
                 else throw new InvalidOperationException("La vida máxima debe ser mayor a 0");
             }
         }
-        public int CurrentLife { get => currentLife; set => currentLife = value; }
+        public int CurrentLife
+        {
+            get => currentLife;
+            set
+            {
+                if (value <= 0)
+                {
+                    currentLife = 0;
+                    DieStatus = true;
+                    throw new Exception("Está muerto");
+                }
+                else if (value > MaxLife)
+                {
+                    currentLife = MaxLife;
+                }
+                else
+                {
+                    currentLife = value;
+                }
+            }
+        }
+
         public int AttackPoints { get => attackPoints; set => attackPoints = value; }
         public int DefensePoints { get => defensePoints; set => defensePoints = value; }
         public bool AttackRange { get => attackRange; set => attackRange = value; }
-        public int CurrentEnergy { get => currentEnergy; set => currentEnergy = value; }
+        public int CurrentEnergy
+        {
+            get => currentEnergy;
+            set
+            {
+                if (value <= 0)
+                {
+                    currentEnergy = 0;
+                    throw new Exception("Debe descansar");
+                }
+                else if (value > MaxEnergy)
+                {
+                    currentEnergy = MaxEnergy;
+                }
+                else
+                {
+                    currentEnergy = value;
+                }
+            }
+        }
         public bool DieStatus { get => dieStatus; set => dieStatus = value; }
         public int CostToAttack { get => costToAttack; set => costToAttack = value; }
         public int DefenseShield { get => defenseShield; set => defenseShield = value; }
@@ -151,8 +191,6 @@ namespace SmallWorld.src.Model
         {
             CurrentEnergy += 50;
             CurrentLife += 100;
-            VerifyMaxEnergy();
-            VerifyMaxLife();
         }
 
 
@@ -167,16 +205,22 @@ namespace SmallWorld.src.Model
         /// <param name="EntityToAttack"></param>
         public void Attack(Entity EntityToAttack)
         {
-            if (!VerifyIfTheEntityNeedEnergyToDoAnAction(CostToAttack))
+            if (!NeedEnergyToDoAnAction(CostToAttack))
             {
-                int DicePoints = Dice.TrowDice(6);
-                EntityToAttack.TakeDamage(AttackPoints, DicePoints);
                 CurrentEnergy -= CostToAttack;
-                VerifyMinCurrentEnergy();
+                int DicePoints = Dice.TrowDice(6);
+                
+                int AttackResult = EntityToAttack.TakeDamage(AttackPoints, DicePoints);
+                if (AttackResult > 0)
+                {
+                    CurrentLife -= AttackResult;
+                    throw new Exception("Ganó la defensa, se te quitarán puntos de vida.");
+                }
+
             }
         }
 
-
+        /*función para dañar un escudo de defensa
         public void TakeDamage(int AttackPointsOfTheAttackingEntity, int AttackDicePoints)
         {
             if (ShieldIsDestroyed())
@@ -189,42 +233,60 @@ namespace SmallWorld.src.Model
                 DefenseShield -= (AttackPointsOfTheAttackingEntity + AttackDicePoints);
                 VerifyStatusOfDefenseShield();
             }
-            
-            
-        }
+        }*/
 
-
-        /*Método TakeDamage con la mecánica de lanzar dados y puntos de defensa. Tuve problemas para implementar esto
-        public void TakeDamage(int AttackPointsOfTheAttackingEntity, int AttackDicePoints)
+        //TODO: arreglar esto
+        public int TakeDamage(int AttackPointsOfTheAttackingEntity, int AttackDicePoints)
         {
             int DicePoints2 = Dice.TrowDice(6);
             Console.WriteLine($"Dado atacante: {AttackDicePoints} Dado Victima: {DicePoints2}");
             MessageBox.Show($"Dado atacante: {AttackDicePoints} Dado Victima: {DicePoints2}");
-            //TODO: resolver problema de negativos y positivos
-
-
-
             
-            if (DefensePoints > AttackPointsOfTheAttackingEntity)
+            int AttackResult = CurrentLife + ((DefensePoints + DicePoints2) - (AttackPointsOfTheAttackingEntity + AttackDicePoints));
+
+            if (AttackResult < CurrentLife)
             {
-                //Supongamos  VidaActual = 100 - (100 - 50) 
-                //            VidaActual = 50
-                CurrentLife = CurrentLife - ((DefensePoints + DicePoints2) - (AttackPointsOfTheAttackingEntity + AttackDicePoints));
-
+                CurrentLife = AttackResult;
+                AttackResult = 0;
+                throw new Exception("Ataque exitoso");
             }
-
-            if (DefensePoints < AttackPointsOfTheAttackingEntity)
+            else if (AttackResult > CurrentLife)
             {
-                //Supongamos  VidaActual = 100 + (50 - 100) 
-                //            VidaActual = 50
-                CurrentLife = CurrentLife + ((DefensePoints + DicePoints2) - (AttackPointsOfTheAttackingEntity + AttackDicePoints));
-
+                AttackResult -= CurrentLife;
             }
-            //CurrentLife = CurrentLife - ((DefensePoints + DicePoints2) - (AttackPointsOfTheAttackingEntity + AttackDicePoints));
-           
-            VerifyMaxLife();
+            else if (AttackResult == CurrentLife)
+            {
+                AttackResult = 0;
+                throw new Exception("Hay un empate");
+            }
+            return AttackResult;
+        }
 
-        }*/
+        //TODO: pensar en entidad ataque, si el valor es negativo pierde la entidad atacante. se puede devolver en takeDamage con un return un valor.
+
+
+        /*Problema con la formula propuesta para el ataque:
+        VidaActualDelAtacado = VidaActualDelAtacado - ((PuntosDefensaDelAtacado + DicePoints2) - (PuntosAtaqueDelAtacante + AttackDicePoints));
+        Suponiendo que la vida actual del atacado es igual a 100
+        //Caso 1 donde los puntos de ataque del atacante son menores a los puntos de defensa del defendiente     
+        //            VidaActualDelAtacado = 100 - (100 - 50) 
+        //            VidaActualDelAtacado = 100 - 50
+        //            VidaActualDelAtacado  = 50
+        //            
+        //Caso 2 donde los puntos de ataque del atacante son mayores a los puntos de defensa del defendiente 
+        //            VidaActualDelAtacado = 100 - (50 - 100) 
+        //            VidaActualDelAtacado = 100 - - 50
+        //            VidaActualDelAtacado  = 150
+        //El problema que veo es que si el atacante es mas fuerte, si se usa esa fórmula el defendiente no pierde puntos.
+        //
+        //Solución que propongo: 
+        cambiar la formula: VidaActualDelAtacado = VidaActualDelAtacado - ((PuntosDefensaDelAtacado + DicePoints2) - (PuntosAtaqueDelAtacante + AttackDicePoints));
+        por esta formula:   VidaActualDelAtacado = VidaActualDelAtacado + ((PuntosDefensaDelAtacado + DicePoints2) - (PuntosAtaqueDelAtacante + AttackDicePoints));
+        entonces si se da que el defendiente sale ganando en cantidad de puntos,
+        hacer un condicional que si el resultado de la formula es mayor a la vida actualdelatacado
+        la vida actual del atacado no se toca.
+        Habría que ver cómo se hace si quieren que haya una especie de efecto rebote y la entidad atacante reciba el daño por perder.
+        */
 
 
         public bool ShieldIsDestroyed()
@@ -264,14 +326,14 @@ namespace SmallWorld.src.Model
             CurrentTerrain = DestinyTerrain;
         }*/
 
-
+        /*
         public void VerifyMaxLife()
         {
             if(CurrentLife > MaxLife)
             {
                 CurrentLife = MaxLife;
             }
-        }
+        }*/
 
         public void VerifyMinCurrentLife()
         {
@@ -290,6 +352,7 @@ namespace SmallWorld.src.Model
             }
         }
 
+        /*esto lo hacía antes de validar en las propiedades, se puede borrar
         public void VerifyMinCurrentEnergy() 
         {
             if (CurrentEnergy <= 0)
@@ -297,22 +360,24 @@ namespace SmallWorld.src.Model
                 CurrentEnergy = 0;
                 MessageBox.Show($"{name} tiene energía 0, debe dormir para recuperar energía");
             }
-        }
+        }*/
         public void Die()
         {
             DieStatus = true;
         }
 
-        public bool VerifyIfTheEntityNeedEnergyToDoAnAction(int Action)
+        public bool NeedEnergyToDoAnAction(int Action)
         {
             bool needEnergy = false;
-            if (Action >= CurrentEnergy)
+            if (Action > CurrentEnergy)
             {
-                MessageBox.Show($"{Name}necesita descansar y así recuperar energía antes de hacer esta acción");
                 needEnergy = true;
+                throw new Exception($"{Name}necesita descansar y así recuperar energía antes de hacer esta acción");
             }
             return needEnergy;
         }
+
+        
 
 
         public override string ToString()
