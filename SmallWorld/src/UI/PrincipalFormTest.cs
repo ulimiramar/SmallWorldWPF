@@ -52,7 +52,7 @@ namespace SmallWorld.src.UI
             RefreshEntityValues();
         }
 
-        //Talves sería bueno unir esto al updateEntities, o al revés. pero que quede el refresqueo en una sola función
+        //TODO: Talves sería bueno unir esto al updateEntities, o al revés. pero que quede el refresqueo en una sola función
         private void RefreshEntityValues()
         {
             if (cbCurrentPlayerEntities.SelectedItem is Entity selectedCurrentPlayerEntity)
@@ -66,6 +66,8 @@ namespace SmallWorld.src.UI
                 lblCurrentEnergyCurrentPlayerEntity.Text = Convert.ToString(selectedCurrentPlayerEntity.CurrentEnergy);
                 lblDefensePointsCurrentPlayerEntity.Text = Convert.ToString(selectedCurrentPlayerEntity.DefensePoints);
                 lblAttackPointsCurrentPlayerEntity.Text = Convert.ToString(selectedCurrentPlayerEntity.AttackPoints);
+
+                CurrentPlayerEntityIsDied(selectedCurrentPlayerEntity);
             }
 
             if (cbWaitingPlayersEntities.SelectedItem is Entity selectedWaitingPlayerEntity)
@@ -79,7 +81,11 @@ namespace SmallWorld.src.UI
                 lblCurrentEnergyWaitingPlayerEntity.Text = Convert.ToString(selectedWaitingPlayerEntity.CurrentEnergy);
                 lblDefensePointsWaitingPlayerEntity.Text = Convert.ToString(selectedWaitingPlayerEntity.DefensePoints);
                 lblAttackPointsWaitingPlayerEntity.Text = Convert.ToString(selectedWaitingPlayerEntity.AttackPoints);
+
+                WaitingPlayerEntityIsDead(selectedWaitingPlayerEntity);
             }
+            
+            
         }
         
         
@@ -109,9 +115,57 @@ namespace SmallWorld.src.UI
             RefreshEntityValues();
         }
 
-        private void UpdateProgressEntitiesBars()
+        //TODO: problema con el botón ataque, cuando el witingPlayer esta en una entidad muerta y cambia a una entidad viva, pero el currentPlayer cambia a una entidad muerta, el botón atacar sigue enabled.
+        private bool CurrentPlayerEntityIsDied(Entity selectedCurrentPlayerEntity)
         {
-
+            bool IsDied = false;
+                if (selectedCurrentPlayerEntity.DieStatus)
+                {
+                    btnAttack.Enabled = false;
+                    btnInteract.Enabled = false;
+                    btnRest.Enabled = false;
+                    lblCurrentLifeCurrentPlayerEntity.ForeColor = Color.Red;
+                    lblCurrentLifeCurrentPlayerEntity.Text = "Muerto";
+                    IsDied = true;
+                }
+                else
+                {
+                    // Si la entidad está viva, restablece los controles
+                    btnAttack.Enabled = true;
+                    
+                    btnInteract.Enabled = true;
+                    btnRest.Enabled = true;
+                    lblCurrentLifeCurrentPlayerEntity.ForeColor = Color.Black;
+                    lblCurrentLifeCurrentPlayerEntity.Text = selectedCurrentPlayerEntity.CurrentLife.ToString(); // Actualiza el valor de la vida
+                    IsDied = false;
+                }
+            return IsDied;
         }
+
+        private bool WaitingPlayerEntityIsDead(Entity selectedWaitingPlayerEntity)
+        {
+            bool IsDied = false;
+                if (selectedWaitingPlayerEntity.DieStatus)
+                {
+                    //TODO: acá se podría pensar en habilitar un botón "comer" para comerse esa entidad muerta.
+                    btnAttack.Enabled = false;
+                    lblCurrentLifeWaitingPlayerEntity.ForeColor = Color.Red;
+                    lblCurrentLifeWaitingPlayerEntity.Text = "Muerto";
+                    IsDied = true;
+                }
+                else
+                {
+                    // Si la entidad está viva, restablece los controles
+
+                    lblCurrentLifeWaitingPlayerEntity.ForeColor = Color.Black;
+                    lblCurrentLifeWaitingPlayerEntity.Text = selectedWaitingPlayerEntity.CurrentLife.ToString(); // Actualiza el valor de la vida
+                    IsDied = false;
+                }
+            
+            return IsDied;
+        }
+
+        
+        
     }
 }

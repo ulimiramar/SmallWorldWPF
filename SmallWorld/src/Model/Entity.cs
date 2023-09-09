@@ -126,10 +126,9 @@ namespace SmallWorld.src.Model
             get => currentEnergy;
             set
             {
-                if (value <= 0)
+                if (value < 0)
                 {
                     currentEnergy = 0;
-                    throw new Exception("Debe descansar");
                 }
                 else if (value > MaxEnergy)
                 {
