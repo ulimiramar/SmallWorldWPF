@@ -54,6 +54,9 @@
             this.btnDeleteEntity = new System.Windows.Forms.Button();
             this.dgvEntitiesBs = new System.Windows.Forms.BindingSource(this.components);
             this.btnRandomData = new System.Windows.Forms.Button();
+            this.btnCancelUpdate = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblId = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntities)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEntitiesBs)).BeginInit();
             this.SuspendLayout();
@@ -246,6 +249,7 @@
             this.btnUpdateEntity.TabIndex = 74;
             this.btnUpdateEntity.Text = "Modificar";
             this.btnUpdateEntity.UseVisualStyleBackColor = true;
+            this.btnUpdateEntity.Click += new System.EventHandler(this.btnUpdateEntity_Click);
             // 
             // btnDeleteEntity
             // 
@@ -267,11 +271,43 @@
             this.btnRandomData.UseVisualStyleBackColor = true;
             this.btnRandomData.Click += new System.EventHandler(this.btnRandomData_Click);
             // 
+            // btnCancelUpdate
+            // 
+            this.btnCancelUpdate.Location = new System.Drawing.Point(550, 295);
+            this.btnCancelUpdate.Name = "btnCancelUpdate";
+            this.btnCancelUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelUpdate.TabIndex = 77;
+            this.btnCancelUpdate.Text = "Cancelar";
+            this.btnCancelUpdate.UseVisualStyleBackColor = true;
+            this.btnCancelUpdate.Visible = false;
+            this.btnCancelUpdate.Click += new System.EventHandler(this.btnCancelUpdate_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(59, 88);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(16, 13);
+            this.label5.TabIndex = 78;
+            this.label5.Text = "Id";
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(59, 101);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(31, 13);
+            this.lblId.TabIndex = 79;
+            this.lblId.Text = "Valor";
+            // 
             // EntitiesCrudFormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(922, 450);
+            this.Controls.Add(this.lblId);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.btnCancelUpdate);
             this.Controls.Add(this.btnRandomData);
             this.Controls.Add(this.btnDeleteEntity);
             this.Controls.Add(this.btnUpdateEntity);
@@ -332,5 +368,8 @@
         private System.Windows.Forms.Button btnDeleteEntity;
         private System.Windows.Forms.BindingSource dgvEntitiesBs;
         private System.Windows.Forms.Button btnRandomData;
+        private System.Windows.Forms.Button btnCancelUpdate;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblId;
     }
 }

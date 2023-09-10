@@ -14,6 +14,8 @@ namespace SmallWorld.src.Model
 {
     internal class Entity
     {
+        private static int lastId = 0;
+        public int Id { get; private set; }
         IKingdom kingdom;
         string name;
         IDiet diet;
@@ -38,6 +40,9 @@ namespace SmallWorld.src.Model
 
         //properties
         //TODO: hacer validaciones en propiedades, informar de alguna manera si esta muerto y no puede recibir mas ataques, talvez borrandolo de la lista, o que la lista traiga solo los vivos. y los interacts se traigan los muertos para abono.
+       
+       
+        
         internal IKingdom Kingdom
         {
             get => kingdom;
@@ -151,6 +156,8 @@ namespace SmallWorld.src.Model
         //constructor
         public Entity(IKingdom kingdom, string name, IDiet diet, IHabitat habitat, int attackPoints, int defensePoints, bool attackRange, int maxLife, int maxEnergy, int defenseShield)
         {
+            lastId++;
+            Id = lastId;
             Kingdom = kingdom;
             Name = name;
             Diet = diet;

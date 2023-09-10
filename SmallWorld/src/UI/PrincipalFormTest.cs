@@ -116,9 +116,9 @@ namespace SmallWorld.src.UI
         }
 
         //TODO: problema con el botón ataque, cuando el witingPlayer esta en una entidad muerta y cambia a una entidad viva, pero el currentPlayer cambia a una entidad muerta, el botón atacar sigue enabled.
-        private bool CurrentPlayerEntityIsDied(Entity selectedCurrentPlayerEntity)
+        private void CurrentPlayerEntityIsDied(Entity selectedCurrentPlayerEntity)
         {
-            bool IsDied = false;
+            
                 if (selectedCurrentPlayerEntity.DieStatus)
                 {
                     btnAttack.Enabled = false;
@@ -126,7 +126,7 @@ namespace SmallWorld.src.UI
                     btnRest.Enabled = false;
                     lblCurrentLifeCurrentPlayerEntity.ForeColor = Color.Red;
                     lblCurrentLifeCurrentPlayerEntity.Text = "Muerto";
-                    IsDied = true;
+                    
                 }
                 else
                 {
@@ -137,21 +137,21 @@ namespace SmallWorld.src.UI
                     btnRest.Enabled = true;
                     lblCurrentLifeCurrentPlayerEntity.ForeColor = Color.Black;
                     lblCurrentLifeCurrentPlayerEntity.Text = selectedCurrentPlayerEntity.CurrentLife.ToString(); // Actualiza el valor de la vida
-                    IsDied = false;
+                    
                 }
-            return IsDied;
+            
         }
 
-        private bool WaitingPlayerEntityIsDead(Entity selectedWaitingPlayerEntity)
+        private void WaitingPlayerEntityIsDead(Entity selectedWaitingPlayerEntity)
         {
-            bool IsDied = false;
+            
                 if (selectedWaitingPlayerEntity.DieStatus)
                 {
                     //TODO: acá se podría pensar en habilitar un botón "comer" para comerse esa entidad muerta.
                     btnAttack.Enabled = false;
                     lblCurrentLifeWaitingPlayerEntity.ForeColor = Color.Red;
                     lblCurrentLifeWaitingPlayerEntity.Text = "Muerto";
-                    IsDied = true;
+                    
                 }
                 else
                 {
@@ -159,10 +159,10 @@ namespace SmallWorld.src.UI
 
                     lblCurrentLifeWaitingPlayerEntity.ForeColor = Color.Black;
                     lblCurrentLifeWaitingPlayerEntity.Text = selectedWaitingPlayerEntity.CurrentLife.ToString(); // Actualiza el valor de la vida
-                    IsDied = false;
+                    
                 }
             
-            return IsDied;
+           
         }
 
         

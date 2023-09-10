@@ -24,12 +24,13 @@ namespace SmallWorld.src.UI
         {
             InitializeComponent();
 
+            //FillComboBoxKingdoms();
             cbKingdom.Items.Add(new Alien());
             cbKingdom.Items.Add(new Animal());
             cbKingdom.Items.Add(new Machine());
             cbKingdom.Items.Add(new Vegetable());
 
-            
+
 
             cbDiet.Items.Add(new Carnivorous());
             cbDiet.Items.Add(new Herbivorous());
@@ -40,6 +41,20 @@ namespace SmallWorld.src.UI
             cbHabitat.Items.Add(new Terrestrial());
         }
 
+        /*Para llenar combobox automáticamente, me falta hacer que traiga el new clase()
+        private void FillComboBoxKingdoms()
+        {
+            var interfaceType = typeof(IKingdom);
+
+            var classList = AppDomain.CurrentDomain.GetAssemblies()
+                .SelectMany(assembly => assembly.GetTypes())
+                .Where(type => interfaceType.IsAssignableFrom(type) && !type.IsInterface)
+                //.Select(type => type.Name)
+                .ToList();
+
+            cbKingdom.DataSource = classList;
+        }*/
+
         private void btnDeleteEntity_Click(object sender, EventArgs e)
         {
             if (dgvEntities.SelectedRows.Count > 0)
@@ -48,7 +63,7 @@ namespace SmallWorld.src.UI
                 Entity entityToDelete = (Entity)selectedRow.DataBoundItem;
 
                 entityController.Delete(entityToDelete);                
-                UpdateDataGridEntities();
+                RefreshDataGridEntities();
 
             }
             else MessageBox.Show("Seleccionar una entidad");
@@ -60,7 +75,8 @@ namespace SmallWorld.src.UI
             {
                 //EntityController.GetInstance().AddEntity()
                 entityController.AddEntity((IKingdom)cbKingdom.SelectedItem, txtName.Text, (IDiet)cbDiet.SelectedItem, (IHabitat)cbHabitat.SelectedItem, Convert.ToInt32(txtAttackPoints.Text), Convert.ToInt32(txtDefensePoints.Text), chbAttackRange.Checked, Convert.ToInt32(txtMaxLife.Text), Convert.ToInt32(txtMaxEnergy.Text), Convert.ToInt32(txtDefenseShield.Text));             
-                UpdateDataGridEntities();
+                RefreshDataGridEntities();
+                ClearFormControls();
             }
             catch(Exception ex) 
             { 
@@ -75,7 +91,7 @@ namespace SmallWorld.src.UI
         /// Then the binding-source is asigned to data-source of the data-grid to update it.
         /// In resume this method update the datagrid data.
         /// </summary>
-        private void UpdateDataGridEntities()
+        private void RefreshDataGridEntities()
         {
             dgvEntitiesBs.DataSource = entityController.getEntities();
             dgvEntitiesBs.ResetBindings(false);
@@ -117,6 +133,84 @@ namespace SmallWorld.src.UI
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
             return new string(Enumerable.Repeat(chars, length)
                 .Select(s => s[random.Next(s.Length)]).ToArray());
+        }
+
+
+        
+        private bool UpdateMode = false; // Variable para controlar si estamos en modo actualizar o modificar
+
+        private void btnUpdateEntity_Click(object sender, EventArgs e)
+        {
+            if (!UpdateMode)
+            {
+                // Modo "Modificar" a "Actualizar"
+                UpdateMode = true;
+                btnUpdateEntity.Text = "Actualizar";
+                btnCreateEntity.Enabled = false;
+                btnCancelUpdate.Visible = true;
+                btnDeleteEntity.Enabled = false;
+                dgvEntities.Enabled = false;
+
+                // Obtener la fila seleccionada
+                DataGridViewRow selectedRow = dgvEntities.SelectedRows[0];
+
+                // Obtener la entidad seleccionada
+                Entity entityToUpdate = (Entity)selectedRow.DataBoundItem;
+
+                // Mostrar los datos en los controles del formulario
+                txtName.Text = entityToUpdate.Name;
+                cbKingdom.SelectedItem = entityToUpdate.Kingdom;
+                cbDiet.SelectedItem = entityToUpdate.Diet;
+                cbHabitat.SelectedItem = entityToUpdate.Habitat;
+                txtMaxEnergy.Text = entityToUpdate.MaxEnergy.ToString();
+                txtMaxLife.Text = entityToUpdate.MaxLife.ToString();
+                txtAttackPoints.Text = entityToUpdate.AttackPoints.ToString();
+                txtDefensePoints.Text = entityToUpdate.DefensePoints.ToString();
+                chbAttackRange.Checked = entityToUpdate.AttackRange;
+                txtDefenseShield.Text = entityToUpdate.DefenseShield.ToString();
+                lblId.Text = entityToUpdate.Id.ToString();
+            }
+            else
+            {
+                // Modo "Actualizar" a "Modificar"
+                UpdateMode = false;
+                btnUpdateEntity.Text = "Modificar";
+                btnCreateEntity.Enabled = true;
+                btnDeleteEntity.Enabled = true;
+                btnCancelUpdate.Visible = false;
+                dgvEntities.Enabled = true;
+
+                entityController.Update(Convert.ToInt32(lblId.Text),(IKingdom)cbKingdom.SelectedItem, txtName.Text, (IDiet)cbDiet.SelectedItem, (IHabitat)cbHabitat.SelectedItem, Convert.ToInt32(txtAttackPoints.Text), Convert.ToInt32(txtDefensePoints.Text), chbAttackRange.Checked, Convert.ToInt32(txtMaxLife.Text), Convert.ToInt32(txtMaxEnergy.Text), Convert.ToInt32(txtDefenseShield.Text));
+                RefreshDataGridEntities();
+                ClearFormControls();
+
+                // Resto del código para actualizar la entidad cuando se presione el botón "Actualizar"
+                // ...
+            }
+        }
+
+        private void btnCancelUpdate_Click(object sender, EventArgs e)
+        {
+            UpdateMode = false;
+            btnUpdateEntity.Text = "Modificar";
+            btnCancelUpdate.Visible = false;
+            btnCreateEntity.Enabled = true;
+            btnDeleteEntity.Enabled = true;
+            dgvEntities.Enabled = true;
+            ClearFormControls();
+        }
+
+        private void ClearFormControls()
+        {
+            txtName.Clear();
+            txtAttackPoints.Clear();
+            txtDefensePoints.Clear();
+            txtDefenseShield.Clear();
+            txtMaxEnergy.Clear();
+            txtMaxLife.Clear();
+            cbDiet.SelectedIndex = -1;
+            cbHabitat.SelectedIndex = -1;
+            cbKingdom.SelectedIndex = -1;
         }
     }
 }

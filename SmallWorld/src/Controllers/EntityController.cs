@@ -4,6 +4,7 @@ using SmallWorld.src.Model.Reino;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -88,75 +89,28 @@ namespace SmallWorld.src.Controllers
             Entities.Remove(entity);
         }
 
+
         
-
-
-        /* Otra idea de lógica de ataque
-
-        /// <summary>
-        /// Logica del ataque: primero se lanzarían los dados (que eso todavía no lo hice)
-        /// el que gane será el atacante.La lógica es que la entidad atacante
-        /// le resta la misma cantidad que tiene de su fuerza de ataque a la entidad que se defiende
-        /// la entidad que se defiende tiene 3 capas de defensa.Primero tiene su escudo de defensa.
-        /// una vez destruido el escudo de defensa, se empieza a disminuir su energía actual
-        /// cuando su energía actual llega a 0, pierde una vida de las vidas actuales y se reestablece
-        /// a 100 su energia actual.
-        /// cuando pierde todas las vidas la entidad muere.
-        /// </summary>
-
-
-        public void Attack(Entity AttackingEntity, Entity DefendingEntity)
+        public void Update(int id, IKingdom kingdom, string name, IDiet diet, IHabitat habitat, int atkPoints, int defPoints, bool rangeAttack, int maxLife, int maxEnergy, int defenseShield)
         {
-            
-            if (DefendingEntity.DefensePoints > 0)
+            foreach (Entity EntityToUpdate in Entities)
             {
-                DefendingEntity.DefensePoints -= AttackingEntity.AttackPoints;
-                VerifyDefenseStatus(DefendingEntity);
-            }
-            else if (DefendingEntity.DefensePoints <= 0 && DefendingEntity.CurrentEnergy > 0)
-            {
-                DefendingEntity.CurrentEnergy -= AttackingEntity.AttackPoints;
-                VerifyEnergyStatus(DefendingEntity);
-            }
-            
-        }
-
-        public void VerifyDefenseStatus(Entity DefendingEntity)
-        {
-            if (DefendingEntity.DefensePoints <= 0)
-            {
-                DefendingEntity.CurrentEnergy += DefendingEntity.DefensePoints;
-                DefendingEntity.DefensePoints = 0;
-                MessageBox.Show($"El escudo de {DefendingEntity.Name} ha sido destruido");
-            }
-        }
-
-        public void VerifyEnergyStatus(Entity DefendingEntity)
-        {
-            if (DefendingEntity.CurrentEnergy <= 0)
-            {
-                if (VerifyAmountOfLivesAvailable(DefendingEntity))
+                if (EntityToUpdate.Id == id)
                 {
-                    DefendingEntity.CurrentLife--;
-                    DefendingEntity.CurrentEnergy = 100 + DefendingEntity.CurrentEnergy;
-                    MessageBox.Show($"{DefendingEntity.Name} Ha perdido una vida");
-                }
-                else
-                {
-                    DefendingEntity.CurrentEnergy = 0;
-                    MessageBox.Show($"{DefendingEntity.Name} Ha sido exterminado");
+                    EntityToUpdate.Kingdom = kingdom;
+                    EntityToUpdate.Name = name;
+                    EntityToUpdate.Diet = diet;
+                    EntityToUpdate.Habitat = habitat;
+                    EntityToUpdate.AttackPoints = atkPoints;
+                    EntityToUpdate.DefensePoints = defPoints;
+                    EntityToUpdate.AttackRange = rangeAttack;
+                    EntityToUpdate.MaxLife = maxLife;
+                    EntityToUpdate.MaxEnergy = maxEnergy;
+                    EntityToUpdate.DefenseShield = defenseShield;
+                    break;
                 }
             }
         }
-
-        public bool VerifyAmountOfLivesAvailable(Entity DefendingEntity)
-        {
-            if (DefendingEntity.CurrentLife < 1)
-            {
-                return false;
-            }
-            else { return true; }
-        }*/
 
         
     }
