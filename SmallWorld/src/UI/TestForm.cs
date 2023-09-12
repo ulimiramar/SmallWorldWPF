@@ -122,7 +122,7 @@ namespace SmallWorld.src.UI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            entityController.ReadEntities();
+            
             dgvEntities.DataSource = entityController.getEntities();
 
             cbSelectAttackEntity.DataSource = entityController.getEntitiesCopy1();

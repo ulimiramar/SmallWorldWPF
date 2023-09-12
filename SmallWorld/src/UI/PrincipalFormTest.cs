@@ -1,5 +1,8 @@
 ﻿using SmallWorld.src.Controllers;
+using SmallWorld.src.Interfaces;
 using SmallWorld.src.Model;
+using SmallWorld.src.Model.Interactable.ItemEffects;
+using SmallWorld.src.Model.Interactuable;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +18,7 @@ namespace SmallWorld.src.UI
     public partial class PrincipalFormTest : Form
     {
         EntityController entityController = EntityController.GetInstance();
+        ItemController itemController = ItemController.GetInstance();
         public PrincipalFormTest()
         {
             InitializeComponent();
@@ -93,8 +97,15 @@ namespace SmallWorld.src.UI
         {
             UpdateEntities();
             RefreshEntityValues();
+            RefreshItems();
         }
 
+        private void RefreshItems()
+        {
+            bsItems.DataSource = itemController.getItems();
+            bsItems.ResetBindings(false);
+            cbItems.DataSource = bsItems;
+        }
         private void UpdateEntities()
         {
             bsCurrentPlayerEntities.DataSource = entityController.getEntities();
@@ -165,7 +176,21 @@ namespace SmallWorld.src.UI
            
         }
 
-        
-        
+        private void btnInteract_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cbCurrentPlayerEntities.SelectedItem is Entity selectedCurrentPlayerEntity)
+                    if (cbItems.SelectedItem is Item item)
+                        item.ExecuteEffectStrategy(selectedCurrentPlayerEntity);
+                RefreshEntityValues();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                RefreshEntityValues();
+            }
+
+        }
     }
 }

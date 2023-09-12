@@ -55,9 +55,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\Controllers\EntityController.cs" />
+    <Compile Include="src\Controllers\ItemController.cs" />
     <Compile Include="src\Controllers\KingdomController.cs" />
     <Compile Include="src\Controllers\MapController.cs" />
     <Compile Include="src\Interfaces\IDiet.cs" />
+    <Compile Include="src\Interfaces\IEffectStrategy.cs" />
     <Compile Include="src\Interfaces\IEntity.cs" />
     <Compile Include="src\Interfaces\IHabitat.cs" />
     <Compile Include="src\Interfaces\IInteractable.cs" />
@@ -70,6 +72,10 @@
     <Compile Include="src\Model\Habitat\Aquatic.cs" />
     <Compile Include="src\Model\Habitat\Aerial.cs" />
     <Compile Include="src\Model\Habitat\Terrestrial.cs" />
+    <Compile Include="src\Model\Interactable\ItemEffects\FillCurrentLife.cs" />
+    <Compile Include="src\Model\Interactable\ItemEffects\GodMode.cs" />
+    <Compile Include="src\Model\Interactable\ItemEffects\Kill.cs" />
+    <Compile Include="src\Model\Interactable\ItemEffects\MaxAttackPoints.cs" />
     <Compile Include="src\Static\Dice.cs" />
     <Compile Include="src\Model\Interactable\Food.cs" />
     <Compile Include="src\Model\Interactable\Item.cs" />

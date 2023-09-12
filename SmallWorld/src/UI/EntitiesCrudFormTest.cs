@@ -10,6 +10,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -25,7 +26,10 @@ namespace SmallWorld.src.UI
             InitializeComponent();
 
             //FillComboBoxKingdoms();
-            cbKingdom.Items.Add(new Alien());
+            FillComboBoxes();
+            RefreshDataGridEntities();
+
+            /*cbKingdom.Items.Add(new Alien());
             cbKingdom.Items.Add(new Animal());
             cbKingdom.Items.Add(new Machine());
             cbKingdom.Items.Add(new Vegetable());
@@ -38,7 +42,7 @@ namespace SmallWorld.src.UI
 
             cbHabitat.Items.Add(new Aerial());
             cbHabitat.Items.Add(new Aquatic());
-            cbHabitat.Items.Add(new Terrestrial());
+            cbHabitat.Items.Add(new Terrestrial());*/
         }
 
         /*Para llenar combobox automáticamente, me falta hacer que traiga el new clase()
@@ -54,6 +58,31 @@ namespace SmallWorld.src.UI
 
             cbKingdom.DataSource = classList;
         }*/
+
+
+        private void FillComboBoxes()
+        {
+            // Llena el ComboBox de Kingdom con las clases que implementan IKingsom
+            foreach (Type type in Assembly.GetExecutingAssembly().GetTypes()
+                .Where(t => t.GetInterfaces().Contains(typeof(IKingdom))))
+            {
+                cbKingdom.Items.Add(Activator.CreateInstance(type));
+            }
+
+            // Llena el ComboBox de Diet con las clases que implementan IDiet
+            foreach (Type type in Assembly.GetExecutingAssembly().GetTypes()
+                .Where(t => t.GetInterfaces().Contains(typeof(IDiet))))
+            {
+                cbDiet.Items.Add(Activator.CreateInstance(type));
+            }
+
+            // Llena el ComboBox de Habitat con las clases que implementan IHabitat
+            foreach (Type type in Assembly.GetExecutingAssembly().GetTypes()
+                .Where(t => t.GetInterfaces().Contains(typeof(IHabitat))))
+            {
+                cbHabitat.Items.Add(Activator.CreateInstance(type));
+            }
+        }
 
         private void btnDeleteEntity_Click(object sender, EventArgs e)
         {
@@ -139,6 +168,7 @@ namespace SmallWorld.src.UI
         
         private bool UpdateMode = false; // Variable para controlar si estamos en modo actualizar o modificar
 
+        //TODO: cuando se vuelve a abrir el formulario después de atacar, al presionar el botón modificar, no se traen los datos a los comboboxes, talves hay que agregar el (IDiet)adelante, no, talvez no porque ya lo probé. no se porqué.
         private void btnUpdateEntity_Click(object sender, EventArgs e)
         {
             if (!UpdateMode)
@@ -184,8 +214,7 @@ namespace SmallWorld.src.UI
                 RefreshDataGridEntities();
                 ClearFormControls();
 
-                // Resto del código para actualizar la entidad cuando se presione el botón "Actualizar"
-                // ...
+                
             }
         }
 

@@ -29,10 +29,7 @@ namespace SmallWorld.src.Controllers
             return instance;
         }
 
-        /*public static EntityController GetController()
-        {
-            return EntitiesController;
-        }*/
+        
 
 
         public void AddEntity(IKingdom kingdom, string name, IDiet diet, IHabitat habitat, int atkPonints, int defPoints, bool range, int maxLife, int maxEnergy, int defenseShield)
@@ -58,31 +55,6 @@ namespace SmallWorld.src.Controllers
         }
 
 
-        //TODO: hacer funcion que obtenga solo la información de los puntos
-        /*
-        public List<Entity> getNameAndPointsInformation()
-        {
-            List<Entity> EntityList = new List<Entity>(Entities);
-            
-        }*/
-
-        /// <summary>
-        /// Solo para mostrar por consola la lista de entidades creadas
-        /// </summary>
-        public void ReadEntities()
-        {
-            if (Entities.Count == 0)
-            {
-                Console.WriteLine("No entities to display.");
-                return;
-            }
-
-            foreach (var Entity in Entities)
-            {
-                Console.WriteLine(Entity.ToString());
-            }
-            
-        }
 
         public void Delete(Entity entity)
         {

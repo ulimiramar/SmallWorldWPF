@@ -322,7 +322,7 @@ namespace SmallWorld.src.Model
 
         public void Interact (Item objectInteractable)
         {
-            CurrentLife = CurrentLife + objectInteractable.Points;
+            //CurrentLife = CurrentLife + objectInteractable.Points;
         }
 
 
