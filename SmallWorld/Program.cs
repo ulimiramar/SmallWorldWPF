@@ -1,4 +1,5 @@
 ﻿using SmallWorld.src.UI;
+using SmallWorld.src.UI.Home;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,8 @@ namespace SmallWorld
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new PrincipalFormTest());
+            //Application.Run(new PrincipalFormTest());
+            Application.Run(new FormHome());
         }
     }
 }

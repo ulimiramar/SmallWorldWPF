@@ -37,10 +37,10 @@
             this.label8 = new System.Windows.Forms.Label();
             this.cbKingdom = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.bsItems = new System.Windows.Forms.BindingSource(this.components);
             this.btnCancelUpdate = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
+            this.bsItems = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsItems)).BeginInit();
             this.SuspendLayout();
@@ -48,7 +48,7 @@
             // dgvItems
             // 
             this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvItems.Location = new System.Drawing.Point(374, 56);
+            this.dgvItems.Location = new System.Drawing.Point(272, 24);
             this.dgvItems.Name = "dgvItems";
             this.dgvItems.ReadOnly = true;
             this.dgvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -57,7 +57,7 @@
             // 
             // btnCreateItem
             // 
-            this.btnCreateItem.Location = new System.Drawing.Point(255, 129);
+            this.btnCreateItem.Location = new System.Drawing.Point(153, 97);
             this.btnCreateItem.Name = "btnCreateItem";
             this.btnCreateItem.Size = new System.Drawing.Size(75, 23);
             this.btnCreateItem.TabIndex = 15;
@@ -67,7 +67,7 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(488, 227);
+            this.btnDelete.Location = new System.Drawing.Point(386, 195);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(75, 23);
             this.btnDelete.TabIndex = 16;
@@ -77,7 +77,7 @@
             // 
             // btnModifyUpdate
             // 
-            this.btnModifyUpdate.Location = new System.Drawing.Point(397, 227);
+            this.btnModifyUpdate.Location = new System.Drawing.Point(295, 195);
             this.btnModifyUpdate.Name = "btnModifyUpdate";
             this.btnModifyUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnModifyUpdate.TabIndex = 17;
@@ -88,7 +88,7 @@
             // cbItemEffect
             // 
             this.cbItemEffect.FormattingEnabled = true;
-            this.cbItemEffect.Location = new System.Drawing.Point(128, 131);
+            this.cbItemEffect.Location = new System.Drawing.Point(26, 99);
             this.cbItemEffect.Name = "cbItemEffect";
             this.cbItemEffect.Size = new System.Drawing.Size(121, 21);
             this.cbItemEffect.TabIndex = 18;
@@ -96,7 +96,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(125, 115);
+            this.label8.Location = new System.Drawing.Point(23, 83);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(78, 13);
             this.label8.TabIndex = 19;
@@ -105,7 +105,7 @@
             // cbKingdom
             // 
             this.cbKingdom.FormattingEnabled = true;
-            this.cbKingdom.Location = new System.Drawing.Point(128, 83);
+            this.cbKingdom.Location = new System.Drawing.Point(26, 51);
             this.cbKingdom.Name = "cbKingdom";
             this.cbKingdom.Size = new System.Drawing.Size(121, 21);
             this.cbKingdom.TabIndex = 20;
@@ -113,7 +113,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(125, 67);
+            this.label9.Location = new System.Drawing.Point(23, 35);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(177, 13);
             this.label9.TabIndex = 21;
@@ -121,7 +121,7 @@
             // 
             // btnCancelUpdate
             // 
-            this.btnCancelUpdate.Location = new System.Drawing.Point(397, 267);
+            this.btnCancelUpdate.Location = new System.Drawing.Point(295, 235);
             this.btnCancelUpdate.Name = "btnCancelUpdate";
             this.btnCancelUpdate.Size = new System.Drawing.Size(75, 23);
             this.btnCancelUpdate.TabIndex = 22;
@@ -132,7 +132,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(207, 176);
+            this.label10.Location = new System.Drawing.Point(105, 144);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(16, 13);
             this.label10.TabIndex = 23;
@@ -141,7 +141,7 @@
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(210, 193);
+            this.lblId.Location = new System.Drawing.Point(108, 161);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(31, 13);
             this.lblId.TabIndex = 24;
@@ -151,7 +151,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(718, 522);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnCancelUpdate);
@@ -163,6 +163,7 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnCreateItem);
             this.Controls.Add(this.dgvItems);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ItemsCrudFormTest";
             this.Text = "ItemsCrudFormTest";
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();

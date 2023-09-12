@@ -38,11 +38,11 @@ namespace SmallWorld.src.Model
 
 
 
-        //properties
+        #region Properties
         //TODO: hacer validaciones en propiedades, informar de alguna manera si esta muerto y no puede recibir mas ataques, talvez borrandolo de la lista, o que la lista traiga solo los vivos. y los interacts se traigan los muertos para abono.
-       
-       
-        
+
+
+
         internal IKingdom Kingdom
         {
             get => kingdom;
@@ -152,6 +152,8 @@ namespace SmallWorld.src.Model
         //public Terrain CurrentTerrain { get => currentTerrain; set => currentTerrain = value; }
 
         //public Point Position { get => position; set => position = value; }
+
+        #endregion
 
         //constructor
         public Entity(IKingdom kingdom, string name, IDiet diet, IHabitat habitat, int attackPoints, int defensePoints, bool attackRange, int maxLife, int maxEnergy, int defenseShield)

@@ -87,7 +87,7 @@
             // 
             // btnAdmin
             // 
-            this.btnAdmin.Location = new System.Drawing.Point(87, 24);
+            this.btnAdmin.Location = new System.Drawing.Point(38, 12);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Size = new System.Drawing.Size(91, 23);
             this.btnAdmin.TabIndex = 0;
@@ -98,7 +98,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(84, 86);
+            this.label1.Location = new System.Drawing.Point(35, 74);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 1;
@@ -120,7 +120,7 @@
             this.panel1.Controls.Add(this.pbDefensePointsCurrentPlayerEntity);
             this.panel1.Controls.Add(this.pbCurrentEnergyCurrentPlayerEntity);
             this.panel1.Controls.Add(this.pbCurrentLifeCurrentPlayerEntity);
-            this.panel1.Location = new System.Drawing.Point(61, 120);
+            this.panel1.Location = new System.Drawing.Point(12, 108);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(176, 261);
             this.panel1.TabIndex = 2;
@@ -246,7 +246,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(569, 67);
+            this.label5.Location = new System.Drawing.Point(520, 55);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(112, 13);
             this.label5.TabIndex = 3;
@@ -268,7 +268,7 @@
             this.panel2.Controls.Add(this.pbCurrentEnergyWaitingPlayerEntity);
             this.panel2.Controls.Add(this.pbDefensePointsWaitingPlayerEntity);
             this.panel2.Controls.Add(this.pbCurrentLifeWaitingPlayerEntity);
-            this.panel2.Location = new System.Drawing.Point(461, 120);
+            this.panel2.Location = new System.Drawing.Point(386, 108);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(178, 261);
             this.panel2.TabIndex = 4;
@@ -394,7 +394,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(340, 86);
+            this.label11.Location = new System.Drawing.Point(291, 74);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(34, 13);
             this.label11.TabIndex = 5;
@@ -402,22 +402,22 @@
             // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(243, 120);
+            this.panel3.Location = new System.Drawing.Point(194, 108);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 261);
+            this.panel3.Size = new System.Drawing.Size(176, 261);
             this.panel3.TabIndex = 6;
             // 
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(572, 83);
+            this.comboBox3.Location = new System.Drawing.Point(523, 71);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(121, 21);
             this.comboBox3.TabIndex = 7;
             // 
             // btnAttack
             // 
-            this.btnAttack.Location = new System.Drawing.Point(503, 387);
+            this.btnAttack.Location = new System.Drawing.Point(454, 375);
             this.btnAttack.Name = "btnAttack";
             this.btnAttack.Size = new System.Drawing.Size(75, 23);
             this.btnAttack.TabIndex = 8;
@@ -427,7 +427,7 @@
             // 
             // btnInteract
             // 
-            this.btnInteract.Location = new System.Drawing.Point(689, 387);
+            this.btnInteract.Location = new System.Drawing.Point(640, 375);
             this.btnInteract.Name = "btnInteract";
             this.btnInteract.Size = new System.Drawing.Size(75, 23);
             this.btnInteract.TabIndex = 14;
@@ -440,7 +440,7 @@
             this.panel4.Controls.Add(this.label12);
             this.panel4.Controls.Add(this.cbItems);
             this.panel4.Controls.Add(this.label14);
-            this.panel4.Location = new System.Drawing.Point(645, 120);
+            this.panel4.Location = new System.Drawing.Point(570, 108);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(150, 261);
             this.panel4.TabIndex = 13;
@@ -473,7 +473,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(299, 387);
+            this.button4.Location = new System.Drawing.Point(250, 375);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 15;
@@ -482,7 +482,7 @@
             // 
             // btnRefreshData
             // 
-            this.btnRefreshData.Location = new System.Drawing.Point(203, 24);
+            this.btnRefreshData.Location = new System.Drawing.Point(154, 12);
             this.btnRefreshData.Name = "btnRefreshData";
             this.btnRefreshData.Size = new System.Drawing.Size(107, 23);
             this.btnRefreshData.TabIndex = 16;
@@ -492,7 +492,7 @@
             // 
             // btnRest
             // 
-            this.btnRest.Location = new System.Drawing.Point(108, 387);
+            this.btnRest.Location = new System.Drawing.Point(59, 375);
             this.btnRest.Name = "btnRest";
             this.btnRest.Size = new System.Drawing.Size(75, 23);
             this.btnRest.TabIndex = 17;
@@ -504,7 +504,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(718, 522);
             this.Controls.Add(this.btnRest);
             this.Controls.Add(this.btnRefreshData);
             this.Controls.Add(this.button4);
@@ -519,6 +519,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAdmin);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PrincipalFormTest";
             this.Text = "PincipalFormTest";
             this.Load += new System.EventHandler(this.PrincipalFormTest_Load);

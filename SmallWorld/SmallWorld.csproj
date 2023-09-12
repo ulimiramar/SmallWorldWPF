@@ -110,6 +110,12 @@
     <Compile Include="src\UI\FoodCrudFormTest.Designer.cs">
       <DependentUpon>FoodCrudFormTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\UI\Home\FormHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\UI\Home\FormHome.Designer.cs">
+      <DependentUpon>FormHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\UI\ItemsCrudFormTest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\UI\FoodCrudFormTest.resx">
       <DependentUpon>FoodCrudFormTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\UI\Home\FormHome.resx">
+      <DependentUpon>FormHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\UI\ItemsCrudFormTest.resx">
       <DependentUpon>ItemsCrudFormTest.cs</DependentUpon>
