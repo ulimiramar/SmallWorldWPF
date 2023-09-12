@@ -77,12 +77,16 @@
             this.bsCurrentPlayerEntities = new System.Windows.Forms.BindingSource(this.components);
             this.bsWaitingPlayersEntities = new System.Windows.Forms.BindingSource(this.components);
             this.bsItems = new System.Windows.Forms.BindingSource(this.components);
+            this.cbFood = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.bsFoods = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bsCurrentPlayerEntities)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsWaitingPlayersEntities)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsItems)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsFoods)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdmin
@@ -437,6 +441,8 @@
             // 
             // panel4
             // 
+            this.panel4.Controls.Add(this.label13);
+            this.panel4.Controls.Add(this.cbFood);
             this.panel4.Controls.Add(this.label12);
             this.panel4.Controls.Add(this.cbItems);
             this.panel4.Controls.Add(this.label14);
@@ -461,6 +467,7 @@
             this.cbItems.Name = "cbItems";
             this.cbItems.Size = new System.Drawing.Size(121, 21);
             this.cbItems.TabIndex = 1;
+            this.cbItems.SelectedIndexChanged += new System.EventHandler(this.cbItems_SelectedIndexChanged);
             // 
             // label14
             // 
@@ -500,6 +507,24 @@
             this.btnRest.UseVisualStyleBackColor = true;
             this.btnRest.Click += new System.EventHandler(this.btnRest_Click);
             // 
+            // cbFood
+            // 
+            this.cbFood.FormattingEnabled = true;
+            this.cbFood.Location = new System.Drawing.Point(16, 115);
+            this.cbFood.Name = "cbFood";
+            this.cbFood.Size = new System.Drawing.Size(121, 21);
+            this.cbFood.TabIndex = 3;
+            this.cbFood.SelectedIndexChanged += new System.EventHandler(this.cbFood_SelectedIndexChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(16, 99);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(116, 13);
+            this.label13.TabIndex = 4;
+            this.label13.Text = "Comida en este terreno";
+            // 
             // PrincipalFormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -532,6 +557,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsCurrentPlayerEntities)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsWaitingPlayersEntities)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsItems)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsFoods)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -587,5 +613,8 @@
         private System.Windows.Forms.Label lblCurrentEnergyWaitingPlayerEntity;
         private System.Windows.Forms.Label lblCurrentLifeWaitingPlayerEntity;
         private System.Windows.Forms.BindingSource bsItems;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox cbFood;
+        private System.Windows.Forms.BindingSource bsFoods;
     }
 }

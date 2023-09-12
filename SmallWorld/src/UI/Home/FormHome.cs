@@ -68,6 +68,12 @@ namespace SmallWorld.src.UI.Home
         private void btnPlay_Click(object sender, EventArgs e)
         {
             OpenChildForm(new PrincipalFormTest());
+            HideSubMenu();
+        }
+
+        private void btnFoodCrud_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FoodCrudFormTest());
         }
     }
 }

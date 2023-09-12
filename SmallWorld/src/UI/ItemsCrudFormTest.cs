@@ -132,7 +132,7 @@ namespace SmallWorld.src.UI
                 RefreshDataGridItems();
 
             }
-            else MessageBox.Show("Seleccionar una entidad");
+            else MessageBox.Show("Seleccionar un item");
         }
     }
 }

@@ -322,6 +322,14 @@ namespace SmallWorld.src.Model
             }
         }
 
+        public void Eat (Food food)
+        {
+            if (food.CanEat(this))
+            {
+                this.CurrentEnergy += food.EnergyValue;
+            }
+            else throw new Exception($"no es compatible con la dieta. {food.Name} {food.Diet} != {Name} {Diet}");
+        }
         public void Interact (Item objectInteractable)
         {
             //CurrentLife = CurrentLife + objectInteractable.Points;

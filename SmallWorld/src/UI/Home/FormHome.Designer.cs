@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.pSideMenu = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnAdmin = new System.Windows.Forms.Button();
+            this.btnPlay = new System.Windows.Forms.Button();
             this.pAdminSubMenu = new System.Windows.Forms.Panel();
-            this.btnEntityCrud = new System.Windows.Forms.Button();
-            this.btnItemCrud = new System.Windows.Forms.Button();
             this.btnFoodCrud = new System.Windows.Forms.Button();
+            this.btnItemCrud = new System.Windows.Forms.Button();
+            this.btnEntityCrud = new System.Windows.Forms.Button();
+            this.btnAdmin = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelChildForm = new System.Windows.Forms.Panel();
-            this.btnPlay = new System.Windows.Forms.Button();
             this.pSideMenu.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.pAdminSubMenu.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pSideMenu
@@ -57,30 +57,20 @@
             this.pSideMenu.Size = new System.Drawing.Size(200, 561);
             this.pSideMenu.TabIndex = 0;
             // 
-            // panel1
+            // btnPlay
             // 
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 100);
-            this.panel1.TabIndex = 0;
-            // 
-            // btnAdmin
-            // 
-            this.btnAdmin.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAdmin.FlatAppearance.BorderSize = 0;
-            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmin.ForeColor = System.Drawing.Color.White;
-            this.btnAdmin.Location = new System.Drawing.Point(0, 100);
-            this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnAdmin.Size = new System.Drawing.Size(200, 45);
-            this.btnAdmin.TabIndex = 1;
-            this.btnAdmin.Text = "Administrador";
-            this.btnAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdmin.UseVisualStyleBackColor = true;
-            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+            this.btnPlay.BackColor = System.Drawing.Color.Salmon;
+            this.btnPlay.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlay.Location = new System.Drawing.Point(0, 269);
+            this.btnPlay.Name = "btnPlay";
+            this.btnPlay.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnPlay.Size = new System.Drawing.Size(200, 45);
+            this.btnPlay.TabIndex = 3;
+            this.btnPlay.Text = "Jugar";
+            this.btnPlay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPlay.UseVisualStyleBackColor = false;
+            this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
             // 
             // pAdminSubMenu
             // 
@@ -94,21 +84,21 @@
             this.pAdminSubMenu.Size = new System.Drawing.Size(200, 124);
             this.pAdminSubMenu.TabIndex = 2;
             // 
-            // btnEntityCrud
+            // btnFoodCrud
             // 
-            this.btnEntityCrud.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEntityCrud.FlatAppearance.BorderSize = 0;
-            this.btnEntityCrud.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEntityCrud.ForeColor = System.Drawing.Color.White;
-            this.btnEntityCrud.Location = new System.Drawing.Point(0, 0);
-            this.btnEntityCrud.Name = "btnEntityCrud";
-            this.btnEntityCrud.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnEntityCrud.Size = new System.Drawing.Size(200, 40);
-            this.btnEntityCrud.TabIndex = 0;
-            this.btnEntityCrud.Text = "CRUD Entidades";
-            this.btnEntityCrud.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEntityCrud.UseVisualStyleBackColor = true;
-            this.btnEntityCrud.Click += new System.EventHandler(this.btnEntityCrud_Click);
+            this.btnFoodCrud.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnFoodCrud.FlatAppearance.BorderSize = 0;
+            this.btnFoodCrud.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFoodCrud.ForeColor = System.Drawing.Color.White;
+            this.btnFoodCrud.Location = new System.Drawing.Point(0, 80);
+            this.btnFoodCrud.Name = "btnFoodCrud";
+            this.btnFoodCrud.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnFoodCrud.Size = new System.Drawing.Size(200, 40);
+            this.btnFoodCrud.TabIndex = 2;
+            this.btnFoodCrud.Text = "CRUD Alimentos";
+            this.btnFoodCrud.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFoodCrud.UseVisualStyleBackColor = true;
+            this.btnFoodCrud.Click += new System.EventHandler(this.btnFoodCrud_Click);
             // 
             // btnItemCrud
             // 
@@ -126,20 +116,46 @@
             this.btnItemCrud.UseVisualStyleBackColor = true;
             this.btnItemCrud.Click += new System.EventHandler(this.btnItemCrud_Click);
             // 
-            // btnFoodCrud
+            // btnEntityCrud
             // 
-            this.btnFoodCrud.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnFoodCrud.FlatAppearance.BorderSize = 0;
-            this.btnFoodCrud.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFoodCrud.ForeColor = System.Drawing.Color.White;
-            this.btnFoodCrud.Location = new System.Drawing.Point(0, 80);
-            this.btnFoodCrud.Name = "btnFoodCrud";
-            this.btnFoodCrud.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
-            this.btnFoodCrud.Size = new System.Drawing.Size(200, 40);
-            this.btnFoodCrud.TabIndex = 2;
-            this.btnFoodCrud.Text = "CRUD Alimentos";
-            this.btnFoodCrud.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFoodCrud.UseVisualStyleBackColor = true;
+            this.btnEntityCrud.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnEntityCrud.FlatAppearance.BorderSize = 0;
+            this.btnEntityCrud.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEntityCrud.ForeColor = System.Drawing.Color.White;
+            this.btnEntityCrud.Location = new System.Drawing.Point(0, 0);
+            this.btnEntityCrud.Name = "btnEntityCrud";
+            this.btnEntityCrud.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
+            this.btnEntityCrud.Size = new System.Drawing.Size(200, 40);
+            this.btnEntityCrud.TabIndex = 0;
+            this.btnEntityCrud.Text = "CRUD Entidades";
+            this.btnEntityCrud.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEntityCrud.UseVisualStyleBackColor = true;
+            this.btnEntityCrud.Click += new System.EventHandler(this.btnEntityCrud_Click);
+            // 
+            // btnAdmin
+            // 
+            this.btnAdmin.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAdmin.FlatAppearance.BorderSize = 0;
+            this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdmin.ForeColor = System.Drawing.Color.White;
+            this.btnAdmin.Location = new System.Drawing.Point(0, 100);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnAdmin.Size = new System.Drawing.Size(200, 45);
+            this.btnAdmin.TabIndex = 1;
+            this.btnAdmin.Text = "Administrador";
+            this.btnAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAdmin.UseVisualStyleBackColor = true;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 100);
+            this.panel1.TabIndex = 0;
             // 
             // label1
             // 
@@ -161,21 +177,6 @@
             this.panelChildForm.Size = new System.Drawing.Size(734, 561);
             this.panelChildForm.TabIndex = 1;
             // 
-            // btnPlay
-            // 
-            this.btnPlay.BackColor = System.Drawing.Color.Salmon;
-            this.btnPlay.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPlay.Location = new System.Drawing.Point(0, 269);
-            this.btnPlay.Name = "btnPlay";
-            this.btnPlay.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnPlay.Size = new System.Drawing.Size(200, 45);
-            this.btnPlay.TabIndex = 3;
-            this.btnPlay.Text = "Jugar";
-            this.btnPlay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPlay.UseVisualStyleBackColor = false;
-            this.btnPlay.Click += new System.EventHandler(this.btnPlay_Click);
-            // 
             // FormHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -187,9 +188,9 @@
             this.Name = "FormHome";
             this.Text = "FormHome";
             this.pSideMenu.ResumeLayout(false);
+            this.pAdminSubMenu.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.pAdminSubMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

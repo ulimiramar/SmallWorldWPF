@@ -19,9 +19,11 @@ namespace SmallWorld.src.UI
     {
         EntityController entityController = EntityController.GetInstance();
         ItemController itemController = ItemController.GetInstance();
+        FoodController foodController = FoodController.GetInstance();
         public PrincipalFormTest()
         {
             InitializeComponent();
+            RefreshAllData();
         }
 
        
@@ -95,11 +97,23 @@ namespace SmallWorld.src.UI
         
         private void btnRefreshData_Click(object sender, EventArgs e)
         {
+            RefreshAllData();
+        }
+
+        private void RefreshAllData() 
+        {
             UpdateEntities();
             RefreshEntityValues();
             RefreshItems();
+            RefreshFoods();
         }
 
+        private void RefreshFoods()
+        {
+            bsFoods.DataSource = foodController.getFoods();
+            bsFoods.ResetBindings(false);
+            cbFood.DataSource = bsFoods;
+        }
         private void RefreshItems()
         {
             bsItems.DataSource = itemController.getItems();
@@ -180,9 +194,12 @@ namespace SmallWorld.src.UI
         {
             try
             {
-                if (cbCurrentPlayerEntities.SelectedItem is Entity selectedCurrentPlayerEntity)
+                if (cbCurrentPlayerEntities.SelectedItem is Entity selectedCurrentPlayerEntity) { 
                     if (cbItems.SelectedItem is Item item)
                         item.ExecuteEffectStrategy(selectedCurrentPlayerEntity);
+                    if (cbFood.SelectedItem is Food food)
+                        selectedCurrentPlayerEntity.Eat(food);
+                }
                 RefreshEntityValues();
             }
             catch (Exception ex)
@@ -191,6 +208,16 @@ namespace SmallWorld.src.UI
                 RefreshEntityValues();
             }
 
+        }
+
+        private void cbItems_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbFood.SelectedIndex = -1;
+        }
+
+        private void cbFood_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbItems.SelectedIndex = -1;
         }
     }
 }
