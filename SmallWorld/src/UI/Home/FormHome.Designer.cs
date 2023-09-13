@@ -59,8 +59,9 @@
             // 
             // btnPlay
             // 
-            this.btnPlay.BackColor = System.Drawing.Color.Salmon;
+            this.btnPlay.BackColor = System.Drawing.Color.Coral;
             this.btnPlay.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPlay.FlatAppearance.BorderSize = 0;
             this.btnPlay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPlay.Location = new System.Drawing.Point(0, 269);
             this.btnPlay.Name = "btnPlay";
@@ -134,10 +135,11 @@
             // 
             // btnAdmin
             // 
+            this.btnAdmin.BackColor = System.Drawing.Color.Coral;
             this.btnAdmin.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnAdmin.FlatAppearance.BorderSize = 0;
             this.btnAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdmin.ForeColor = System.Drawing.Color.White;
+            this.btnAdmin.ForeColor = System.Drawing.Color.Black;
             this.btnAdmin.Location = new System.Drawing.Point(0, 100);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
@@ -145,7 +147,7 @@
             this.btnAdmin.TabIndex = 1;
             this.btnAdmin.Text = "Administrador";
             this.btnAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdmin.UseVisualStyleBackColor = true;
+            this.btnAdmin.UseVisualStyleBackColor = false;
             this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
             // panel1

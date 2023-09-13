@@ -1,6 +1,6 @@
-﻿namespace SmallWorld.src.UI
+﻿namespace SmallWorld.src.UI.Admin.EntityCrud
 {
-    partial class EntitiesCrudFormTest
+    partial class FormEditEntity
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.lblId = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.txtDefenseShield = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.txtMaxEnergy = new System.Windows.Forms.TextBox();
@@ -48,271 +49,205 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.cbKingdom = new System.Windows.Forms.ComboBox();
-            this.btnCreateEntity = new System.Windows.Forms.Button();
-            this.dgvEntities = new System.Windows.Forms.DataGridView();
-            this.btnUpdateEntity = new System.Windows.Forms.Button();
-            this.btnDeleteEntity = new System.Windows.Forms.Button();
-            this.btnRandomData = new System.Windows.Forms.Button();
-            this.btnCancelUpdate = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lblId = new System.Windows.Forms.Label();
-            this.dgvEntitiesBs = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEntities)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEntitiesBs)).BeginInit();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Location = new System.Drawing.Point(425, 76);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(31, 13);
+            this.lblId.TabIndex = 123;
+            this.lblId.Text = "Valor";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(425, 63);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(16, 13);
+            this.label5.TabIndex = 122;
+            this.label5.Text = "Id";
             // 
             // txtDefenseShield
             // 
-            this.txtDefenseShield.Location = new System.Drawing.Point(194, 213);
+            this.txtDefenseShield.Location = new System.Drawing.Point(235, 215);
             this.txtDefenseShield.Name = "txtDefenseShield";
             this.txtDefenseShield.Size = new System.Drawing.Size(100, 20);
-            this.txtDefenseShield.TabIndex = 72;
+            this.txtDefenseShield.TabIndex = 121;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(191, 196);
+            this.label17.Location = new System.Drawing.Point(232, 198);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(152, 13);
-            this.label17.TabIndex = 71;
+            this.label17.TabIndex = 120;
             this.label17.Text = "Puntos del Escudo de defensa";
             // 
             // txtMaxEnergy
             // 
-            this.txtMaxEnergy.Location = new System.Drawing.Point(194, 161);
+            this.txtMaxEnergy.Location = new System.Drawing.Point(235, 163);
             this.txtMaxEnergy.Name = "txtMaxEnergy";
             this.txtMaxEnergy.Size = new System.Drawing.Size(100, 20);
-            this.txtMaxEnergy.TabIndex = 70;
+            this.txtMaxEnergy.TabIndex = 119;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(191, 145);
+            this.label13.Location = new System.Drawing.Point(232, 147);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(83, 13);
-            this.label13.TabIndex = 69;
+            this.label13.TabIndex = 118;
             this.label13.Text = "Energía máxima";
             // 
             // txtMaxLife
             // 
-            this.txtMaxLife.Location = new System.Drawing.Point(27, 213);
+            this.txtMaxLife.Location = new System.Drawing.Point(68, 215);
             this.txtMaxLife.Name = "txtMaxLife";
             this.txtMaxLife.Size = new System.Drawing.Size(100, 20);
-            this.txtMaxLife.TabIndex = 68;
+            this.txtMaxLife.TabIndex = 117;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(24, 195);
+            this.label12.Location = new System.Drawing.Point(65, 197);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(67, 13);
-            this.label12.TabIndex = 67;
+            this.label12.TabIndex = 116;
             this.label12.Text = "Vida Máxima";
             // 
             // chbAttackRange
             // 
             this.chbAttackRange.AutoSize = true;
-            this.chbAttackRange.Location = new System.Drawing.Point(194, 258);
+            this.chbAttackRange.Location = new System.Drawing.Point(235, 260);
             this.chbAttackRange.Name = "chbAttackRange";
             this.chbAttackRange.Size = new System.Drawing.Size(172, 17);
-            this.chbAttackRange.TabIndex = 66;
+            this.chbAttackRange.TabIndex = 115;
             this.chbAttackRange.Text = "Habilidad de atacar a distancia";
             this.chbAttackRange.UseVisualStyleBackColor = true;
             // 
             // txtDefensePoints
             // 
-            this.txtDefensePoints.Location = new System.Drawing.Point(194, 117);
+            this.txtDefensePoints.Location = new System.Drawing.Point(235, 119);
             this.txtDefensePoints.Name = "txtDefensePoints";
             this.txtDefensePoints.Size = new System.Drawing.Size(100, 20);
-            this.txtDefensePoints.TabIndex = 65;
+            this.txtDefensePoints.TabIndex = 114;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(191, 100);
+            this.label10.Location = new System.Drawing.Point(232, 102);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(98, 13);
-            this.label10.TabIndex = 64;
+            this.label10.TabIndex = 113;
             this.label10.Text = "Puntos de Defensa";
             // 
             // txtAttackPoints
             // 
-            this.txtAttackPoints.Location = new System.Drawing.Point(26, 161);
+            this.txtAttackPoints.Location = new System.Drawing.Point(67, 163);
             this.txtAttackPoints.Name = "txtAttackPoints";
             this.txtAttackPoints.Size = new System.Drawing.Size(100, 20);
-            this.txtAttackPoints.TabIndex = 63;
+            this.txtAttackPoints.TabIndex = 112;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(24, 145);
+            this.label9.Location = new System.Drawing.Point(65, 147);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(91, 13);
-            this.label9.TabIndex = 62;
+            this.label9.TabIndex = 111;
             this.label9.Text = "Puntos de ataque";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(191, 55);
+            this.label4.Location = new System.Drawing.Point(232, 57);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 13);
-            this.label4.TabIndex = 61;
+            this.label4.TabIndex = 110;
             this.label4.Text = "Habitat";
             // 
             // cbHabitat
             // 
             this.cbHabitat.FormattingEnabled = true;
-            this.cbHabitat.Location = new System.Drawing.Point(194, 71);
+            this.cbHabitat.Location = new System.Drawing.Point(235, 73);
             this.cbHabitat.Name = "cbHabitat";
             this.cbHabitat.Size = new System.Drawing.Size(121, 21);
-            this.cbHabitat.TabIndex = 60;
+            this.cbHabitat.TabIndex = 109;
             // 
             // cbDiet
             // 
             this.cbDiet.FormattingEnabled = true;
-            this.cbDiet.Location = new System.Drawing.Point(29, 258);
+            this.cbDiet.Location = new System.Drawing.Point(70, 260);
             this.cbDiet.Name = "cbDiet";
             this.cbDiet.Size = new System.Drawing.Size(121, 21);
-            this.cbDiet.TabIndex = 59;
+            this.cbDiet.TabIndex = 108;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(26, 241);
+            this.label3.Location = new System.Drawing.Point(67, 243);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 13);
-            this.label3.TabIndex = 58;
+            this.label3.TabIndex = 107;
             this.label3.Text = "Dieta";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 100);
+            this.label2.Location = new System.Drawing.Point(64, 102);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 57;
+            this.label2.TabIndex = 106;
             this.label2.Text = "Reino";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 55);
+            this.label1.Location = new System.Drawing.Point(64, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(83, 13);
-            this.label1.TabIndex = 56;
+            this.label1.TabIndex = 105;
             this.label1.Text = "Nombre Entidad";
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(26, 71);
+            this.txtName.Location = new System.Drawing.Point(67, 73);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(100, 20);
-            this.txtName.TabIndex = 55;
+            this.txtName.TabIndex = 104;
             // 
             // cbKingdom
             // 
             this.cbKingdom.FormattingEnabled = true;
-            this.cbKingdom.Location = new System.Drawing.Point(26, 116);
+            this.cbKingdom.Location = new System.Drawing.Point(67, 118);
             this.cbKingdom.Name = "cbKingdom";
             this.cbKingdom.Size = new System.Drawing.Size(121, 21);
-            this.cbKingdom.TabIndex = 54;
+            this.cbKingdom.TabIndex = 103;
             // 
-            // btnCreateEntity
+            // btnUpdate
             // 
-            this.btnCreateEntity.Location = new System.Drawing.Point(29, 303);
-            this.btnCreateEntity.Name = "btnCreateEntity";
-            this.btnCreateEntity.Size = new System.Drawing.Size(197, 23);
-            this.btnCreateEntity.TabIndex = 53;
-            this.btnCreateEntity.Text = "Crear Entidad";
-            this.btnCreateEntity.UseVisualStyleBackColor = true;
-            this.btnCreateEntity.Click += new System.EventHandler(this.btnCreateEntity_Click_1);
+            this.btnUpdate.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.Location = new System.Drawing.Point(68, 312);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.TabIndex = 124;
+            this.btnUpdate.Text = "Actualizar";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // dgvEntities
-            // 
-            this.dgvEntities.AllowUserToAddRows = false;
-            this.dgvEntities.AllowUserToDeleteRows = false;
-            this.dgvEntities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEntities.Location = new System.Drawing.Point(349, 25);
-            this.dgvEntities.Name = "dgvEntities";
-            this.dgvEntities.ReadOnly = true;
-            this.dgvEntities.RowHeadersWidth = 51;
-            this.dgvEntities.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEntities.Size = new System.Drawing.Size(339, 208);
-            this.dgvEntities.TabIndex = 73;
-            // 
-            // btnUpdateEntity
-            // 
-            this.btnUpdateEntity.Location = new System.Drawing.Point(404, 255);
-            this.btnUpdateEntity.Name = "btnUpdateEntity";
-            this.btnUpdateEntity.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdateEntity.TabIndex = 74;
-            this.btnUpdateEntity.Text = "Modificar";
-            this.btnUpdateEntity.UseVisualStyleBackColor = true;
-            this.btnUpdateEntity.Click += new System.EventHandler(this.btnUpdateEntity_Click);
-            // 
-            // btnDeleteEntity
-            // 
-            this.btnDeleteEntity.Location = new System.Drawing.Point(504, 256);
-            this.btnDeleteEntity.Name = "btnDeleteEntity";
-            this.btnDeleteEntity.Size = new System.Drawing.Size(75, 23);
-            this.btnDeleteEntity.TabIndex = 75;
-            this.btnDeleteEntity.Text = "Borrar";
-            this.btnDeleteEntity.UseVisualStyleBackColor = true;
-            this.btnDeleteEntity.Click += new System.EventHandler(this.btnDeleteEntity_Click);
-            // 
-            // btnRandomData
-            // 
-            this.btnRandomData.Location = new System.Drawing.Point(26, 12);
-            this.btnRandomData.Name = "btnRandomData";
-            this.btnRandomData.Size = new System.Drawing.Size(197, 26);
-            this.btnRandomData.TabIndex = 76;
-            this.btnRandomData.Text = "LLenar formulario aleatoriamente";
-            this.btnRandomData.UseVisualStyleBackColor = true;
-            this.btnRandomData.Click += new System.EventHandler(this.btnRandomData_Click);
-            // 
-            // btnCancelUpdate
-            // 
-            this.btnCancelUpdate.Location = new System.Drawing.Point(404, 285);
-            this.btnCancelUpdate.Name = "btnCancelUpdate";
-            this.btnCancelUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelUpdate.TabIndex = 77;
-            this.btnCancelUpdate.Text = "Cancelar";
-            this.btnCancelUpdate.UseVisualStyleBackColor = true;
-            this.btnCancelUpdate.Visible = false;
-            this.btnCancelUpdate.Click += new System.EventHandler(this.btnCancelUpdate_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(243, 11);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(16, 13);
-            this.label5.TabIndex = 78;
-            this.label5.Text = "Id";
-            // 
-            // lblId
-            // 
-            this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(243, 24);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(31, 13);
-            this.lblId.TabIndex = 79;
-            this.lblId.Text = "Valor";
-            // 
-            // EntitiesCrudFormTest
+            // FormEditEntity
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(718, 522);
+            this.ClientSize = new System.Drawing.Size(702, 483);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.btnCancelUpdate);
-            this.Controls.Add(this.btnRandomData);
-            this.Controls.Add(this.btnDeleteEntity);
-            this.Controls.Add(this.btnUpdateEntity);
-            this.Controls.Add(this.dgvEntities);
             this.Controls.Add(this.txtDefenseShield);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.txtMaxEnergy);
@@ -332,13 +267,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.cbKingdom);
-            this.Controls.Add(this.btnCreateEntity);
-            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "EntitiesCrudFormTest";
-            this.Text = "EntitiesCrudFormTest";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEntities)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEntitiesBs)).EndInit();
+            this.Name = "FormEditEntity";
+            this.Text = "FormEditEntity";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -346,6 +277,8 @@
 
         #endregion
 
+        private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtDefenseShield;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtMaxEnergy;
@@ -365,14 +298,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.ComboBox cbKingdom;
-        private System.Windows.Forms.Button btnCreateEntity;
-        private System.Windows.Forms.DataGridView dgvEntities;
-        private System.Windows.Forms.Button btnUpdateEntity;
-        private System.Windows.Forms.Button btnDeleteEntity;
-        private System.Windows.Forms.BindingSource dgvEntitiesBs;
-        private System.Windows.Forms.Button btnRandomData;
-        private System.Windows.Forms.Button btnCancelUpdate;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }

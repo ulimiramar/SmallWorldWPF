@@ -58,7 +58,7 @@ namespace SmallWorld.src.UI
             RefreshEntityValues();
         }
 
-        //TODO: Talves sería bueno unir esto al updateEntities, o al revés. pero que quede el refresqueo en una sola función
+        
         private void RefreshEntityValues()
         {
             if (cbCurrentPlayerEntities.SelectedItem is Entity selectedCurrentPlayerEntity)
@@ -102,7 +102,7 @@ namespace SmallWorld.src.UI
 
         private void RefreshAllData() 
         {
-            UpdateEntities();
+            RefreshEntitiesComboBoxes();
             RefreshEntityValues();
             RefreshItems();
             RefreshFoods();
@@ -120,7 +120,7 @@ namespace SmallWorld.src.UI
             bsItems.ResetBindings(false);
             cbItems.DataSource = bsItems;
         }
-        private void UpdateEntities()
+        private void RefreshEntitiesComboBoxes()
         {
             bsCurrentPlayerEntities.DataSource = entityController.getEntities();
             bsWaitingPlayersEntities.DataSource = entityController.getEntities();
@@ -140,7 +140,6 @@ namespace SmallWorld.src.UI
             RefreshEntityValues();
         }
 
-        //TODO: problema con el botón ataque, cuando el witingPlayer esta en una entidad muerta y cambia a una entidad viva, pero el currentPlayer cambia a una entidad muerta, el botón atacar sigue enabled.
         private void CurrentPlayerEntityIsDied(Entity selectedCurrentPlayerEntity)
         {
             

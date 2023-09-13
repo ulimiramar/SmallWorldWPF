@@ -28,7 +28,7 @@ namespace SmallWorld.src.Model.Interactuable
             EnergyValue = energyValue;
         }
 
-        //TODO: resolver esto no funciona, en realidad en el diagrama de clases está distinto
+        //TODO: resolver esto no funciona si saco el ToString(), en realidad en el diagrama de clases está distinto
         public bool CanEat(Entity entity)
         {
             bool canEat = false;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SmallWorld.src.UI.Admin;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,8 +40,9 @@ namespace SmallWorld.src.UI.Home
         {
             ShowSubMenu(pAdminSubMenu);
         }
+
         private Form activeForm = null;
-        private void OpenChildForm(Form childForm)
+        public void OpenChildForm(Form childForm)
         {
             if (activeForm != null)
             {
@@ -57,7 +59,7 @@ namespace SmallWorld.src.UI.Home
 
         private void btnEntityCrud_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new EntitiesCrudFormTest());
+            OpenChildForm(new FormEntityCrud(this));
         }
 
         private void btnItemCrud_Click(object sender, EventArgs e)

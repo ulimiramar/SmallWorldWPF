@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SmallWorld.src.Interfaces
 {
-    internal interface IHabitat
+    public interface IHabitat
     {
     }
 }

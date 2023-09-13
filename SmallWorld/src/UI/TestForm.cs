@@ -48,9 +48,7 @@ namespace SmallWorld.src.UI
             cbHabitat.Items.Add(new Terrestrial());
 
 
-            //TODO: hacer que las elementos del windows forms se actualicen solos cuando haya cambios.
-            //TODO: hacer crud de items y poder usarlos
-            //TODO: hacer cruud de alimentos y poder comerlos
+            
 
             /*
              * Código usando reflexión para traer los nombres de las clases que implementan cierta interfaz

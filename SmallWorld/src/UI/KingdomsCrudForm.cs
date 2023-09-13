@@ -48,7 +48,7 @@ namespace SmallWorld.src.UI
 
         private void btnGetKingdoms_Click(object sender, EventArgs e)
         {
-	        //TODO: todavía no funciona este botón, si lo apreto no trae la lista de kingdoms
+	        
             dgvKingdoms.DataSource = kingdomController.GetKingdoms();
             dgvKingdoms.Refresh();
         }
