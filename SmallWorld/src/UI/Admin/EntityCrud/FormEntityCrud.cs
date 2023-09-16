@@ -17,12 +17,10 @@ namespace SmallWorld.src.UI.Admin
     public partial class FormEntityCrud : Form
     {
         EntityController entityController = EntityController.GetInstance();
-        private FormHome formHome;
-        public FormEntityCrud(FormHome formHome)
+        public FormEntityCrud()
         {
             InitializeComponent();
             RefreshDataGridEntities();
-            this.formHome = formHome;
         }
         private void RefreshDataGridEntities()
         {
@@ -33,8 +31,8 @@ namespace SmallWorld.src.UI.Admin
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            FormCreateEntity formCreateEntity = new FormCreateEntity();
-            formHome.OpenChildForm(formCreateEntity);
+            new FormCreateEntity().ShowDialog();
+            RefreshDataGridEntities();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -45,12 +43,14 @@ namespace SmallWorld.src.UI.Admin
 
             FormEditEntity formEditEntity = new FormEditEntity
                 (
-                    entity.Id, entity.Kingdom, entity.Name, 
+                    entity
+                    /*entity.Id, entity.Kingdom, entity.Name, 
                     entity.Diet, entity.Habitat, entity.AttackPoints, 
                     entity.DefensePoints, entity.AttackRange, entity.MaxLife,
-                    entity.MaxEnergy, entity.DefenseShield
+                    entity.MaxEnergy, entity.DefenseShield*/
                 ) ;
-            formHome.OpenChildForm(formEditEntity);
+            formEditEntity.ShowDialog();
+            RefreshDataGridEntities();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

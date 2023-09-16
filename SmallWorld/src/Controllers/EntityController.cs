@@ -84,6 +84,17 @@ namespace SmallWorld.src.Controllers
             }
         }
 
-        
+        public void Update(Entity entityToModify, Entity entityModified)
+        {
+            
+            int index = Entities.FindIndex(e => e == entityToModify);
+
+            if (index != -1)
+            {
+                Entities[index] = entityModified;
+                
+            }
+        }
+
     }
 }

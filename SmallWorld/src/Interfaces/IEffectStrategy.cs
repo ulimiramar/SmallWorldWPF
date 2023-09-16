@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SmallWorld.src.Interfaces
 {
-    internal interface IEffectStrategy
+    public interface IEffectStrategy
     {
         void Effect(Entity entity);
     }

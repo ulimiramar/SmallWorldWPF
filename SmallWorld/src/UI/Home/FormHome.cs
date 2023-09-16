@@ -1,4 +1,5 @@
 ﻿using SmallWorld.src.UI.Admin;
+using SmallWorld.src.UI.Admin.ItemCrud;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -59,12 +60,12 @@ namespace SmallWorld.src.UI.Home
 
         private void btnEntityCrud_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormEntityCrud(this));
+            OpenChildForm(new FormEntityCrud());
         }
 
         private void btnItemCrud_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new ItemsCrudFormTest());
+            OpenChildForm(new FormItemsCrudHome());
         }
 
         private void btnPlay_Click(object sender, EventArgs e)

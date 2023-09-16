@@ -12,9 +12,23 @@ namespace SmallWorld.src.Model.Reino
         public int Id { get => Id; set => Id = value; }
         public string Name { get => Name; set => Name = value; }
         public bool Deleted { get => Deleted; set => Deleted = value; }*/
+
+        private string name = "Vegetal";
+        public override bool Equals(object obj)
+        {
+            if (obj is Vegetable other)
+            {
+                return name == other.name;
+            }
+            return false;
+        }
         public override string ToString()
         {
-            return "Vegetal";
+            return name;
+        }
+        public override int GetHashCode()
+        {
+            return name.GetHashCode();
         }
     }
 }

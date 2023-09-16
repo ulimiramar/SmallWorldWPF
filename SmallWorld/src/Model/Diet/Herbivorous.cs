@@ -9,9 +9,22 @@ namespace SmallWorld.src.Model.Dieta
 {
     internal class Herbivorous : IDiet
     {
+        private string name = "Herbívoro";
+        public override bool Equals(object obj)
+        {
+            if (obj is Herbivorous other)
+            {
+                return name == other.name;
+            }
+            return false;
+        }
         public override string ToString()
         {
-            return "Herbívoro";
+            return name;
+        }
+        public override int GetHashCode()
+        {
+            return name.GetHashCode();
         }
     }
 }

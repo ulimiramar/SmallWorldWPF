@@ -114,6 +114,24 @@
     <Compile Include="src\UI\Admin\EntityCrud\FormEntityCrud.Designer.cs">
       <DependentUpon>FormEntityCrud.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\UI\Admin\ItemsCrud\FormCreateItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\UI\Admin\ItemsCrud\FormCreateItem.Designer.cs">
+      <DependentUpon>FormCreateItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\UI\Admin\ItemsCrud\FormEditItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\UI\Admin\ItemsCrud\FormEditItem.Designer.cs">
+      <DependentUpon>FormEditItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\UI\Admin\ItemsCrud\FormItemsCrudHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\UI\Admin\ItemsCrud\FormItemsCrudHome.Designer.cs">
+      <DependentUpon>FormItemsCrudHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\UI\CustomControls\HexagonControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -186,6 +204,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\UI\Admin\EntityCrud\FormEntityCrud.resx">
       <DependentUpon>FormEntityCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\UI\Admin\ItemsCrud\FormCreateItem.resx">
+      <DependentUpon>FormCreateItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\UI\Admin\ItemsCrud\FormEditItem.resx">
+      <DependentUpon>FormEditItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\UI\Admin\ItemsCrud\FormItemsCrudHome.resx">
+      <DependentUpon>FormItemsCrudHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\UI\EntitiesCrudFormTest.resx">
       <DependentUpon>EntitiesCrudFormTest.cs</DependentUpon>

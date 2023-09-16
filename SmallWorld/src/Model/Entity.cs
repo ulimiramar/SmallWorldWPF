@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace SmallWorld.src.Model
 {
-    internal class Entity
+    public class Entity
     {
         private static int lastId = 0;
         public int Id { get; private set; }
