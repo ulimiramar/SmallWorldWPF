@@ -197,7 +197,8 @@ namespace SmallWorld.src.UI
                     if (cbItems.SelectedItem is Item item)
                         item.ExecuteEffectStrategy(selectedCurrentPlayerEntity);
                     if (cbFood.SelectedItem is Food food)
-                        selectedCurrentPlayerEntity.Eat(food);
+                        //selectedCurrentPlayerEntity.Eat(food);
+                        entityController.Eat(selectedCurrentPlayerEntity, food);
                 }
                 RefreshEntityValues();
             }

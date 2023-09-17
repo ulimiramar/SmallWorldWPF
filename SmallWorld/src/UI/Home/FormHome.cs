@@ -76,7 +76,7 @@ namespace SmallWorld.src.UI.Home
 
         private void btnFoodCrud_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FoodCrudFormTest());
+            OpenChildForm(new FormFoodCrudHome());
         }
     }
 }

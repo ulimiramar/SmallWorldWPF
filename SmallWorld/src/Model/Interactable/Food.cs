@@ -13,16 +13,14 @@ namespace SmallWorld.src.Model.Interactuable
         private static int lastId = 0;
         public int Id { get; private set; }
         private string name;
-        private IDiet diet;
+        private List<IDiet> diet;
         private int energyValue;
 
         public string Name { get => name; set => name = value; }
-
-        //TODO: hacer que este Diet muestre su nombre en el data grid de alimentos, y modificar la función de canEat para que ande
-        public IDiet Diet { get => diet; set => diet = value; }
+        public List<IDiet> Diet { get => diet; set => diet = value; }
         public int EnergyValue { get => energyValue; set => energyValue = value; }
 
-        public Food(string name, IDiet diet, int energyValue)
+        public Food(string name, List<IDiet> diet, int energyValue)
         {
             lastId++;
             Id = lastId;
@@ -31,7 +29,7 @@ namespace SmallWorld.src.Model.Interactuable
             EnergyValue = energyValue;
         }
 
-        //TODO: resolver esto no funciona si saco el ToString(), en realidad en el diagrama de clases está distinto
+        //TODO: sacar esto de acá, ya no lo uso
         public bool CanEat(Entity entity)
         {
             bool canEat = false;

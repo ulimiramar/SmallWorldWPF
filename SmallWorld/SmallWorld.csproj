@@ -114,6 +114,18 @@
     <Compile Include="src\UI\Admin\EntityCrud\FormEntityCrud.Designer.cs">
       <DependentUpon>FormEntityCrud.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\UI\Admin\FoodCrud\FormCreateFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\UI\Admin\FoodCrud\FormCreateFood.Designer.cs">
+      <DependentUpon>FormCreateFood.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\UI\Admin\FoodCrud\FormFoodCrudHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\UI\Admin\FoodCrud\FormFoodCrudHome.Designer.cs">
+      <DependentUpon>FormFoodCrudHome.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\UI\Admin\ItemsCrud\FormCreateItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +216,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\UI\Admin\EntityCrud\FormEntityCrud.resx">
       <DependentUpon>FormEntityCrud.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\UI\Admin\FoodCrud\FormCreateFood.resx">
+      <DependentUpon>FormCreateFood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\UI\Admin\FoodCrud\FormFoodCrudHome.resx">
+      <DependentUpon>FormFoodCrudHome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\UI\Admin\ItemsCrud\FormCreateItem.resx">
       <DependentUpon>FormCreateItem.cs</DependentUpon>

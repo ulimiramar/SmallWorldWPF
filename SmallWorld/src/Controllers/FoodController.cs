@@ -24,7 +24,7 @@ namespace SmallWorld.src.Controllers
         }
 
 
-        public void AddFood(string name, IDiet diet, int energyValue)
+        public void AddFood(string name, List<IDiet> diet, int energyValue)
         {
             Food FoodToAdd = new Food(name,diet,energyValue);
             Foods.Add(FoodToAdd);
@@ -46,7 +46,7 @@ namespace SmallWorld.src.Controllers
 
 
 
-        public void Update(int id, string name, IDiet diet, int energyValue)
+        public void Update(int id, string name, List<IDiet> diet, int energyValue)
         {
             foreach (Food FoodToUpdate in Foods)
             {
@@ -59,5 +59,7 @@ namespace SmallWorld.src.Controllers
                 }
             }
         }
+
+        
     }
 }

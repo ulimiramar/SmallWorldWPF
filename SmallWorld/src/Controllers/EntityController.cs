@@ -1,5 +1,7 @@
 ﻿using SmallWorld.src.Interfaces;
 using SmallWorld.src.Model;
+using SmallWorld.src.Model.Dieta;
+using SmallWorld.src.Model.Interactuable;
 using SmallWorld.src.Model.Reino;
 using System;
 using System.Collections.Generic;
@@ -8,6 +10,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace SmallWorld.src.Controllers
@@ -95,6 +98,14 @@ namespace SmallWorld.src.Controllers
                 
             }
         }
-
+        public void Eat(Entity entity, Food food)
+        {
+            if (food.Diet.Contains(entity.Diet))
+                {
+                    entity.CurrentEnergy += food.EnergyValue;
+                }
+                else throw new Exception($"no es compatible con la dieta. {food.Name} {food.Diet} != {entity.Name} {entity.Diet}");
+        }
+    
     }
 }

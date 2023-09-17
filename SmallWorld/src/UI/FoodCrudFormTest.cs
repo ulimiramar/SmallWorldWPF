@@ -46,7 +46,7 @@ namespace SmallWorld.src.UI
             try
             {
                 //EntityController.GetInstance().AddEntity()
-                foodController.AddFood(txtFoodName.Text, (IDiet)cbDiet.SelectedItem, Convert.ToInt32(txtEnergyValue.Text) ) ;
+                //foodController.AddFood(txtFoodName.Text, (IDiet)cbDiet.SelectedItem, Convert.ToInt32(txtEnergyValue.Text) ) ;
                 RefreshDataGridItems();
                 ClearFormControls();
             }
@@ -99,7 +99,7 @@ namespace SmallWorld.src.UI
                 btnCancelUpdate.Visible = false;
                 dgvFoods.Enabled = true;
 
-                foodController.Update(Convert.ToInt32(lblId.Text), txtFoodName.Text, (IDiet)cbDiet.SelectedItem, Convert.ToInt32(txtEnergyValue.Text));
+                //foodController.Update(Convert.ToInt32(lblId.Text), txtFoodName.Text, (IDiet)cbDiet.SelectedItem, Convert.ToInt32(txtEnergyValue.Text));
                 RefreshDataGridItems();
                 ClearFormControls();
             }

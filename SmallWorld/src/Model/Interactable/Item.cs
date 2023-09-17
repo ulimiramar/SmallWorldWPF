@@ -12,7 +12,7 @@ namespace SmallWorld.src.Model.Interactuable
     {
         //podria haber un item que te agregue valores por este turno, permanentemente o por un ataque
         //un item se agarra y se activa. requiere energía. no se va a saber que hace cada item.
-        //item implementa un reino, es decir no todos los items pueden ser usados por todos los reinos.
+        //item implementa un reino, es decir no todos los items pueden ser usados por todos los reinos. Esto falta implementar
         
         private static int lastId = 0;
         public int Id { get; private set; }
