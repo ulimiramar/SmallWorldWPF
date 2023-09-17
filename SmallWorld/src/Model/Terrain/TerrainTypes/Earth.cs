@@ -8,13 +8,16 @@ using System.Threading.Tasks;
 
 namespace SmallWorld.src.Model.Terreno
 {
-    internal class Water : ITerrain
+    internal class Earth : ITerrainType
     {
-        private Bitmap ImageRute = global::SmallWorld.Properties.Resources.waterSea;
+        private Bitmap ImageRute = global::SmallWorld.Properties.Resources.EarthGreen;
+        
+
+        //private string ImageRute = $@"I:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\Resources\EarthGreen.jpg";
 
         public override string ToString()
         {
-            return "Agua";
+            return "Tierra";
         }
         public Bitmap getTerrainImageRute()
         {

@@ -1,4 +1,5 @@
 ﻿using SmallWorld.src.Interfaces;
+using SmallWorld.src.Model.Terrain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +10,12 @@ namespace SmallWorld.src.Model.Map
 {
     internal class Map
     {
-        List<ITerrain> Terrains = new List<ITerrain>();
-
-        public Map(List<ITerrain> terrains)
+        private List<Land> lands;
+        internal List<Land> Lands { get => lands; set => lands = value; }
+        public Map(List<Land> lands)
         {
-            Terrains = terrains;
+            Lands = lands;
         }
+        public Map() { }
     }
 }

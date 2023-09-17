@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SmallWorld.src.Model.Terreno
 {
-    internal class Air
+    internal class Air : ITerrainType
     {
         public string getTerrainImageRute()
         {

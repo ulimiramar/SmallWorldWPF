@@ -25,7 +25,7 @@ namespace SmallWorld.src.UI
     public partial class TestForm : Form
     {
         private EntityController entityController = EntityController.GetInstance();
-        private MapController mapController = MapController.GetController();
+        //private MapController mapController = MapController.GetController();
         List<HexagonControl> HexagonsList = new List<HexagonControl>();
 
         public TestForm()
@@ -140,12 +140,12 @@ namespace SmallWorld.src.UI
 
         private void btnCreateMap_Click(object sender, EventArgs e)
         {
-            mapController.GenerateMap();
+            //mapController.GenerateMap();
         }
 
         private void btnShowMap_Click(object sender, EventArgs e)
         {
-            List<Bitmap> imagesRutes = new List<Bitmap>();
+            /*List<Bitmap> imagesRutes = new List<Bitmap>();
             List<HexagonControl> HexagonsList = new List<HexagonControl>();
 
             int hexagonSize = 60;
@@ -196,7 +196,7 @@ namespace SmallWorld.src.UI
                 // Agrega el hexágono al Panel
                 panelMap.Controls.Add(Hexagon);
                 HexagonsList.Add(Hexagon);
-            }
+            }*/
         
 
 

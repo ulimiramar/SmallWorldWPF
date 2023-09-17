@@ -3,6 +3,7 @@ using SmallWorld.src.Interfaces;
 using SmallWorld.src.Model;
 using SmallWorld.src.Model.Interactable.ItemEffects;
 using SmallWorld.src.Model.Interactuable;
+using SmallWorld.src.Model.Terrain;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,8 @@ namespace SmallWorld.src.UI
         EntityController entityController = EntityController.GetInstance();
         ItemController itemController = ItemController.GetInstance();
         FoodController foodController = FoodController.GetInstance();
+        MapController mapController = MapController.GetInstance();
+        LandController landController = LandController.GetInstance();
         public PrincipalFormTest()
         {
             InitializeComponent();
@@ -106,8 +109,14 @@ namespace SmallWorld.src.UI
             RefreshEntityValues();
             RefreshItems();
             RefreshFoods();
+            RefreshMap();
         }
 
+        private void RefreshMap()
+        {
+            //TODO: descomentar
+            //cbLands.DataSource = landController.getLands();
+        }
         private void RefreshFoods()
         {
             bsFoods.DataSource = foodController.getFoods();
@@ -218,6 +227,12 @@ namespace SmallWorld.src.UI
         private void cbFood_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbItems.SelectedIndex = -1;
+        }
+
+        private void btnGenerateMap_Click(object sender, EventArgs e)
+        {
+            //TODO: descomentar
+            //mapController.GenerateMap();
         }
     }
 }

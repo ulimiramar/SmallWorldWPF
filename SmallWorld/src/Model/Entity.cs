@@ -31,7 +31,7 @@ namespace SmallWorld.src.Model
         bool attackRange;
         int costToAttack;
 
-        Terrain currentTerrain;
+        //Terrain currentTerrain;
         bool dieStatus;
         int defenseShield;
         //Point position;

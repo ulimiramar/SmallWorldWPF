@@ -58,6 +58,7 @@
     <Compile Include="src\Controllers\FoodController.cs" />
     <Compile Include="src\Controllers\ItemController.cs" />
     <Compile Include="src\Controllers\KingdomController.cs" />
+    <Compile Include="src\Controllers\LandController.cs" />
     <Compile Include="src\Controllers\MapController.cs" />
     <Compile Include="src\Interfaces\IDiet.cs" />
     <Compile Include="src\Interfaces\IEffectStrategy.cs" />
@@ -66,6 +67,7 @@
     <Compile Include="src\Interfaces\IInteractable.cs" />
     <Compile Include="src\Interfaces\IKingdom.cs" />
     <Compile Include="src\Interfaces\ITerrain.cs" />
+    <Compile Include="src\Interfaces\ITerrainType.cs" />
     <Compile Include="src\Model\Diet\Carnivorous.cs" />
     <Compile Include="src\Model\Diet\Herbivorous.cs" />
     <Compile Include="src\Model\Diet\Omnivorous.cs" />
@@ -77,6 +79,7 @@
     <Compile Include="src\Model\Interactable\ItemEffects\GodMode.cs" />
     <Compile Include="src\Model\Interactable\ItemEffects\Kill.cs" />
     <Compile Include="src\Model\Interactable\ItemEffects\MaxAttackPoints.cs" />
+    <Compile Include="src\Model\Map\Land.cs" />
     <Compile Include="src\Static\Dice.cs" />
     <Compile Include="src\Model\Interactable\Food.cs" />
     <Compile Include="src\Model\Interactable\Item.cs" />
@@ -85,11 +88,10 @@
     <Compile Include="src\Model\Kingdom\Alien.cs" />
     <Compile Include="src\Model\Kingdom\Machine.cs" />
     <Compile Include="src\Model\Kingdom\Vegetable.cs" />
-    <Compile Include="src\Model\Map\Terrain.cs" />
     <Compile Include="src\Model\Map\Map.cs" />
-    <Compile Include="src\Model\Terrain\Water.cs" />
-    <Compile Include="src\Model\Terrain\Air.cs" />
-    <Compile Include="src\Model\Terrain\Earth.cs" />
+    <Compile Include="src\Model\Terrain\TerrainTypes\Water.cs" />
+    <Compile Include="src\Model\Terrain\TerrainTypes\Air.cs" />
+    <Compile Include="src\Model\Terrain\TerrainTypes\Earth.cs" />
     <Compile Include="src\UI\AdminFormTest.cs">
       <SubType>Form</SubType>
     </Compile>
