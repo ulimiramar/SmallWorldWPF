@@ -120,6 +120,12 @@
     <Compile Include="src\UI\Admin\FoodCrud\FormCreateFood.Designer.cs">
       <DependentUpon>FormCreateFood.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\UI\Admin\FoodCrud\FormEditFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\UI\Admin\FoodCrud\FormEditFood.Designer.cs">
+      <DependentUpon>FormEditFood.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\UI\Admin\FoodCrud\FormFoodCrudHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +225,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\UI\Admin\FoodCrud\FormCreateFood.resx">
       <DependentUpon>FormCreateFood.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\UI\Admin\FoodCrud\FormEditFood.resx">
+      <DependentUpon>FormEditFood.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\UI\Admin\FoodCrud\FormFoodCrudHome.resx">
       <DependentUpon>FormFoodCrudHome.cs</DependentUpon>

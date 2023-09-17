@@ -18,6 +18,17 @@ namespace SmallWorld.src.Model.Interactuable
 
         public string Name { get => name; set => name = value; }
         public List<IDiet> Diet { get => diet; set => diet = value; }
+        public string DietNames { 
+            get 
+            {
+                string dietListString = "";
+                foreach(var d in diet)
+                {
+                    dietListString = string.Join(", ", diet);
+                }
+                return dietListString;
+            } 
+        }
         public int EnergyValue { get => energyValue; set => energyValue = value; }
 
         public Food(string name, List<IDiet> diet, int energyValue)
@@ -27,6 +38,10 @@ namespace SmallWorld.src.Model.Interactuable
             Name = name;
             Diet = diet;
             EnergyValue = energyValue;
+        }
+
+        public Food()
+        {
         }
 
         //TODO: sacar esto de acá, ya no lo uso

@@ -25,9 +25,9 @@ namespace SmallWorld.src.Controllers
         }
 
 
-        public void AddItem(IEffectStrategy effectStrategy)
+        public void AddItem(List<IEffectStrategy> effectStrategies, string name)
         {
-            Item ItemToAdd = new Item(effectStrategy);
+            Item ItemToAdd = new Item(effectStrategies, name);
             Items.Add(ItemToAdd);
         }
 
@@ -48,7 +48,7 @@ namespace SmallWorld.src.Controllers
 
 
         public void Update(int id, IEffectStrategy effecStrategy)
-        {
+        {/*
             foreach (Item ItemToUpdate in Items)
             {
                 if (ItemToUpdate.Id == id)
@@ -56,6 +56,18 @@ namespace SmallWorld.src.Controllers
                     ItemToUpdate.EffectStrategy = effecStrategy;
                     break;
                 }
+            }*/
+        }
+
+        public void Update(Item itemToModify, Item itemModified)
+        {
+
+            int index = Items.FindIndex(e => e == itemToModify);
+
+            if (index != -1)
+            {
+                Items[index] = itemModified;
+
             }
         }
     }

@@ -35,10 +35,10 @@ namespace SmallWorld.src.UI.Admin.FoodCrud
         private void btnCreate_Click(object sender, EventArgs e)
         {
             List<IDiet> selectedDiets = new List<IDiet>();
-            //TODO: System.InvalidCastException: 'No se puede convertir un objeto de tipo 'System.String' al tipo 'SmallWorld.src.Interfaces.IDiet'.'
-            foreach (IDiet item in clbListDiets.CheckedItems)
+            
+            foreach (IDiet diet in clbListDiets.CheckedItems)
             {
-                    selectedDiets.Add(item);
+                    selectedDiets.Add(diet);
             }
             try
             {
@@ -54,7 +54,10 @@ namespace SmallWorld.src.UI.Admin.FoodCrud
         {
             txtEnergyValue.Text = "";
             txtFoodName.Text = "";
-            clbListDiets.ClearSelected();
+            for (int i = 0; i < clbListDiets.Items.Count; i++)
+            {
+                clbListDiets.SetItemChecked(i, false);
+            }
         }
 
         private void btnRandomData_Click(object sender, EventArgs e)
@@ -62,8 +65,20 @@ namespace SmallWorld.src.UI.Admin.FoodCrud
             Random random = new Random();
             txtEnergyValue.Text = Convert.ToString(random.Next(10, 100));
             txtFoodName.Text = GetRandomString(8);
+
+
+
+            //lógica para marcar al menos un checkbox aleatorios y luego los demás aleatorios
+
+            int randomIndex = random.Next(0, clbListDiets.Items.Count);
+            clbListDiets.SetItemChecked(randomIndex, true);
+
             for (int i = 0; i < clbListDiets.Items.Count; i++)
             {
+                if (i == randomIndex)
+                {
+                    continue; // Salta el elemento que ya marcamos aleatoriamente
+                }
                 bool isChecked = random.Next(0, 2) == 1; // Genera 0 o 1 aleatoriamente
                 clbListDiets.SetItemChecked(i, isChecked);
             }

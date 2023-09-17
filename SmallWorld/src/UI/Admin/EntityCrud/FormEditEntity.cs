@@ -21,22 +21,6 @@ namespace SmallWorld.src.UI.Admin.EntityCrud
     {
         EntityController entityController = EntityController.GetInstance();
         Entity entityToModify = new Entity();
-        public FormEditEntity(int id, IKingdom kingdom, string name, IDiet diet, IHabitat habitat, int atkPoints, int defPoints, bool rangeAttack, int maxLife, int maxEnergy, int defenseShield)
-        {
-            InitializeComponent();
-            FillComboBoxes();
-            //lblId.Text = id.ToString();
-            cbKingdom.SelectedItem = kingdom;
-            txtName.Text = name;
-            cbDiet.SelectedItem = diet;
-            cbHabitat.SelectedItem = habitat;
-            txtAttackPoints.Text = atkPoints.ToString();
-            txtDefensePoints.Text = defPoints.ToString();
-            chbAttackRange.Checked = rangeAttack;
-            txtMaxLife.Text = maxLife.ToString();
-            txtMaxEnergy.Text = maxEnergy.ToString();
-            txtDefenseShield.Text = defenseShield.ToString();
-        }
         public FormEditEntity(Entity entityToModify)
         {
             InitializeComponent();

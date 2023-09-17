@@ -1,4 +1,5 @@
 ﻿using SmallWorld.src.Interfaces;
+using SmallWorld.src.Model;
 using SmallWorld.src.Model.Interactuable;
 using System;
 using System.Collections.Generic;
@@ -59,7 +60,17 @@ namespace SmallWorld.src.Controllers
                 }
             }
         }
+        public void Update(Food foodToModify, Food foodModified)
+        {
 
-        
+            int index = Foods.FindIndex(e => e == foodToModify);
+
+            if (index != -1)
+            {
+                Foods[index] = foodModified;
+
+            }
+        }
+
     }
 }

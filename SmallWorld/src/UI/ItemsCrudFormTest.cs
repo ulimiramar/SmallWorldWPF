@@ -55,7 +55,7 @@ namespace SmallWorld.src.UI
             try
             {
                 //EntityController.GetInstance().AddEntity()
-                itemController.AddItem((IEffectStrategy)cbItemEffect.SelectedItem);
+                //itemController.AddItem((IEffectStrategy)cbItemEffect.SelectedItem);
                 RefreshDataGridItems();
                 ClearFormControls();
             }
@@ -90,7 +90,7 @@ namespace SmallWorld.src.UI
                 Item itemToUpdate = (Item)selectedRow.DataBoundItem;
 
                 // Mostrar los datos en los controles del formulario
-                cbItemEffect.SelectedItem = itemToUpdate.EffectStrategy;
+                //cbItemEffect.SelectedItem = itemToUpdate.EffectStrategy;
                 lblId.Text = itemToUpdate.Id.ToString();
 
             }

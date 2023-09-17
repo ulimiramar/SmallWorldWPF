@@ -2,6 +2,7 @@
 using SmallWorld.src.Model;
 using SmallWorld.src.Model.Interactuable;
 using SmallWorld.src.UI.Admin.EntityCrud;
+using SmallWorld.src.UI.Admin.FoodCrud;
 using SmallWorld.src.UI.Admin.ItemsCrud;
 using System;
 using System.Collections.Generic;
@@ -42,9 +43,13 @@ namespace SmallWorld.src.UI.Admin.ItemCrud
             Item item = (Item)selectedRow.DataBoundItem;
 
 
-            FormEditItem formEditItem = new FormEditItem(item.Id, item.EffectStrategy);
+            //FormEditItem formEditItem = new FormEditItem(item.Id, item.EffectStrategy);
+            FormEditItem formEditItem = new FormEditItem(item);
             formEditItem.ShowDialog();
             RefreshDataGridItems();
+
+            
+
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

@@ -17,37 +17,62 @@ namespace SmallWorld.src.Model.Interactuable
         private static int lastId = 0;
         public int Id { get; private set; }
 
-        IEffectStrategy effectStrategy;
+        private string name;
+
+        List<IEffectStrategy> effectStrategies;
 
         //properties
-        internal IEffectStrategy EffectStrategy { get => effectStrategy; set => effectStrategy = value; }
-        public string EffectName 
-        { 
-            get 
+        public string Name { get => name; set => name = value; }
+        internal List<IEffectStrategy> EffectStrategies { get => effectStrategies; set => effectStrategies = value; }
+
+        public string StrategyNames
+        {
+            get
             {
-                string name = "";
-                if (effectStrategy != null) name = effectStrategy.ToString();
-                return name;
-            } 
+                string effectsListString = "";
+                foreach (var e in effectStrategies)
+                {
+                    effectsListString = string.Join(", ", effectStrategies);
+                }
+                return effectsListString;
+            }
         }
 
-        public Item(IEffectStrategy effectStrategy)
+        
+
+        /*public string EffectName 
+{ 
+get 
+{
+string name = "";
+if (effectStrategy != null) name = effectStrategy.ToString();
+return name;
+} 
+}*/
+
+        public Item(List<IEffectStrategy> effectStrategies, string name)
         {
             lastId++;
             Id = lastId;
-            EffectStrategy = effectStrategy;
+            EffectStrategies = effectStrategies;
+            Name = name;
         }
+
+        
 
         public Item() { }
 
         public void ExecuteEffectStrategy(Entity entity)
         {
-            EffectStrategy.Effect(entity);
+            foreach(var e in EffectStrategies)
+            {
+                e.Effect(entity);
+            }
         }
 
         public override string ToString()
         {
-            return EffectName;
+            return Name;
         }
     }
 }

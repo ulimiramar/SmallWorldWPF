@@ -1,4 +1,6 @@
 ﻿using SmallWorld.src.Controllers;
+using SmallWorld.src.Interfaces;
+using SmallWorld.src.Model;
 using SmallWorld.src.Model.Interactuable;
 using SmallWorld.src.UI.Admin.EntityCrud;
 using SmallWorld.src.UI.Admin.FoodCrud;
@@ -20,16 +22,6 @@ namespace SmallWorld.src.UI.Admin
         public FormFoodCrudHome()
         {
             InitializeComponent();
-            
-            
-
-            // Crea una columna para la lista de dietas
-            DataGridViewTextBoxColumn dietColumn = new DataGridViewTextBoxColumn();
-            dietColumn.DataPropertyName = "Diet"; // Debe coincidir con el nombre de la propiedad
-            dietColumn.HeaderText = "Dietas";
-
-            // Agrega la columna al DataGridView
-            dgvFood.Columns.Add(dietColumn);
             RefreshDataGridFood();
         }
 
@@ -46,31 +38,33 @@ namespace SmallWorld.src.UI.Admin
         }
 
 
-        //TODO: 1. arreglar esto que muestra en la columna dietas la palabra colección, y arreglar que esa columna vaya a un costado y no primera
-        
-        //posición de la columna
-        int dietListColumnIndex = 1;
-
         private void dgvFood_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-            if (e.ColumnIndex == dietListColumnIndex && e.RowIndex >= 0)
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow selectedRow = dgvFood.SelectedRows[0];
+            Food food = (Food)selectedRow.DataBoundItem;
+
+
+            FormEditFood formEditFood = new FormEditFood(food);
+            formEditFood.ShowDialog();
+            RefreshDataGridFood();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (dgvFood.SelectedRows.Count > 0)
             {
-                // Obtiene el valor de la celda
-                object cellValue = dgvFood[e.ColumnIndex, e.RowIndex].Value;
+                DataGridViewRow selectedRow = dgvFood.SelectedRows[0];
+                Food foodToDelete = (Food)selectedRow.DataBoundItem;
 
-                // Verifica si el valor es una colección (por ejemplo, List<string>)
-                if (cellValue is IEnumerable<string> dietList)
-                {
-                    // Convierte la colección en una cadena separada por comas
-                    string dietListString = string.Join(", ", dietList);
+                foodController.Delete(foodToDelete);
+                RefreshDataGridFood();
 
-                    // Establece el valor formateado en la celda
-                    e.Value = dietListString;
-
-                    // Marca la celda como formateada
-                    e.FormattingApplied = true;
-                }
             }
+            else MessageBox.Show("Seleccionar una comida");
         }
     }
 }

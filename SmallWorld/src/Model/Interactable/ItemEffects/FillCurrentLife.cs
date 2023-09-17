@@ -1,4 +1,5 @@
 ﻿using SmallWorld.src.Interfaces;
+using SmallWorld.src.Model.Dieta;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,14 +10,27 @@ namespace SmallWorld.src.Model.Interactable.ItemEffects
 {
     internal class FillCurrentLife : IEffectStrategy
     {
+        private string name = "Llenar vida actual";
+        
         public void Effect(Entity entity)
         {
             entity.CurrentLife += 100;
         }
-
+        public override bool Equals(object obj)
+        {
+            if (obj is FillCurrentLife other)
+            {
+                return name == other.name;
+            }
+            return false;
+        }
         public override string ToString()
         {
-            return "Llenar vida actual";
+            return name;
+        }
+        public override int GetHashCode()
+        {
+            return name.GetHashCode();
         }
     }
 }
