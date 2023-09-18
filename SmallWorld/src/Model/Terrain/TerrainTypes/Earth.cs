@@ -10,6 +10,7 @@ namespace SmallWorld.src.Model.Terreno
 {
     internal class Earth : ITerrainType
     {
+        private string name = "Tierra";
         private Bitmap ImageRute = global::SmallWorld.Properties.Resources.EarthGreen;
         
 
@@ -17,7 +18,7 @@ namespace SmallWorld.src.Model.Terreno
 
         public override string ToString()
         {
-            return "Tierra";
+            return name;
         }
         public Bitmap getTerrainImageRute()
         {

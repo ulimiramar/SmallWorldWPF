@@ -42,20 +42,21 @@ namespace SmallWorld.src.Controllers
             }
             return terrainTypesList;
         }
-        
+
         public void GenerateMap()
         {
             var random = new Random();
-            for (int i=0; i < 20; i++)
+            for (int i = 0; i < 20; i++)
             {
                 List<ITerrainType> terrainTypes = terrainsTypes();
                 ITerrainType randomTerrain = terrainTypes[random.Next(terrainTypes.Count)];
                 landController.AddLand(randomTerrain);
                 //TODO: resolver de si trabajar con la controladora de lands o mapas.
-                //map.Lands.Add
+                //map.Lands.Add()
             }
+            //map.Lands = landController.getLands();
             //map.Lands = land
-            setBorderingLands();
+            landController.setBorderingLands();
         }
         public Map GetMap()
         {
@@ -73,13 +74,18 @@ namespace SmallWorld.src.Controllers
                 availableLandIndices.Remove(map.Lands.IndexOf(land));
                 for (int i = 0; i < numBorderingLands; i++)
                 {
-                    //elige aleatoriamente las tierras limitrofes
-                    int randomIndex = random.Next(0, availableLandIndices.Count);
-                    //asigna a una variable entera el indice de la tierra.
-                    int borderingLandIndex = availableLandIndices[randomIndex];
-                    //land.BorderingLands.Add(map.Lands[random.Next(map.Lands.Count)]);
-                    //agrega a la lista de tierras limitrofes una tierra limitrofe.
-                    land.BorderingLands.Add(map.Lands[borderingLandIndex]);
+                    if (availableLandIndices.Count > 0)
+                    {
+                        //elige aleatoriamente las tierras limitrofes
+                        int randomIndex = random.Next(0, availableLandIndices.Count);
+                        //asigna a una variable entera el indice de la tierra.
+                        int borderingLandIndex = availableLandIndices[randomIndex];
+                        //land.BorderingLands.Add(map.Lands[random.Next(map.Lands.Count)]);
+                        //agrega a la lista de tierras limitrofes una tierra limitrofe.
+                        land.BorderingLands.Add(map.Lands[borderingLandIndex]);
+                        // Elimina el índice seleccionado de las tierras disponibles para evitar duplicados
+                        availableLandIndices.RemoveAt(randomIndex);
+                    }
                 }
             }
         }

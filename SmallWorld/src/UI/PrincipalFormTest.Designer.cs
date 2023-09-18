@@ -64,6 +64,10 @@
             this.pbCurrentLifeWaitingPlayerEntity = new System.Windows.Forms.ProgressBar();
             this.label11 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
+            this.cbBorderingLands = new System.Windows.Forms.ComboBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.cbLands = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.btnAttack = new System.Windows.Forms.Button();
             this.btnInteract = new System.Windows.Forms.Button();
@@ -81,10 +85,8 @@
             this.bsItems = new System.Windows.Forms.BindingSource(this.components);
             this.bsFoods = new System.Windows.Forms.BindingSource(this.components);
             this.btnGenerateMap = new System.Windows.Forms.Button();
-            this.cbLands = new System.Windows.Forms.ComboBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.cbBorderingLands = new System.Windows.Forms.ComboBox();
+            this.bsLands = new System.Windows.Forms.BindingSource(this.components);
+            this.bsBorderingLands = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -93,6 +95,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsWaitingPlayersEntities)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsFoods)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsLands)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsBorderingLands)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAdmin
@@ -421,6 +425,41 @@
             this.panel3.Size = new System.Drawing.Size(176, 261);
             this.panel3.TabIndex = 6;
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(28, 110);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(98, 13);
+            this.label18.TabIndex = 3;
+            this.label18.Text = "Terrenos Limítrofes";
+            // 
+            // cbBorderingLands
+            // 
+            this.cbBorderingLands.FormattingEnabled = true;
+            this.cbBorderingLands.Location = new System.Drawing.Point(28, 129);
+            this.cbBorderingLands.Name = "cbBorderingLands";
+            this.cbBorderingLands.Size = new System.Drawing.Size(121, 21);
+            this.cbBorderingLands.TabIndex = 2;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(28, 37);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(44, 13);
+            this.label17.TabIndex = 1;
+            this.label17.Text = "Terreno";
+            // 
+            // cbLands
+            // 
+            this.cbLands.FormattingEnabled = true;
+            this.cbLands.Location = new System.Drawing.Point(28, 56);
+            this.cbLands.Name = "cbLands";
+            this.cbLands.Size = new System.Drawing.Size(121, 21);
+            this.cbLands.TabIndex = 0;
+            this.cbLands.SelectedIndexChanged += new System.EventHandler(this.cbLands_SelectedIndexChanged);
+            // 
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
@@ -545,40 +584,6 @@
             this.btnGenerateMap.UseVisualStyleBackColor = true;
             this.btnGenerateMap.Click += new System.EventHandler(this.btnGenerateMap_Click);
             // 
-            // cbLands
-            // 
-            this.cbLands.FormattingEnabled = true;
-            this.cbLands.Location = new System.Drawing.Point(28, 56);
-            this.cbLands.Name = "cbLands";
-            this.cbLands.Size = new System.Drawing.Size(121, 21);
-            this.cbLands.TabIndex = 0;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(28, 37);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(44, 13);
-            this.label17.TabIndex = 1;
-            this.label17.Text = "Terreno";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(28, 110);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(98, 13);
-            this.label18.TabIndex = 3;
-            this.label18.Text = "Terrenos Limítrofes";
-            // 
-            // cbBorderingLands
-            // 
-            this.cbBorderingLands.FormattingEnabled = true;
-            this.cbBorderingLands.Location = new System.Drawing.Point(28, 129);
-            this.cbBorderingLands.Name = "cbBorderingLands";
-            this.cbBorderingLands.Size = new System.Drawing.Size(121, 21);
-            this.cbBorderingLands.TabIndex = 2;
-            // 
             // PrincipalFormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -615,6 +620,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsWaitingPlayersEntities)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsItems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsFoods)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsLands)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsBorderingLands)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -678,5 +685,7 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.ComboBox cbLands;
         private System.Windows.Forms.Button btnGenerateMap;
+        private System.Windows.Forms.BindingSource bsLands;
+        private System.Windows.Forms.BindingSource bsBorderingLands;
     }
 }

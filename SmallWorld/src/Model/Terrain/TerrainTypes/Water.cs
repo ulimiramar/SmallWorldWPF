@@ -10,11 +10,12 @@ namespace SmallWorld.src.Model.Terreno
 {
     internal class Water : ITerrainType
     {
+        private string name = "Agua";
         private Bitmap ImageRute = global::SmallWorld.Properties.Resources.waterSea;
 
         public override string ToString()
         {
-            return "Agua";
+            return name;
         }
         public Bitmap getTerrainImageRute()
         {

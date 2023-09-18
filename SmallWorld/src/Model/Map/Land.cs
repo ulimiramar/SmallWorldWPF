@@ -11,7 +11,7 @@ namespace SmallWorld.src.Model.Terrain
     {
         private static int lastId = 0;
         private ITerrainType terrainType;
-        private List<Land> borderingLands;
+        private List<Land> borderingLands = new List<Land>();
 
         public int Id { get; private set; }
         internal ITerrainType TerrainType { get => terrainType; set => terrainType = value; }
@@ -37,5 +37,9 @@ namespace SmallWorld.src.Model.Terrain
             TerrainType = terrainType;
         }
         public Land() { }
+        public override string ToString()
+        {
+            return $"Id: {Id} , tipo: {TerrainType}";
+        }
     }
 }

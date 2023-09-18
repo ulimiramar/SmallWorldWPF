@@ -114,8 +114,9 @@ namespace SmallWorld.src.UI
 
         private void RefreshMap()
         {
-            //TODO: descomentar
-            //cbLands.DataSource = landController.getLands();
+            bsLands.DataSource = landController.getLands();
+            bsLands.ResetBindings(false);
+            cbLands.DataSource = bsLands;
         }
         private void RefreshFoods()
         {
@@ -231,8 +232,20 @@ namespace SmallWorld.src.UI
 
         private void btnGenerateMap_Click(object sender, EventArgs e)
         {
-            //TODO: descomentar
-            //mapController.GenerateMap();
+            mapController.GenerateMap();
+            RefreshMap();
+            btnGenerateMap.Enabled = false;
+        }
+
+        private void cbLands_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+            if (cbLands.SelectedItem is Land land)
+            {
+                bsBorderingLands.DataSource = landController.getBorderingLands(land);
+                bsItems.ResetBindings(true);
+                cbBorderingLands.DataSource = bsBorderingLands;
+            }
         }
     }
 }
