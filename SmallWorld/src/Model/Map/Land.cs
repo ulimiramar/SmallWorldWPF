@@ -12,11 +12,15 @@ namespace SmallWorld.src.Model.Terrain
         private static int lastId = 0;
         private ITerrainType terrainType;
         private List<Land> borderingLands = new List<Land>();
+        private List<IPositionable> positionables;
 
+        #region Properties
         public int Id { get; private set; }
         internal ITerrainType TerrainType { get => terrainType; set => terrainType = value; }
         public string TerrainTypeName { get => terrainType.ToString(); }
         internal List<Land> BorderingLands { get => borderingLands; set => borderingLands = value; }
+        internal List<IPositionable> Positionables { get => positionables; set => positionables = value; }
+        
         public string BorderingLandsIds
         {
             get
@@ -29,6 +33,8 @@ namespace SmallWorld.src.Model.Terrain
                 return borderingLandsIds;
             }
         }
+
+        #endregion
 
         public Land(ITerrainType terrainType)
         {

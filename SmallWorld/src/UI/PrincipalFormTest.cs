@@ -243,7 +243,7 @@ namespace SmallWorld.src.UI
             if (cbLands.SelectedItem is Land land)
             {
                 bsBorderingLands.DataSource = landController.getBorderingLands(land);
-                bsItems.ResetBindings(true);
+                bsBorderingLands.ResetBindings(false);
                 cbBorderingLands.DataSource = bsBorderingLands;
             }
         }

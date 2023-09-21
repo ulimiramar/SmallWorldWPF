@@ -75,7 +75,7 @@ namespace SmallWorld.src.Controllers
                     EntityToUpdate.Kingdom = kingdom;
                     EntityToUpdate.Name = name;
                     EntityToUpdate.Diet = diet;
-                    EntityToUpdate.Habitat = habitat;
+                    EntityToUpdate.HabitatList = habitat;
                     EntityToUpdate.AttackPoints = atkPoints;
                     EntityToUpdate.DefensePoints = defPoints;
                     EntityToUpdate.AttackRange = rangeAttack;

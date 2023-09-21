@@ -1,5 +1,6 @@
 ﻿using SmallWorld.src.Interfaces;
 using SmallWorld.src.Model.Reino;
+using SmallWorld.src.Model.Terrain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SmallWorld.src.Model.Interactuable
 {
-    public class Food : IInteractable
+    public class Food : IInteractable, IPositionable
     {
         private static int lastId = 0;
         public int Id { get; private set; }
@@ -59,6 +60,10 @@ namespace SmallWorld.src.Model.Interactuable
         {
             return Name;
         }
-        
+
+        void IPositionable.Position(Land land)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

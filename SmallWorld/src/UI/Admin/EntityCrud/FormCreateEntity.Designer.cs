@@ -50,6 +50,7 @@
             this.cbKingdom = new System.Windows.Forms.ComboBox();
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.clbListHabitat = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
             // btnRandomData
@@ -248,11 +249,20 @@
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
+            // clbListHabitat
+            // 
+            this.clbListHabitat.FormattingEnabled = true;
+            this.clbListHabitat.Location = new System.Drawing.Point(393, 48);
+            this.clbListHabitat.Name = "clbListHabitat";
+            this.clbListHabitat.Size = new System.Drawing.Size(120, 94);
+            this.clbListHabitat.TabIndex = 115;
+            // 
             // FormCreateEntity
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 374);
+            this.ClientSize = new System.Drawing.Size(700, 374);
+            this.Controls.Add(this.clbListHabitat);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnRandomData);
             this.Controls.Add(this.txtDefenseShield);
@@ -306,5 +316,6 @@
         private System.Windows.Forms.ComboBox cbKingdom;
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.CheckedListBox clbListHabitat;
     }
 }

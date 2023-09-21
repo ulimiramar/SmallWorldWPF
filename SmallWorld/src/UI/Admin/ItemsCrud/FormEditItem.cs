@@ -20,25 +20,32 @@ namespace SmallWorld.src.UI.Admin.ItemsCrud
         private ItemController itemController = ItemController.GetInstance();
         private Item itemToModify = new Item();
         private Item itemModified = new Item();
-        public FormEditItem(int id, IEffectStrategy effectStrategy)
-        {
-            InitializeComponent();
-            FillComboBoxes();
-            lblId.Text = id.ToString();
-            cbItemEffect.SelectedItem = effectStrategy;
-        }
+        private ViewController viewController = ViewController.GetInstance();
         public FormEditItem(Item itemToModify)
         {
             InitializeComponent();
             this.itemToModify = itemToModify;
             itemModified = itemToModify;
-            //FillComboBoxes();
-            FillCheckedListBoxEffects();
+            FillListControls();
+            //FillCheckedListBoxEffects();
             CheckItemsInListBoxEffects();
-            txtName.Text = itemToModify.Name;
-
-            //cbItemEffect.SelectedItem = itemToModify.EffectStrategy;
+            txtName.Text = itemToModify.Name; 
+            
         }
+
+        private void FillListControls()
+        {
+            viewController.FillListControlWithImplementations(clbListEffects, typeof(IEffectStrategy));
+        }
+
+        //TODO: hacer función para checkear los items en el clbControl con la información del objeto a modificar
+        //private void Check()
+        //{
+        //    viewController.
+        //}
+
+
+        #region How to fill List Control With Implementations of an interface. For comboBox And CheckedListBox
         private void FillComboBoxes()
         {
             foreach (Type type in Assembly.GetExecutingAssembly().GetTypes()
@@ -56,7 +63,9 @@ namespace SmallWorld.src.UI.Admin.ItemsCrud
             }
         }
 
-        //TODO: arreglar esto y que en la vista del juego no muestra los nombres
+        #endregion
+
+        
         private void CheckItemsInListBoxEffects()
         {
             foreach (IEffectStrategy effect in itemToModify.EffectStrategies)

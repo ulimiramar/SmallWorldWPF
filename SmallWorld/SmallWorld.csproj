@@ -60,12 +60,14 @@
     <Compile Include="src\Controllers\KingdomController.cs" />
     <Compile Include="src\Controllers\LandController.cs" />
     <Compile Include="src\Controllers\MapController.cs" />
+    <Compile Include="src\Controllers\ViewController.cs" />
     <Compile Include="src\Interfaces\IDiet.cs" />
     <Compile Include="src\Interfaces\IEffectStrategy.cs" />
     <Compile Include="src\Interfaces\IEntity.cs" />
     <Compile Include="src\Interfaces\IHabitat.cs" />
     <Compile Include="src\Interfaces\IInteractable.cs" />
     <Compile Include="src\Interfaces\IKingdom.cs" />
+    <Compile Include="src\Interfaces\IPositionable.cs" />
     <Compile Include="src\Interfaces\ITerrain.cs" />
     <Compile Include="src\Interfaces\ITerrainType.cs" />
     <Compile Include="src\Model\Diet\Carnivorous.cs" />
@@ -151,6 +153,12 @@
     </Compile>
     <Compile Include="src\UI\Admin\ItemsCrud\FormItemsCrudHome.Designer.cs">
       <DependentUpon>FormItemsCrudHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="src\UI\Admin\MapGenerator\FormMapGenerator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\UI\Admin\MapGenerator\FormMapGenerator.Designer.cs">
+      <DependentUpon>FormMapGenerator.cs</DependentUpon>
     </Compile>
     <Compile Include="src\UI\CustomControls\HexagonControl.cs">
       <SubType>UserControl</SubType>
@@ -242,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\UI\Admin\ItemsCrud\FormItemsCrudHome.resx">
       <DependentUpon>FormItemsCrudHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\UI\Admin\MapGenerator\FormMapGenerator.resx">
+      <DependentUpon>FormMapGenerator.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\UI\EntitiesCrudFormTest.resx">
       <DependentUpon>EntitiesCrudFormTest.cs</DependentUpon>

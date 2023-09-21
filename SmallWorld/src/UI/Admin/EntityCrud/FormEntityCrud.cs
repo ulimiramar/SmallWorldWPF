@@ -40,15 +40,7 @@ namespace SmallWorld.src.UI.Admin
             DataGridViewRow selectedRow = dgvEntities.SelectedRows[0];
             Entity entity = (Entity)selectedRow.DataBoundItem;
 
-
-            FormEditEntity formEditEntity = new FormEditEntity
-                (
-                    entity
-                    /*entity.Id, entity.Kingdom, entity.Name, 
-                    entity.Diet, entity.Habitat, entity.AttackPoints, 
-                    entity.DefensePoints, entity.AttackRange, entity.MaxLife,
-                    entity.MaxEnergy, entity.DefenseShield*/
-                ) ;
+            FormEditEntity formEditEntity = new FormEditEntity(entity);
             formEditEntity.ShowDialog();
             RefreshDataGridEntities();
         }

@@ -2,6 +2,7 @@
 using SmallWorld.src.Model.Interactable;
 using SmallWorld.src.Model.Interactuable;
 using SmallWorld.src.Model.Map;
+using SmallWorld.src.Model.Terrain;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -19,24 +20,18 @@ namespace SmallWorld.src.Model
         IKingdom kingdom;
         string name;
         IDiet diet;
-        IHabitat habitat;
+        IHabitat habitatList;
 
         int maxEnergy;
         int currentEnergy;
         int maxLife;
         int currentLife;
-
         int attackPoints;
         int defensePoints;
         bool attackRange;
         int costToAttack;
-
-        //Terrain currentTerrain;
         bool dieStatus;
         int defenseShield;
-        //Point position;
-
-
 
         #region Properties
         //TODO: hacer validaciones en propiedades, informar de alguna manera si esta muerto y no puede recibir mas ataques, talvez borrandolo de la lista, o que la lista traiga solo los vivos. y los interacts se traigan los muertos para abono.
@@ -73,16 +68,27 @@ namespace SmallWorld.src.Model
             }
         }
         public string DietName { get { return diet.ToString(); } }
-        internal IHabitat Habitat
+        internal IHabitat HabitatList
         {
-            get => habitat;
+            get => habitatList;
             set
             {
-                if (value != null) habitat = value;
+                if (value != null) habitatList = value;
                 else throw new InvalidOperationException("Debe seleccionar un Habitat");
             }
         }
-        public string HabitatName { get { return habitat.ToString(); } }
+        /*public string HabitatName 
+        {
+            get
+            {
+                string habitatListString = "";
+                foreach (var h in habitatList)
+                {
+                    habitatListString = string.Join(", ", habitatList);
+                }
+                return habitatListString;
+            }
+        }*/
         public int MaxEnergy
         {
             get => maxEnergy;
@@ -149,10 +155,6 @@ namespace SmallWorld.src.Model
         public int CostToAttack { get => costToAttack; set => costToAttack = value; }
         public int DefenseShield { get => defenseShield; set => defenseShield = value; }
 
-        //public Terrain CurrentTerrain { get => currentTerrain; set => currentTerrain = value; }
-
-        //public Point Position { get => position; set => position = value; }
-
         #endregion
 
         //constructor
@@ -163,7 +165,7 @@ namespace SmallWorld.src.Model
             Kingdom = kingdom;
             Name = name;
             Diet = diet;
-            Habitat = habitat;
+            HabitatList = habitat;
             AttackPoints = attackPoints;
             DefensePoints = defensePoints;
             AttackRange = attackRange;
@@ -400,6 +402,11 @@ namespace SmallWorld.src.Model
         {
             return name;
             //return $"Reino:{Kingdom}, Nombre:{Name}, Dieta:{Diet}, Habitat:{Habitat}, Energía actual:{CurrentEnergy}, Energía Máxima:{MaxEnergy}, Vida Actual:{CurrentLife}, Vida Máxima:{MaxLife}, Puntos de Ataque:{AttackPoints}, Escudo de Defensa:{DefensePoints}, Fuerza del ataque a distancia:{AttackRange}";
+        }
+
+        void Position(Land land)
+        {
+            //if(habitat. == land.TerrainType);
         }
     }
 }

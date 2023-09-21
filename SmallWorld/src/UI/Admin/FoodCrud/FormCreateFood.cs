@@ -1,5 +1,6 @@
 ﻿using SmallWorld.src.Controllers;
 using SmallWorld.src.Interfaces;
+using SmallWorld.src.Model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,19 +18,15 @@ namespace SmallWorld.src.UI.Admin.FoodCrud
     public partial class FormCreateFood : Form
     {
         private FoodController foodController = FoodController.GetInstance();
+        private ViewController viewController = ViewController.GetInstance();
         public FormCreateFood()
         {
             InitializeComponent();
-            FillCheckedListBoxDiets();
+            FillListControls();
         }
-
-        private void FillCheckedListBoxDiets()
+        private void FillListControls()
         {
-            foreach (Type type in Assembly.GetExecutingAssembly().GetTypes()
-                .Where(t => t.GetInterfaces().Contains(typeof(IDiet))))
-            {
-                clbListDiets.Items.Add(Activator.CreateInstance(type));
-            }
+            viewController.FillListControlWithImplementations(clbListDiets, typeof(IDiet));
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
@@ -54,34 +51,15 @@ namespace SmallWorld.src.UI.Admin.FoodCrud
         {
             txtEnergyValue.Text = "";
             txtFoodName.Text = "";
-            for (int i = 0; i < clbListDiets.Items.Count; i++)
-            {
-                clbListDiets.SetItemChecked(i, false);
-            }
+            viewController.ClearCheckedListBox(clbListDiets);
         }
 
         private void btnRandomData_Click(object sender, EventArgs e)
         {
             Random random = new Random();
             txtEnergyValue.Text = Convert.ToString(random.Next(10, 100));
-            txtFoodName.Text = GetRandomString(8);
-
-
-
-            //lógica para marcar al menos un checkbox aleatorios y luego los demás aleatorios
-
-            int randomIndex = random.Next(0, clbListDiets.Items.Count);
-            clbListDiets.SetItemChecked(randomIndex, true);
-
-            for (int i = 0; i < clbListDiets.Items.Count; i++)
-            {
-                if (i == randomIndex)
-                {
-                    continue; // Salta el elemento que ya marcamos aleatoriamente
-                }
-                bool isChecked = random.Next(0, 2) == 1; // Genera 0 o 1 aleatoriamente
-                clbListDiets.SetItemChecked(i, isChecked);
-            }
+            txtFoodName.Text = viewController.GetRandomString(8);
+            viewController.CheckRandomItemsInClbControl(clbListDiets);
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -89,12 +67,5 @@ namespace SmallWorld.src.UI.Admin.FoodCrud
             this.Close();
         }
 
-        private string GetRandomString(int length)
-        {
-            Random random = new Random();
-            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-            return new string(Enumerable.Repeat(chars, length)
-                .Select(s => s[random.Next(s.Length)]).ToArray());
-        }
     }
 }

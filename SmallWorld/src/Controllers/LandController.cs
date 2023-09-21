@@ -42,6 +42,17 @@ namespace SmallWorld.src.Controllers
         {
             return Lands;
         }
+
+        public List<IPositionable> getPositionbalesInAllLands()
+        {
+            List<IPositionable> allPositionables = new List<IPositionable>();
+            foreach (Land land in Lands)
+            {
+                allPositionables.AddRange(land.Positionables);
+            }
+            return allPositionables;
+        }
+
         public List<Land> getBorderingLands(Land land)
         {
             return land.BorderingLands;
@@ -90,6 +101,10 @@ namespace SmallWorld.src.Controllers
                     }
                 }
             }
+        }
+        public List<IPositionable> GetPositionablesInLand(Land land)
+        {
+            return land.Positionables;
         }
     }
 }

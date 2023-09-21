@@ -21,6 +21,7 @@ namespace SmallWorld.src.Controllers
         private LandController landController = LandController.GetInstance();
         private static MapController instance;
         private readonly Map map = new Map();
+        private readonly List<IPositionable> positionables = new List<IPositionable>();
         //private readonly List<Land> landsInMap = new List<Land>();
         private MapController() { }
         public static MapController GetInstance()
@@ -62,32 +63,22 @@ namespace SmallWorld.src.Controllers
         {
             return map;
         }
-        public void setBorderingLands()
+        
+
+        public void SetPositions()
         {
-            var random = new Random();
-            foreach (Land land in map.Lands) 
-            { 
-                int numBorderingLands = random.Next(1, 7);
-                //Trae todos los indices de las tierras disponibles
-                List<int> availableLandIndices = Enumerable.Range(0, map.Lands.Count).ToList();
-                // Elimina el índice de la tierra actual de las tierras disponibles para que no limite con ella misma
-                availableLandIndices.Remove(map.Lands.IndexOf(land));
-                for (int i = 0; i < numBorderingLands; i++)
-                {
-                    if (availableLandIndices.Count > 0)
-                    {
-                        //elige aleatoriamente las tierras limitrofes
-                        int randomIndex = random.Next(0, availableLandIndices.Count);
-                        //asigna a una variable entera el indice de la tierra.
-                        int borderingLandIndex = availableLandIndices[randomIndex];
-                        //land.BorderingLands.Add(map.Lands[random.Next(map.Lands.Count)]);
-                        //agrega a la lista de tierras limitrofes una tierra limitrofe.
-                        land.BorderingLands.Add(map.Lands[borderingLandIndex]);
-                        // Elimina el índice seleccionado de las tierras disponibles para evitar duplicados
-                        availableLandIndices.RemoveAt(randomIndex);
-                    }
-                }
+            Random random = new Random();
+            foreach(IPositionable positionable in positionables)
+            {
+                int randomLand = random.Next(0, landController.getLands().Count);
+                positionable.Position(landController.getLands()[randomLand]);
             }
         }
+
+        public void SetPosition(IPositionable positionable)
+        {
+            
+        }
+
     }
 }

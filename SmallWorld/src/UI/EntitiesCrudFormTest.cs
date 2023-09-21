@@ -191,7 +191,7 @@ namespace SmallWorld.src.UI
                 txtName.Text = entityToUpdate.Name;
                 cbKingdom.SelectedItem = entityToUpdate.Kingdom;
                 cbDiet.SelectedItem = entityToUpdate.Diet;
-                cbHabitat.SelectedItem = entityToUpdate.Habitat;
+                cbHabitat.SelectedItem = entityToUpdate.HabitatList;
                 txtMaxEnergy.Text = entityToUpdate.MaxEnergy.ToString();
                 txtMaxLife.Text = entityToUpdate.MaxLife.ToString();
                 txtAttackPoints.Text = entityToUpdate.AttackPoints.ToString();

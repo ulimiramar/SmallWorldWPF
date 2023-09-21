@@ -42,3 +42,4 @@ I:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.src.U
 I:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.src.UI.Admin.FoodCrud.FormCreateFood.resources
 I:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.src.UI.Admin.FormFoodCrudHome.resources
 I:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.src.UI.Admin.FoodCrud.FormEditFood.resources
+I:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.src.UI.Admin.MapGenerator.FormMapGenerator.resources

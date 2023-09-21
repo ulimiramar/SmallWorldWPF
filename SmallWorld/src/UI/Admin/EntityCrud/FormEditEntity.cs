@@ -20,16 +20,17 @@ namespace SmallWorld.src.UI.Admin.EntityCrud
     public partial class FormEditEntity : Form
     {
         EntityController entityController = EntityController.GetInstance();
+        ViewController viewController = ViewController.GetInstance();
         Entity entityToModify = new Entity();
         public FormEditEntity(Entity entityToModify)
         {
             InitializeComponent();
-            FillComboBoxes();
+            FillListControls();
             this.entityToModify = entityToModify;
             cbKingdom.SelectedItem = entityToModify.Kingdom;
             txtName.Text = entityToModify.Name;
             cbDiet.SelectedItem = entityToModify.Diet;
-            cbHabitat.SelectedItem = entityToModify.Habitat;
+            cbHabitat.SelectedItem = entityToModify.HabitatList;
             txtAttackPoints.Text = entityToModify.AttackPoints.ToString();
             txtDefensePoints.Text = entityToModify.DefensePoints.ToString();
             chbAttackRange.Checked = entityToModify.AttackRange;
@@ -37,29 +38,15 @@ namespace SmallWorld.src.UI.Admin.EntityCrud
             txtMaxEnergy.Text = entityToModify.MaxEnergy.ToString();
             txtDefenseShield.Text = entityToModify.DefenseShield.ToString();
         }
-        private void FillComboBoxes()
+
+        private void FillListControls()
         {
-            // Llena el ComboBox de Kingdom con las clases que implementan IKingsom
-            foreach (Type type in Assembly.GetExecutingAssembly().GetTypes()
-                .Where(t => t.GetInterfaces().Contains(typeof(IKingdom))))
-            {
-                cbKingdom.Items.Add(Activator.CreateInstance(type));
-            }
-
-            // Llena el ComboBox de Diet con las clases que implementan IDiet
-            foreach (Type type in Assembly.GetExecutingAssembly().GetTypes()
-                .Where(t => t.GetInterfaces().Contains(typeof(IDiet))))
-            {
-                cbDiet.Items.Add(Activator.CreateInstance(type));
-            }
-
-            // Llena el ComboBox de Habitat con las clases que implementan IHabitat
-            foreach (Type type in Assembly.GetExecutingAssembly().GetTypes()
-                .Where(t => t.GetInterfaces().Contains(typeof(IHabitat))))
-            {
-                cbHabitat.Items.Add(Activator.CreateInstance(type));
-            }
+            viewController.FillListControlWithImplementations(cbKingdom, typeof(IKingdom));
+            viewController.FillListControlWithImplementations(cbDiet, typeof(IDiet));
+            viewController.FillListControlWithImplementations(cbHabitat, typeof(IHabitat));
+            //viewController.FillListControlWithImplementations(c, typeof(IKingdom));
         }
+        
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             
@@ -68,7 +55,7 @@ namespace SmallWorld.src.UI.Admin.EntityCrud
             entityModified.Kingdom = (IKingdom)cbKingdom.SelectedItem;
             entityModified.Name = txtName.Text;
             entityModified.Diet = (IDiet)cbDiet.SelectedItem;
-            entityModified.Habitat = (IHabitat)cbHabitat.SelectedItem;
+            entityModified.HabitatList = (IHabitat)cbHabitat.SelectedItem;
             entityModified.AttackPoints = Convert.ToInt32(txtAttackPoints.Text);
             entityModified.DefensePoints = Convert.ToInt32(txtDefensePoints.Text);
             entityModified.AttackRange = chbAttackRange.Checked;
@@ -77,9 +64,6 @@ namespace SmallWorld.src.UI.Admin.EntityCrud
             entityModified.DefenseShield = Convert.ToInt32(txtDefenseShield.Text);
 
             entityController.Update(entityToModify, entityModified);
-
-
-            //entityController.Update(Convert.ToInt32(lblId.Text), (IKingdom)cbKingdom.SelectedItem, txtName.Text, (IDiet)cbDiet.SelectedItem, (IHabitat)cbHabitat.SelectedItem, Convert.ToInt32(txtAttackPoints.Text), Convert.ToInt32(txtDefensePoints.Text), chbAttackRange.Checked, Convert.ToInt32(txtMaxLife.Text), Convert.ToInt32(txtMaxEnergy.Text), Convert.ToInt32(txtDefenseShield.Text));
             MessageBox.Show("Actualizado con exito");
             this.Close();
         }
