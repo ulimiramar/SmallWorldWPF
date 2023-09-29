@@ -35,9 +35,9 @@ namespace SmallWorld.src.Controllers
         
 
 
-        public void AddEntity(IKingdom kingdom, string name, IDiet diet, IHabitat habitat, int atkPonints, int defPoints, bool range, int maxLife, int maxEnergy, int defenseShield)
+        public void AddEntity(IKingdom kingdom, string name, IDiet diet, List<IHabitat> habitatList, int atkPonints, int defPoints, bool range, int maxLife, int maxEnergy, int defenseShield)
         {
-            Entity EntityToAdd = new Entity(kingdom, name, diet, habitat, atkPonints, defPoints, range, maxLife, maxEnergy, defenseShield);
+            Entity EntityToAdd = new Entity(kingdom, name, diet, habitatList, atkPonints, defPoints, range, maxLife, maxEnergy, defenseShield);
             Entities.Add(EntityToAdd);
         }
         
@@ -65,7 +65,7 @@ namespace SmallWorld.src.Controllers
         }
 
 
-        
+        /*
         public void Update(int id, IKingdom kingdom, string name, IDiet diet, IHabitat habitat, int atkPoints, int defPoints, bool rangeAttack, int maxLife, int maxEnergy, int defenseShield)
         {
             foreach (Entity EntityToUpdate in Entities)
@@ -75,7 +75,7 @@ namespace SmallWorld.src.Controllers
                     EntityToUpdate.Kingdom = kingdom;
                     EntityToUpdate.Name = name;
                     EntityToUpdate.Diet = diet;
-                    EntityToUpdate.HabitatList = habitat;
+                    EntityToUpdate.Habitat = habitat;
                     EntityToUpdate.AttackPoints = atkPoints;
                     EntityToUpdate.DefensePoints = defPoints;
                     EntityToUpdate.AttackRange = rangeAttack;
@@ -85,7 +85,7 @@ namespace SmallWorld.src.Controllers
                     break;
                 }
             }
-        }
+        }*/
 
         public void Update(Entity entityToModify, Entity entityModified)
         {

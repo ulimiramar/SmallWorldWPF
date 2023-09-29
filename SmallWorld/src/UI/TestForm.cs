@@ -109,8 +109,8 @@ namespace SmallWorld.src.UI
         private void btnCreateEntity_Click(object sender, EventArgs e)
         {
             
-            entityController.AddEntity((IKingdom)cbKingdom.SelectedItem, txtName.Text, (IDiet)cbDiet.SelectedItem, (IHabitat)cbHabitat.SelectedItem, Convert.ToInt32(txtAttackPoints.Text), Convert.ToInt32(txtDefensePoints.Text), chbAttackRange.Checked, Convert.ToInt32(txtMaxLife.Text), Convert.ToInt32(txtMaxEnergy.Text), Convert.ToInt32(txtDefenseShield.Text));
-            Console.WriteLine($"ataque:{tbAttack.Value} defensa:{tbDefense.Value}");
+            //entityController.AddEntity((IKingdom)cbKingdom.SelectedItem, txtName.Text, (IDiet)cbDiet.SelectedItem, (IHabitat)cbHabitat.SelectedItem, Convert.ToInt32(txtAttackPoints.Text), Convert.ToInt32(txtDefensePoints.Text), chbAttackRange.Checked, Convert.ToInt32(txtMaxLife.Text), Convert.ToInt32(txtMaxEnergy.Text), Convert.ToInt32(txtDefenseShield.Text));
+            //Console.WriteLine($"ataque:{tbAttack.Value} defensa:{tbDefense.Value}");
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)

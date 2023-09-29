@@ -20,7 +20,8 @@ namespace SmallWorld.src.Model
         IKingdom kingdom;
         string name;
         IDiet diet;
-        IHabitat habitatList;
+        //IHabitat habitat;
+        List<IHabitat> habitatList;
 
         int maxEnergy;
         int currentEnergy;
@@ -68,16 +69,17 @@ namespace SmallWorld.src.Model
             }
         }
         public string DietName { get { return diet.ToString(); } }
-        internal IHabitat HabitatList
+        /*internal IHabitat Habitat
         {
-            get => habitatList;
+            get => habitat;
             set
             {
-                if (value != null) habitatList = value;
+                if (value != null) habitat = value;
                 else throw new InvalidOperationException("Debe seleccionar un Habitat");
             }
-        }
-        /*public string HabitatName 
+        }*/
+
+        public string HabitatName 
         {
             get
             {
@@ -88,7 +90,17 @@ namespace SmallWorld.src.Model
                 }
                 return habitatListString;
             }
-        }*/
+        }
+        public List<IHabitat> HabitatList
+        {
+            get => habitatList;
+            set
+            {
+                if (value != null) habitatList = value;
+                else throw new InvalidOperationException("Debe seleccionar al menos un Habitat");
+            }
+        }
+
         public int MaxEnergy
         {
             get => maxEnergy;
@@ -158,14 +170,14 @@ namespace SmallWorld.src.Model
         #endregion
 
         //constructor
-        public Entity(IKingdom kingdom, string name, IDiet diet, IHabitat habitat, int attackPoints, int defensePoints, bool attackRange, int maxLife, int maxEnergy, int defenseShield)
+        public Entity(IKingdom kingdom, string name, IDiet diet, List<IHabitat> habitatList, int attackPoints, int defensePoints, bool attackRange, int maxLife, int maxEnergy, int defenseShield)
         {
             lastId++;
             Id = lastId;
             Kingdom = kingdom;
             Name = name;
             Diet = diet;
-            HabitatList = habitat;
+            HabitatList = habitatList;
             AttackPoints = attackPoints;
             DefensePoints = defensePoints;
             AttackRange = attackRange;
@@ -271,33 +283,6 @@ namespace SmallWorld.src.Model
             }
             return AttackResult;
         }
-
-        //TODO: pensar en entidad ataque, si el valor es negativo pierde la entidad atacante. se puede devolver en takeDamage con un return un valor.
-
-
-        /*Problema con la formula propuesta para el ataque:
-        VidaActualDelAtacado = VidaActualDelAtacado - ((PuntosDefensaDelAtacado + DicePoints2) - (PuntosAtaqueDelAtacante + AttackDicePoints));
-        Suponiendo que la vida actual del atacado es igual a 100
-        //Caso 1 donde los puntos de ataque del atacante son menores a los puntos de defensa del defendiente     
-        //            VidaActualDelAtacado = 100 - (100 - 50) 
-        //            VidaActualDelAtacado = 100 - 50
-        //            VidaActualDelAtacado  = 50
-        //            
-        //Caso 2 donde los puntos de ataque del atacante son mayores a los puntos de defensa del defendiente 
-        //            VidaActualDelAtacado = 100 - (50 - 100) 
-        //            VidaActualDelAtacado = 100 - - 50
-        //            VidaActualDelAtacado  = 150
-        //El problema que veo es que si el atacante es mas fuerte, si se usa esa fórmula el defendiente no pierde puntos.
-        //
-        //Solución que propongo: 
-        cambiar la formula: VidaActualDelAtacado = VidaActualDelAtacado - ((PuntosDefensaDelAtacado + DicePoints2) - (PuntosAtaqueDelAtacante + AttackDicePoints));
-        por esta formula:   VidaActualDelAtacado = VidaActualDelAtacado + ((PuntosDefensaDelAtacado + DicePoints2) - (PuntosAtaqueDelAtacante + AttackDicePoints));
-        entonces si se da que el defendiente sale ganando en cantidad de puntos,
-        hacer un condicional que si el resultado de la formula es mayor a la vida actualdelatacado
-        la vida actual del atacado no se toca.
-        Habría que ver cómo se hace si quieren que haya una especie de efecto rebote y la entidad atacante reciba el daño por perder.
-        */
-
 
         public bool ShieldIsDestroyed()
         {

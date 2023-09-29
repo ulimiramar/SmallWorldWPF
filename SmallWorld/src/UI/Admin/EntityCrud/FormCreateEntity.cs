@@ -25,9 +25,14 @@ namespace SmallWorld.src.UI.Admin.EntityCrud
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
+            List<IHabitat> selectedHabitats = new List<IHabitat>();
+            foreach (IHabitat habitat in clbListHabitat.CheckedItems)
+            {
+                selectedHabitats.Add(habitat);
+            }
             try
             {
-                entityController.AddEntity((IKingdom)cbKingdom.SelectedItem, txtName.Text, (IDiet)cbDiet.SelectedItem, (IHabitat)cbHabitat.SelectedItem, Convert.ToInt32(txtAttackPoints.Text), Convert.ToInt32(txtDefensePoints.Text), chbAttackRange.Checked, Convert.ToInt32(txtMaxLife.Text), Convert.ToInt32(txtMaxEnergy.Text), Convert.ToInt32(txtDefenseShield.Text));
+                entityController.AddEntity((IKingdom)cbKingdom.SelectedItem, txtName.Text, (IDiet)cbDiet.SelectedItem, selectedHabitats, Convert.ToInt32(txtAttackPoints.Text), Convert.ToInt32(txtDefensePoints.Text), chbAttackRange.Checked, Convert.ToInt32(txtMaxLife.Text), Convert.ToInt32(txtMaxEnergy.Text), Convert.ToInt32(txtDefenseShield.Text));
                 ClearFormControls();
             }
             catch (Exception ex)

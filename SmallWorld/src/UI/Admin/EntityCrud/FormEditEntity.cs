@@ -25,12 +25,13 @@ namespace SmallWorld.src.UI.Admin.EntityCrud
         public FormEditEntity(Entity entityToModify)
         {
             InitializeComponent();
-            FillListControls();
             this.entityToModify = entityToModify;
+            FillListControls();
+            CheckItemsInClb();
             cbKingdom.SelectedItem = entityToModify.Kingdom;
             txtName.Text = entityToModify.Name;
             cbDiet.SelectedItem = entityToModify.Diet;
-            cbHabitat.SelectedItem = entityToModify.HabitatList;
+            //cbHabitat.SelectedItem = entityToModify.Habitat;
             txtAttackPoints.Text = entityToModify.AttackPoints.ToString();
             txtDefensePoints.Text = entityToModify.DefensePoints.ToString();
             chbAttackRange.Checked = entityToModify.AttackRange;
@@ -44,21 +45,35 @@ namespace SmallWorld.src.UI.Admin.EntityCrud
             formController.FillListControlWithImplementations<IKingdom>(cbKingdom);
             formController.FillListControlWithImplementations<IDiet>(cbDiet);
             formController.FillListControlWithImplementations<IHabitat>(cbHabitat);
+            formController.FillListControlWithImplementations<IHabitat>(clbListHabitat);
 
             //formController.FillListControlWithImplementations(cbKingdom, typeof(IKingdom));
             //formController.FillListControlWithImplementations(cbDiet, typeof(IDiet));
             //formController.FillListControlWithImplementations(cbHabitat, typeof(IHabitat));
         }
-        
+        private void CheckItemsInClb()
+        {
+            formController.CheckItemsInClbControl<IHabitat>(clbListHabitat, entityToModify.HabitatList);
+        }
+
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            List<IHabitat> selectedHabitats = new List<IHabitat>();
+            foreach (IHabitat habitat in clbListHabitat.CheckedItems)
+            {
+                selectedHabitats.Add(habitat);
+            }
+
             
+
+
             Entity entityModified = entityToModify;
             
             entityModified.Kingdom = (IKingdom)cbKingdom.SelectedItem;
             entityModified.Name = txtName.Text;
             entityModified.Diet = (IDiet)cbDiet.SelectedItem;
-            entityModified.HabitatList = (IHabitat)cbHabitat.SelectedItem;
+            entityModified.HabitatList = selectedHabitats;
+            //entityModified.Habitat = (IHabitat)cbHabitat.SelectedItem;
             entityModified.AttackPoints = Convert.ToInt32(txtAttackPoints.Text);
             entityModified.DefensePoints = Convert.ToInt32(txtDefensePoints.Text);
             entityModified.AttackRange = chbAttackRange.Checked;
