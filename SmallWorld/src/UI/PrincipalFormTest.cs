@@ -33,8 +33,8 @@ namespace SmallWorld.src.UI
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
-            AdminFormTest adminFormTest = new AdminFormTest();
-            adminFormTest.Show();
+            //AdminFormTest adminFormTest = new AdminFormTest();
+            //adminFormTest.Show();
         }
 
         private void btnAttack_Click(object sender, EventArgs e)

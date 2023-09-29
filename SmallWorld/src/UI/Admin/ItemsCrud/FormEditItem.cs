@@ -20,29 +20,29 @@ namespace SmallWorld.src.UI.Admin.ItemsCrud
         private ItemController itemController = ItemController.GetInstance();
         private Item itemToModify = new Item();
         private Item itemModified = new Item();
-        private ViewController viewController = ViewController.GetInstance();
+        private FormController formController = FormController.GetInstance();
         public FormEditItem(Item itemToModify)
         {
             InitializeComponent();
             this.itemToModify = itemToModify;
             itemModified = itemToModify;
             FillListControls();
-            //FillCheckedListBoxEffects();
-            CheckItemsInListBoxEffects();
+            CheckItemsInClbEffects();
             txtName.Text = itemToModify.Name; 
             
         }
 
         private void FillListControls()
         {
-            viewController.FillListControlWithImplementations(clbListEffects, typeof(IEffectStrategy));
+            formController.FillListControlWithImplementations<IEffectStrategy>(clbListEffects);
+            //formController.FillListControlWithImplementations(clbListEffects, typeof(IEffectStrategy));
         }
 
         //TODO: hacer función para checkear los items en el clbControl con la información del objeto a modificar
-        //private void Check()
-        //{
-        //    viewController.
-        //}
+        private void CheckItemsInClbEffects()
+        {
+            formController.CheckItemsInClbControl<IEffectStrategy>(clbListEffects, itemToModify.EffectStrategies);
+        }
 
 
         #region How to fill List Control With Implementations of an interface. For comboBox And CheckedListBox
@@ -63,9 +63,6 @@ namespace SmallWorld.src.UI.Admin.ItemsCrud
             }
         }
 
-        #endregion
-
-        
         private void CheckItemsInListBoxEffects()
         {
             foreach (IEffectStrategy effect in itemToModify.EffectStrategies)
@@ -77,6 +74,9 @@ namespace SmallWorld.src.UI.Admin.ItemsCrud
                 }
             }
         }
+
+        #endregion
+
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             //itemController.Update(Convert.ToInt32(lblId.Text), (IEffectStrategy)cbItemEffect.SelectedItem);

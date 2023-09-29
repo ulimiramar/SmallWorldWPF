@@ -12,20 +12,34 @@ using System.Windows.Forms;
 
 namespace SmallWorld.src.Controllers
 {
-    internal class ViewController
+    internal class FormController
     {
-        private static ViewController instance;
+        private static FormController instance;
         private Random random = new Random();
-        private ViewController() { }
+        private FormController() { }
 
-        public static ViewController GetInstance()
+        public static FormController GetInstance()
         {
             if (instance == null)
             {
-                instance = new ViewController();
+                instance = new FormController();
             }
             return instance;
         }
+
+        public void FillListControlWithImplementations<DinamicInterface>(ListControl control)
+        {
+            var interfaceType = typeof(DinamicInterface);
+            var types = Assembly.GetExecutingAssembly().GetTypes()
+                                .Where(type => interfaceType.IsAssignableFrom(type) && !type.IsInterface)
+                                .ToList();
+
+            var instances = types.Select(type => Activator.CreateInstance(type)).ToList();
+
+            control.DataSource = instances;
+        }
+
+
 
         public void FillListControlWithImplementations(ListControl control, Type interfaceType)
         {
@@ -84,8 +98,17 @@ namespace SmallWorld.src.Controllers
         }
 
 
-        //TODO: hacer función para checkear los items en el clbControl con la información del objeto a modificar
-        //public void CheckItemsInClbControl(CheckedListBox checkedListBox, Type interfaceType)
+        public void CheckItemsInClbControl<DinamicInterface>(CheckedListBox checkedListBox, List<DinamicInterface> ObjectsList)
+        {
+            foreach (DinamicInterface i in ObjectsList)
+            {
+                int index = checkedListBox.Items.IndexOf(i);
+                if (index >= 0)
+                {
+                    checkedListBox.SetItemChecked(index, true);
+                }
+            }
+        }
 
     }
 }

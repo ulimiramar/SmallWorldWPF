@@ -18,7 +18,7 @@ namespace SmallWorld.src.UI.Admin.FoodCrud
     public partial class FormCreateFood : Form
     {
         private FoodController foodController = FoodController.GetInstance();
-        private ViewController viewController = ViewController.GetInstance();
+        private FormController viewController = FormController.GetInstance();
         public FormCreateFood()
         {
             InitializeComponent();

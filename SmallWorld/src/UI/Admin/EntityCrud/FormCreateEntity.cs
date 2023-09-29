@@ -16,7 +16,7 @@ namespace SmallWorld.src.UI.Admin.EntityCrud
     public partial class FormCreateEntity : Form
     {
         EntityController entityController = EntityController.GetInstance();
-        ViewController viewController = ViewController.GetInstance();
+        FormController formController = FormController.GetInstance();
         public FormCreateEntity()
         {
             InitializeComponent();
@@ -38,10 +38,16 @@ namespace SmallWorld.src.UI.Admin.EntityCrud
 
         private void FillListControls()
         {
-            viewController.FillListControlWithImplementations(cbKingdom, typeof(IKingdom));
-            viewController.FillListControlWithImplementations(cbDiet, typeof(IDiet));
-            viewController.FillListControlWithImplementations(cbHabitat, typeof(IHabitat));
-            viewController.FillListControlWithImplementations(clbListHabitat, typeof(IHabitat));
+            formController.FillListControlWithImplementations<IKingdom>(cbKingdom);
+            formController.FillListControlWithImplementations<IDiet>(cbDiet);
+            formController.FillListControlWithImplementations<IHabitat>(cbHabitat);
+            formController.FillListControlWithImplementations<IHabitat>(clbListHabitat);
+
+
+            //formController.FillListControlWithImplementations(cbKingdom, typeof(IKingdom));
+            //formController.FillListControlWithImplementations(cbDiet, typeof(IDiet));
+            //formController.FillListControlWithImplementations(cbHabitat, typeof(IHabitat));
+            //formController.FillListControlWithImplementations(clbListHabitat, typeof(IHabitat));
         }
 
         private void ClearFormControls()
@@ -55,18 +61,18 @@ namespace SmallWorld.src.UI.Admin.EntityCrud
             cbDiet.SelectedIndex = -1;
             cbHabitat.SelectedIndex = -1;
             cbKingdom.SelectedIndex = -1;
-            viewController.ClearCheckedListBox(clbListHabitat);
+            formController.ClearCheckedListBox(clbListHabitat);
         }
 
         private void btnRandomData_Click(object sender, EventArgs e)
         {
             Random random = new Random();
 
-            txtName.Text = viewController.GetRandomString(8);
+            txtName.Text = formController.GetRandomString(8);
 
-            viewController.SelectRandomItemInComboBox(cbKingdom);
-            viewController.SelectRandomItemInComboBox(cbHabitat);
-            viewController.SelectRandomItemInComboBox(cbDiet);
+            formController.SelectRandomItemInComboBox(cbKingdom);
+            formController.SelectRandomItemInComboBox(cbHabitat);
+            formController.SelectRandomItemInComboBox(cbDiet);
 
             txtMaxLife.Text = Convert.ToString(100);
             txtMaxEnergy.Text = Convert.ToString(100);
@@ -74,7 +80,7 @@ namespace SmallWorld.src.UI.Admin.EntityCrud
             txtDefensePoints.Text = Convert.ToString(random.Next(10, 100));
             txtDefenseShield.Text = Convert.ToString(random.Next(10, 100));
 
-            viewController.CheckRandomItemsInClbControl(clbListHabitat);
+            formController.CheckRandomItemsInClbControl(clbListHabitat);
         }
         private void btnExit_Click(object sender, EventArgs e)
         {

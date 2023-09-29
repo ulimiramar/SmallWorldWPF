@@ -9,11 +9,6 @@ I:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\bin\Debug\SmallWorld.exe
 I:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\bin\Debug\SmallWorld.pdb
 I:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.exe
 I:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.pdb
-I:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.src.UI.KingdomsCrudForm.resources
-I:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.src.UI.AdminFormTest.resources
-I:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.src.UI.EntitiesCrudFormTest.resources
-I:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.src.UI.FoodCrudFormTest.resources
-I:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.src.UI.ItemsCrudFormTest.resources
 I:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.src.UI.PrincipalFormTest.resources
 D:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\bin\Debug\SmallWorld.exe.config
 D:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\bin\Debug\SmallWorld.exe

@@ -20,7 +20,7 @@ namespace SmallWorld.src.UI.Admin.EntityCrud
     public partial class FormEditEntity : Form
     {
         EntityController entityController = EntityController.GetInstance();
-        ViewController viewController = ViewController.GetInstance();
+        FormController formController = FormController.GetInstance();
         Entity entityToModify = new Entity();
         public FormEditEntity(Entity entityToModify)
         {
@@ -41,10 +41,13 @@ namespace SmallWorld.src.UI.Admin.EntityCrud
 
         private void FillListControls()
         {
-            viewController.FillListControlWithImplementations(cbKingdom, typeof(IKingdom));
-            viewController.FillListControlWithImplementations(cbDiet, typeof(IDiet));
-            viewController.FillListControlWithImplementations(cbHabitat, typeof(IHabitat));
-            //viewController.FillListControlWithImplementations(c, typeof(IKingdom));
+            formController.FillListControlWithImplementations<IKingdom>(cbKingdom);
+            formController.FillListControlWithImplementations<IDiet>(cbDiet);
+            formController.FillListControlWithImplementations<IHabitat>(cbHabitat);
+
+            //formController.FillListControlWithImplementations(cbKingdom, typeof(IKingdom));
+            //formController.FillListControlWithImplementations(cbDiet, typeof(IDiet));
+            //formController.FillListControlWithImplementations(cbHabitat, typeof(IHabitat));
         }
         
         private void btnUpdate_Click(object sender, EventArgs e)

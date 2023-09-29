@@ -104,7 +104,7 @@ namespace SmallWorld.src.Controllers
                 {
                     entity.CurrentEnergy += food.EnergyValue;
                 }
-                else throw new Exception($"no es compatible con la dieta. {food.Name} {food.Diet} != {entity.Name} {entity.Diet}");
+                else throw new Exception($"no es compatible con la dieta. {food.Name} {food.DietNames} != {entity.Name} {entity.Diet}");
         }
     
     }

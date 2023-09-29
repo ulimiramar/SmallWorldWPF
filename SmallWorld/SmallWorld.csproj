@@ -60,7 +60,7 @@
     <Compile Include="src\Controllers\KingdomController.cs" />
     <Compile Include="src\Controllers\LandController.cs" />
     <Compile Include="src\Controllers\MapController.cs" />
-    <Compile Include="src\Controllers\ViewController.cs" />
+    <Compile Include="src\Controllers\FormController.cs" />
     <Compile Include="src\Interfaces\IDiet.cs" />
     <Compile Include="src\Interfaces\IEffectStrategy.cs" />
     <Compile Include="src\Interfaces\IEntity.cs" />
@@ -94,12 +94,6 @@
     <Compile Include="src\Model\Terrain\TerrainTypes\Water.cs" />
     <Compile Include="src\Model\Terrain\TerrainTypes\Air.cs" />
     <Compile Include="src\Model\Terrain\TerrainTypes\Earth.cs" />
-    <Compile Include="src\UI\AdminFormTest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="src\UI\AdminFormTest.Designer.cs">
-      <DependentUpon>AdminFormTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="src\UI\Admin\EntityCrud\FormCreateEntity.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,35 +157,11 @@
     <Compile Include="src\UI\CustomControls\HexagonControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="src\UI\EntitiesCrudFormTest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="src\UI\EntitiesCrudFormTest.Designer.cs">
-      <DependentUpon>EntitiesCrudFormTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="src\UI\FoodCrudFormTest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="src\UI\FoodCrudFormTest.Designer.cs">
-      <DependentUpon>FoodCrudFormTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="src\UI\Home\FormHome.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="src\UI\Home\FormHome.Designer.cs">
       <DependentUpon>FormHome.cs</DependentUpon>
-    </Compile>
-    <Compile Include="src\UI\ItemsCrudFormTest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="src\UI\ItemsCrudFormTest.Designer.cs">
-      <DependentUpon>ItemsCrudFormTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="src\UI\KingdomsCrudForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="src\UI\KingdomsCrudForm.Designer.cs">
-      <DependentUpon>KingdomsCrudForm.cs</DependentUpon>
     </Compile>
     <Compile Include="src\UI\PrincipalFormTest.cs">
       <SubType>Form</SubType>
@@ -205,12 +175,6 @@
     <Compile Include="src\UI\TestForm.Designer.cs">
       <DependentUpon>TestForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="src\UI\TestMap.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="src\UI\TestMap.Designer.cs">
-      <DependentUpon>TestMap.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -221,9 +185,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="src\UI\AdminFormTest.resx">
-      <DependentUpon>AdminFormTest.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="src\UI\Admin\EntityCrud\FormCreateEntity.resx">
       <DependentUpon>FormCreateEntity.cs</DependentUpon>
     </EmbeddedResource>
@@ -254,20 +215,8 @@
     <EmbeddedResource Include="src\UI\Admin\MapGenerator\FormMapGenerator.resx">
       <DependentUpon>FormMapGenerator.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="src\UI\EntitiesCrudFormTest.resx">
-      <DependentUpon>EntitiesCrudFormTest.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="src\UI\FoodCrudFormTest.resx">
-      <DependentUpon>FoodCrudFormTest.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="src\UI\Home\FormHome.resx">
       <DependentUpon>FormHome.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="src\UI\ItemsCrudFormTest.resx">
-      <DependentUpon>ItemsCrudFormTest.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="src\UI\KingdomsCrudForm.resx">
-      <DependentUpon>KingdomsCrudForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\UI\PrincipalFormTest.resx">
       <DependentUpon>PrincipalFormTest.cs</DependentUpon>

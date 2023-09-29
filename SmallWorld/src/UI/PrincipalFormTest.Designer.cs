@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.btnAdmin = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblAttackPointsCurrentPlayerEntity = new System.Windows.Forms.Label();
@@ -98,16 +97,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.bsLands)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsBorderingLands)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnAdmin
-            // 
-            this.btnAdmin.Location = new System.Drawing.Point(38, 12);
-            this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(91, 23);
-            this.btnAdmin.TabIndex = 0;
-            this.btnAdmin.Text = "Administrador";
-            this.btnAdmin.UseVisualStyleBackColor = true;
-            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
             // label1
             // 
@@ -603,7 +592,6 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnAdmin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PrincipalFormTest";
             this.Text = "PincipalFormTest";
@@ -628,8 +616,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label6;

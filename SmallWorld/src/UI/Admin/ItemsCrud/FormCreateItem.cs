@@ -17,7 +17,7 @@ namespace SmallWorld.src.UI.Admin.ItemsCrud
     public partial class FormCreateItem : Form
     {
         private ItemController itemController = ItemController.GetInstance();
-        private ViewController viewController = ViewController.GetInstance();
+        private FormController formController = FormController.GetInstance();
         public FormCreateItem()
         {
             InitializeComponent();
@@ -26,7 +26,8 @@ namespace SmallWorld.src.UI.Admin.ItemsCrud
 
         private void FillListControls()
         {
-            viewController.FillListControlWithImplementations(clbListEffects, typeof(IEffectStrategy));
+            formController.FillListControlWithImplementations<IEffectStrategy>(clbListEffects);
+            //formController.FillListControlWithImplementations(clbListEffects, typeof(IEffectStrategy));
         }
         private void btnCreate_Click(object sender, EventArgs e)
         {
@@ -49,13 +50,14 @@ namespace SmallWorld.src.UI.Admin.ItemsCrud
         }
         private void ClearFormControls()
         {
-            viewController.ClearCheckedListBox(clbListEffects);
+            txtName.Clear();
+            formController.ClearCheckedListBox(clbListEffects);
         }
 
         private void btnRandomData_Click(object sender, EventArgs e)
         {
-            txtName.Text = viewController.GetRandomString(4);
-            viewController.CheckRandomItemsInClbControl(clbListEffects);
+            txtName.Text = formController.GetRandomString(4);
+            formController.CheckRandomItemsInClbControl(clbListEffects);
         }
 
         private void btnExit_Click(object sender, EventArgs e)
