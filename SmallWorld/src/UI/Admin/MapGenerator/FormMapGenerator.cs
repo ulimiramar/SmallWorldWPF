@@ -41,13 +41,13 @@ namespace SmallWorld.src.UI.Admin.MapGenerator
 
         private void cbBorderingLands_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cbPositionablesInBorderingLand.DataSource = landController.GetPositionablesInLand((Land)cbBorderingLands.SelectedItem);
+            //cbPositionablesInBorderingLand.DataSource = landController.GetPositionablesInLand((Land)cbBorderingLands.SelectedItem);
         }
 
         private void cbLands_SelectedIndexChanged(object sender, EventArgs e)
         {
             RefreshMap();
-            cbPositionablesInCurrentLand.DataSource = landController.GetPositionablesInLand((Land)cbLands.SelectedItem);
+            //cbPositionablesInCurrentLand.DataSource = landController.GetPositionablesInLand((Land)cbLands.SelectedItem);
         }
     }
 }

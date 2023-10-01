@@ -3,6 +3,7 @@ using SmallWorld.src.Model.Interactable;
 using SmallWorld.src.Model.Interactuable;
 using SmallWorld.src.Model.Map;
 using SmallWorld.src.Model.Terrain;
+using SmallWorld.src.Static;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -13,7 +14,7 @@ using System.Windows.Forms;
 
 namespace SmallWorld.src.Model
 {
-    public class Entity
+    public class Entity : IPositionable
     {
         private static int lastId = 0;
         public int Id { get; private set; }
@@ -187,6 +188,7 @@ namespace SmallWorld.src.Model
             CurrentEnergy = maxEnergy;
             CostToAttack = 30;
             DefenseShield = defenseShield;
+            PositionableObjectRegistry.Register(this);
             //CurrentTerrain = currentTerrain;
             //Position = position;
         }
@@ -392,6 +394,11 @@ namespace SmallWorld.src.Model
         void Position(Land land)
         {
             //if(habitat. == land.TerrainType);
+        }
+
+        void IPositionable.Position(Land land)
+        {
+            throw new NotImplementedException();
         }
     }
 }

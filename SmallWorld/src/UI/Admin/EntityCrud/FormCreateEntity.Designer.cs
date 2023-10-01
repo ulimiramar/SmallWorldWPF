@@ -51,6 +51,9 @@
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.clbListHabitat = new System.Windows.Forms.CheckedListBox();
+            this.btnCreateRandoms = new System.Windows.Forms.Button();
+            this.txtRandomsNumber = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnRandomData
@@ -241,7 +244,7 @@
             this.btnExit.BackColor = System.Drawing.Color.Crimson;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(131, 316);
+            this.btnExit.Location = new System.Drawing.Point(39, 316);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(197, 25);
             this.btnExit.TabIndex = 101;
@@ -257,11 +260,43 @@
             this.clbListHabitat.Size = new System.Drawing.Size(120, 94);
             this.clbListHabitat.TabIndex = 115;
             // 
+            // btnCreateRandoms
+            // 
+            this.btnCreateRandoms.BackColor = System.Drawing.Color.Gold;
+            this.btnCreateRandoms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateRandoms.ForeColor = System.Drawing.Color.Black;
+            this.btnCreateRandoms.Location = new System.Drawing.Point(242, 315);
+            this.btnCreateRandoms.Name = "btnCreateRandoms";
+            this.btnCreateRandoms.Size = new System.Drawing.Size(197, 25);
+            this.btnCreateRandoms.TabIndex = 116;
+            this.btnCreateRandoms.Text = "Crear aleatorios";
+            this.btnCreateRandoms.UseVisualStyleBackColor = false;
+            this.btnCreateRandoms.Click += new System.EventHandler(this.btnCreateRandoms_Click);
+            // 
+            // txtRandomsNumber
+            // 
+            this.txtRandomsNumber.Location = new System.Drawing.Point(457, 321);
+            this.txtRandomsNumber.Name = "txtRandomsNumber";
+            this.txtRandomsNumber.Size = new System.Drawing.Size(56, 20);
+            this.txtRandomsNumber.TabIndex = 117;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(519, 328);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(105, 13);
+            this.label5.TabIndex = 118;
+            this.label5.Text = "Númeo de Aleatorios";
+            // 
             // FormCreateEntity
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 374);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtRandomsNumber);
+            this.Controls.Add(this.btnCreateRandoms);
             this.Controls.Add(this.clbListHabitat);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnRandomData);
@@ -317,5 +352,8 @@
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.CheckedListBox clbListHabitat;
+        private System.Windows.Forms.Button btnCreateRandoms;
+        private System.Windows.Forms.TextBox txtRandomsNumber;
+        private System.Windows.Forms.Label label5;
     }
 }

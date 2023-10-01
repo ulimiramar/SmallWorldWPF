@@ -3,6 +3,7 @@ using SmallWorld.src.Model;
 using SmallWorld.src.Model.Map;
 using SmallWorld.src.Model.Terrain;
 using SmallWorld.src.Model.Terreno;
+using SmallWorld.src.Static;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,11 +19,10 @@ namespace SmallWorld.src.Controllers
 {
     internal class MapController
     {
-        private LandController landController = LandController.GetInstance();
         private static MapController instance;
-        private readonly Map map = new Map();
+        private readonly List<Map>maps = new List<Map>();
+        private readonly List<Land> Lands = new List<Land>();
         private readonly List<IPositionable> positionables = new List<IPositionable>();
-        //private readonly List<Land> landsInMap = new List<Land>();
         private MapController() { }
         public static MapController GetInstance()
         {
@@ -32,7 +32,35 @@ namespace SmallWorld.src.Controllers
             }
             return instance;
         }
-
+        public void AddLand(ITerrainType terrainType, Map map)
+        {
+            Land LandToAdd = new Land(terrainType);
+            map.Lands.Add(LandToAdd);
+        }
+        public void AddBorderingLands(Land landToModify, List<Land> BorderingLandsToAdd)
+        {
+            foreach (Land land in BorderingLandsToAdd)
+            {
+                landToModify.BorderingLands.Add(land);
+            }
+        }
+        public void AddBorderingLand(Land landToModify, Land BorderingLandToAdd)
+        {
+            landToModify.BorderingLands.Add(BorderingLandToAdd);
+        }
+        public List<Land> getLands(Map map)
+        {
+            return map.Lands;
+        }
+        public List<IPositionable> getPositionbalesInAllLands()
+        {
+            List<IPositionable> allPositionables = new List<IPositionable>();
+            foreach (Land land in Lands)
+            {
+                allPositionables.AddRange(land.Positionables);
+            }
+            return allPositionables;
+        }
         public List<ITerrainType> terrainsTypes()
         {
             List<ITerrainType> terrainTypesList = new List<ITerrainType>();
@@ -46,35 +74,73 @@ namespace SmallWorld.src.Controllers
 
         public void GenerateMap()
         {
+            Map map = new Map();
             var random = new Random();
             for (int i = 0; i < 20; i++)
             {
                 List<ITerrainType> terrainTypes = terrainsTypes();
                 ITerrainType randomTerrain = terrainTypes[random.Next(terrainTypes.Count)];
-                landController.AddLand(randomTerrain);
-                //TODO: resolver de si trabajar con la controladora de lands o mapas.
-                //map.Lands.Add()
+                AddLand(randomTerrain, map);
             }
-            //map.Lands = landController.getLands();
-            //map.Lands = land
-            landController.setBorderingLands();
+            maps.Add(map);
+            setBorderingLands(map);
+            SetPositionsOfPositionableObjects(map);
         }
-        public Map GetMap()
+        public void setBorderingLands(Map map)
         {
-            return map;
-        }
-        
+            var random = new Random();
 
-        public void SetPositions()
+            foreach (Land land in getLands(map))
+            {
+                int numBorderingLands = random.Next(1, 7);
+                List<int> availableLandIndices = Enumerable.Range(0, getLands(map).Count).ToList();
+                availableLandIndices.Remove(getLands(map).IndexOf(land));
+
+                for (int i = 0; i < numBorderingLands; i++)
+                {
+                    if (availableLandIndices.Count > 0)
+                    {
+                        int randomIndex = random.Next(0, availableLandIndices.Count);
+                        int borderingLandIndex = availableLandIndices[randomIndex];
+                        if (!land.BorderingLands.Contains(getLands(map)[borderingLandIndex]) && land.BorderingLands.Count < 6 && getLands(map)[borderingLandIndex].BorderingLands.Count < 6)
+                        {
+                            AddBorderingLand(land, getLands(map)[borderingLandIndex]);
+                            AddBorderingLand(getLands(map)[borderingLandIndex], land);
+                        }
+                    }
+                }
+            }
+        }
+        public List<Map> GetMaps()
+        {
+            return maps;
+        }
+        public List<Land> getBorderingLands(Land land)
+        {
+            return land.BorderingLands;
+        }
+
+
+        public void SetPositionsOfPositionableObjects(Map map)
         {
             Random random = new Random();
-            foreach(IPositionable positionable in positionables)
+            foreach(IPositionable positionable in PositionableObjectRegistry.GetAllPositionableObjects())
             {
-                int randomLand = random.Next(0, landController.getLands().Count);
-                positionable.Position(landController.getLands()[randomLand]);
+                int randomLand = random.Next(0, getLands(map).Count);
+                getLands(map)[randomLand].Positionables.Add(positionable);
+                //positionable.Position(getLands(map)[randomLand]);
             }
         }
+        public List<IPositionable> GetPositionablesInLand(Land land)
+        {
+            return land.Positionables;
+        }
 
+        //Generics para traer IPositionables según la clase.
+        public List<T> GetPositionablesInLand<T>(Land land) where T : IPositionable
+        {
+            return land.Positionables.OfType<T>().ToList();
+        }
         public void SetPosition(IPositionable positionable)
         {
             

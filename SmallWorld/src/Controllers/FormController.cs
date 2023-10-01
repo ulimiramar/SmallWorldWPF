@@ -110,5 +110,12 @@ namespace SmallWorld.src.Controllers
             }
         }
 
+        public void RefreshDataSource<T>(BindingSource bs, ComboBox cb, Func<IEnumerable<T>> dataSourceFunc)
+        {
+            bs.DataSource = dataSourceFunc();
+            bs.ResetBindings(false);
+            cb.DataSource = bs;
+        }
+
     }
 }

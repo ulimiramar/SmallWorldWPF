@@ -25,20 +25,7 @@ namespace SmallWorld.src.UI.Admin.EntityCrud
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            List<IHabitat> selectedHabitats = new List<IHabitat>();
-            foreach (IHabitat habitat in clbListHabitat.CheckedItems)
-            {
-                selectedHabitats.Add(habitat);
-            }
-            try
-            {
-                entityController.AddEntity((IKingdom)cbKingdom.SelectedItem, txtName.Text, (IDiet)cbDiet.SelectedItem, selectedHabitats, Convert.ToInt32(txtAttackPoints.Text), Convert.ToInt32(txtDefensePoints.Text), chbAttackRange.Checked, Convert.ToInt32(txtMaxLife.Text), Convert.ToInt32(txtMaxEnergy.Text), Convert.ToInt32(txtDefenseShield.Text));
-                ClearFormControls();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            CreateEntity();
         }
 
         private void FillListControls()
@@ -71,9 +58,37 @@ namespace SmallWorld.src.UI.Admin.EntityCrud
 
         private void btnRandomData_Click(object sender, EventArgs e)
         {
+            RandomData();
+        }
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnCreateRandoms_Click(object sender, EventArgs e)
+        {
+            if (txtRandomsNumber.Text != "")
+            {
+                for (int i = 0; i <= Convert.ToInt32(txtRandomsNumber.Text); i++)
+                {
+                    RandomData();
+                    CreateEntity();
+                }
+                MessageBox.Show("Creados con éxito");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Ingrese número de aleatorios a crear");
+            }
+        }
+
+        public void RandomData()
+        {
+            int i = entityController.getEntities().Count() + 1;
             Random random = new Random();
 
-            txtName.Text = formController.GetRandomString(8);
+            txtName.Text = $"{i} {formController.GetRandomString(4)}";
 
             formController.SelectRandomItemInComboBox(cbKingdom);
             formController.SelectRandomItemInComboBox(cbHabitat);
@@ -87,9 +102,22 @@ namespace SmallWorld.src.UI.Admin.EntityCrud
 
             formController.CheckRandomItemsInClbControl(clbListHabitat);
         }
-        private void btnExit_Click(object sender, EventArgs e)
+        public void CreateEntity()
         {
-            this.Close();
+            List<IHabitat> selectedHabitats = new List<IHabitat>();
+            foreach (IHabitat habitat in clbListHabitat.CheckedItems)
+            {
+                selectedHabitats.Add(habitat);
+            }
+            try
+            {
+                entityController.AddEntity((IKingdom)cbKingdom.SelectedItem, txtName.Text, (IDiet)cbDiet.SelectedItem, selectedHabitats, Convert.ToInt32(txtAttackPoints.Text), Convert.ToInt32(txtDefensePoints.Text), chbAttackRange.Checked, Convert.ToInt32(txtMaxLife.Text), Convert.ToInt32(txtMaxEnergy.Text), Convert.ToInt32(txtDefenseShield.Text));
+                ClearFormControls();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

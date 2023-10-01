@@ -102,9 +102,6 @@ namespace SmallWorld.src.Controllers
                 }
             }
         }
-        public List<IPositionable> GetPositionablesInLand(Land land)
-        {
-            return land.Positionables;
-        }
+
     }
 }

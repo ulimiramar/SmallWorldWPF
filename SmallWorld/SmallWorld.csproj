@@ -94,6 +94,7 @@
     <Compile Include="src\Model\Terrain\TerrainTypes\Water.cs" />
     <Compile Include="src\Model\Terrain\TerrainTypes\Air.cs" />
     <Compile Include="src\Model\Terrain\TerrainTypes\Earth.cs" />
+    <Compile Include="src\Static\PositionableObjectRegistry.cs" />
     <Compile Include="src\UI\Admin\EntityCrud\FormCreateEntity.cs">
       <SubType>Form</SubType>
     </Compile>

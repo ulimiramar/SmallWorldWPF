@@ -41,6 +41,7 @@ namespace SmallWorld.src.Model.Terrain
             lastId++;
             Id = lastId;
             TerrainType = terrainType;
+            Positionables = new List<IPositionable>();
         }
         public Land() { }
         public override string ToString()

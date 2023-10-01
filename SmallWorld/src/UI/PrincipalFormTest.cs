@@ -3,6 +3,7 @@ using SmallWorld.src.Interfaces;
 using SmallWorld.src.Model;
 using SmallWorld.src.Model.Interactable.ItemEffects;
 using SmallWorld.src.Model.Interactuable;
+using SmallWorld.src.Model.Map;
 using SmallWorld.src.Model.Terrain;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,7 @@ namespace SmallWorld.src.UI
         FoodController foodController = FoodController.GetInstance();
         MapController mapController = MapController.GetInstance();
         LandController landController = LandController.GetInstance();
+        FormController formController = FormController.GetInstance();
         public PrincipalFormTest()
         {
             InitializeComponent();
@@ -54,6 +56,9 @@ namespace SmallWorld.src.UI
         private void cbSelectMyEntity_SelectedIndexChanged(object sender, EventArgs e)
         {
             RefreshEntityValues();
+            //TODO: hacer que si el jugador cambia de entidad seleccionada, se cambie a la land en donde está.
+            /*if (cbCurrentPlayerEntities.SelectedItem is Entity CurrentPlayerEntity)
+            cbLands.SelectedItem = mapController.ge*/
         }
 
         private void cbSelectEntityFromOtherUser_SelectedIndexChanged(object sender, EventArgs e)
@@ -109,35 +114,27 @@ namespace SmallWorld.src.UI
             RefreshEntityValues();
             RefreshItems();
             RefreshFoods();
-            RefreshMap();
+            //RefreshMap();
         }
 
         private void RefreshMap()
         {
-            bsLands.DataSource = landController.getLands();
-            bsLands.ResetBindings(false);
-            cbLands.DataSource = bsLands;
+            formController.RefreshDataSource(bsLands, cbLands, () => mapController.getLands((Map)cbMaps.SelectedItem));
+            formController.RefreshDataSource(bsBorderingLands, cbBorderingLands, () => mapController.getBorderingLands((Land)cbLands.SelectedItem));
+            formController.RefreshDataSource(bsLands, cbSelectedLand, () => mapController.getLands((Map)cbMaps.SelectedItem));
         }
         private void RefreshFoods()
         {
-            bsFoods.DataSource = foodController.getFoods();
-            bsFoods.ResetBindings(false);
-            cbFood.DataSource = bsFoods;
+            formController.RefreshDataSource(bsFoods, cbFood, () => foodController.getFoods());
         }
         private void RefreshItems()
         {
-            bsItems.DataSource = itemController.getItems();
-            bsItems.ResetBindings(false);
-            cbItems.DataSource = bsItems;
+            formController.RefreshDataSource(bsItems, cbItems, () => itemController.getItems());
         }
         private void RefreshEntitiesComboBoxes()
         {
-            bsCurrentPlayerEntities.DataSource = entityController.getEntities();
-            bsWaitingPlayersEntities.DataSource = entityController.getEntities();
-            bsCurrentPlayerEntities.ResetBindings(false);
-            bsWaitingPlayersEntities.ResetBindings(false);
-            cbCurrentPlayerEntities.DataSource = bsCurrentPlayerEntities;
-            cbWaitingPlayersEntities.DataSource = bsWaitingPlayersEntities;
+            formController.RefreshDataSource(bsCurrentPlayerEntities, cbCurrentPlayerEntities, () => entityController.getEntities());
+            formController.RefreshDataSource(bsWaitingPlayersEntities, cbWaitingPlayersEntities, () => entityController.getEntities());
         }
 
         private void PrincipalFormTest_Load(object sender, EventArgs e)
@@ -233,18 +230,33 @@ namespace SmallWorld.src.UI
         private void btnGenerateMap_Click(object sender, EventArgs e)
         {
             mapController.GenerateMap();
+            formController.RefreshDataSource(bsMaps, cbMaps, () => mapController.GetMaps());
             RefreshMap();
-            btnGenerateMap.Enabled = false;
+            //btnGenerateMap.Enabled = false;
         }
 
         private void cbLands_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
+            if (cbLands.SelectedItem is Land land)
+            {   
+                formController.RefreshDataSource(bsBorderingLands, cbBorderingLands, () => mapController.getBorderingLands(land));
+            }
+        }
+
+        private void cbMaps_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefreshMap();
+        }
+
+        private void cbSelectedLand_SelectedIndexChanged(object sender, EventArgs e)
+        {
             if (cbLands.SelectedItem is Land land)
             {
-                bsBorderingLands.DataSource = landController.getBorderingLands(land);
-                bsBorderingLands.ResetBindings(false);
-                cbBorderingLands.DataSource = bsBorderingLands;
+                formController.RefreshDataSource(bsItems, cbItems, () => mapController.GetPositionablesInLand<Item>(land));
+                formController.RefreshDataSource(bsFoods, cbFood, () => mapController.GetPositionablesInLand<Food>(land));
+                formController.RefreshDataSource(bsCurrentPlayerEntities, cbCurrentPlayerEntities, () => mapController.GetPositionablesInLand<Entity>(land));
+                formController.RefreshDataSource(bsWaitingPlayersEntities, cbWaitingPlayersEntities, () => mapController.GetPositionablesInLand<Entity>(land));
             }
         }
     }

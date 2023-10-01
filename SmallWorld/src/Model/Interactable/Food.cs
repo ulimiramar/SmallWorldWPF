@@ -1,6 +1,7 @@
 ﻿using SmallWorld.src.Interfaces;
 using SmallWorld.src.Model.Reino;
 using SmallWorld.src.Model.Terrain;
+using SmallWorld.src.Static;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -39,6 +40,7 @@ namespace SmallWorld.src.Model.Interactuable
             Name = name;
             Diet = diet;
             EnergyValue = energyValue;
+            PositionableObjectRegistry.Register(this);
         }
 
         public Food()
