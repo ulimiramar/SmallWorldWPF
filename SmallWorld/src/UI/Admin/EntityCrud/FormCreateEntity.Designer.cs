@@ -58,9 +58,9 @@
             // 
             // btnRandomData
             // 
-            this.btnRandomData.BackColor = System.Drawing.Color.HotPink;
+            this.btnRandomData.BackColor = System.Drawing.Color.LightBlue;
             this.btnRandomData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRandomData.ForeColor = System.Drawing.Color.White;
+            this.btnRandomData.ForeColor = System.Drawing.Color.Black;
             this.btnRandomData.Location = new System.Drawing.Point(39, 284);
             this.btnRandomData.Name = "btnRandomData";
             this.btnRandomData.Size = new System.Drawing.Size(197, 26);
@@ -228,9 +228,9 @@
             // 
             // btnCreate
             // 
-            this.btnCreate.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnCreate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(247)))), ((int)(((byte)(129)))));
             this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreate.ForeColor = System.Drawing.Color.White;
+            this.btnCreate.ForeColor = System.Drawing.Color.Black;
             this.btnCreate.Location = new System.Drawing.Point(242, 284);
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(197, 25);
@@ -241,9 +241,9 @@
             // 
             // btnExit
             // 
-            this.btnExit.BackColor = System.Drawing.Color.Crimson;
+            this.btnExit.BackColor = System.Drawing.Color.LightCoral;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.ForeColor = System.Drawing.Color.Black;
             this.btnExit.Location = new System.Drawing.Point(39, 316);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(197, 25);
@@ -254,15 +254,16 @@
             // 
             // clbListHabitat
             // 
+            this.clbListHabitat.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.clbListHabitat.FormattingEnabled = true;
             this.clbListHabitat.Location = new System.Drawing.Point(393, 48);
             this.clbListHabitat.Name = "clbListHabitat";
-            this.clbListHabitat.Size = new System.Drawing.Size(120, 94);
+            this.clbListHabitat.Size = new System.Drawing.Size(120, 90);
             this.clbListHabitat.TabIndex = 115;
             // 
             // btnCreateRandoms
             // 
-            this.btnCreateRandoms.BackColor = System.Drawing.Color.Gold;
+            this.btnCreateRandoms.BackColor = System.Drawing.Color.NavajoWhite;
             this.btnCreateRandoms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreateRandoms.ForeColor = System.Drawing.Color.Black;
             this.btnCreateRandoms.Location = new System.Drawing.Point(242, 315);
@@ -285,14 +286,15 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(519, 328);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(105, 13);
+            this.label5.Size = new System.Drawing.Size(108, 13);
             this.label5.TabIndex = 118;
-            this.label5.Text = "Númeo de Aleatorios";
+            this.label5.Text = "Número de Aleatorios";
             // 
             // FormCreateEntity
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(222)))), ((int)(((byte)(144)))));
             this.ClientSize = new System.Drawing.Size(700, 374);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtRandomsNumber);

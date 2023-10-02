@@ -78,7 +78,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.cbItems = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnMove = new System.Windows.Forms.Button();
             this.btnRefreshData = new System.Windows.Forms.Button();
             this.btnRest = new System.Windows.Forms.Button();
             this.bsCurrentPlayerEntities = new System.Windows.Forms.BindingSource(this.components);
@@ -113,6 +113,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.Color.LightGreen;
             this.panel1.Controls.Add(this.lblAttackPointsCurrentPlayerEntity);
             this.panel1.Controls.Add(this.lblDefensePointsCurrentPlayerEntity);
             this.panel1.Controls.Add(this.lblCurrentEnergyCurrentPlayerEntity);
@@ -261,6 +262,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.LightCoral;
             this.panel2.Controls.Add(this.lblAttackPointsWaitingPlayerEntity);
             this.panel2.Controls.Add(this.lblDefensePointsWaitingPlayerEntity);
             this.panel2.Controls.Add(this.lblCurrentEnergyWaitingPlayerEntity);
@@ -275,7 +277,7 @@
             this.panel2.Controls.Add(this.pbCurrentEnergyWaitingPlayerEntity);
             this.panel2.Controls.Add(this.pbDefensePointsWaitingPlayerEntity);
             this.panel2.Controls.Add(this.pbCurrentLifeWaitingPlayerEntity);
-            this.panel2.Location = new System.Drawing.Point(386, 108);
+            this.panel2.Location = new System.Drawing.Point(376, 108);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(178, 261);
             this.panel2.TabIndex = 4;
@@ -409,6 +411,7 @@
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.NavajoWhite;
             this.panel3.Controls.Add(this.cbMaps);
             this.panel3.Controls.Add(this.label19);
             this.panel3.Controls.Add(this.label18);
@@ -484,32 +487,39 @@
             // 
             // btnAttack
             // 
-            this.btnAttack.Location = new System.Drawing.Point(454, 375);
+            this.btnAttack.BackColor = System.Drawing.Color.NavajoWhite;
+            this.btnAttack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAttack.ForeColor = System.Drawing.Color.Black;
+            this.btnAttack.Location = new System.Drawing.Point(428, 375);
             this.btnAttack.Name = "btnAttack";
             this.btnAttack.Size = new System.Drawing.Size(75, 23);
             this.btnAttack.TabIndex = 8;
             this.btnAttack.Text = "Atacar";
-            this.btnAttack.UseVisualStyleBackColor = true;
+            this.btnAttack.UseVisualStyleBackColor = false;
             this.btnAttack.Click += new System.EventHandler(this.btnAttack_Click);
             // 
             // btnInteract
             // 
-            this.btnInteract.Location = new System.Drawing.Point(640, 375);
+            this.btnInteract.BackColor = System.Drawing.Color.LightBlue;
+            this.btnInteract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInteract.ForeColor = System.Drawing.Color.Black;
+            this.btnInteract.Location = new System.Drawing.Point(604, 375);
             this.btnInteract.Name = "btnInteract";
             this.btnInteract.Size = new System.Drawing.Size(75, 23);
             this.btnInteract.TabIndex = 14;
             this.btnInteract.Text = "Interactuar";
-            this.btnInteract.UseVisualStyleBackColor = true;
+            this.btnInteract.UseVisualStyleBackColor = false;
             this.btnInteract.Click += new System.EventHandler(this.btnInteract_Click);
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.Color.LightBlue;
             this.panel4.Controls.Add(this.label13);
             this.panel4.Controls.Add(this.cbFood);
             this.panel4.Controls.Add(this.label12);
             this.panel4.Controls.Add(this.cbItems);
             this.panel4.Controls.Add(this.label14);
-            this.panel4.Location = new System.Drawing.Point(570, 108);
+            this.panel4.Location = new System.Drawing.Point(560, 108);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(150, 261);
             this.panel4.TabIndex = 13;
@@ -559,18 +569,22 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "Items en este terreno";
             // 
-            // button4
+            // btnMove
             // 
-            this.button4.Location = new System.Drawing.Point(250, 375);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 15;
-            this.button4.Text = "Mover";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnMove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMove.ForeColor = System.Drawing.Color.Black;
+            this.btnMove.Location = new System.Drawing.Point(250, 375);
+            this.btnMove.Name = "btnMove";
+            this.btnMove.Size = new System.Drawing.Size(75, 23);
+            this.btnMove.TabIndex = 15;
+            this.btnMove.Text = "Mover";
+            this.btnMove.UseVisualStyleBackColor = true;
+            this.btnMove.Click += new System.EventHandler(this.btnMove_Click);
             // 
             // btnRefreshData
             // 
-            this.btnRefreshData.Location = new System.Drawing.Point(154, 12);
+            this.btnRefreshData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefreshData.Location = new System.Drawing.Point(34, 12);
             this.btnRefreshData.Name = "btnRefreshData";
             this.btnRefreshData.Size = new System.Drawing.Size(107, 23);
             this.btnRefreshData.TabIndex = 16;
@@ -580,35 +594,41 @@
             // 
             // btnRest
             // 
+            this.btnRest.BackColor = System.Drawing.Color.LightGreen;
+            this.btnRest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRest.ForeColor = System.Drawing.Color.Black;
             this.btnRest.Location = new System.Drawing.Point(59, 375);
             this.btnRest.Name = "btnRest";
             this.btnRest.Size = new System.Drawing.Size(75, 23);
             this.btnRest.TabIndex = 17;
             this.btnRest.Text = "Descansar";
-            this.btnRest.UseVisualStyleBackColor = true;
+            this.btnRest.UseVisualStyleBackColor = false;
             this.btnRest.Click += new System.EventHandler(this.btnRest_Click);
             // 
             // btnGenerateMap
             // 
+            this.btnGenerateMap.BackColor = System.Drawing.Color.NavajoWhite;
+            this.btnGenerateMap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerateMap.Location = new System.Drawing.Point(250, 71);
             this.btnGenerateMap.Name = "btnGenerateMap";
             this.btnGenerateMap.Size = new System.Drawing.Size(75, 23);
             this.btnGenerateMap.TabIndex = 18;
             this.btnGenerateMap.Text = "Generar";
-            this.btnGenerateMap.UseVisualStyleBackColor = true;
+            this.btnGenerateMap.UseVisualStyleBackColor = false;
             this.btnGenerateMap.Click += new System.EventHandler(this.btnGenerateMap_Click);
             // 
             // PrincipalFormTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(247)))), ((int)(((byte)(129)))));
             this.ClientSize = new System.Drawing.Size(718, 522);
             this.Controls.Add(this.cbSelectedLand);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnGenerateMap);
             this.Controls.Add(this.btnRest);
             this.Controls.Add(this.btnRefreshData);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnMove);
             this.Controls.Add(this.btnInteract);
             this.Controls.Add(this.btnAttack);
             this.Controls.Add(this.panel4);
@@ -671,7 +691,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox cbItems;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnMove;
         private System.Windows.Forms.BindingSource bsCurrentPlayerEntities;
         private System.Windows.Forms.Button btnRefreshData;
         private System.Windows.Forms.BindingSource bsWaitingPlayersEntities;

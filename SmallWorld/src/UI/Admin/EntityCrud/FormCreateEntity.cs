@@ -83,12 +83,13 @@ namespace SmallWorld.src.UI.Admin.EntityCrud
             }
         }
 
+
         public void RandomData()
         {
             int i = entityController.getEntities().Count() + 1;
             Random random = new Random();
 
-            txtName.Text = $"{i} {formController.GetRandomString(4)}";
+            txtName.Text = $"{i} entidad {formController.GetRandomString(4)}";
 
             formController.SelectRandomItemInComboBox(cbKingdom);
             formController.SelectRandomItemInComboBox(cbHabitat);

@@ -141,10 +141,34 @@ namespace SmallWorld.src.Controllers
         {
             return land.Positionables.OfType<T>().ToList();
         }
-        public void SetPosition(IPositionable positionable)
+
+
+        public void MoveMovible2(Land landOrigin, Land landDestiny, Entity entity)
         {
-            
+            List<IPositionable> MoviblesToRemove = new List<IPositionable>();
+
+            foreach (IPositionable p in landOrigin.Positionables)
+            {
+                if (p.Equals(entity))
+                {
+                    MoviblesToRemove.Add(p);
+                    landDestiny.Positionables.Add(p);
+                    break;
+                }
+            }
+
+            foreach (IPositionable p in MoviblesToRemove)
+            {
+                landOrigin.Positionables.Remove(p);
+            }
         }
+
+        public void MoveMovible(Land landOrigin, Land landDestiny, Entity entity)
+        {
+            landDestiny.Positionables.Add(entity);
+            landOrigin.Positionables.Remove(entity);
+        }
+
 
     }
 }

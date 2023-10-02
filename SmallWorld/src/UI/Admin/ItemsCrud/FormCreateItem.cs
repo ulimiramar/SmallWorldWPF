@@ -31,22 +31,7 @@ namespace SmallWorld.src.UI.Admin.ItemsCrud
         }
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            List<IEffectStrategy> selectedEffects = new List<IEffectStrategy>();
-
-            foreach (IEffectStrategy diet in clbListEffects.CheckedItems)
-            {
-                selectedEffects.Add(diet);
-            }
-            try
-                {
-                    itemController.AddItem(selectedEffects, txtName.Text);
-                    ClearFormControls();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            
+            CreateItem();
         }
         private void ClearFormControls()
         {
@@ -56,13 +41,55 @@ namespace SmallWorld.src.UI.Admin.ItemsCrud
 
         private void btnRandomData_Click(object sender, EventArgs e)
         {
-            txtName.Text = formController.GetRandomString(4);
-            formController.CheckRandomItemsInClbControl(clbListEffects);
+            RandomData();
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnCreateRandoms_Click(object sender, EventArgs e)
+        {
+            if (txtRandomsNumber.Text != "")
+            {
+                for (int i = 0; i <= Convert.ToInt32(txtRandomsNumber.Text); i++)
+                {
+                    RandomData();
+                    CreateItem();
+                }
+                MessageBox.Show("Creados con éxito");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Ingrese número de aleatorios a crear");
+            }
+        }
+        private void RandomData()
+        {
+            int i = itemController.getItems().Count() + 1;
+
+            txtName.Text = $"{i} item {formController.GetRandomString(4)}";
+            formController.CheckRandomItemsInClbControl(clbListEffects);
+        }
+        private void CreateItem()
+        {
+            List<IEffectStrategy> selectedEffects = new List<IEffectStrategy>();
+
+            foreach (IEffectStrategy diet in clbListEffects.CheckedItems)
+            {
+                selectedEffects.Add(diet);
+            }
+            try
+            {
+                itemController.AddItem(selectedEffects, txtName.Text);
+                ClearFormControls();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

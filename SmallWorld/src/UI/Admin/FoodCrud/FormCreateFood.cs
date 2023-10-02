@@ -18,7 +18,7 @@ namespace SmallWorld.src.UI.Admin.FoodCrud
     public partial class FormCreateFood : Form
     {
         private FoodController foodController = FoodController.GetInstance();
-        private FormController viewController = FormController.GetInstance();
+        private FormController formController = FormController.GetInstance();
         public FormCreateFood()
         {
             InitializeComponent();
@@ -26,16 +26,64 @@ namespace SmallWorld.src.UI.Admin.FoodCrud
         }
         private void FillListControls()
         {
-            viewController.FillListControlWithImplementations(clbListDiets, typeof(IDiet));
+            formController.FillListControlWithImplementations(clbListDiets, typeof(IDiet));
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
+            CreateFood();
+        }
+        private void ClearFormControls()
+        {
+            txtEnergyValue.Text = "";
+            txtFoodName.Text = "";
+            formController.ClearCheckedListBox(clbListDiets);
+        }
+
+        private void btnRandomData_Click(object sender, EventArgs e)
+        {
+            RandomData();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnCreateRandoms_Click(object sender, EventArgs e)
+        {
+            if (txtRandomsNumber.Text != "")
+            {
+                for (int i = 0; i <= Convert.ToInt32(txtRandomsNumber.Text); i++)
+                {
+                    RandomData();
+                    CreateFood();
+                }
+                MessageBox.Show("Creados con éxito");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Ingrese número de aleatorios a crear");
+            }
+        }
+        public void RandomData()
+        {
+            int i = foodController.getFoods().Count() + 1;
+            Random random = new Random();
+
+            txtFoodName.Text = $"{i} comida {formController.GetRandomString(4)}";
+
+            txtEnergyValue.Text = Convert.ToString(random.Next(10, 100));
+            formController.CheckRandomItemsInClbControl(clbListDiets);
+        }
+        public void CreateFood()
+        {
             List<IDiet> selectedDiets = new List<IDiet>();
-            
+
             foreach (IDiet diet in clbListDiets.CheckedItems)
             {
-                    selectedDiets.Add(diet);
+                selectedDiets.Add(diet);
             }
             try
             {
@@ -47,25 +95,5 @@ namespace SmallWorld.src.UI.Admin.FoodCrud
                 MessageBox.Show(ex.Message);
             }
         }
-        private void ClearFormControls()
-        {
-            txtEnergyValue.Text = "";
-            txtFoodName.Text = "";
-            viewController.ClearCheckedListBox(clbListDiets);
-        }
-
-        private void btnRandomData_Click(object sender, EventArgs e)
-        {
-            Random random = new Random();
-            txtEnergyValue.Text = Convert.ToString(random.Next(10, 100));
-            txtFoodName.Text = viewController.GetRandomString(8);
-            viewController.CheckRandomItemsInClbControl(clbListDiets);
-        }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
     }
 }

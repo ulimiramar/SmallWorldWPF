@@ -38,6 +38,9 @@
             this.txtFoodName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.clbListDiets = new System.Windows.Forms.CheckedListBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtRandomsNumber = new System.Windows.Forms.TextBox();
+            this.btnCreateRandoms = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnExit
@@ -45,7 +48,7 @@
             this.btnExit.BackColor = System.Drawing.Color.Crimson;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(118, 296);
+            this.btnExit.Location = new System.Drawing.Point(26, 328);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(197, 25);
             this.btnExit.TabIndex = 107;
@@ -136,11 +139,43 @@
             this.clbListDiets.Size = new System.Drawing.Size(120, 94);
             this.clbListDiets.TabIndex = 114;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(303, 310);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(108, 13);
+            this.label5.TabIndex = 121;
+            this.label5.Text = "Número de Aleatorios";
+            // 
+            // txtRandomsNumber
+            // 
+            this.txtRandomsNumber.Location = new System.Drawing.Point(241, 303);
+            this.txtRandomsNumber.Name = "txtRandomsNumber";
+            this.txtRandomsNumber.Size = new System.Drawing.Size(56, 20);
+            this.txtRandomsNumber.TabIndex = 120;
+            // 
+            // btnCreateRandoms
+            // 
+            this.btnCreateRandoms.BackColor = System.Drawing.Color.Gold;
+            this.btnCreateRandoms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCreateRandoms.ForeColor = System.Drawing.Color.Black;
+            this.btnCreateRandoms.Location = new System.Drawing.Point(26, 297);
+            this.btnCreateRandoms.Name = "btnCreateRandoms";
+            this.btnCreateRandoms.Size = new System.Drawing.Size(197, 25);
+            this.btnCreateRandoms.TabIndex = 119;
+            this.btnCreateRandoms.Text = "Crear aleatorios";
+            this.btnCreateRandoms.UseVisualStyleBackColor = false;
+            this.btnCreateRandoms.Click += new System.EventHandler(this.btnCreateRandoms_Click);
+            // 
             // FormCreateFood
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(456, 450);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.txtRandomsNumber);
+            this.Controls.Add(this.btnCreateRandoms);
             this.Controls.Add(this.clbListDiets);
             this.Controls.Add(this.txtEnergyValue);
             this.Controls.Add(this.label3);
@@ -171,5 +206,8 @@
         private System.Windows.Forms.TextBox txtFoodName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckedListBox clbListDiets;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtRandomsNumber;
+        private System.Windows.Forms.Button btnCreateRandoms;
     }
 }

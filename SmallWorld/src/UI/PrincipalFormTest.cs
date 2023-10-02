@@ -14,6 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace SmallWorld.src.UI
 {
@@ -137,6 +138,14 @@ namespace SmallWorld.src.UI
             formController.RefreshDataSource(bsWaitingPlayersEntities, cbWaitingPlayersEntities, () => entityController.getEntities());
         }
 
+        private void RefreshPositionables(Land land)
+        {
+            formController.RefreshDataSource(bsItems, cbItems, () => mapController.GetPositionablesInLand<Item>(land));
+            formController.RefreshDataSource(bsFoods, cbFood, () => mapController.GetPositionablesInLand<Food>(land));
+            formController.RefreshDataSource(bsCurrentPlayerEntities, cbCurrentPlayerEntities, () => mapController.GetPositionablesInLand<Entity>(land));
+            formController.RefreshDataSource(bsWaitingPlayersEntities, cbWaitingPlayersEntities, () => mapController.GetPositionablesInLand<Entity>(land));
+        }
+
         private void PrincipalFormTest_Load(object sender, EventArgs e)
         {
         }
@@ -251,12 +260,19 @@ namespace SmallWorld.src.UI
 
         private void cbSelectedLand_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbLands.SelectedItem is Land land)
+            if (cbSelectedLand.SelectedItem is Land land)
             {
-                formController.RefreshDataSource(bsItems, cbItems, () => mapController.GetPositionablesInLand<Item>(land));
-                formController.RefreshDataSource(bsFoods, cbFood, () => mapController.GetPositionablesInLand<Food>(land));
-                formController.RefreshDataSource(bsCurrentPlayerEntities, cbCurrentPlayerEntities, () => mapController.GetPositionablesInLand<Entity>(land));
-                formController.RefreshDataSource(bsWaitingPlayersEntities, cbWaitingPlayersEntities, () => mapController.GetPositionablesInLand<Entity>(land));
+                RefreshPositionables(land);
+            }
+        }
+
+        private void btnMove_Click(object sender, EventArgs e)
+        {
+            if (cbCurrentPlayerEntities.SelectedItem is Entity entity && cbLands.SelectedItem is Land landOrigin && cbBorderingLands.SelectedItem is Land landDestiny)
+            {
+                mapController.MoveMovible(landOrigin, landDestiny, entity);
+                MessageBox.Show($"{entity} se movió de {landOrigin} a {landDestiny}");
+                RefreshPositionables(landOrigin);
             }
         }
     }

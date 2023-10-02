@@ -231,9 +231,9 @@
             // 
             // btnUpdate
             // 
-            this.btnUpdate.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnUpdate.BackColor = System.Drawing.Color.LightBlue;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.ForeColor = System.Drawing.Color.Black;
             this.btnUpdate.Location = new System.Drawing.Point(68, 312);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(132, 23);
@@ -244,9 +244,9 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.Crimson;
+            this.btnCancel.BackColor = System.Drawing.Color.LightCoral;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.ForeColor = System.Drawing.Color.Black;
             this.btnCancel.Location = new System.Drawing.Point(206, 312);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(130, 23);
@@ -257,16 +257,18 @@
             // 
             // clbListHabitat
             // 
+            this.clbListHabitat.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.clbListHabitat.FormattingEnabled = true;
             this.clbListHabitat.Location = new System.Drawing.Point(379, 73);
             this.clbListHabitat.Name = "clbListHabitat";
-            this.clbListHabitat.Size = new System.Drawing.Size(120, 94);
+            this.clbListHabitat.Size = new System.Drawing.Size(120, 90);
             this.clbListHabitat.TabIndex = 126;
             // 
             // FormEditEntity
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(222)))), ((int)(((byte)(144)))));
             this.ClientSize = new System.Drawing.Size(572, 348);
             this.Controls.Add(this.clbListHabitat);
             this.Controls.Add(this.btnCancel);

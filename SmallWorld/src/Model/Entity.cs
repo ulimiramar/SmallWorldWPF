@@ -382,8 +382,11 @@ namespace SmallWorld.src.Model
             return needEnergy;
         }
 
-        
 
+        public override bool Equals(object obj)
+        {
+            return base.Equals(obj);
+        }
 
         public override string ToString()
         {
