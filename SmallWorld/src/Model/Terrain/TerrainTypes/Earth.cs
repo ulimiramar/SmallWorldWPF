@@ -12,7 +12,10 @@ namespace SmallWorld.src.Model.Terreno
     {
         private string name = "Tierra";
         private Bitmap ImageRute = global::SmallWorld.Properties.Resources.EarthGreen;
-        
+        private Color color = Color.Green;
+
+        public Color Color { get => color; set => color = value; }
+
 
         //private string ImageRute = $@"I:\itec3\disenio\SmallWorld-mio\SmallWorld\SmallWorld\Resources\EarthGreen.jpg";
 
@@ -23,6 +26,11 @@ namespace SmallWorld.src.Model.Terreno
         public Bitmap getTerrainImageRute()
         {
             return ImageRute;
+        }
+
+        public Color getColor()
+        {
+            return Color;
         }
     }
 }

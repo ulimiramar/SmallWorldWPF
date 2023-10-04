@@ -71,12 +71,11 @@ namespace SmallWorld.src.Controllers
             }
             return terrainTypesList;
         }
-
         public void GenerateMap()
         {
             Map map = new Map();
             var random = new Random();
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 19; i++)
             {
                 List<ITerrainType> terrainTypes = terrainsTypes();
                 ITerrainType randomTerrain = terrainTypes[random.Next(terrainTypes.Count)];
@@ -87,6 +86,28 @@ namespace SmallWorld.src.Controllers
             SetPositionsOfPositionableObjects(map);
         }
         public void setBorderingLands(Map map)
+        {
+            map.Lands[0].BorderingLands = new List<Land> { map.Lands[1], map.Lands[5], map.Lands[6] };
+            map.Lands[1].BorderingLands = new List<Land> { map.Lands[0], map.Lands[6], map.Lands[7], map.Lands[2] };
+            map.Lands[2].BorderingLands = new List<Land> { map.Lands[1], map.Lands[7], map.Lands[3] };
+            map.Lands[3].BorderingLands = new List<Land> { map.Lands[2], map.Lands[7], map.Lands[8], map.Lands[4] };
+            map.Lands[4].BorderingLands = new List<Land> { map.Lands[3], map.Lands[8], map.Lands[9] };
+            map.Lands[5].BorderingLands = new List<Land> { map.Lands[0], map.Lands[6], map.Lands[11], map.Lands[10] };
+            map.Lands[6].BorderingLands = new List<Land> { map.Lands[0], map.Lands[1], map.Lands[7], map.Lands[12], map.Lands[11], map.Lands[5] };
+            map.Lands[7].BorderingLands = new List<Land> { map.Lands[1], map.Lands[2], map.Lands[3], map.Lands[8], map.Lands[12], map.Lands[6] };
+            map.Lands[8].BorderingLands = new List<Land> { map.Lands[7], map.Lands[3], map.Lands[4], map.Lands[9], map.Lands[13], map.Lands[12] };
+            map.Lands[9].BorderingLands = new List<Land> { map.Lands[4], map.Lands[8], map.Lands[13], map.Lands[14] };
+            map.Lands[10].BorderingLands = new List<Land> { map.Lands[5], map.Lands[11], map.Lands[15] };
+            map.Lands[11].BorderingLands = new List<Land> { map.Lands[10], map.Lands[5], map.Lands[6], map.Lands[12], map.Lands[16], map.Lands[15] };
+            map.Lands[12].BorderingLands = new List<Land> { map.Lands[6], map.Lands[7], map.Lands[8], map.Lands[11], map.Lands[16], map.Lands[13] };
+            map.Lands[13].BorderingLands = new List<Land> { map.Lands[12], map.Lands[8], map.Lands[9], map.Lands[14], map.Lands[17], map.Lands[16] };
+            map.Lands[14].BorderingLands = new List<Land> { map.Lands[9], map.Lands[13], map.Lands[17] };
+            map.Lands[15].BorderingLands = new List<Land> { map.Lands[10], map.Lands[11], map.Lands[16], map.Lands[18] };
+            map.Lands[16].BorderingLands = new List<Land> { map.Lands[15], map.Lands[11], map.Lands[12], map.Lands[13], map.Lands[17], map.Lands[18] };
+            map.Lands[17].BorderingLands = new List<Land> { map.Lands[14], map.Lands[13], map.Lands[16], map.Lands[18] };
+            map.Lands[18].BorderingLands = new List<Land> { map.Lands[15], map.Lands[16], map.Lands[17] };
+        }
+        public void setBorderingLandsRandomly(Map map)
         {
             var random = new Random();
 

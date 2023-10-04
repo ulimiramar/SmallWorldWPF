@@ -63,6 +63,25 @@
             this.pbCurrentLifeWaitingPlayerEntity = new System.Windows.Forms.ProgressBar();
             this.label11 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.hexagon0 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagon5 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagon10 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagon4 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagon9 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagon14 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagon18 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagon15 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagon17 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagon2 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagon16 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagon3 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagon1 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagon11 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagon13 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagon8 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagon7 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagon6 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagon12 = new SmallWorld.src.UI.CustomControls.HexagonControl();
             this.cbMaps = new System.Windows.Forms.ComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -130,7 +149,7 @@
             this.panel1.Controls.Add(this.pbCurrentLifeCurrentPlayerEntity);
             this.panel1.Location = new System.Drawing.Point(12, 108);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(176, 261);
+            this.panel1.Size = new System.Drawing.Size(165, 261);
             this.panel1.TabIndex = 2;
             // 
             // lblAttackPointsCurrentPlayerEntity
@@ -277,9 +296,9 @@
             this.panel2.Controls.Add(this.pbCurrentEnergyWaitingPlayerEntity);
             this.panel2.Controls.Add(this.pbDefensePointsWaitingPlayerEntity);
             this.panel2.Controls.Add(this.pbCurrentLifeWaitingPlayerEntity);
-            this.panel2.Location = new System.Drawing.Point(376, 108);
+            this.panel2.Location = new System.Drawing.Point(391, 108);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(178, 261);
+            this.panel2.Size = new System.Drawing.Size(163, 261);
             this.panel2.TabIndex = 4;
             // 
             // lblAttackPointsWaitingPlayerEntity
@@ -412,21 +431,192 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.NavajoWhite;
+            this.panel3.Controls.Add(this.hexagon0);
+            this.panel3.Controls.Add(this.hexagon5);
+            this.panel3.Controls.Add(this.hexagon10);
+            this.panel3.Controls.Add(this.hexagon4);
+            this.panel3.Controls.Add(this.hexagon9);
+            this.panel3.Controls.Add(this.hexagon14);
+            this.panel3.Controls.Add(this.hexagon18);
+            this.panel3.Controls.Add(this.hexagon15);
+            this.panel3.Controls.Add(this.hexagon17);
+            this.panel3.Controls.Add(this.hexagon2);
+            this.panel3.Controls.Add(this.hexagon16);
+            this.panel3.Controls.Add(this.hexagon3);
+            this.panel3.Controls.Add(this.hexagon1);
+            this.panel3.Controls.Add(this.hexagon11);
+            this.panel3.Controls.Add(this.hexagon13);
+            this.panel3.Controls.Add(this.hexagon8);
+            this.panel3.Controls.Add(this.hexagon7);
+            this.panel3.Controls.Add(this.hexagon6);
+            this.panel3.Controls.Add(this.hexagon12);
             this.panel3.Controls.Add(this.cbMaps);
             this.panel3.Controls.Add(this.label19);
             this.panel3.Controls.Add(this.label18);
             this.panel3.Controls.Add(this.cbBorderingLands);
             this.panel3.Controls.Add(this.label17);
             this.panel3.Controls.Add(this.cbLands);
-            this.panel3.Location = new System.Drawing.Point(194, 108);
+            this.panel3.Location = new System.Drawing.Point(183, 108);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(176, 261);
+            this.panel3.Size = new System.Drawing.Size(202, 361);
             this.panel3.TabIndex = 6;
+            // 
+            // hexagon0
+            // 
+            this.hexagon0.BackColor = System.Drawing.Color.DarkBlue;
+            this.hexagon0.Location = new System.Drawing.Point(12, 175);
+            this.hexagon0.Name = "hexagon0";
+            this.hexagon0.Size = new System.Drawing.Size(40, 40);
+            this.hexagon0.TabIndex = 24;
+            // 
+            // hexagon5
+            // 
+            this.hexagon5.BackColor = System.Drawing.Color.DarkBlue;
+            this.hexagon5.Location = new System.Drawing.Point(12, 221);
+            this.hexagon5.Name = "hexagon5";
+            this.hexagon5.Size = new System.Drawing.Size(40, 40);
+            this.hexagon5.TabIndex = 23;
+            // 
+            // hexagon10
+            // 
+            this.hexagon10.BackColor = System.Drawing.Color.DarkBlue;
+            this.hexagon10.Location = new System.Drawing.Point(12, 267);
+            this.hexagon10.Name = "hexagon10";
+            this.hexagon10.Size = new System.Drawing.Size(40, 40);
+            this.hexagon10.TabIndex = 22;
+            // 
+            // hexagon4
+            // 
+            this.hexagon4.BackColor = System.Drawing.Color.DarkBlue;
+            this.hexagon4.Location = new System.Drawing.Point(148, 175);
+            this.hexagon4.Name = "hexagon4";
+            this.hexagon4.Size = new System.Drawing.Size(40, 40);
+            this.hexagon4.TabIndex = 21;
+            // 
+            // hexagon9
+            // 
+            this.hexagon9.BackColor = System.Drawing.Color.DarkBlue;
+            this.hexagon9.Location = new System.Drawing.Point(148, 221);
+            this.hexagon9.Name = "hexagon9";
+            this.hexagon9.Size = new System.Drawing.Size(40, 40);
+            this.hexagon9.TabIndex = 20;
+            // 
+            // hexagon14
+            // 
+            this.hexagon14.BackColor = System.Drawing.Color.DarkBlue;
+            this.hexagon14.Location = new System.Drawing.Point(148, 267);
+            this.hexagon14.Name = "hexagon14";
+            this.hexagon14.Size = new System.Drawing.Size(40, 40);
+            this.hexagon14.TabIndex = 19;
+            // 
+            // hexagon18
+            // 
+            this.hexagon18.BackColor = System.Drawing.Color.DarkBlue;
+            this.hexagon18.Location = new System.Drawing.Point(79, 313);
+            this.hexagon18.Name = "hexagon18";
+            this.hexagon18.Size = new System.Drawing.Size(40, 40);
+            this.hexagon18.TabIndex = 18;
+            // 
+            // hexagon15
+            // 
+            this.hexagon15.BackColor = System.Drawing.Color.DarkBlue;
+            this.hexagon15.Location = new System.Drawing.Point(44, 294);
+            this.hexagon15.Name = "hexagon15";
+            this.hexagon15.Size = new System.Drawing.Size(40, 40);
+            this.hexagon15.TabIndex = 17;
+            // 
+            // hexagon17
+            // 
+            this.hexagon17.BackColor = System.Drawing.Color.DarkBlue;
+            this.hexagon17.Location = new System.Drawing.Point(115, 294);
+            this.hexagon17.Name = "hexagon17";
+            this.hexagon17.Size = new System.Drawing.Size(40, 40);
+            this.hexagon17.TabIndex = 16;
+            // 
+            // hexagon2
+            // 
+            this.hexagon2.BackColor = System.Drawing.Color.DarkBlue;
+            this.hexagon2.Location = new System.Drawing.Point(79, 131);
+            this.hexagon2.Name = "hexagon2";
+            this.hexagon2.Size = new System.Drawing.Size(40, 40);
+            this.hexagon2.TabIndex = 15;
+            // 
+            // hexagon16
+            // 
+            this.hexagon16.BackColor = System.Drawing.Color.DarkBlue;
+            this.hexagon16.Location = new System.Drawing.Point(79, 267);
+            this.hexagon16.Name = "hexagon16";
+            this.hexagon16.Size = new System.Drawing.Size(40, 40);
+            this.hexagon16.TabIndex = 14;
+            // 
+            // hexagon3
+            // 
+            this.hexagon3.BackColor = System.Drawing.Color.DarkBlue;
+            this.hexagon3.Location = new System.Drawing.Point(115, 153);
+            this.hexagon3.Name = "hexagon3";
+            this.hexagon3.Size = new System.Drawing.Size(40, 40);
+            this.hexagon3.TabIndex = 13;
+            // 
+            // hexagon1
+            // 
+            this.hexagon1.BackColor = System.Drawing.Color.DarkBlue;
+            this.hexagon1.Location = new System.Drawing.Point(44, 154);
+            this.hexagon1.Name = "hexagon1";
+            this.hexagon1.Size = new System.Drawing.Size(40, 40);
+            this.hexagon1.TabIndex = 12;
+            // 
+            // hexagon11
+            // 
+            this.hexagon11.BackColor = System.Drawing.Color.DarkBlue;
+            this.hexagon11.Location = new System.Drawing.Point(44, 248);
+            this.hexagon11.Name = "hexagon11";
+            this.hexagon11.Size = new System.Drawing.Size(40, 40);
+            this.hexagon11.TabIndex = 11;
+            // 
+            // hexagon13
+            // 
+            this.hexagon13.BackColor = System.Drawing.Color.DarkBlue;
+            this.hexagon13.Location = new System.Drawing.Point(115, 248);
+            this.hexagon13.Name = "hexagon13";
+            this.hexagon13.Size = new System.Drawing.Size(40, 40);
+            this.hexagon13.TabIndex = 10;
+            // 
+            // hexagon8
+            // 
+            this.hexagon8.BackColor = System.Drawing.Color.DarkBlue;
+            this.hexagon8.Location = new System.Drawing.Point(115, 197);
+            this.hexagon8.Name = "hexagon8";
+            this.hexagon8.Size = new System.Drawing.Size(40, 40);
+            this.hexagon8.TabIndex = 9;
+            // 
+            // hexagon7
+            // 
+            this.hexagon7.BackColor = System.Drawing.Color.DarkBlue;
+            this.hexagon7.Location = new System.Drawing.Point(79, 175);
+            this.hexagon7.Name = "hexagon7";
+            this.hexagon7.Size = new System.Drawing.Size(40, 40);
+            this.hexagon7.TabIndex = 8;
+            // 
+            // hexagon6
+            // 
+            this.hexagon6.BackColor = System.Drawing.Color.DarkBlue;
+            this.hexagon6.Location = new System.Drawing.Point(44, 197);
+            this.hexagon6.Name = "hexagon6";
+            this.hexagon6.Size = new System.Drawing.Size(40, 40);
+            this.hexagon6.TabIndex = 7;
+            // 
+            // hexagon12
+            // 
+            this.hexagon12.BackColor = System.Drawing.Color.DarkBlue;
+            this.hexagon12.Location = new System.Drawing.Point(79, 221);
+            this.hexagon12.Name = "hexagon12";
+            this.hexagon12.Size = new System.Drawing.Size(40, 40);
+            this.hexagon12.TabIndex = 6;
             // 
             // cbMaps
             // 
             this.cbMaps.FormattingEnabled = true;
-            this.cbMaps.Location = new System.Drawing.Point(29, 45);
+            this.cbMaps.Location = new System.Drawing.Point(10, 23);
             this.cbMaps.Name = "cbMaps";
             this.cbMaps.Size = new System.Drawing.Size(121, 21);
             this.cbMaps.TabIndex = 5;
@@ -435,7 +625,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(29, 29);
+            this.label19.Location = new System.Drawing.Point(10, 7);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(34, 13);
             this.label19.TabIndex = 4;
@@ -444,7 +634,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(29, 160);
+            this.label18.Location = new System.Drawing.Point(10, 87);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(98, 13);
             this.label18.TabIndex = 3;
@@ -453,7 +643,7 @@
             // cbBorderingLands
             // 
             this.cbBorderingLands.FormattingEnabled = true;
-            this.cbBorderingLands.Location = new System.Drawing.Point(29, 179);
+            this.cbBorderingLands.Location = new System.Drawing.Point(10, 106);
             this.cbBorderingLands.Name = "cbBorderingLands";
             this.cbBorderingLands.Size = new System.Drawing.Size(121, 21);
             this.cbBorderingLands.TabIndex = 2;
@@ -461,7 +651,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(29, 87);
+            this.label17.Location = new System.Drawing.Point(10, 45);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(44, 13);
             this.label17.TabIndex = 1;
@@ -470,7 +660,7 @@
             // cbLands
             // 
             this.cbLands.FormattingEnabled = true;
-            this.cbLands.Location = new System.Drawing.Point(29, 106);
+            this.cbLands.Location = new System.Drawing.Point(10, 64);
             this.cbLands.Name = "cbLands";
             this.cbLands.Size = new System.Drawing.Size(121, 21);
             this.cbLands.TabIndex = 0;
@@ -573,7 +763,7 @@
             // 
             this.btnMove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMove.ForeColor = System.Drawing.Color.Black;
-            this.btnMove.Location = new System.Drawing.Point(250, 375);
+            this.btnMove.Location = new System.Drawing.Point(250, 475);
             this.btnMove.Name = "btnMove";
             this.btnMove.Size = new System.Drawing.Size(75, 23);
             this.btnMove.TabIndex = 15;
@@ -722,5 +912,24 @@
         private System.Windows.Forms.ComboBox cbMaps;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.BindingSource bsMaps;
+        private CustomControls.HexagonControl hexagon0;
+        private CustomControls.HexagonControl hexagon5;
+        private CustomControls.HexagonControl hexagon10;
+        private CustomControls.HexagonControl hexagon4;
+        private CustomControls.HexagonControl hexagon9;
+        private CustomControls.HexagonControl hexagon14;
+        private CustomControls.HexagonControl hexagon18;
+        private CustomControls.HexagonControl hexagon15;
+        private CustomControls.HexagonControl hexagon17;
+        private CustomControls.HexagonControl hexagon2;
+        private CustomControls.HexagonControl hexagon16;
+        private CustomControls.HexagonControl hexagon3;
+        private CustomControls.HexagonControl hexagon1;
+        private CustomControls.HexagonControl hexagon11;
+        private CustomControls.HexagonControl hexagon13;
+        private CustomControls.HexagonControl hexagon8;
+        private CustomControls.HexagonControl hexagon7;
+        private CustomControls.HexagonControl hexagon6;
+        private CustomControls.HexagonControl hexagon12;
     }
 }

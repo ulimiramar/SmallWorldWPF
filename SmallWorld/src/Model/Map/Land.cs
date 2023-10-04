@@ -38,8 +38,8 @@ namespace SmallWorld.src.Model.Terrain
 
         public Land(ITerrainType terrainType)
         {
-            lastId++;
             Id = lastId;
+            lastId++;
             TerrainType = terrainType;
             Positionables = new List<IPositionable>();
         }

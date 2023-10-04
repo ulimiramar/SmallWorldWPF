@@ -5,6 +5,7 @@ using SmallWorld.src.Model.Interactable.ItemEffects;
 using SmallWorld.src.Model.Interactuable;
 using SmallWorld.src.Model.Map;
 using SmallWorld.src.Model.Terrain;
+using SmallWorld.src.UI.CustomControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,15 +25,46 @@ namespace SmallWorld.src.UI
         ItemController itemController = ItemController.GetInstance();
         FoodController foodController = FoodController.GetInstance();
         MapController mapController = MapController.GetInstance();
-        LandController landController = LandController.GetInstance();
         FormController formController = FormController.GetInstance();
+
+        List<HexagonControl> hexagons = new List<HexagonControl>();
+
         public PrincipalFormTest()
         {
             InitializeComponent();
             RefreshAllData();
+            AddHexagonsToList();
+            foreach (var hexagon in hexagons)
+            {
+                hexagon.Click += Hexagon_Click;
+            }
         }
 
        
+        private void AddHexagonsToList()
+        {
+            hexagons.AddRange(new List<HexagonControl>
+            {
+                hexagon0, hexagon1, hexagon2, hexagon3, hexagon4, hexagon5,
+                hexagon6, hexagon7, hexagon8, hexagon9, hexagon10, hexagon11,
+                hexagon12, hexagon13, hexagon14, hexagon15, hexagon16, hexagon17,
+                hexagon18
+            });
+            /*hexagons = this.Controls
+            .OfType<HexagonControl>()
+            .OrderBy(control => control.Name)
+            .ToList();*/
+        }
+
+
+        private void Hexagon_Click(object sender, EventArgs e)
+        {
+            HexagonControl clickedHexagon = sender as HexagonControl;
+
+            int index = hexagons.IndexOf(clickedHexagon);
+            cbLands.SelectedIndex = index;
+            ChangeColorOfSelectedHexagonAndTheirBorderingHexagons(mapController.getLands((Map)cbMaps.SelectedItem)[index]);
+        }
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
@@ -64,7 +96,7 @@ namespace SmallWorld.src.UI
 
         private void cbSelectEntityFromOtherUser_SelectedIndexChanged(object sender, EventArgs e)
         {
-            RefreshEntityValues();
+            //RefreshEntityValues();
         }
 
         
@@ -241,14 +273,16 @@ namespace SmallWorld.src.UI
             mapController.GenerateMap();
             formController.RefreshDataSource(bsMaps, cbMaps, () => mapController.GetMaps());
             RefreshMap();
+            cbMaps.SelectedIndex = cbMaps.Items.Count - 1;
+            PaintHexagons();
             //btnGenerateMap.Enabled = false;
         }
 
         private void cbLands_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             if (cbLands.SelectedItem is Land land)
-            {   
+            {
+                formController.RefreshDataSource(bsCurrentPlayerEntities, cbCurrentPlayerEntities, () => mapController.GetPositionablesInLand<Entity>(land));
                 formController.RefreshDataSource(bsBorderingLands, cbBorderingLands, () => mapController.getBorderingLands(land));
             }
         }
@@ -256,13 +290,17 @@ namespace SmallWorld.src.UI
         private void cbMaps_SelectedIndexChanged(object sender, EventArgs e)
         {
             RefreshMap();
+            PaintHexagons();
         }
 
+        //TODO: resolver que no puedo seleccionar un terreno sin que se cambie en todos lados
         private void cbSelectedLand_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbSelectedLand.SelectedItem is Land land)
             {
-                RefreshPositionables(land);
+                formController.RefreshDataSource(bsItems, cbItems, () => mapController.GetPositionablesInLand<Item>(land));
+                formController.RefreshDataSource(bsFoods, cbFood, () => mapController.GetPositionablesInLand<Food>(land));
+                formController.RefreshDataSource(bsWaitingPlayersEntities, cbWaitingPlayersEntities, () => mapController.GetPositionablesInLand<Entity>(land));
             }
         }
 
@@ -274,6 +312,57 @@ namespace SmallWorld.src.UI
                 MessageBox.Show($"{entity} se movió de {landOrigin} a {landDestiny}");
                 RefreshPositionables(landOrigin);
             }
+        }
+
+        private void PaintHexagons()
+        {
+            List<Land> lands = mapController.getLands((Map)cbMaps.SelectedItem);
+
+            for (int i = 0; i < hexagons.Count(); i++)
+            {
+                hexagons[i].BackColor = lands[i].TerrainType.getColor();
+            }
+        }
+
+
+        private void ResetHexagonBorderColor()
+        {
+            foreach (var hexagon in hexagons)
+            {
+                hexagon.BorderColor = SystemColors.ControlText; // O utiliza el color original del borde
+            }
+        }
+        private void ChangeColorOfSelectedHexagonAndTheirBorderingHexagons(Land land)
+        {
+            ResetHexagonBorderColor();
+            hexagons[land.Id].BorderColor = Color.HotPink;
+            for (int i = 0; i < land.BorderingLands.Count(); i++)
+            {
+                hexagons[land.BorderingLands[i].Id].BorderColor = Color.Red;
+            }
+        }
+
+        private void PaintHexagons2()
+        {
+            hexagon0.BackColor = mapController.getLands((Map)cbMaps.SelectedItem)[0].TerrainType.getColor();
+            hexagon1.BackColor = mapController.getLands((Map)cbMaps.SelectedItem)[1].TerrainType.getColor();
+            hexagon2.BackColor = mapController.getLands((Map)cbMaps.SelectedItem)[2].TerrainType.getColor();
+            hexagon3.BackColor = mapController.getLands((Map)cbMaps.SelectedItem)[3].TerrainType.getColor();
+            hexagon4.BackColor = mapController.getLands((Map)cbMaps.SelectedItem)[4].TerrainType.getColor();
+            hexagon5.BackColor = mapController.getLands((Map)cbMaps.SelectedItem)[5].TerrainType.getColor();
+            hexagon6.BackColor = mapController.getLands((Map)cbMaps.SelectedItem)[6].TerrainType.getColor();
+            hexagon7.BackColor = mapController.getLands((Map)cbMaps.SelectedItem)[7].TerrainType.getColor();
+            hexagon8.BackColor = mapController.getLands((Map)cbMaps.SelectedItem)[8].TerrainType.getColor();
+            hexagon9.BackColor = mapController.getLands((Map)cbMaps.SelectedItem)[9].TerrainType.getColor();
+            hexagon10.BackColor = mapController.getLands((Map)cbMaps.SelectedItem)[10].TerrainType.getColor();
+            hexagon11.BackColor = mapController.getLands((Map)cbMaps.SelectedItem)[11].TerrainType.getColor();
+            hexagon12.BackColor = mapController.getLands((Map)cbMaps.SelectedItem)[12].TerrainType.getColor();
+            hexagon13.BackColor = mapController.getLands((Map)cbMaps.SelectedItem)[13].TerrainType.getColor();
+            hexagon14.BackColor = mapController.getLands((Map)cbMaps.SelectedItem)[14].TerrainType.getColor();
+            hexagon15.BackColor = mapController.getLands((Map)cbMaps.SelectedItem)[15].TerrainType.getColor();
+            hexagon16.BackColor = mapController.getLands((Map)cbMaps.SelectedItem)[16].TerrainType.getColor();
+            hexagon17.BackColor = mapController.getLands((Map)cbMaps.SelectedItem)[17].TerrainType.getColor();
+            hexagon18.BackColor = mapController.getLands((Map)cbMaps.SelectedItem)[18].TerrainType.getColor();
         }
     }
 }

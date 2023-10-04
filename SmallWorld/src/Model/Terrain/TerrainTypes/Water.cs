@@ -12,7 +12,9 @@ namespace SmallWorld.src.Model.Terreno
     {
         private string name = "Agua";
         private Bitmap ImageRute = global::SmallWorld.Properties.Resources.waterSea;
+        private Color color = Color.Blue;
 
+        public Color Color { get => color; set => color = value; }
         public override string ToString()
         {
             return name;
@@ -20,6 +22,10 @@ namespace SmallWorld.src.Model.Terreno
         public Bitmap getTerrainImageRute()
         {
             return ImageRute;
+        }
+        public Color getColor()
+        {
+            return Color;
         }
     }
 }
