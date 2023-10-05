@@ -148,6 +148,8 @@ namespace SmallWorld.src.Controllers
             foreach(IPositionable positionable in PositionableObjectRegistry.GetAllPositionableObjects())
             {
                 int randomLand = random.Next(0, getLands(map).Count);
+                //TODO: resolver como colocar en el mapa las entidades según su habitat.
+                //if(getLands(map)[randomLand].TerrainType.getHabitatsSupported().Contains())
                 getLands(map)[randomLand].Positionables.Add(positionable);
                 //positionable.Position(getLands(map)[randomLand]);
             }
@@ -186,8 +188,17 @@ namespace SmallWorld.src.Controllers
 
         public void MoveMovible(Land landOrigin, Land landDestiny, Entity entity)
         {
-            landDestiny.Positionables.Add(entity);
-            landOrigin.Positionables.Remove(entity);
+            foreach(var habitat in entity.HabitatList)
+            {
+                if (landDestiny.TerrainType.getHabitatsSupported().Contains(habitat))
+                {
+                    landDestiny.Positionables.Add(entity);
+                    landOrigin.Positionables.Remove(entity);
+                }
+                else throw new Exception($"{entity} ({entity.HabitatName}) no es compatible con el tipo de terreno {landDestiny}");
+            }
+
+           
         }
 
 

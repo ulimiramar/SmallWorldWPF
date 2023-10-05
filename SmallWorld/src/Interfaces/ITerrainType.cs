@@ -10,5 +10,6 @@ namespace SmallWorld.src.Interfaces
     internal interface ITerrainType
     {
         Color getColor();
+        List<IHabitat> getHabitatsSupported();
     }
 }

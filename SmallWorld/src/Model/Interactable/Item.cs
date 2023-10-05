@@ -67,6 +67,11 @@ namespace SmallWorld.src.Model.Interactuable
             return Name;
         }
 
+        public string GetAllData()
+        {
+            return $"nombre: {name}, efectos: {effectStrategies}";
+        }
+
         void IPositionable.Position(Land land)
         {
             throw new NotImplementedException();

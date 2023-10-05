@@ -12,11 +12,11 @@ namespace SmallWorld.src.Model.Habitat
     internal class Aerial : IHabitat
     {
         private string name = "Aéreo";
-        private List<ITerrainType> terrainsAcepted = new List<ITerrainType>()
+        /*private List<ITerrainType> terrainsAcepted = new List<ITerrainType>()
         {
             new Earth(),
             new Water()
-        };
+        };*/
         public override bool Equals(object obj)
         {
             if (obj is Aerial other)

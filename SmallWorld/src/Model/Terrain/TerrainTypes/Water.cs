@@ -1,4 +1,5 @@
 ﻿using SmallWorld.src.Interfaces;
+using SmallWorld.src.Model.Habitat;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -13,8 +14,9 @@ namespace SmallWorld.src.Model.Terreno
         private string name = "Agua";
         private Bitmap ImageRute = global::SmallWorld.Properties.Resources.waterSea;
         private Color color = Color.Blue;
-
+        private List<IHabitat> habitatsSupported = new List<IHabitat>() { new Aquatic(), new Aerial() };
         public Color Color { get => color; set => color = value; }
+        public List<IHabitat> getHabitatsSupported() { return habitatsSupported; }
         public override string ToString()
         {
             return name;

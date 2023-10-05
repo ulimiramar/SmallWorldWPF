@@ -63,6 +63,11 @@ namespace SmallWorld.src.Model.Interactuable
             return Name;
         }
 
+        public string GetAllData()
+        {
+            return $"nombre: {Name}, dietas que acepta: {Diet}, valor energético: {EnergyValue}";
+        }
+
         void IPositionable.Position(Land land)
         {
             throw new NotImplementedException();

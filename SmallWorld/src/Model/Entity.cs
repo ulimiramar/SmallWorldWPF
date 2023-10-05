@@ -391,7 +391,10 @@ namespace SmallWorld.src.Model
         public override string ToString()
         {
             return name;
-            //return $"Reino:{Kingdom}, Nombre:{Name}, Dieta:{Diet}, Habitat:{Habitat}, Energía actual:{CurrentEnergy}, Energía Máxima:{MaxEnergy}, Vida Actual:{CurrentLife}, Vida Máxima:{MaxLife}, Puntos de Ataque:{AttackPoints}, Escudo de Defensa:{DefensePoints}, Fuerza del ataque a distancia:{AttackRange}";
+        }
+        public string getAllData()
+        {
+            return $"Nombre:{Name}, Reino:{Kingdom}, Dieta:{Diet}, Habitats:{HabitatList}, Energía actual:{CurrentEnergy}, Energía Máxima:{MaxEnergy}, Vida Actual:{CurrentLife}, Vida Máxima:{MaxLife}, Puntos de Ataque:{AttackPoints}, Puntos de Defensa:{DefensePoints}, acepta ataque a distancia:{AttackRange}";
         }
 
         void Position(Land land)

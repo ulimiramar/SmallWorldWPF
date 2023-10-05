@@ -66,11 +66,6 @@ namespace SmallWorld.src.UI
             ChangeColorOfSelectedHexagonAndTheirBorderingHexagons(mapController.getLands((Map)cbMaps.SelectedItem)[index]);
         }
 
-        private void btnAdmin_Click(object sender, EventArgs e)
-        {
-            //AdminFormTest adminFormTest = new AdminFormTest();
-            //adminFormTest.Show();
-        }
 
         private void btnAttack_Click(object sender, EventArgs e)
         {
@@ -86,18 +81,8 @@ namespace SmallWorld.src.UI
             }
         }
 
-        private void cbSelectMyEntity_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            RefreshEntityValues();
-            //TODO: hacer que si el jugador cambia de entidad seleccionada, se cambie a la land en donde está.
-            /*if (cbCurrentPlayerEntities.SelectedItem is Entity CurrentPlayerEntity)
-            cbLands.SelectedItem = mapController.ge*/
-        }
+        
 
-        private void cbSelectEntityFromOtherUser_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //RefreshEntityValues();
-        }
 
         
         private void RefreshEntityValues()
@@ -154,7 +139,7 @@ namespace SmallWorld.src.UI
         {
             formController.RefreshDataSource(bsLands, cbLands, () => mapController.getLands((Map)cbMaps.SelectedItem));
             formController.RefreshDataSource(bsBorderingLands, cbBorderingLands, () => mapController.getBorderingLands((Land)cbLands.SelectedItem));
-            formController.RefreshDataSource(bsLands, cbSelectedLand, () => mapController.getLands((Map)cbMaps.SelectedItem));
+            formController.RefreshDataSource(bsSelectedLand, cbSelectedLand, () => mapController.getLands((Map)cbMaps.SelectedItem));
         }
         private void RefreshFoods()
         {
@@ -261,11 +246,13 @@ namespace SmallWorld.src.UI
         private void cbItems_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbFood.SelectedIndex = -1;
+            //if(cbItems.SelectedItem is Item item) lblInfoItem.Text += $"{item.GetAllData()}";
         }
 
         private void cbFood_SelectedIndexChanged(object sender, EventArgs e)
         {
             cbItems.SelectedIndex = -1;
+            //if(cbFood.SelectedItem is Food food) lblInfoFood.Text += $"{food.GetAllData()}";
         }
 
         private void btnGenerateMap_Click(object sender, EventArgs e)
@@ -293,7 +280,6 @@ namespace SmallWorld.src.UI
             PaintHexagons();
         }
 
-        //TODO: resolver que no puedo seleccionar un terreno sin que se cambie en todos lados
         private void cbSelectedLand_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbSelectedLand.SelectedItem is Land land)
@@ -308,9 +294,16 @@ namespace SmallWorld.src.UI
         {
             if (cbCurrentPlayerEntities.SelectedItem is Entity entity && cbLands.SelectedItem is Land landOrigin && cbBorderingLands.SelectedItem is Land landDestiny)
             {
-                mapController.MoveMovible(landOrigin, landDestiny, entity);
-                MessageBox.Show($"{entity} se movió de {landOrigin} a {landDestiny}");
-                RefreshPositionables(landOrigin);
+                try
+                {
+                    mapController.MoveMovible(landOrigin, landDestiny, entity);
+                    MessageBox.Show($"{entity} ({entity.HabitatName}) se movió de {landOrigin} a {landDestiny}");
+                    RefreshPositionables(landOrigin);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show($"{ex.Message}");
+                }
             }
         }
 
@@ -363,6 +356,18 @@ namespace SmallWorld.src.UI
             hexagon16.BackColor = mapController.getLands((Map)cbMaps.SelectedItem)[16].TerrainType.getColor();
             hexagon17.BackColor = mapController.getLands((Map)cbMaps.SelectedItem)[17].TerrainType.getColor();
             hexagon18.BackColor = mapController.getLands((Map)cbMaps.SelectedItem)[18].TerrainType.getColor();
+        }
+
+        private void cbCurrentPlayerEntities_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefreshEntityValues();
+            //if(cbCurrentPlayerEntities.SelectedItem is Entity entity) lblInfoCurrentEntity.Text += $"{entity.getAllData()}";
+        }
+
+        private void cbWaitingPlayersEntities_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            RefreshEntityValues();
+            //if(cbWaitingPlayersEntities.SelectedItem is Entity entity) lblInfoWaitingEntity.Text += $"{entity.getAllData()}";
         }
     }
 }
