@@ -41,8 +41,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtAttackPoints = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cbHabitat = new System.Windows.Forms.ComboBox();
             this.cbDiet = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -74,7 +72,7 @@
             // 
             // txtDefenseShield
             // 
-            this.txtDefenseShield.Location = new System.Drawing.Point(235, 215);
+            this.txtDefenseShield.Location = new System.Drawing.Point(235, 224);
             this.txtDefenseShield.Name = "txtDefenseShield";
             this.txtDefenseShield.Size = new System.Drawing.Size(100, 20);
             this.txtDefenseShield.TabIndex = 121;
@@ -82,7 +80,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(232, 198);
+            this.label17.Location = new System.Drawing.Point(232, 207);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(152, 13);
             this.label17.TabIndex = 120;
@@ -90,7 +88,7 @@
             // 
             // txtMaxEnergy
             // 
-            this.txtMaxEnergy.Location = new System.Drawing.Point(235, 163);
+            this.txtMaxEnergy.Location = new System.Drawing.Point(235, 172);
             this.txtMaxEnergy.Name = "txtMaxEnergy";
             this.txtMaxEnergy.Size = new System.Drawing.Size(100, 20);
             this.txtMaxEnergy.TabIndex = 119;
@@ -98,7 +96,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(232, 147);
+            this.label13.Location = new System.Drawing.Point(232, 156);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(83, 13);
             this.label13.TabIndex = 118;
@@ -123,7 +121,7 @@
             // chbAttackRange
             // 
             this.chbAttackRange.AutoSize = true;
-            this.chbAttackRange.Location = new System.Drawing.Point(235, 260);
+            this.chbAttackRange.Location = new System.Drawing.Point(235, 269);
             this.chbAttackRange.Name = "chbAttackRange";
             this.chbAttackRange.Size = new System.Drawing.Size(172, 17);
             this.chbAttackRange.TabIndex = 115;
@@ -132,7 +130,7 @@
             // 
             // txtDefensePoints
             // 
-            this.txtDefensePoints.Location = new System.Drawing.Point(235, 119);
+            this.txtDefensePoints.Location = new System.Drawing.Point(235, 128);
             this.txtDefensePoints.Name = "txtDefensePoints";
             this.txtDefensePoints.Size = new System.Drawing.Size(100, 20);
             this.txtDefensePoints.TabIndex = 114;
@@ -140,7 +138,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(232, 102);
+            this.label10.Location = new System.Drawing.Point(232, 111);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(98, 13);
             this.label10.TabIndex = 113;
@@ -161,23 +159,6 @@
             this.label9.Size = new System.Drawing.Size(91, 13);
             this.label9.TabIndex = 111;
             this.label9.Text = "Puntos de ataque";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(232, 57);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 13);
-            this.label4.TabIndex = 110;
-            this.label4.Text = "Habitat";
-            // 
-            // cbHabitat
-            // 
-            this.cbHabitat.FormattingEnabled = true;
-            this.cbHabitat.Location = new System.Drawing.Point(235, 73);
-            this.cbHabitat.Name = "cbHabitat";
-            this.cbHabitat.Size = new System.Drawing.Size(121, 21);
-            this.cbHabitat.TabIndex = 109;
             // 
             // cbDiet
             // 
@@ -259,7 +240,7 @@
             // 
             this.clbListHabitat.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.clbListHabitat.FormattingEnabled = true;
-            this.clbListHabitat.Location = new System.Drawing.Point(379, 73);
+            this.clbListHabitat.Location = new System.Drawing.Point(235, 17);
             this.clbListHabitat.Name = "clbListHabitat";
             this.clbListHabitat.Size = new System.Drawing.Size(120, 90);
             this.clbListHabitat.TabIndex = 126;
@@ -286,8 +267,6 @@
             this.Controls.Add(this.label10);
             this.Controls.Add(this.txtAttackPoints);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.cbHabitat);
             this.Controls.Add(this.cbDiet);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -317,8 +296,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtAttackPoints;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cbHabitat;
         private System.Windows.Forms.ComboBox cbDiet;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

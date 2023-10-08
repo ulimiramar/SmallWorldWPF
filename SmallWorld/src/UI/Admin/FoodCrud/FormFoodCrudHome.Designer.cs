@@ -93,8 +93,10 @@
             // 
             this.dgvFood.AllowUserToAddRows = false;
             this.dgvFood.AllowUserToDeleteRows = false;
+            this.dgvFood.BackgroundColor = System.Drawing.Color.LightBlue;
             this.dgvFood.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvFood.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFood.GridColor = System.Drawing.Color.LightCoral;
             this.dgvFood.Location = new System.Drawing.Point(37, 113);
             this.dgvFood.Name = "dgvFood";
             this.dgvFood.ReadOnly = true;

@@ -93,7 +93,9 @@
             // 
             this.dgvItems.AllowUserToAddRows = false;
             this.dgvItems.AllowUserToDeleteRows = false;
+            this.dgvItems.BackgroundColor = System.Drawing.Color.LightBlue;
             this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvItems.GridColor = System.Drawing.Color.LightCoral;
             this.dgvItems.Location = new System.Drawing.Point(38, 55);
             this.dgvItems.Name = "dgvItems";
             this.dgvItems.ReadOnly = true;

@@ -13,7 +13,11 @@ namespace SmallWorld.src.UI.CustomControls
     {
         private Color borderColor = Color.Black;
         private int borderWidth = 10; // Ancho del borde en píxeles
-
+        public string HexagonText
+        {
+            get { return Text; }
+            set { Text = value; }
+        }
         public HexagonControl()
         {
             SetStyle(ControlStyles.OptimizedDoubleBuffer, true);
@@ -59,6 +63,17 @@ namespace SmallWorld.src.UI.CustomControls
             using (Pen pen = new Pen(BorderColor, borderWidth))
             {
                 e.Graphics.DrawPath(pen, path);
+            }
+
+            // Dibuja el texto en el centro del hexágono
+            using (StringFormat format = new StringFormat())
+            {
+                format.Alignment = StringAlignment.Center;
+                format.LineAlignment = StringAlignment.Center;
+                using (SolidBrush textBrush = new SolidBrush(ForeColor))
+                {
+                    e.Graphics.DrawString(HexagonText, Font, textBrush, ClientRectangle, format);
+                }
             }
 
             base.OnPaint(e);

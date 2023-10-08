@@ -38,6 +38,11 @@ namespace SmallWorld.src.UI
             {
                 hexagon.Click += Hexagon_Click;
             }
+            for (int i = 0; i < hexagons.Count(); i++)
+            {
+                hexagons[i].HexagonText = $"{i}";
+            }
+            RefreshMap();
         }
 
        
@@ -64,6 +69,7 @@ namespace SmallWorld.src.UI
             int index = hexagons.IndexOf(clickedHexagon);
             cbLands.SelectedIndex = index;
             ChangeColorOfSelectedHexagonAndTheirBorderingHexagons(mapController.getLands((Map)cbMaps.SelectedItem)[index]);
+            RefreshEntityValues();
         }
 
 
@@ -137,9 +143,19 @@ namespace SmallWorld.src.UI
 
         private void RefreshMap()
         {
-            formController.RefreshDataSource(bsLands, cbLands, () => mapController.getLands((Map)cbMaps.SelectedItem));
-            formController.RefreshDataSource(bsBorderingLands, cbBorderingLands, () => mapController.getBorderingLands((Land)cbLands.SelectedItem));
-            formController.RefreshDataSource(bsSelectedLand, cbSelectedLand, () => mapController.getLands((Map)cbMaps.SelectedItem));
+            formController.RefreshDataSource(bsMaps, cbMaps, () => mapController.GetMaps());
+
+            if (cbMaps.SelectedItem is Map map)
+            {
+                formController.RefreshDataSource(bsLands, cbLands, () => mapController.getLands(map));
+                formController.RefreshDataSource(bsSelectedLand, cbSelectedLand, () => mapController.getLands(map));
+                PaintHexagons(map);
+            }
+            if (cbLands.SelectedItem is Land land)
+            {
+
+                formController.RefreshDataSource(bsBorderingLands, cbBorderingLands, () => mapController.getBorderingLands(land));
+            }
         }
         private void RefreshFoods()
         {
@@ -258,10 +274,9 @@ namespace SmallWorld.src.UI
         private void btnGenerateMap_Click(object sender, EventArgs e)
         {
             mapController.GenerateMap();
-            formController.RefreshDataSource(bsMaps, cbMaps, () => mapController.GetMaps());
             RefreshMap();
             cbMaps.SelectedIndex = cbMaps.Items.Count - 1;
-            PaintHexagons();
+            //PaintHexagons();
             //btnGenerateMap.Enabled = false;
         }
 
@@ -271,13 +286,14 @@ namespace SmallWorld.src.UI
             {
                 formController.RefreshDataSource(bsCurrentPlayerEntities, cbCurrentPlayerEntities, () => mapController.GetPositionablesInLand<Entity>(land));
                 formController.RefreshDataSource(bsBorderingLands, cbBorderingLands, () => mapController.getBorderingLands(land));
+                ChangeColorOfSelectedHexagonAndTheirBorderingHexagons(land);
+                RefreshEntityValues();
             }
         }
 
         private void cbMaps_SelectedIndexChanged(object sender, EventArgs e)
         {
             RefreshMap();
-            PaintHexagons();
         }
 
         private void cbSelectedLand_SelectedIndexChanged(object sender, EventArgs e)
@@ -287,6 +303,7 @@ namespace SmallWorld.src.UI
                 formController.RefreshDataSource(bsItems, cbItems, () => mapController.GetPositionablesInLand<Item>(land));
                 formController.RefreshDataSource(bsFoods, cbFood, () => mapController.GetPositionablesInLand<Food>(land));
                 formController.RefreshDataSource(bsWaitingPlayersEntities, cbWaitingPlayersEntities, () => mapController.GetPositionablesInLand<Entity>(land));
+                RefreshEntityValues();
             }
         }
 
@@ -307,14 +324,17 @@ namespace SmallWorld.src.UI
             }
         }
 
-        private void PaintHexagons()
+        private void PaintHexagons(Map map)
         {
-            List<Land> lands = mapController.getLands((Map)cbMaps.SelectedItem);
+            //if (cbMaps.SelectedItem is Map map)
+            //{
+                List<Land> lands = mapController.getLands(map);
 
-            for (int i = 0; i < hexagons.Count(); i++)
-            {
-                hexagons[i].BackColor = lands[i].TerrainType.getColor();
-            }
+                for (int i = 0; i < hexagons.Count(); i++)
+                {
+                    hexagons[i].BackColor = lands[i].TerrainType.getColor();
+                }
+            //}
         }
 
 

@@ -38,6 +38,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelChildForm = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.pSideMenu.SuspendLayout();
             this.pAdminSubMenu.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -48,6 +49,7 @@
             this.pSideMenu.AutoScroll = true;
             this.pSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(247)))), ((int)(((byte)(129)))));
             this.pSideMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pSideMenu.Controls.Add(this.label2);
             this.pSideMenu.Controls.Add(this.btnPlay);
             this.pSideMenu.Controls.Add(this.pAdminSubMenu);
             this.pSideMenu.Controls.Add(this.btnAdmin);
@@ -185,6 +187,16 @@
             this.panelChildForm.Size = new System.Drawing.Size(734, 561);
             this.panelChildForm.TabIndex = 1;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(11, 338);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(175, 39);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Paso 1: Utilice el administrador para\r\ncrear objetos y entidades\r\nPaso 2: Juegue\r" +
+    "\n";
+            // 
             // FormHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -196,6 +208,7 @@
             this.Name = "FormHome";
             this.Text = "FormHome";
             this.pSideMenu.ResumeLayout(false);
+            this.pSideMenu.PerformLayout();
             this.pAdminSubMenu.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -215,5 +228,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panelChildForm;
         private System.Windows.Forms.Button btnPlay;
+        private System.Windows.Forms.Label label2;
     }
 }

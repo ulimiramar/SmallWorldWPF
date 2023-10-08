@@ -32,7 +32,6 @@ namespace SmallWorld.src.UI.Admin.EntityCrud
         {
             formController.FillListControlWithImplementations<IKingdom>(cbKingdom);
             formController.FillListControlWithImplementations<IDiet>(cbDiet);
-            formController.FillListControlWithImplementations<IHabitat>(cbHabitat);
             formController.FillListControlWithImplementations<IHabitat>(clbListHabitat);
 
 
@@ -51,7 +50,6 @@ namespace SmallWorld.src.UI.Admin.EntityCrud
             txtMaxEnergy.Clear();
             txtMaxLife.Clear();
             cbDiet.SelectedIndex = -1;
-            cbHabitat.SelectedIndex = -1;
             cbKingdom.SelectedIndex = -1;
             formController.ClearCheckedListBox(clbListHabitat);
         }
@@ -92,7 +90,6 @@ namespace SmallWorld.src.UI.Admin.EntityCrud
             txtName.Text = $"{i} entidad {formController.GetRandomString(4)}";
 
             formController.SelectRandomItemInComboBox(cbKingdom);
-            formController.SelectRandomItemInComboBox(cbHabitat);
             formController.SelectRandomItemInComboBox(cbDiet);
 
             txtMaxLife.Text = Convert.ToString(100);

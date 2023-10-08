@@ -390,21 +390,16 @@ namespace SmallWorld.src.Model
 
         public override string ToString()
         {
-            return name;
+            return $"{name} - {HabitatName}";
         }
         public string getAllData()
         {
             return $"Nombre:{Name}, Reino:{Kingdom}, Dieta:{Diet}, Habitats:{HabitatList}, Energía actual:{CurrentEnergy}, Energía Máxima:{MaxEnergy}, Vida Actual:{CurrentLife}, Vida Máxima:{MaxLife}, Puntos de Ataque:{AttackPoints}, Puntos de Defensa:{DefensePoints}, acepta ataque a distancia:{AttackRange}";
         }
 
-        void Position(Land land)
+        public List<IHabitat> HabitatsCompatible()
         {
-            //if(habitat. == land.TerrainType);
-        }
-
-        void IPositionable.Position(Land land)
-        {
-            throw new NotImplementedException();
+           return HabitatList;
         }
     }
 }

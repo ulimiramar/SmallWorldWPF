@@ -1,4 +1,5 @@
 ﻿using SmallWorld.src.Interfaces;
+using SmallWorld.src.Model.Habitat;
 using SmallWorld.src.Model.Reino;
 using SmallWorld.src.Model.Terrain;
 using SmallWorld.src.Static;
@@ -68,9 +69,12 @@ namespace SmallWorld.src.Model.Interactuable
             return $"nombre: {Name}, dietas que acepta: {Diet}, valor energético: {EnergyValue}";
         }
 
-        void IPositionable.Position(Land land)
+        public List<IHabitat> HabitatsCompatible()
         {
-            throw new NotImplementedException();
+            //este método se puede usar si pensamos que las comidas pueden tener un habitat
+            //por ejemplo para no poner una manzana en el agua.
+            List<IHabitat> habitats = new List<IHabitat>() { new Terrestrial(), new Aerial(), new Aquatic() };
+            return habitats;
         }
     }
 }

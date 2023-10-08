@@ -44,7 +44,6 @@ namespace SmallWorld.src.UI.Admin.EntityCrud
         {
             formController.FillListControlWithImplementations<IKingdom>(cbKingdom);
             formController.FillListControlWithImplementations<IDiet>(cbDiet);
-            formController.FillListControlWithImplementations<IHabitat>(cbHabitat);
             formController.FillListControlWithImplementations<IHabitat>(clbListHabitat);
 
             //formController.FillListControlWithImplementations(cbKingdom, typeof(IKingdom));
@@ -63,9 +62,6 @@ namespace SmallWorld.src.UI.Admin.EntityCrud
             {
                 selectedHabitats.Add(habitat);
             }
-
-            
-
 
             Entity entityModified = entityToModify;
             

@@ -51,7 +51,7 @@ namespace SmallWorld.src.UI.Admin.ItemsCrud
             foreach (Type type in Assembly.GetExecutingAssembly().GetTypes()
                 .Where(t => t.GetInterfaces().Contains(typeof(IEffectStrategy))))
             {
-                cbItemEffect.Items.Add(Activator.CreateInstance(type));
+                //cbItemEffect.Items.Add(Activator.CreateInstance(type));
             }
         }
         private void FillCheckedListBoxEffects()

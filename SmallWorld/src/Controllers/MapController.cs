@@ -147,13 +147,41 @@ namespace SmallWorld.src.Controllers
             Random random = new Random();
             foreach(IPositionable positionable in PositionableObjectRegistry.GetAllPositionableObjects())
             {
-                int randomLand = random.Next(0, getLands(map).Count);
-                //TODO: resolver como colocar en el mapa las entidades según su habitat.
-                //if(getLands(map)[randomLand].TerrainType.getHabitatsSupported().Contains())
-                getLands(map)[randomLand].Positionables.Add(positionable);
+                bool canBePositioned = false;
+                while (!canBePositioned)
+                {
+                    int randomLand = random.Next(0, getLands(map).Count);
+                    //TODO: resolver como colocar en el mapa las entidades según su habitat.
+                    //if(getLands(map)[randomLand].TerrainType.getHabitatsSupported().Contains())
+
+                    canBePositioned = positionable.HabitatsCompatible().Any(elemento => getLands(map)[randomLand].TerrainType.getHabitatsSupported().Contains(elemento));
+
+                    if (canBePositioned)
+                    {
+                        getLands(map)[randomLand].Positionables.Add(positionable);
+                    }
+                }
                 //positionable.Position(getLands(map)[randomLand]);
             }
         }
+
+        /*public void SetPositionsOfEntities(Map map)
+        {
+            Random random = new Random();
+            
+            foreach(IPositionable positionable in PositionableObjectRegistry.GetAllPositionableObjects())
+            {
+                if (positionable is Entity entity)
+                {
+                    int randomLand = random.Next(0, getLands(map).Count);
+
+                    if (entity.)
+                    getLands(map)[randomLand].Positionables.Add(positionable);
+                }
+            }
+            
+        }*/
+
         public List<IPositionable> GetPositionablesInLand(Land land)
         {
             return land.Positionables;
@@ -188,17 +216,27 @@ namespace SmallWorld.src.Controllers
 
         public void MoveMovible(Land landOrigin, Land landDestiny, Entity entity)
         {
-            foreach(var habitat in entity.HabitatList)
+            bool canBeMoved = false;
+            canBeMoved = entity.HabitatList.Any(elemento => landDestiny.TerrainType.getHabitatsSupported().Contains(elemento));
+
+            if (canBeMoved)
+            {
+                landDestiny.Positionables.Add(entity);
+                landOrigin.Positionables.Remove(entity);
+            }
+            else throw new Exception($"{entity} ({entity.HabitatName}) no es compatible con el tipo de terreno {landDestiny}");
+
+
+            /*foreach (var habitat in entity.HabitatList)
             {
                 if (landDestiny.TerrainType.getHabitatsSupported().Contains(habitat))
                 {
                     landDestiny.Positionables.Add(entity);
                     landOrigin.Positionables.Remove(entity);
                 }
-                else throw new Exception($"{entity} ({entity.HabitatName}) no es compatible con el tipo de terreno {landDestiny}");
             }
+            else throw new Exception($"{entity} ({entity.HabitatName}) no es compatible con el tipo de terreno {landDestiny}");*/
 
-           
         }
 
 

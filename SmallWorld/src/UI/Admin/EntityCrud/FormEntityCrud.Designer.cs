@@ -43,8 +43,10 @@
             // 
             this.dgvEntities.AllowUserToAddRows = false;
             this.dgvEntities.AllowUserToDeleteRows = false;
+            this.dgvEntities.BackgroundColor = System.Drawing.Color.LightBlue;
             this.dgvEntities.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvEntities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEntities.GridColor = System.Drawing.Color.LightCoral;
             this.dgvEntities.Location = new System.Drawing.Point(27, 88);
             this.dgvEntities.Name = "dgvEntities";
             this.dgvEntities.ReadOnly = true;

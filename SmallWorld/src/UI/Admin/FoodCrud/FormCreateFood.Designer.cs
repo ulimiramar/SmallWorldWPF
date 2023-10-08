@@ -33,24 +33,23 @@
             this.btnCreate = new System.Windows.Forms.Button();
             this.txtEnergyValue = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.cbDiet = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtFoodName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.clbListDiets = new System.Windows.Forms.CheckedListBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtRandomsNumber = new System.Windows.Forms.TextBox();
             this.btnCreateRandoms = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnExit
             // 
-            this.btnExit.BackColor = System.Drawing.Color.Crimson;
+            this.btnExit.BackColor = System.Drawing.Color.LightCoral;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(26, 328);
+            this.btnExit.ForeColor = System.Drawing.Color.Black;
+            this.btnExit.Location = new System.Drawing.Point(26, 343);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(197, 25);
+            this.btnExit.Size = new System.Drawing.Size(120, 25);
             this.btnExit.TabIndex = 107;
             this.btnExit.Text = "Salir";
             this.btnExit.UseVisualStyleBackColor = false;
@@ -58,12 +57,12 @@
             // 
             // btnRandomData
             // 
-            this.btnRandomData.BackColor = System.Drawing.Color.HotPink;
+            this.btnRandomData.BackColor = System.Drawing.Color.LightBlue;
             this.btnRandomData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRandomData.ForeColor = System.Drawing.Color.White;
-            this.btnRandomData.Location = new System.Drawing.Point(26, 264);
+            this.btnRandomData.ForeColor = System.Drawing.Color.Black;
+            this.btnRandomData.Location = new System.Drawing.Point(26, 223);
             this.btnRandomData.Name = "btnRandomData";
-            this.btnRandomData.Size = new System.Drawing.Size(197, 26);
+            this.btnRandomData.Size = new System.Drawing.Size(120, 26);
             this.btnRandomData.TabIndex = 106;
             this.btnRandomData.Text = "Elegir aleatoriamente";
             this.btnRandomData.UseVisualStyleBackColor = false;
@@ -71,12 +70,12 @@
             // 
             // btnCreate
             // 
-            this.btnCreate.BackColor = System.Drawing.Color.ForestGreen;
+            this.btnCreate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(247)))), ((int)(((byte)(129)))));
             this.btnCreate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCreate.ForeColor = System.Drawing.Color.White;
-            this.btnCreate.Location = new System.Drawing.Point(229, 264);
+            this.btnCreate.ForeColor = System.Drawing.Color.Black;
+            this.btnCreate.Location = new System.Drawing.Point(26, 255);
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(197, 25);
+            this.btnCreate.Size = new System.Drawing.Size(120, 25);
             this.btnCreate.TabIndex = 105;
             this.btnCreate.Text = "Crear Comida";
             this.btnCreate.UseVisualStyleBackColor = false;
@@ -84,7 +83,7 @@
             // 
             // txtEnergyValue
             // 
-            this.txtEnergyValue.Location = new System.Drawing.Point(151, 209);
+            this.txtEnergyValue.Location = new System.Drawing.Point(36, 187);
             this.txtEnergyValue.Name = "txtEnergyValue";
             this.txtEnergyValue.Size = new System.Drawing.Size(100, 20);
             this.txtEnergyValue.TabIndex = 113;
@@ -92,32 +91,15 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(164, 193);
+            this.label3.Location = new System.Drawing.Point(46, 171);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 13);
             this.label3.TabIndex = 112;
             this.label3.Text = "Valor energético";
             // 
-            // cbDiet
-            // 
-            this.cbDiet.FormattingEnabled = true;
-            this.cbDiet.Location = new System.Drawing.Point(146, 158);
-            this.cbDiet.Name = "cbDiet";
-            this.cbDiet.Size = new System.Drawing.Size(121, 21);
-            this.cbDiet.TabIndex = 111;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(191, 142);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(32, 13);
-            this.label2.TabIndex = 110;
-            this.label2.Text = "Dieta";
-            // 
             // txtFoodName
             // 
-            this.txtFoodName.Location = new System.Drawing.Point(151, 111);
+            this.txtFoodName.Location = new System.Drawing.Point(36, 33);
             this.txtFoodName.Name = "txtFoodName";
             this.txtFoodName.Size = new System.Drawing.Size(100, 20);
             this.txtFoodName.TabIndex = 109;
@@ -125,7 +107,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(161, 95);
+            this.label1.Location = new System.Drawing.Point(46, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 13);
             this.label1.TabIndex = 108;
@@ -134,7 +116,7 @@
             // clbListDiets
             // 
             this.clbListDiets.FormattingEnabled = true;
-            this.clbListDiets.Location = new System.Drawing.Point(306, 85);
+            this.clbListDiets.Location = new System.Drawing.Point(26, 73);
             this.clbListDiets.Name = "clbListDiets";
             this.clbListDiets.Size = new System.Drawing.Size(120, 94);
             this.clbListDiets.TabIndex = 114;
@@ -142,45 +124,54 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(303, 310);
+            this.label5.Location = new System.Drawing.Point(70, 324);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 13);
+            this.label5.Size = new System.Drawing.Size(93, 13);
             this.label5.TabIndex = 121;
-            this.label5.Text = "Número de Aleatorios";
+            this.label5.Text = "Núm de Aleatorios";
             // 
             // txtRandomsNumber
             // 
-            this.txtRandomsNumber.Location = new System.Drawing.Point(241, 303);
+            this.txtRandomsNumber.Location = new System.Drawing.Point(26, 317);
             this.txtRandomsNumber.Name = "txtRandomsNumber";
-            this.txtRandomsNumber.Size = new System.Drawing.Size(56, 20);
+            this.txtRandomsNumber.Size = new System.Drawing.Size(36, 20);
             this.txtRandomsNumber.TabIndex = 120;
             // 
             // btnCreateRandoms
             // 
-            this.btnCreateRandoms.BackColor = System.Drawing.Color.Gold;
+            this.btnCreateRandoms.BackColor = System.Drawing.Color.NavajoWhite;
             this.btnCreateRandoms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreateRandoms.ForeColor = System.Drawing.Color.Black;
-            this.btnCreateRandoms.Location = new System.Drawing.Point(26, 297);
+            this.btnCreateRandoms.Location = new System.Drawing.Point(26, 286);
             this.btnCreateRandoms.Name = "btnCreateRandoms";
-            this.btnCreateRandoms.Size = new System.Drawing.Size(197, 25);
+            this.btnCreateRandoms.Size = new System.Drawing.Size(120, 25);
             this.btnCreateRandoms.TabIndex = 119;
             this.btnCreateRandoms.Text = "Crear aleatorios";
             this.btnCreateRandoms.UseVisualStyleBackColor = false;
             this.btnCreateRandoms.Click += new System.EventHandler(this.btnCreateRandoms_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(39, 56);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(97, 13);
+            this.label2.TabIndex = 122;
+            this.label2.Text = "Dietas Compatibles";
+            // 
             // FormCreateFood
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(456, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(222)))), ((int)(((byte)(144)))));
+            this.ClientSize = new System.Drawing.Size(175, 386);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtRandomsNumber);
             this.Controls.Add(this.btnCreateRandoms);
             this.Controls.Add(this.clbListDiets);
             this.Controls.Add(this.txtEnergyValue);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.cbDiet);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtFoodName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnExit);
@@ -201,13 +192,12 @@
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.TextBox txtEnergyValue;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox cbDiet;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtFoodName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckedListBox clbListDiets;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtRandomsNumber;
         private System.Windows.Forms.Button btnCreateRandoms;
+        private System.Windows.Forms.Label label2;
     }
 }

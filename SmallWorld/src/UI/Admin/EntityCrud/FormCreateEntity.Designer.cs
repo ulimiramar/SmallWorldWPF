@@ -41,7 +41,6 @@
             this.txtAttackPoints = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.cbHabitat = new System.Windows.Forms.ComboBox();
             this.cbDiet = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -162,19 +161,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(204, 39);
+            this.label4.Location = new System.Drawing.Point(408, 84);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 13);
             this.label4.TabIndex = 88;
             this.label4.Text = "Habitat";
-            // 
-            // cbHabitat
-            // 
-            this.cbHabitat.FormattingEnabled = true;
-            this.cbHabitat.Location = new System.Drawing.Point(207, 55);
-            this.cbHabitat.Name = "cbHabitat";
-            this.cbHabitat.Size = new System.Drawing.Size(121, 21);
-            this.cbHabitat.TabIndex = 87;
             // 
             // cbDiet
             // 
@@ -256,7 +247,7 @@
             // 
             this.clbListHabitat.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.clbListHabitat.FormattingEnabled = true;
-            this.clbListHabitat.Location = new System.Drawing.Point(393, 48);
+            this.clbListHabitat.Location = new System.Drawing.Point(411, 103);
             this.clbListHabitat.Name = "clbListHabitat";
             this.clbListHabitat.Size = new System.Drawing.Size(120, 90);
             this.clbListHabitat.TabIndex = 115;
@@ -314,7 +305,6 @@
             this.Controls.Add(this.txtAttackPoints);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.cbHabitat);
             this.Controls.Add(this.cbDiet);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -344,7 +334,6 @@
         private System.Windows.Forms.TextBox txtAttackPoints;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cbHabitat;
         private System.Windows.Forms.ComboBox cbDiet;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

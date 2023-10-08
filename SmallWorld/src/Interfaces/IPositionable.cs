@@ -9,6 +9,6 @@ namespace SmallWorld.src.Interfaces
 {
     internal interface IPositionable
     {
-        void Position(Land land);
+        List<IHabitat> HabitatsCompatible();
     }
 }

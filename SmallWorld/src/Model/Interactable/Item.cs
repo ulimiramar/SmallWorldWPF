@@ -1,4 +1,5 @@
 ﻿using SmallWorld.src.Interfaces;
+using SmallWorld.src.Model.Habitat;
 using SmallWorld.src.Model.Terrain;
 using SmallWorld.src.Static;
 using System;
@@ -72,9 +73,10 @@ namespace SmallWorld.src.Model.Interactuable
             return $"nombre: {name}, efectos: {effectStrategies}";
         }
 
-        void IPositionable.Position(Land land)
+        public List<IHabitat> HabitatsCompatible()
         {
-            throw new NotImplementedException();
+            List<IHabitat> habitats = new List<IHabitat>() { new Terrestrial(), new Aerial(), new Aquatic() };
+            return habitats;
         }
     }
 }

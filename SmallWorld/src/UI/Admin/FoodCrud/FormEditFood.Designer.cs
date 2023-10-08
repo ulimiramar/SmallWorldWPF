@@ -35,28 +35,29 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtFoodName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.Crimson;
+            this.btnCancel.BackColor = System.Drawing.Color.LightCoral;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(242, 220);
+            this.btnCancel.ForeColor = System.Drawing.Color.Black;
+            this.btnCancel.Location = new System.Drawing.Point(26, 259);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(130, 23);
+            this.btnCancel.Size = new System.Drawing.Size(120, 23);
             this.btnCancel.TabIndex = 127;
             this.btnCancel.Text = "Cancelar";
             this.btnCancel.UseVisualStyleBackColor = false;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnUpdate.BackColor = System.Drawing.Color.LightBlue;
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(104, 220);
+            this.btnUpdate.ForeColor = System.Drawing.Color.Black;
+            this.btnUpdate.Location = new System.Drawing.Point(26, 230);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(132, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(120, 23);
             this.btnUpdate.TabIndex = 126;
             this.btnUpdate.Text = "Actualizar";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -65,14 +66,14 @@
             // clbListDiets
             // 
             this.clbListDiets.FormattingEnabled = true;
-            this.clbListDiets.Location = new System.Drawing.Point(294, 89);
+            this.clbListDiets.Location = new System.Drawing.Point(26, 125);
             this.clbListDiets.Name = "clbListDiets";
             this.clbListDiets.Size = new System.Drawing.Size(120, 94);
             this.clbListDiets.TabIndex = 134;
             // 
             // txtEnergyValue
             // 
-            this.txtEnergyValue.Location = new System.Drawing.Point(139, 163);
+            this.txtEnergyValue.Location = new System.Drawing.Point(35, 79);
             this.txtEnergyValue.Name = "txtEnergyValue";
             this.txtEnergyValue.Size = new System.Drawing.Size(100, 20);
             this.txtEnergyValue.TabIndex = 133;
@@ -80,7 +81,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(152, 147);
+            this.label3.Location = new System.Drawing.Point(45, 63);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(84, 13);
             this.label3.TabIndex = 132;
@@ -88,7 +89,7 @@
             // 
             // txtFoodName
             // 
-            this.txtFoodName.Location = new System.Drawing.Point(139, 115);
+            this.txtFoodName.Location = new System.Drawing.Point(35, 31);
             this.txtFoodName.Name = "txtFoodName";
             this.txtFoodName.Size = new System.Drawing.Size(100, 20);
             this.txtFoodName.TabIndex = 129;
@@ -96,17 +97,28 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(149, 99);
+            this.label1.Location = new System.Drawing.Point(45, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(87, 13);
             this.label1.TabIndex = 128;
             this.label1.Text = "Nombre Alimento";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(32, 109);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(97, 13);
+            this.label2.TabIndex = 135;
+            this.label2.Text = "Dietas Compatibles";
+            // 
             // FormEditFood
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(465, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(222)))), ((int)(((byte)(144)))));
+            this.ClientSize = new System.Drawing.Size(180, 305);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.clbListDiets);
             this.Controls.Add(this.txtEnergyValue);
             this.Controls.Add(this.label3);
@@ -131,5 +143,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtFoodName;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
