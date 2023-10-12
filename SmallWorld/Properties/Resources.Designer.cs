@@ -63,6 +63,16 @@ namespace SmallWorld.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap backgroundImage1 {
+            get {
+                object obj = ResourceManager.GetObject("backgroundImage1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cover_image {
             get {
                 object obj = ResourceManager.GetObject("cover-image", resourceCulture);
@@ -76,6 +86,16 @@ namespace SmallWorld.Properties {
         internal static System.Drawing.Bitmap EarthGreen {
             get {
                 object obj = ResourceManager.GetObject("EarthGreen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap flechaBlanca {
+            get {
+                object obj = ResourceManager.GetObject("flechaBlanca", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -106,6 +126,26 @@ namespace SmallWorld.Properties {
         internal static System.Drawing.Bitmap HexagonWater {
             get {
                 object obj = ResourceManager.GetObject("HexagonWater", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mandoCuadrado {
+            get {
+                object obj = ResourceManager.GetObject("mandoCuadrado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tele {
+            get {
+                object obj = ResourceManager.GetObject("tele", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

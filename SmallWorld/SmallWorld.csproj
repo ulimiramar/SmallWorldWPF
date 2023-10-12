@@ -158,6 +158,12 @@
     <Compile Include="src\UI\CustomControls\HexagonControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="src\UI\Game\FormGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\UI\Game\FormGame.Designer.cs">
+      <DependentUpon>FormGame.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\UI\Home\FormHome.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +222,9 @@
     <EmbeddedResource Include="src\UI\Admin\MapGenerator\FormMapGenerator.resx">
       <DependentUpon>FormMapGenerator.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="src\UI\Game\FormGame.resx">
+      <DependentUpon>FormGame.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\UI\Home\FormHome.resx">
       <DependentUpon>FormHome.cs</DependentUpon>
     </EmbeddedResource>
@@ -247,10 +256,14 @@
     <None Include="Resources\Hexagon.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\mandoCuadrado.png" />
+    <None Include="Resources\tele.png" />
     <None Include="Resources\textura-campo-cesped %281%29.jpg" />
     <None Include="Resources\waterSea.jpg" />
     <None Include="Resources\cover-image.png" />
     <None Include="Resources\EarthGreen.jpg" />
+    <None Include="Resources\flechaBlanca.png" />
+    <None Include="Resources\backgroundImage1.jpg" />
     <Content Include="Resources\HexagonEarth.png" />
     <Content Include="Resources\HexagonWater.png" />
   </ItemGroup>

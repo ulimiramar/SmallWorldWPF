@@ -61,3 +61,4 @@ C:\Users\uli\Desktop\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.c
 C:\Users\uli\Desktop\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.csproj.CoreCompileInputs.cache
 C:\Users\uli\Desktop\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.exe
 C:\Users\uli\Desktop\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.pdb
+C:\Users\uli\Desktop\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.src.UI.Game.FormGame.resources

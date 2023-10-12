@@ -1,5 +1,6 @@
 ﻿using SmallWorld.src.UI.Admin;
 using SmallWorld.src.UI.Admin.ItemCrud;
+using SmallWorld.src.UI.Game;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -77,6 +78,11 @@ namespace SmallWorld.src.UI.Home
         private void btnFoodCrud_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FormFoodCrudHome());
+        }
+
+        private void btnPlayNewVersion_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FormGame());
         }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pSideMenu = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnPlay = new System.Windows.Forms.Button();
             this.pAdminSubMenu = new System.Windows.Forms.Panel();
             this.btnFoodCrud = new System.Windows.Forms.Button();
@@ -38,7 +39,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panelChildForm = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.btnPlayNewVersion = new System.Windows.Forms.Button();
             this.pSideMenu.SuspendLayout();
             this.pAdminSubMenu.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -49,6 +50,7 @@
             this.pSideMenu.AutoScroll = true;
             this.pSideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(206)))), ((int)(((byte)(247)))), ((int)(((byte)(129)))));
             this.pSideMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pSideMenu.Controls.Add(this.btnPlayNewVersion);
             this.pSideMenu.Controls.Add(this.label2);
             this.pSideMenu.Controls.Add(this.btnPlay);
             this.pSideMenu.Controls.Add(this.pAdminSubMenu);
@@ -59,6 +61,16 @@
             this.pSideMenu.Name = "pSideMenu";
             this.pSideMenu.Size = new System.Drawing.Size(200, 561);
             this.pSideMenu.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 389);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(175, 39);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Paso 1: Utilice el administrador para\r\ncrear objetos y entidades\r\nPaso 2: Juegue\r" +
+    "\n";
             // 
             // btnPlay
             // 
@@ -184,27 +196,33 @@
             this.panelChildForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelChildForm.Location = new System.Drawing.Point(200, 0);
             this.panelChildForm.Name = "panelChildForm";
-            this.panelChildForm.Size = new System.Drawing.Size(734, 561);
+            this.panelChildForm.Size = new System.Drawing.Size(808, 561);
             this.panelChildForm.TabIndex = 1;
             // 
-            // label2
+            // btnPlayNewVersion
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 338);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(175, 39);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Paso 1: Utilice el administrador para\r\ncrear objetos y entidades\r\nPaso 2: Juegue\r" +
-    "\n";
+            this.btnPlayNewVersion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(192)))), ((int)(((byte)(129)))));
+            this.btnPlayNewVersion.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnPlayNewVersion.FlatAppearance.BorderSize = 0;
+            this.btnPlayNewVersion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPlayNewVersion.Location = new System.Drawing.Point(0, 314);
+            this.btnPlayNewVersion.Name = "btnPlayNewVersion";
+            this.btnPlayNewVersion.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnPlayNewVersion.Size = new System.Drawing.Size(198, 45);
+            this.btnPlayNewVersion.TabIndex = 4;
+            this.btnPlayNewVersion.Text = "Jugar nueva versión";
+            this.btnPlayNewVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPlayNewVersion.UseVisualStyleBackColor = false;
+            this.btnPlayNewVersion.Click += new System.EventHandler(this.btnPlayNewVersion_Click);
             // 
             // FormHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(934, 561);
+            this.ClientSize = new System.Drawing.Size(1008, 561);
             this.Controls.Add(this.panelChildForm);
             this.Controls.Add(this.pSideMenu);
-            this.MinimumSize = new System.Drawing.Size(950, 600);
+            this.MinimumSize = new System.Drawing.Size(1024, 600);
             this.Name = "FormHome";
             this.Text = "FormHome";
             this.pSideMenu.ResumeLayout(false);
@@ -229,5 +247,6 @@
         private System.Windows.Forms.Panel panelChildForm;
         private System.Windows.Forms.Button btnPlay;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnPlayNewVersion;
     }
 }
