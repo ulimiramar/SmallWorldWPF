@@ -133,6 +133,16 @@ namespace SmallWorld.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap HumanVsMythology {
+            get {
+                object obj = ResourceManager.GetObject("HumanVsMythology", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap mandoCuadrado {
             get {
                 object obj = ResourceManager.GetObject("mandoCuadrado", resourceCulture);

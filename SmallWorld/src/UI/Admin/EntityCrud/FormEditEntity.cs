@@ -37,7 +37,6 @@ namespace SmallWorld.src.UI.Admin.EntityCrud
             chbAttackRange.Checked = entityToModify.AttackRange;
             txtMaxLife.Text = entityToModify.MaxLife.ToString();
             txtMaxEnergy.Text = entityToModify.MaxEnergy.ToString();
-            txtDefenseShield.Text = entityToModify.DefenseShield.ToString();
         }
 
         private void FillListControls()
@@ -75,7 +74,6 @@ namespace SmallWorld.src.UI.Admin.EntityCrud
             entityModified.AttackRange = chbAttackRange.Checked;
             entityModified.MaxLife = Convert.ToInt32(txtMaxLife.Text);
             entityModified.MaxEnergy = Convert.ToInt32(txtMaxEnergy.Text);
-            entityModified.DefenseShield = Convert.ToInt32(txtDefenseShield.Text);
 
             entityController.Update(entityToModify, entityModified);
             MessageBox.Show("Actualizado con exito");

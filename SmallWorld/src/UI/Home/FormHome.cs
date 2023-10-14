@@ -1,5 +1,6 @@
 ﻿using SmallWorld.src.UI.Admin;
 using SmallWorld.src.UI.Admin.ItemCrud;
+using SmallWorld.src.UI.FormsGame;
 using SmallWorld.src.UI.Game;
 using System;
 using System.Collections.Generic;
@@ -82,7 +83,7 @@ namespace SmallWorld.src.UI.Home
 
         private void btnPlayNewVersion_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new FormGame());
+            //OpenChildForm(new FormGame(new Game());
         }
     }
 }

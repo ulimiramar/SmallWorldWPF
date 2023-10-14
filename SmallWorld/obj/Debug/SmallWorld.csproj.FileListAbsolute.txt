@@ -61,4 +61,9 @@ C:\Users\uli\Desktop\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.c
 C:\Users\uli\Desktop\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.csproj.CoreCompileInputs.cache
 C:\Users\uli\Desktop\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.exe
 C:\Users\uli\Desktop\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.pdb
-C:\Users\uli\Desktop\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.src.UI.Game.FormGame.resources
+C:\Users\uli\Desktop\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.src.UI.Game.FormWelcome.resources
+C:\Users\uli\Desktop\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.src.UI.Game.FormGameOptions.resources
+C:\Users\uli\Desktop\SmallWorld-mio\SmallWorld\SmallWorld\bin\Debug\Newtonsoft.Json.dll
+C:\Users\uli\Desktop\SmallWorld-mio\SmallWorld\SmallWorld\bin\Debug\Newtonsoft.Json.xml
+C:\Users\uli\Desktop\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.csproj.CopyComplete
+C:\Users\uli\Desktop\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.src.UI.FormsGame.FormGame.resources

@@ -33,7 +33,6 @@ namespace SmallWorld.src.Model
         bool attackRange;
         int costToAttack;
         bool dieStatus;
-        int defenseShield;
 
         #region Properties
         //TODO: hacer validaciones en propiedades, informar de alguna manera si esta muerto y no puede recibir mas ataques, talvez borrandolo de la lista, o que la lista traiga solo los vivos. y los interacts se traigan los muertos para abono.
@@ -166,12 +165,11 @@ namespace SmallWorld.src.Model
         }
         public bool DieStatus { get => dieStatus; set => dieStatus = value; }
         public int CostToAttack { get => costToAttack; set => costToAttack = value; }
-        public int DefenseShield { get => defenseShield; set => defenseShield = value; }
 
         #endregion
 
         //constructor
-        public Entity(IKingdom kingdom, string name, IDiet diet, List<IHabitat> habitatList, int attackPoints, int defensePoints, bool attackRange, int maxLife, int maxEnergy, int defenseShield)
+        public Entity(IKingdom kingdom, string name, IDiet diet, List<IHabitat> habitatList, int attackPoints, int defensePoints, bool attackRange, int maxLife, int maxEnergy)
         {
             lastId++;
             Id = lastId;
@@ -187,7 +185,6 @@ namespace SmallWorld.src.Model
             MaxEnergy = maxEnergy;
             CurrentEnergy = maxEnergy;
             CostToAttack = 30;
-            DefenseShield = defenseShield;
             PositionableObjectRegistry.Register(this);
             //CurrentTerrain = currentTerrain;
             //Position = position;
@@ -286,30 +283,10 @@ namespace SmallWorld.src.Model
             return AttackResult;
         }
 
-        public bool ShieldIsDestroyed()
-        {
-            bool shieldIsDestroyed = false;
-            if (DefenseShield <= 0)
-            {
-                shieldIsDestroyed = true;
-            }
-            return shieldIsDestroyed;
-        }
+        
 
 
-        /// <summary>
-        /// If after of attack the defense shield had a negative value, 
-        /// this points substract CurrentLife
-        /// </summary>
-        public void VerifyStatusOfDefenseShield()
-        {
-            if (DefenseShield < 0)
-            {
-                CurrentLife += DefenseShield;
-                DefenseShield = 0;
-                VerifyMinCurrentLife();
-            }
-        }
+        
 
         public void Eat (Food food)
         {

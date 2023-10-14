@@ -10,6 +10,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace SmallWorld.src.UI.Admin.EntityCrud
 {
@@ -63,17 +64,27 @@ namespace SmallWorld.src.UI.Admin.EntityCrud
             this.Close();
         }
 
-        private void btnCreateRandoms_Click(object sender, EventArgs e)
+        private async void btnCreateRandoms_Click(object sender, EventArgs e)
         {
+            
             if (txtRandomsNumber.Text != "")
             {
-                for (int i = 0; i <= Convert.ToInt32(txtRandomsNumber.Text); i++)
+                try
                 {
-                    RandomData();
-                    CreateEntity();
+                    int totalEntitiesToCreate = Convert.ToInt32(txtRandomsNumber.Text);
+                    await entityController.AddRandomsEntitiesAsync(totalEntitiesToCreate);
+                    MessageBox.Show("Creados con éxito");
+                    this.Close();
+                    /*for (int i = 0; i <= Convert.ToInt32(txtRandomsNumber.Text); i++)
+                    {
+                        RandomData();
+                        CreateEntity();
+                    }*/
                 }
-                MessageBox.Show("Creados con éxito");
-                this.Close();
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
             else
             {
@@ -109,7 +120,10 @@ namespace SmallWorld.src.UI.Admin.EntityCrud
             }
             try
             {
-                entityController.AddEntity((IKingdom)cbKingdom.SelectedItem, txtName.Text, (IDiet)cbDiet.SelectedItem, selectedHabitats, Convert.ToInt32(txtAttackPoints.Text), Convert.ToInt32(txtDefensePoints.Text), chbAttackRange.Checked, Convert.ToInt32(txtMaxLife.Text), Convert.ToInt32(txtMaxEnergy.Text), Convert.ToInt32(txtDefenseShield.Text));
+                entityController.AddEntity((IKingdom)cbKingdom.SelectedItem, txtName.Text, 
+                    (IDiet)cbDiet.SelectedItem, selectedHabitats, Convert.ToInt32(txtAttackPoints.Text), 
+                    Convert.ToInt32(txtDefensePoints.Text), chbAttackRange.Checked, 
+                    Convert.ToInt32(txtMaxLife.Text), Convert.ToInt32(txtMaxEnergy.Text));
                 ClearFormControls();
             }
             catch (Exception ex)

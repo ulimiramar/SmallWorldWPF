@@ -8,12 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SmallWorld.src.UI.Game
+namespace SmallWorld.src.UI.FormsGame
 {
     public partial class FormGame : Form
     {
-        public FormGame()
+        public FormGame(Model.Game.Game gameOptions)
         {
+            //TODO: empezar a llenar los datos de los datagrid view y generar el mapa
             InitializeComponent();
         }
 

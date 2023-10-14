@@ -376,7 +376,6 @@ namespace SmallWorld.src.UI
             if (cbSelectUniqueEntity.SelectedItem is Entity selectedEntity)
             {
                 pbCurrentLife.Value = selectedEntity.CurrentLife;
-                pbDefenseShield.Value = selectedEntity.DefenseShield;
                 pbCurrentEnergy.Value = selectedEntity.CurrentEnergy;
             }
         }

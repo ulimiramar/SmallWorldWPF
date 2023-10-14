@@ -1,4 +1,4 @@
-﻿namespace SmallWorld.src.UI.Game
+﻿namespace SmallWorld.src.UI.FormsGame
 {
     partial class FormGame
     {

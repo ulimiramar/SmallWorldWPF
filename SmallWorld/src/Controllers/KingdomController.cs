@@ -13,7 +13,6 @@ namespace SmallWorld.src.Controllers
     {
         
         private static KingdomController instance;
-
         private readonly List<Kingdom> Kingdoms = new List<Kingdom>();
 
         private KingdomController() { }
