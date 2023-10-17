@@ -19,8 +19,8 @@ namespace SmallWorld
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormHome());
-            //Application.Run(new FormWelcome());
+            //Application.Run(new FormHome());
+            Application.Run(new FormWelcome());
         }
     }
 }

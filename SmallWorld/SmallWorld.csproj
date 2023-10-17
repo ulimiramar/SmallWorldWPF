@@ -82,6 +82,7 @@
     <Compile Include="src\Model\Habitat\Aquatic.cs" />
     <Compile Include="src\Model\Habitat\Aerial.cs" />
     <Compile Include="src\Model\Habitat\Terrestrial.cs" />
+    <Compile Include="src\Model\Interactable\ItemEffects\AtomicBombLauncher.cs" />
     <Compile Include="src\Model\Interactable\ItemEffects\FillCurrentLife.cs" />
     <Compile Include="src\Model\Interactable\ItemEffects\GodMode.cs" />
     <Compile Include="src\Model\Interactable\ItemEffects\Kill.cs" />

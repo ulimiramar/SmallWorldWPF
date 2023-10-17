@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace SmallWorld.src.Model.Interactuable
 {
     //TODO: Importante hacer que una entidad utilize un item. Un item lo usas o lo dejas, debe haber un crud de items, puede tocar un item negativo, que sea malo. El item puede sumar ataque, vida, etc. Patron strategy para agregar otro objeto que determina a que se lo da.
-    public class Item : IInteractable, IPositionable
+    public class Item : IInteractable
     {
         //podria haber un item que te agregue valores por este turno, permanentemente o por un ataque
         //un item se agarra y se activa. requiere energía. no se va a saber que hace cada item.
@@ -48,7 +48,6 @@ namespace SmallWorld.src.Model.Interactuable
             Id = lastId;
             EffectStrategies = effectStrategies;
             Name = name;
-            PositionableObjectRegistry.Register(this);
         }
 
         

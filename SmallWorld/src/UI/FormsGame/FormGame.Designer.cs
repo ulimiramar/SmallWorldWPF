@@ -28,23 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvP1Entities = new System.Windows.Forms.DataGridView();
+            this.IdEntity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Kingdom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Habitats = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Diet = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CurrentLife = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CurrentEnergy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AtkPoints = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DefPoints = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.btnAttack = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.button15 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
+            this.btnItemsMap = new System.Windows.Forms.Button();
+            this.btnFoodMap = new System.Windows.Forms.Button();
+            this.btnEntitiesMap = new System.Windows.Forms.Button();
+            this.btnNumLandMap = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.button8 = new System.Windows.Forms.Button();
+            this.btnUseItem = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button11 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.hexagon0 = new SmallWorld.src.UI.CustomControls.HexagonControl();
             this.hexagon5 = new SmallWorld.src.UI.CustomControls.HexagonControl();
             this.hexagon10 = new SmallWorld.src.UI.CustomControls.HexagonControl();
@@ -64,40 +91,146 @@
             this.hexagon7 = new SmallWorld.src.UI.CustomControls.HexagonControl();
             this.hexagon6 = new SmallWorld.src.UI.CustomControls.HexagonControl();
             this.hexagon12 = new SmallWorld.src.UI.CustomControls.HexagonControl();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.button11 = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            this.dgvP2Entities = new System.Windows.Forms.DataGridView();
+            this.IdEntity2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvItems = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Effects = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvFood = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DietNames = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EnergyValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvP1Entities)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvP2Entities)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFood)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(673, 58);
+            this.label1.Location = new System.Drawing.Point(506, 58);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(68, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "JUGADOR 1";
             // 
-            // dataGridView1
+            // dgvP1Entities
             // 
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.LightCoral;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(660, 74);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(275, 150);
-            this.dataGridView1.TabIndex = 1;
+            this.dgvP1Entities.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.HotPink;
+            this.dgvP1Entities.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            this.dgvP1Entities.BackgroundColor = System.Drawing.Color.LightCoral;
+            this.dgvP1Entities.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvP1Entities.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.DeepPink;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.DeepPink;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvP1Entities.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            this.dgvP1Entities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvP1Entities.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdEntity,
+            this.Name,
+            this.Kingdom,
+            this.Habitats,
+            this.Diet,
+            this.CurrentLife,
+            this.CurrentEnergy,
+            this.AtkPoints,
+            this.DefPoints});
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.DeepPink;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvP1Entities.DefaultCellStyle = dataGridViewCellStyle15;
+            this.dgvP1Entities.EnableHeadersVisualStyles = false;
+            this.dgvP1Entities.GridColor = System.Drawing.Color.LavenderBlush;
+            this.dgvP1Entities.Location = new System.Drawing.Point(509, 74);
+            this.dgvP1Entities.MultiSelect = false;
+            this.dgvP1Entities.Name = "dgvP1Entities";
+            this.dgvP1Entities.ReadOnly = true;
+            this.dgvP1Entities.RowHeadersVisible = false;
+            this.dgvP1Entities.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvP1Entities.Size = new System.Drawing.Size(503, 150);
+            this.dgvP1Entities.TabIndex = 1;
+            // 
+            // IdEntity
+            // 
+            this.IdEntity.HeaderText = "IdEntity";
+            this.IdEntity.Name = "IdEntity";
+            this.IdEntity.ReadOnly = true;
+            this.IdEntity.Visible = false;
+            // 
+            // Name
+            // 
+            this.Name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Name.HeaderText = "Nombre";
+            this.Name.Name = "Name";
+            this.Name.ReadOnly = true;
+            // 
+            // Kingdom
+            // 
+            this.Kingdom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Kingdom.HeaderText = "Reino";
+            this.Kingdom.Name = "Kingdom";
+            this.Kingdom.ReadOnly = true;
+            // 
+            // Habitats
+            // 
+            this.Habitats.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Habitats.HeaderText = "Habitats";
+            this.Habitats.Name = "Habitats";
+            this.Habitats.ReadOnly = true;
+            // 
+            // Diet
+            // 
+            this.Diet.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Diet.HeaderText = "Dieta";
+            this.Diet.Name = "Diet";
+            this.Diet.ReadOnly = true;
+            // 
+            // CurrentLife
+            // 
+            this.CurrentLife.HeaderText = "Vida";
+            this.CurrentLife.Name = "CurrentLife";
+            this.CurrentLife.ReadOnly = true;
+            this.CurrentLife.Width = 50;
+            // 
+            // CurrentEnergy
+            // 
+            this.CurrentEnergy.HeaderText = "Energía";
+            this.CurrentEnergy.Name = "CurrentEnergy";
+            this.CurrentEnergy.ReadOnly = true;
+            this.CurrentEnergy.Width = 50;
+            // 
+            // AtkPoints
+            // 
+            this.AtkPoints.HeaderText = "Ataque";
+            this.AtkPoints.Name = "AtkPoints";
+            this.AtkPoints.ReadOnly = true;
+            this.AtkPoints.Width = 40;
+            // 
+            // DefPoints
+            // 
+            this.DefPoints.HeaderText = "Defensa";
+            this.DefPoints.Name = "DefPoints";
+            this.DefPoints.ReadOnly = true;
+            this.DefPoints.Width = 40;
             // 
             // button1
             // 
@@ -184,97 +317,95 @@
             this.button6.Text = "Descansar";
             this.button6.UseVisualStyleBackColor = false;
             // 
-            // button7
+            // btnAttack
             // 
-            this.button7.BackColor = System.Drawing.Color.LightCoral;
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(844, 471);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(40, 40);
-            this.button7.TabIndex = 8;
-            this.button7.Text = "Atacar";
-            this.button7.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.DarkTurquoise;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(660, 252);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(275, 150);
-            this.dataGridView2.TabIndex = 10;
+            this.btnAttack.BackColor = System.Drawing.Color.LightCoral;
+            this.btnAttack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAttack.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnAttack.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnAttack.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAttack.ForeColor = System.Drawing.Color.White;
+            this.btnAttack.Location = new System.Drawing.Point(844, 471);
+            this.btnAttack.Name = "btnAttack";
+            this.btnAttack.Size = new System.Drawing.Size(40, 40);
+            this.btnAttack.TabIndex = 8;
+            this.btnAttack.Text = "Atacar";
+            this.btnAttack.UseVisualStyleBackColor = false;
+            this.btnAttack.Click += new System.EventHandler(this.btnAttack_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(673, 236);
+            this.label2.Location = new System.Drawing.Point(506, 237);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 13);
             this.label2.TabIndex = 9;
             this.label2.Text = "JUGADOR 2";
             // 
-            // button15
+            // btnItemsMap
             // 
-            this.button15.BackColor = System.Drawing.Color.Violet;
-            this.button15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.ForeColor = System.Drawing.Color.White;
-            this.button15.Location = new System.Drawing.Point(74, 406);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(50, 50);
-            this.button15.TabIndex = 18;
-            this.button15.UseVisualStyleBackColor = false;
+            this.btnItemsMap.BackColor = System.Drawing.Color.Violet;
+            this.btnItemsMap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnItemsMap.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnItemsMap.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnItemsMap.ForeColor = System.Drawing.Color.White;
+            this.btnItemsMap.Location = new System.Drawing.Point(31, 62);
+            this.btnItemsMap.Name = "btnItemsMap";
+            this.btnItemsMap.Size = new System.Drawing.Size(50, 50);
+            this.btnItemsMap.TabIndex = 18;
+            this.btnItemsMap.Text = "Mapa de Items";
+            this.btnItemsMap.UseVisualStyleBackColor = false;
+            this.btnItemsMap.Click += new System.EventHandler(this.btnItemsMap_Click);
             // 
-            // button16
+            // btnFoodMap
             // 
-            this.button16.BackColor = System.Drawing.Color.Violet;
-            this.button16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button16.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button16.ForeColor = System.Drawing.Color.White;
-            this.button16.Location = new System.Drawing.Point(130, 406);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(50, 50);
-            this.button16.TabIndex = 19;
-            this.button16.UseVisualStyleBackColor = false;
+            this.btnFoodMap.BackColor = System.Drawing.Color.Violet;
+            this.btnFoodMap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFoodMap.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnFoodMap.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFoodMap.ForeColor = System.Drawing.Color.White;
+            this.btnFoodMap.Location = new System.Drawing.Point(87, 62);
+            this.btnFoodMap.Name = "btnFoodMap";
+            this.btnFoodMap.Size = new System.Drawing.Size(50, 50);
+            this.btnFoodMap.TabIndex = 19;
+            this.btnFoodMap.Text = "Mapa de alimentos";
+            this.btnFoodMap.UseVisualStyleBackColor = false;
+            this.btnFoodMap.Click += new System.EventHandler(this.btnFoodMap_Click);
             // 
-            // button17
+            // btnEntitiesMap
             // 
-            this.button17.BackColor = System.Drawing.Color.Violet;
-            this.button17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button17.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button17.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button17.ForeColor = System.Drawing.Color.White;
-            this.button17.Location = new System.Drawing.Point(75, 460);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(50, 50);
-            this.button17.TabIndex = 20;
-            this.button17.UseVisualStyleBackColor = false;
+            this.btnEntitiesMap.BackColor = System.Drawing.Color.Violet;
+            this.btnEntitiesMap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEntitiesMap.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEntitiesMap.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEntitiesMap.ForeColor = System.Drawing.Color.White;
+            this.btnEntitiesMap.Location = new System.Drawing.Point(32, 116);
+            this.btnEntitiesMap.Name = "btnEntitiesMap";
+            this.btnEntitiesMap.Size = new System.Drawing.Size(50, 50);
+            this.btnEntitiesMap.TabIndex = 20;
+            this.btnEntitiesMap.Text = "Mapa de Entidades";
+            this.btnEntitiesMap.UseVisualStyleBackColor = false;
+            this.btnEntitiesMap.Click += new System.EventHandler(this.btnEntitiesMap_Click);
             // 
-            // button18
+            // btnNumLandMap
             // 
-            this.button18.BackColor = System.Drawing.Color.Violet;
-            this.button18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button18.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button18.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button18.ForeColor = System.Drawing.Color.White;
-            this.button18.Location = new System.Drawing.Point(130, 460);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(50, 50);
-            this.button18.TabIndex = 21;
-            this.button18.UseVisualStyleBackColor = false;
+            this.btnNumLandMap.BackColor = System.Drawing.Color.Violet;
+            this.btnNumLandMap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnNumLandMap.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNumLandMap.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNumLandMap.ForeColor = System.Drawing.Color.White;
+            this.btnNumLandMap.Location = new System.Drawing.Point(87, 116);
+            this.btnNumLandMap.Name = "btnNumLandMap";
+            this.btnNumLandMap.Size = new System.Drawing.Size(50, 50);
+            this.btnNumLandMap.TabIndex = 21;
+            this.btnNumLandMap.Text = "Mapa de terrenos";
+            this.btnNumLandMap.UseVisualStyleBackColor = false;
+            this.btnNumLandMap.Click += new System.EventHandler(this.btnNumLandMap_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(472, 497);
+            this.label5.Location = new System.Drawing.Point(29, 310);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 13);
             this.label5.TabIndex = 63;
@@ -283,201 +414,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(371, 497);
+            this.label7.Location = new System.Drawing.Point(29, 256);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(95, 13);
             this.label7.TabIndex = 65;
             this.label7.Text = "TIMER GENERAL";
-            // 
-            // hexagon0
-            // 
-            this.hexagon0.BackColor = System.Drawing.Color.Gainsboro;
-            this.hexagon0.BorderColor = System.Drawing.Color.Black;
-            this.hexagon0.HexagonText = "";
-            this.hexagon0.Location = new System.Drawing.Point(108, 105);
-            this.hexagon0.Name = "hexagon0";
-            this.hexagon0.Size = new System.Drawing.Size(70, 70);
-            this.hexagon0.TabIndex = 43;
-            // 
-            // hexagon5
-            // 
-            this.hexagon5.BackColor = System.Drawing.Color.Gainsboro;
-            this.hexagon5.BorderColor = System.Drawing.Color.Black;
-            this.hexagon5.HexagonText = "";
-            this.hexagon5.Location = new System.Drawing.Point(108, 181);
-            this.hexagon5.Name = "hexagon5";
-            this.hexagon5.Size = new System.Drawing.Size(70, 70);
-            this.hexagon5.TabIndex = 42;
-            // 
-            // hexagon10
-            // 
-            this.hexagon10.BackColor = System.Drawing.Color.Gainsboro;
-            this.hexagon10.BorderColor = System.Drawing.Color.Black;
-            this.hexagon10.HexagonText = "";
-            this.hexagon10.Location = new System.Drawing.Point(108, 257);
-            this.hexagon10.Name = "hexagon10";
-            this.hexagon10.Size = new System.Drawing.Size(70, 70);
-            this.hexagon10.TabIndex = 41;
-            // 
-            // hexagon4
-            // 
-            this.hexagon4.BackColor = System.Drawing.Color.Gainsboro;
-            this.hexagon4.BorderColor = System.Drawing.Color.Black;
-            this.hexagon4.HexagonText = "";
-            this.hexagon4.Location = new System.Drawing.Point(341, 105);
-            this.hexagon4.Name = "hexagon4";
-            this.hexagon4.Size = new System.Drawing.Size(70, 70);
-            this.hexagon4.TabIndex = 40;
-            // 
-            // hexagon9
-            // 
-            this.hexagon9.BackColor = System.Drawing.Color.Gainsboro;
-            this.hexagon9.BorderColor = System.Drawing.Color.Black;
-            this.hexagon9.HexagonText = "";
-            this.hexagon9.Location = new System.Drawing.Point(341, 181);
-            this.hexagon9.Name = "hexagon9";
-            this.hexagon9.Size = new System.Drawing.Size(70, 70);
-            this.hexagon9.TabIndex = 39;
-            // 
-            // hexagon14
-            // 
-            this.hexagon14.BackColor = System.Drawing.Color.Gainsboro;
-            this.hexagon14.BorderColor = System.Drawing.Color.Black;
-            this.hexagon14.HexagonText = "";
-            this.hexagon14.Location = new System.Drawing.Point(341, 257);
-            this.hexagon14.Name = "hexagon14";
-            this.hexagon14.Size = new System.Drawing.Size(70, 70);
-            this.hexagon14.TabIndex = 38;
-            // 
-            // hexagon18
-            // 
-            this.hexagon18.BackColor = System.Drawing.Color.Gainsboro;
-            this.hexagon18.BorderColor = System.Drawing.Color.Black;
-            this.hexagon18.HexagonText = "";
-            this.hexagon18.Location = new System.Drawing.Point(221, 333);
-            this.hexagon18.Name = "hexagon18";
-            this.hexagon18.Size = new System.Drawing.Size(70, 70);
-            this.hexagon18.TabIndex = 37;
-            // 
-            // hexagon15
-            // 
-            this.hexagon15.BackColor = System.Drawing.Color.Gainsboro;
-            this.hexagon15.BorderColor = System.Drawing.Color.Black;
-            this.hexagon15.HexagonText = "";
-            this.hexagon15.Location = new System.Drawing.Point(164, 301);
-            this.hexagon15.Name = "hexagon15";
-            this.hexagon15.Size = new System.Drawing.Size(70, 70);
-            this.hexagon15.TabIndex = 36;
-            // 
-            // hexagon17
-            // 
-            this.hexagon17.BackColor = System.Drawing.Color.Gainsboro;
-            this.hexagon17.BorderColor = System.Drawing.Color.Black;
-            this.hexagon17.HexagonText = "";
-            this.hexagon17.Location = new System.Drawing.Point(282, 301);
-            this.hexagon17.Name = "hexagon17";
-            this.hexagon17.Size = new System.Drawing.Size(70, 70);
-            this.hexagon17.TabIndex = 35;
-            // 
-            // hexagon2
-            // 
-            this.hexagon2.BackColor = System.Drawing.Color.Gainsboro;
-            this.hexagon2.BorderColor = System.Drawing.Color.Black;
-            this.hexagon2.HexagonText = "";
-            this.hexagon2.Location = new System.Drawing.Point(221, 32);
-            this.hexagon2.Name = "hexagon2";
-            this.hexagon2.Size = new System.Drawing.Size(70, 70);
-            this.hexagon2.TabIndex = 34;
-            // 
-            // hexagon16
-            // 
-            this.hexagon16.BackColor = System.Drawing.Color.Gainsboro;
-            this.hexagon16.BorderColor = System.Drawing.Color.Black;
-            this.hexagon16.HexagonText = "";
-            this.hexagon16.Location = new System.Drawing.Point(221, 260);
-            this.hexagon16.Name = "hexagon16";
-            this.hexagon16.Size = new System.Drawing.Size(70, 70);
-            this.hexagon16.TabIndex = 33;
-            // 
-            // hexagon3
-            // 
-            this.hexagon3.BackColor = System.Drawing.Color.Gainsboro;
-            this.hexagon3.BorderColor = System.Drawing.Color.Black;
-            this.hexagon3.HexagonText = "";
-            this.hexagon3.Location = new System.Drawing.Point(282, 66);
-            this.hexagon3.Name = "hexagon3";
-            this.hexagon3.Size = new System.Drawing.Size(70, 70);
-            this.hexagon3.TabIndex = 32;
-            // 
-            // hexagon1
-            // 
-            this.hexagon1.BackColor = System.Drawing.Color.Gainsboro;
-            this.hexagon1.BorderColor = System.Drawing.Color.Black;
-            this.hexagon1.HexagonText = "";
-            this.hexagon1.Location = new System.Drawing.Point(164, 66);
-            this.hexagon1.Name = "hexagon1";
-            this.hexagon1.Size = new System.Drawing.Size(70, 70);
-            this.hexagon1.TabIndex = 31;
-            // 
-            // hexagon11
-            // 
-            this.hexagon11.BackColor = System.Drawing.Color.Gainsboro;
-            this.hexagon11.BorderColor = System.Drawing.Color.Black;
-            this.hexagon11.HexagonText = "";
-            this.hexagon11.Location = new System.Drawing.Point(164, 222);
-            this.hexagon11.Name = "hexagon11";
-            this.hexagon11.Size = new System.Drawing.Size(70, 70);
-            this.hexagon11.TabIndex = 30;
-            // 
-            // hexagon13
-            // 
-            this.hexagon13.BackColor = System.Drawing.Color.Gainsboro;
-            this.hexagon13.BorderColor = System.Drawing.Color.Black;
-            this.hexagon13.HexagonText = "";
-            this.hexagon13.Location = new System.Drawing.Point(282, 225);
-            this.hexagon13.Name = "hexagon13";
-            this.hexagon13.Size = new System.Drawing.Size(70, 70);
-            this.hexagon13.TabIndex = 29;
-            // 
-            // hexagon8
-            // 
-            this.hexagon8.BackColor = System.Drawing.Color.Gainsboro;
-            this.hexagon8.BorderColor = System.Drawing.Color.Black;
-            this.hexagon8.HexagonText = "";
-            this.hexagon8.Location = new System.Drawing.Point(282, 142);
-            this.hexagon8.Name = "hexagon8";
-            this.hexagon8.Size = new System.Drawing.Size(70, 70);
-            this.hexagon8.TabIndex = 28;
-            // 
-            // hexagon7
-            // 
-            this.hexagon7.BackColor = System.Drawing.Color.Gainsboro;
-            this.hexagon7.BorderColor = System.Drawing.Color.Black;
-            this.hexagon7.HexagonText = "";
-            this.hexagon7.Location = new System.Drawing.Point(221, 108);
-            this.hexagon7.Name = "hexagon7";
-            this.hexagon7.Size = new System.Drawing.Size(70, 70);
-            this.hexagon7.TabIndex = 27;
-            // 
-            // hexagon6
-            // 
-            this.hexagon6.BackColor = System.Drawing.Color.Gainsboro;
-            this.hexagon6.BorderColor = System.Drawing.Color.Black;
-            this.hexagon6.HexagonText = "";
-            this.hexagon6.Location = new System.Drawing.Point(164, 142);
-            this.hexagon6.Name = "hexagon6";
-            this.hexagon6.Size = new System.Drawing.Size(70, 70);
-            this.hexagon6.TabIndex = 26;
-            // 
-            // hexagon12
-            // 
-            this.hexagon12.BackColor = System.Drawing.Color.Gainsboro;
-            this.hexagon12.BorderColor = System.Drawing.Color.Black;
-            this.hexagon12.HexagonText = "";
-            this.hexagon12.Location = new System.Drawing.Point(221, 184);
-            this.hexagon12.Name = "hexagon12";
-            this.hexagon12.Size = new System.Drawing.Size(70, 70);
-            this.hexagon12.TabIndex = 25;
             // 
             // button8
             // 
@@ -494,20 +435,21 @@
             this.button8.Text = "Mover";
             this.button8.UseVisualStyleBackColor = false;
             // 
-            // button9
+            // btnUseItem
             // 
-            this.button9.BackColor = System.Drawing.Color.Violet;
-            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(844, 517);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(40, 40);
-            this.button9.TabIndex = 67;
-            this.button9.Text = "Usar";
-            this.button9.UseVisualStyleBackColor = false;
+            this.btnUseItem.BackColor = System.Drawing.Color.Violet;
+            this.btnUseItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUseItem.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnUseItem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnUseItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUseItem.ForeColor = System.Drawing.Color.White;
+            this.btnUseItem.Location = new System.Drawing.Point(844, 517);
+            this.btnUseItem.Name = "btnUseItem";
+            this.btnUseItem.Size = new System.Drawing.Size(40, 40);
+            this.btnUseItem.TabIndex = 67;
+            this.btnUseItem.Text = "Usar";
+            this.btnUseItem.UseVisualStyleBackColor = false;
+            this.btnUseItem.Click += new System.EventHandler(this.btnUseItem_Click);
             // 
             // button10
             // 
@@ -524,39 +466,19 @@
             this.button10.Text = "Comer";
             this.button10.UseVisualStyleBackColor = false;
             // 
-            // dataGridView3
-            // 
-            this.dataGridView3.AllowUserToDeleteRows = false;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(475, 74);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.Size = new System.Drawing.Size(168, 150);
-            this.dataGridView3.TabIndex = 70;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(472, 58);
+            this.label3.Location = new System.Drawing.Point(28, 409);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 69;
             this.label3.Text = "ITEMS";
             // 
-            // dataGridView4
-            // 
-            this.dataGridView4.AllowUserToDeleteRows = false;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(475, 252);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.ReadOnly = true;
-            this.dataGridView4.Size = new System.Drawing.Size(168, 150);
-            this.dataGridView4.TabIndex = 72;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(472, 236);
+            this.label4.Location = new System.Drawing.Point(319, 409);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 71;
@@ -580,11 +502,481 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(238, 497);
+            this.label6.Location = new System.Drawing.Point(29, 211);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(127, 13);
             this.label6.TabIndex = 74;
             this.label6.Text = "RESULTADO GENERAL";
+            // 
+            // hexagon0
+            // 
+            this.hexagon0.BackColor = System.Drawing.Color.Gainsboro;
+            this.hexagon0.BorderColor = System.Drawing.Color.Black;
+            this.hexagon0.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hexagon0.ForeColor = System.Drawing.Color.White;
+            this.hexagon0.HexagonText = "";
+            this.hexagon0.IsSelected = false;
+            this.hexagon0.Location = new System.Drawing.Point(185, 101);
+            this.hexagon0.Name = "hexagon0";
+            this.hexagon0.Size = new System.Drawing.Size(70, 70);
+            this.hexagon0.TabIndex = 43;
+            // 
+            // hexagon5
+            // 
+            this.hexagon5.BackColor = System.Drawing.Color.Gainsboro;
+            this.hexagon5.BorderColor = System.Drawing.Color.Black;
+            this.hexagon5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hexagon5.ForeColor = System.Drawing.Color.White;
+            this.hexagon5.HexagonText = "";
+            this.hexagon5.IsSelected = false;
+            this.hexagon5.Location = new System.Drawing.Point(185, 177);
+            this.hexagon5.Name = "hexagon5";
+            this.hexagon5.Size = new System.Drawing.Size(70, 70);
+            this.hexagon5.TabIndex = 42;
+            // 
+            // hexagon10
+            // 
+            this.hexagon10.BackColor = System.Drawing.Color.Gainsboro;
+            this.hexagon10.BorderColor = System.Drawing.Color.Black;
+            this.hexagon10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hexagon10.ForeColor = System.Drawing.Color.White;
+            this.hexagon10.HexagonText = "";
+            this.hexagon10.IsSelected = false;
+            this.hexagon10.Location = new System.Drawing.Point(185, 253);
+            this.hexagon10.Name = "hexagon10";
+            this.hexagon10.Size = new System.Drawing.Size(70, 70);
+            this.hexagon10.TabIndex = 41;
+            // 
+            // hexagon4
+            // 
+            this.hexagon4.BackColor = System.Drawing.Color.Gainsboro;
+            this.hexagon4.BorderColor = System.Drawing.Color.Black;
+            this.hexagon4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hexagon4.ForeColor = System.Drawing.Color.White;
+            this.hexagon4.HexagonText = "";
+            this.hexagon4.IsSelected = false;
+            this.hexagon4.Location = new System.Drawing.Point(418, 101);
+            this.hexagon4.Name = "hexagon4";
+            this.hexagon4.Size = new System.Drawing.Size(70, 70);
+            this.hexagon4.TabIndex = 40;
+            // 
+            // hexagon9
+            // 
+            this.hexagon9.BackColor = System.Drawing.Color.Gainsboro;
+            this.hexagon9.BorderColor = System.Drawing.Color.Black;
+            this.hexagon9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hexagon9.ForeColor = System.Drawing.Color.White;
+            this.hexagon9.HexagonText = "";
+            this.hexagon9.IsSelected = false;
+            this.hexagon9.Location = new System.Drawing.Point(418, 177);
+            this.hexagon9.Name = "hexagon9";
+            this.hexagon9.Size = new System.Drawing.Size(70, 70);
+            this.hexagon9.TabIndex = 39;
+            // 
+            // hexagon14
+            // 
+            this.hexagon14.BackColor = System.Drawing.Color.Gainsboro;
+            this.hexagon14.BorderColor = System.Drawing.Color.Black;
+            this.hexagon14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hexagon14.ForeColor = System.Drawing.Color.White;
+            this.hexagon14.HexagonText = "";
+            this.hexagon14.IsSelected = false;
+            this.hexagon14.Location = new System.Drawing.Point(418, 253);
+            this.hexagon14.Name = "hexagon14";
+            this.hexagon14.Size = new System.Drawing.Size(70, 70);
+            this.hexagon14.TabIndex = 38;
+            // 
+            // hexagon18
+            // 
+            this.hexagon18.BackColor = System.Drawing.Color.Gainsboro;
+            this.hexagon18.BorderColor = System.Drawing.Color.Black;
+            this.hexagon18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hexagon18.ForeColor = System.Drawing.Color.White;
+            this.hexagon18.HexagonText = "";
+            this.hexagon18.IsSelected = false;
+            this.hexagon18.Location = new System.Drawing.Point(298, 329);
+            this.hexagon18.Name = "hexagon18";
+            this.hexagon18.Size = new System.Drawing.Size(70, 70);
+            this.hexagon18.TabIndex = 37;
+            // 
+            // hexagon15
+            // 
+            this.hexagon15.BackColor = System.Drawing.Color.Gainsboro;
+            this.hexagon15.BorderColor = System.Drawing.Color.Black;
+            this.hexagon15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hexagon15.ForeColor = System.Drawing.Color.White;
+            this.hexagon15.HexagonText = "";
+            this.hexagon15.IsSelected = false;
+            this.hexagon15.Location = new System.Drawing.Point(241, 297);
+            this.hexagon15.Name = "hexagon15";
+            this.hexagon15.Size = new System.Drawing.Size(70, 70);
+            this.hexagon15.TabIndex = 36;
+            // 
+            // hexagon17
+            // 
+            this.hexagon17.BackColor = System.Drawing.Color.Gainsboro;
+            this.hexagon17.BorderColor = System.Drawing.Color.Black;
+            this.hexagon17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hexagon17.ForeColor = System.Drawing.Color.White;
+            this.hexagon17.HexagonText = "";
+            this.hexagon17.IsSelected = false;
+            this.hexagon17.Location = new System.Drawing.Point(359, 297);
+            this.hexagon17.Name = "hexagon17";
+            this.hexagon17.Size = new System.Drawing.Size(70, 70);
+            this.hexagon17.TabIndex = 35;
+            // 
+            // hexagon2
+            // 
+            this.hexagon2.BackColor = System.Drawing.Color.Gainsboro;
+            this.hexagon2.BorderColor = System.Drawing.Color.Black;
+            this.hexagon2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hexagon2.ForeColor = System.Drawing.Color.White;
+            this.hexagon2.HexagonText = "";
+            this.hexagon2.IsSelected = false;
+            this.hexagon2.Location = new System.Drawing.Point(298, 28);
+            this.hexagon2.Name = "hexagon2";
+            this.hexagon2.Size = new System.Drawing.Size(70, 70);
+            this.hexagon2.TabIndex = 34;
+            // 
+            // hexagon16
+            // 
+            this.hexagon16.BackColor = System.Drawing.Color.Gainsboro;
+            this.hexagon16.BorderColor = System.Drawing.Color.Black;
+            this.hexagon16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hexagon16.ForeColor = System.Drawing.Color.White;
+            this.hexagon16.HexagonText = "";
+            this.hexagon16.IsSelected = false;
+            this.hexagon16.Location = new System.Drawing.Point(298, 256);
+            this.hexagon16.Name = "hexagon16";
+            this.hexagon16.Size = new System.Drawing.Size(70, 70);
+            this.hexagon16.TabIndex = 33;
+            // 
+            // hexagon3
+            // 
+            this.hexagon3.BackColor = System.Drawing.Color.Gainsboro;
+            this.hexagon3.BorderColor = System.Drawing.Color.Black;
+            this.hexagon3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hexagon3.ForeColor = System.Drawing.Color.White;
+            this.hexagon3.HexagonText = "";
+            this.hexagon3.IsSelected = false;
+            this.hexagon3.Location = new System.Drawing.Point(359, 62);
+            this.hexagon3.Name = "hexagon3";
+            this.hexagon3.Size = new System.Drawing.Size(70, 70);
+            this.hexagon3.TabIndex = 32;
+            // 
+            // hexagon1
+            // 
+            this.hexagon1.BackColor = System.Drawing.Color.Gainsboro;
+            this.hexagon1.BorderColor = System.Drawing.Color.Black;
+            this.hexagon1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hexagon1.ForeColor = System.Drawing.Color.White;
+            this.hexagon1.HexagonText = "";
+            this.hexagon1.IsSelected = false;
+            this.hexagon1.Location = new System.Drawing.Point(241, 62);
+            this.hexagon1.Name = "hexagon1";
+            this.hexagon1.Size = new System.Drawing.Size(70, 70);
+            this.hexagon1.TabIndex = 31;
+            // 
+            // hexagon11
+            // 
+            this.hexagon11.BackColor = System.Drawing.Color.Gainsboro;
+            this.hexagon11.BorderColor = System.Drawing.Color.Black;
+            this.hexagon11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hexagon11.ForeColor = System.Drawing.Color.White;
+            this.hexagon11.HexagonText = "";
+            this.hexagon11.IsSelected = false;
+            this.hexagon11.Location = new System.Drawing.Point(241, 218);
+            this.hexagon11.Name = "hexagon11";
+            this.hexagon11.Size = new System.Drawing.Size(70, 70);
+            this.hexagon11.TabIndex = 30;
+            // 
+            // hexagon13
+            // 
+            this.hexagon13.BackColor = System.Drawing.Color.Gainsboro;
+            this.hexagon13.BorderColor = System.Drawing.Color.Black;
+            this.hexagon13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hexagon13.ForeColor = System.Drawing.Color.White;
+            this.hexagon13.HexagonText = "";
+            this.hexagon13.IsSelected = false;
+            this.hexagon13.Location = new System.Drawing.Point(359, 221);
+            this.hexagon13.Name = "hexagon13";
+            this.hexagon13.Size = new System.Drawing.Size(70, 70);
+            this.hexagon13.TabIndex = 29;
+            // 
+            // hexagon8
+            // 
+            this.hexagon8.BackColor = System.Drawing.Color.Gainsboro;
+            this.hexagon8.BorderColor = System.Drawing.Color.Black;
+            this.hexagon8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hexagon8.ForeColor = System.Drawing.Color.White;
+            this.hexagon8.HexagonText = "";
+            this.hexagon8.IsSelected = false;
+            this.hexagon8.Location = new System.Drawing.Point(359, 138);
+            this.hexagon8.Name = "hexagon8";
+            this.hexagon8.Size = new System.Drawing.Size(70, 70);
+            this.hexagon8.TabIndex = 28;
+            // 
+            // hexagon7
+            // 
+            this.hexagon7.BackColor = System.Drawing.Color.Gainsboro;
+            this.hexagon7.BorderColor = System.Drawing.Color.Black;
+            this.hexagon7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hexagon7.ForeColor = System.Drawing.Color.White;
+            this.hexagon7.HexagonText = "";
+            this.hexagon7.IsSelected = false;
+            this.hexagon7.Location = new System.Drawing.Point(298, 104);
+            this.hexagon7.Name = "hexagon7";
+            this.hexagon7.Size = new System.Drawing.Size(70, 70);
+            this.hexagon7.TabIndex = 27;
+            // 
+            // hexagon6
+            // 
+            this.hexagon6.BackColor = System.Drawing.Color.Gainsboro;
+            this.hexagon6.BorderColor = System.Drawing.Color.Black;
+            this.hexagon6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hexagon6.ForeColor = System.Drawing.Color.White;
+            this.hexagon6.HexagonText = "";
+            this.hexagon6.IsSelected = false;
+            this.hexagon6.Location = new System.Drawing.Point(241, 138);
+            this.hexagon6.Name = "hexagon6";
+            this.hexagon6.Size = new System.Drawing.Size(70, 70);
+            this.hexagon6.TabIndex = 26;
+            // 
+            // hexagon12
+            // 
+            this.hexagon12.BackColor = System.Drawing.Color.Gainsboro;
+            this.hexagon12.BorderColor = System.Drawing.Color.Black;
+            this.hexagon12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hexagon12.ForeColor = System.Drawing.Color.White;
+            this.hexagon12.HexagonText = "";
+            this.hexagon12.IsSelected = false;
+            this.hexagon12.Location = new System.Drawing.Point(298, 180);
+            this.hexagon12.Name = "hexagon12";
+            this.hexagon12.Size = new System.Drawing.Size(70, 70);
+            this.hexagon12.TabIndex = 25;
+            // 
+            // dgvP2Entities
+            // 
+            this.dgvP2Entities.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.dgvP2Entities.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            this.dgvP2Entities.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.dgvP2Entities.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvP2Entities.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvP2Entities.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            this.dgvP2Entities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvP2Entities.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdEntity2,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9});
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvP2Entities.DefaultCellStyle = dataGridViewCellStyle18;
+            this.dgvP2Entities.EnableHeadersVisualStyles = false;
+            this.dgvP2Entities.GridColor = System.Drawing.Color.LavenderBlush;
+            this.dgvP2Entities.Location = new System.Drawing.Point(509, 253);
+            this.dgvP2Entities.MultiSelect = false;
+            this.dgvP2Entities.Name = "dgvP2Entities";
+            this.dgvP2Entities.ReadOnly = true;
+            this.dgvP2Entities.RowHeadersVisible = false;
+            this.dgvP2Entities.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvP2Entities.Size = new System.Drawing.Size(503, 150);
+            this.dgvP2Entities.TabIndex = 78;
+            // 
+            // IdEntity2
+            // 
+            this.IdEntity2.HeaderText = "IdEntity";
+            this.IdEntity2.Name = "IdEntity2";
+            this.IdEntity2.ReadOnly = true;
+            this.IdEntity2.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Reino";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Habitats";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Dieta";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Vida";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "Energía";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "Ataque";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 40;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.HeaderText = "Defensa";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Width = 40;
+            // 
+            // dgvItems
+            // 
+            this.dgvItems.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.dgvItems.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            this.dgvItems.BackgroundColor = System.Drawing.Color.Gold;
+            this.dgvItems.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvItems.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.NavajoWhite;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Effects});
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.NavajoWhite;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvItems.DefaultCellStyle = dataGridViewCellStyle21;
+            this.dgvItems.EnableHeadersVisualStyles = false;
+            this.dgvItems.GridColor = System.Drawing.Color.LavenderBlush;
+            this.dgvItems.Location = new System.Drawing.Point(29, 425);
+            this.dgvItems.MultiSelect = false;
+            this.dgvItems.Name = "dgvItems";
+            this.dgvItems.ReadOnly = true;
+            this.dgvItems.RowHeadersVisible = false;
+            this.dgvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvItems.Size = new System.Drawing.Size(282, 150);
+            this.dgvItems.TabIndex = 79;
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            // 
+            // Effects
+            // 
+            this.Effects.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Effects.HeaderText = "Efectos";
+            this.Effects.Name = "Effects";
+            this.Effects.ReadOnly = true;
+            // 
+            // dgvFood
+            // 
+            this.dgvFood.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.dgvFood.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
+            this.dgvFood.BackgroundColor = System.Drawing.Color.Gold;
+            this.dgvFood.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvFood.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.NavajoWhite;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFood.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            this.dgvFood.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFood.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn10,
+            this.DietNames,
+            this.EnergyValue});
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.NavajoWhite;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFood.DefaultCellStyle = dataGridViewCellStyle24;
+            this.dgvFood.EnableHeadersVisualStyles = false;
+            this.dgvFood.GridColor = System.Drawing.Color.LavenderBlush;
+            this.dgvFood.Location = new System.Drawing.Point(321, 425);
+            this.dgvFood.MultiSelect = false;
+            this.dgvFood.Name = "dgvFood";
+            this.dgvFood.ReadOnly = true;
+            this.dgvFood.RowHeadersVisible = false;
+            this.dgvFood.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvFood.Size = new System.Drawing.Size(312, 150);
+            this.dgvFood.TabIndex = 80;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Visible = false;
+            // 
+            // DietNames
+            // 
+            this.DietNames.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DietNames.HeaderText = "Dietas";
+            this.DietNames.Name = "DietNames";
+            this.DietNames.ReadOnly = true;
+            // 
+            // EnergyValue
+            // 
+            this.EnergyValue.HeaderText = "Valor Energético";
+            this.EnergyValue.Name = "EnergyValue";
+            this.EnergyValue.ReadOnly = true;
+            this.EnergyValue.Width = 60;
             // 
             // FormGame
             // 
@@ -593,14 +985,15 @@
             this.BackColor = System.Drawing.Color.Beige;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1024, 600);
+            this.Controls.Add(this.dgvFood);
+            this.Controls.Add(this.dgvItems);
+            this.Controls.Add(this.dgvP2Entities);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button11);
-            this.Controls.Add(this.dataGridView4);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button10);
-            this.Controls.Add(this.button9);
+            this.Controls.Add(this.btnUseItem);
             this.Controls.Add(this.button8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
@@ -623,29 +1016,28 @@
             this.Controls.Add(this.hexagon7);
             this.Controls.Add(this.hexagon6);
             this.Controls.Add(this.hexagon12);
-            this.Controls.Add(this.button18);
-            this.Controls.Add(this.button17);
-            this.Controls.Add(this.button16);
-            this.Controls.Add(this.button15);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.btnNumLandMap);
+            this.Controls.Add(this.btnEntitiesMap);
+            this.Controls.Add(this.btnFoodMap);
+            this.Controls.Add(this.btnItemsMap);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.btnAttack);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvP1Entities);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormGame";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            //this.Name = "FormGame";
             this.Text = "FormGame";
             this.Load += new System.EventHandler(this.FormGame_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvP1Entities)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvP2Entities)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFood)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -654,20 +1046,19 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvP1Entities;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button btnAttack;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button btnItemsMap;
+        private System.Windows.Forms.Button btnFoodMap;
+        private System.Windows.Forms.Button btnEntitiesMap;
+        private System.Windows.Forms.Button btnNumLandMap;
         private CustomControls.HexagonControl hexagon0;
         private CustomControls.HexagonControl hexagon5;
         private CustomControls.HexagonControl hexagon10;
@@ -690,13 +1081,37 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btnUseItem;
         private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridView dgvP2Entities;
+        private System.Windows.Forms.DataGridView dgvItems;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Effects;
+        private System.Windows.Forms.DataGridView dgvFood;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DietNames;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EnergyValue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdEntity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Kingdom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Habitats;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Diet;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CurrentLife;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CurrentEnergy;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AtkPoints;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DefPoints;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdEntity2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
     }
 }

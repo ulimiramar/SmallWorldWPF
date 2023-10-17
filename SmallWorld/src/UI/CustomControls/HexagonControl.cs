@@ -13,6 +13,16 @@ namespace SmallWorld.src.UI.CustomControls
     {
         private Color borderColor = Color.Black;
         private int borderWidth = 10; // Ancho del borde en píxeles
+        private bool isSelected = false;
+
+        public bool IsSelected
+        {
+            get { return isSelected; }
+            set
+            {
+                isSelected = value;
+            }
+        }
         public string HexagonText
         {
             get { return Text; }

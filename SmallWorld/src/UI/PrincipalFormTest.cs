@@ -173,8 +173,9 @@ namespace SmallWorld.src.UI
 
         private void RefreshPositionables(Land land)
         {
-            formController.RefreshDataSource(bsItems, cbItems, () => mapController.GetPositionablesInLand<Item>(land));
-            formController.RefreshDataSource(bsFoods, cbFood, () => mapController.GetPositionablesInLand<Food>(land));
+            //esto lo saqué para que funcione la nueva vista que ya no usa posicionables
+            //formController.RefreshDataSource(bsItems, cbItems, () => mapController.GetPositionablesInLand<Item>(land));
+            //formController.RefreshDataSource(bsFoods, cbFood, () => mapController.GetPositionablesInLand<Food>(land));
             formController.RefreshDataSource(bsCurrentPlayerEntities, cbCurrentPlayerEntities, () => mapController.GetPositionablesInLand<Entity>(land));
             formController.RefreshDataSource(bsWaitingPlayersEntities, cbWaitingPlayersEntities, () => mapController.GetPositionablesInLand<Entity>(land));
         }
@@ -300,8 +301,9 @@ namespace SmallWorld.src.UI
         {
             if (cbSelectedLand.SelectedItem is Land land)
             {
-                formController.RefreshDataSource(bsItems, cbItems, () => mapController.GetPositionablesInLand<Item>(land));
-                formController.RefreshDataSource(bsFoods, cbFood, () => mapController.GetPositionablesInLand<Food>(land));
+                //esto lo saqué para que funcione la nueva vista que ya no usa posicionables
+                //formController.RefreshDataSource(bsItems, cbItems, () => mapController.GetPositionablesInLand<Item>(land));
+                //formController.RefreshDataSource(bsFoods, cbFood, () => mapController.GetPositionablesInLand<Food>(land));
                 formController.RefreshDataSource(bsWaitingPlayersEntities, cbWaitingPlayersEntities, () => mapController.GetPositionablesInLand<Entity>(land));
                 RefreshEntityValues();
             }

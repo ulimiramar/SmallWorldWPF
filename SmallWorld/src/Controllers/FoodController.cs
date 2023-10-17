@@ -1,6 +1,7 @@
 ﻿using SmallWorld.src.Interfaces;
 using SmallWorld.src.Model;
 using SmallWorld.src.Model.Interactuable;
+using SmallWorld.src.Static;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ namespace SmallWorld.src.Controllers
 {
     internal class FoodController
     {
+        Random random = new Random();
         private static FoodController instance;
         private readonly List<Food> Foods = new List<Food>();
         private FoodController() { }
@@ -31,6 +33,13 @@ namespace SmallWorld.src.Controllers
             Foods.Add(FoodToAdd);
         }
 
+        public void AddRandomFoods(int num)
+        {
+            for(int i = 0; i < num; i++)
+            {
+                Foods.Add(new Food($"Alimento {i + 1}", InterfacesImplementations.GetRandomDietList(), random.Next(20, 100)));
+            }
+        }
 
         public List<Food> getFoods()
         {

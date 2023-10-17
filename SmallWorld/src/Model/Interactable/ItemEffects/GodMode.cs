@@ -13,11 +13,12 @@ namespace SmallWorld.src.Model.Interactable.ItemEffects
         private string name = "Modo Dios";
         public void Effect(Entity entity)
         {
-            entity.AttackPoints = 100;
-            entity.CostToAttack = 0;
-            entity.CurrentLife = 100;
-            entity.CurrentEnergy = 100;
-            entity.DefensePoints = 100;
+            entity.MaxLife = 9999;
+            entity.MaxEnergy = 9999;
+            entity.CurrentLife = 9999;
+            entity.AttackPoints = 9999;
+            entity.DefensePoints = 9999;
+            entity.CurrentEnergy = 9999;
         }
         public override bool Equals(object obj)
         {

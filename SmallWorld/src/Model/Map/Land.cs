@@ -1,4 +1,5 @@
 ﻿using SmallWorld.src.Interfaces;
+using SmallWorld.src.Model.Interactuable;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,11 @@ namespace SmallWorld.src.Model.Terrain
         private ITerrainType terrainType;
         private List<Land> borderingLands = new List<Land>();
         private List<IPositionable> positionables;
+        private List<Item> items = new List<Item>();
+        private List<Food> foods = new List<Food>();
+        private List<Entity> entities = new List<Entity>();
+        private List<Entity> p1entities = new List<Entity>();
+        private List<Entity> p2entities = new List<Entity>();
 
         #region Properties
         public int Id { get; private set; }
@@ -20,7 +26,6 @@ namespace SmallWorld.src.Model.Terrain
         public string TerrainTypeName { get => terrainType.ToString(); }
         internal List<Land> BorderingLands { get => borderingLands; set => borderingLands = value; }
         internal List<IPositionable> Positionables { get => positionables; set => positionables = value; }
-        
         public string BorderingLandsIds
         {
             get
@@ -33,6 +38,11 @@ namespace SmallWorld.src.Model.Terrain
                 return borderingLandsIds;
             }
         }
+        public List<Item> Items { get => items; set => items = value; }
+        public List<Food> Foods { get => foods; set => foods = value; }
+        public List<Entity> P1entities { get => p1entities; set => p1entities = value; }
+        public List<Entity> P2entities { get => p2entities; set => p2entities = value; }
+        public List<Entity> Entities { get => entities; set => entities = value; }
 
         #endregion
 

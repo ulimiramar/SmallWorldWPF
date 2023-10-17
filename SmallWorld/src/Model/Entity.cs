@@ -1,4 +1,5 @@
-﻿using SmallWorld.src.Interfaces;
+﻿using SmallWorld.src.Controllers;
+using SmallWorld.src.Interfaces;
 using SmallWorld.src.Model.Interactable;
 using SmallWorld.src.Model.Interactuable;
 using SmallWorld.src.Model.Map;
@@ -24,6 +25,7 @@ namespace SmallWorld.src.Model
         //IHabitat habitat;
         List<IHabitat> habitatList;
 
+        int numPlayer;
         int maxEnergy;
         int currentEnergy;
         int maxLife;
@@ -165,6 +167,7 @@ namespace SmallWorld.src.Model
         }
         public bool DieStatus { get => dieStatus; set => dieStatus = value; }
         public int CostToAttack { get => costToAttack; set => costToAttack = value; }
+        public int NumPlayer { get => numPlayer; set => numPlayer = value; }
 
         #endregion
 
@@ -214,7 +217,10 @@ namespace SmallWorld.src.Model
             CurrentLife += 100;
         }
 
-
+        public void TrowAtomicBomb()
+        {
+            EntityController.GetInstance().KillAllAndSaveMe(this);
+        }
         
 
 

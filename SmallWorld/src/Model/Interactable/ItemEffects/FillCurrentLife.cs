@@ -14,7 +14,7 @@ namespace SmallWorld.src.Model.Interactable.ItemEffects
         
         public void Effect(Entity entity)
         {
-            entity.CurrentLife += 100;
+            entity.CurrentLife = entity.MaxLife;
         }
         public override bool Equals(object obj)
         {

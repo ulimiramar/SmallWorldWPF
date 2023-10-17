@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace SmallWorld.src.UI.Game
 {
@@ -29,9 +30,17 @@ namespace SmallWorld.src.UI.Game
             new FormGameOptions().ShowDialog();
         }
 
-        private void btnPlay_Click(object sender, EventArgs e)
+        private async void btnPlay_Click(object sender, EventArgs e)
         {
-            new FormGame(gameController.getGameOptions()).Show();
+            Dictionary<int, int> numPlayersAndNumEntities = new Dictionary<int, int>();
+            numPlayersAndNumEntities[1] = gameController.getGameOptions().P1EntitiesNum;
+            numPlayersAndNumEntities[2] = gameController.getGameOptions().P2EntitiesNum;
+
+            await entityController.AddRandomsEntitiesAsync(numPlayersAndNumEntities); 
+            itemController.AddRandomItems(gameController.getGameOptions().ItemsNum);
+            foodController.AddRandomFoods(gameController.getGameOptions().FoodNum);
+            mapController.GenerateUniqueMap();
+            new FormsGame.FormGame().Show();
         }
     }
 }

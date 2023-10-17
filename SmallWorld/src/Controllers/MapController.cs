@@ -1,5 +1,6 @@
 ﻿using SmallWorld.src.Interfaces;
 using SmallWorld.src.Model;
+using SmallWorld.src.Model.Interactuable;
 using SmallWorld.src.Model.Map;
 using SmallWorld.src.Model.Terrain;
 using SmallWorld.src.Model.Terreno;
@@ -10,6 +11,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
@@ -19,6 +21,10 @@ namespace SmallWorld.src.Controllers
 {
     internal class MapController
     {
+        ItemController itemController = ItemController.GetInstance();
+        FoodController foodController = FoodController.GetInstance();
+        EntityController entityController = EntityController.GetInstance();
+        Random random = new Random();
         private static MapController instance;
         private readonly List<Map>maps = new List<Map>();
         private readonly List<Land> Lands = new List<Land>();
@@ -37,6 +43,11 @@ namespace SmallWorld.src.Controllers
             Land LandToAdd = new Land(terrainType);
             map.Lands.Add(LandToAdd);
         }
+        public void AddLand(ITerrainType terrainType)
+        {
+            Land LandToAdd = new Land(terrainType);
+            Lands.Add(LandToAdd);
+        }
         public void AddBorderingLands(Land landToModify, List<Land> BorderingLandsToAdd)
         {
             foreach (Land land in BorderingLandsToAdd)
@@ -51,6 +62,10 @@ namespace SmallWorld.src.Controllers
         public List<Land> getLands(Map map)
         {
             return map.Lands;
+        }
+        public List<Land> getLands()
+        {
+            return Lands;
         }
         public List<IPositionable> getPositionbalesInAllLands()
         {
@@ -74,7 +89,6 @@ namespace SmallWorld.src.Controllers
         public void GenerateMap()
         {
             Map map = new Map();
-            var random = new Random();
             for (int i = 0; i < 19; i++)
             {
                 List<ITerrainType> terrainTypes = terrainsTypes();
@@ -84,6 +98,17 @@ namespace SmallWorld.src.Controllers
             maps.Add(map);
             setBorderingLands(map);
             SetPositionsOfPositionableObjects(map);
+        }
+        public void GenerateUniqueMap()
+        {
+            for (int i = 0; i < 19; i++)
+            {
+                AddLand(InterfacesImplementations.GetRandomTerrainType());
+            }
+            setBorderingLands();
+            SetPositionsOfEntities();
+            SetPositionsOftems();
+            SetPositionsOfFoods();
         }
         public void setBorderingLands(Map map)
         {
@@ -106,6 +131,28 @@ namespace SmallWorld.src.Controllers
             map.Lands[16].BorderingLands = new List<Land> { map.Lands[15], map.Lands[11], map.Lands[12], map.Lands[13], map.Lands[17], map.Lands[18] };
             map.Lands[17].BorderingLands = new List<Land> { map.Lands[14], map.Lands[13], map.Lands[16], map.Lands[18] };
             map.Lands[18].BorderingLands = new List<Land> { map.Lands[15], map.Lands[16], map.Lands[17] };
+        }
+        public void setBorderingLands()
+        {
+            Lands[0].BorderingLands = new List<Land> { Lands[1], Lands[5], Lands[6] };
+            Lands[1].BorderingLands = new List<Land> { Lands[0], Lands[6], Lands[7], Lands[2] };
+            Lands[2].BorderingLands = new List<Land> { Lands[1], Lands[7], Lands[3] };
+            Lands[3].BorderingLands = new List<Land> { Lands[2], Lands[7], Lands[8], Lands[4] };
+            Lands[4].BorderingLands = new List<Land> { Lands[3], Lands[8], Lands[9] };
+            Lands[5].BorderingLands = new List<Land> { Lands[0], Lands[6], Lands[11], Lands[10] };
+            Lands[6].BorderingLands = new List<Land> { Lands[0], Lands[1], Lands[7], Lands[12], Lands[11], Lands[5] };
+            Lands[7].BorderingLands = new List<Land> { Lands[1], Lands[2], Lands[3], Lands[8], Lands[12], Lands[6] };
+            Lands[8].BorderingLands = new List<Land> { Lands[7], Lands[3], Lands[4], Lands[9], Lands[13], Lands[12] };
+            Lands[9].BorderingLands = new List<Land> { Lands[4], Lands[8], Lands[13], Lands[14] };
+            Lands[10].BorderingLands = new List<Land> { Lands[5], Lands[11], Lands[15] };
+            Lands[11].BorderingLands = new List<Land> { Lands[10], Lands[5], Lands[6], Lands[12], Lands[16], Lands[15] };
+            Lands[12].BorderingLands = new List<Land> { Lands[6], Lands[7], Lands[8], Lands[11], Lands[16], Lands[13] };
+            Lands[13].BorderingLands = new List<Land> { Lands[12], Lands[8], Lands[9], Lands[14], Lands[17], Lands[16] };
+            Lands[14].BorderingLands = new List<Land> { Lands[9], Lands[13], Lands[17] };
+            Lands[15].BorderingLands = new List<Land> { Lands[10], Lands[11], Lands[16], Lands[18] };
+            Lands[16].BorderingLands = new List<Land> { Lands[15], Lands[11], Lands[12], Lands[13], Lands[17], Lands[18] };
+            Lands[17].BorderingLands = new List<Land> { Lands[14], Lands[13], Lands[16], Lands[18] };
+            Lands[18].BorderingLands = new List<Land> { Lands[15], Lands[16], Lands[17] };
         }
         public void setBorderingLandsRandomly(Map map)
         {
@@ -164,24 +211,74 @@ namespace SmallWorld.src.Controllers
                 //positionable.Position(getLands(map)[randomLand]);
             }
         }
-
-        /*public void SetPositionsOfEntities(Map map)
+        public void SetPositionsOfPositionableObjects()
         {
-            Random random = new Random();
-            
-            foreach(IPositionable positionable in PositionableObjectRegistry.GetAllPositionableObjects())
+            foreach (IPositionable positionable in PositionableObjectRegistry.GetAllPositionableObjects())
             {
-                if (positionable is Entity entity)
+                bool canBePositioned = false;
+                while (!canBePositioned)
                 {
-                    int randomLand = random.Next(0, getLands(map).Count);
+                    int randomLand = random.Next(0, getLands().Count);
+                    //TODO: resolver como colocar en el mapa las entidades según su habitat.
+                    //if(getLands(map)[randomLand].TerrainType.getHabitatsSupported().Contains())
 
-                    if (entity.)
-                    getLands(map)[randomLand].Positionables.Add(positionable);
+                    canBePositioned = positionable.HabitatsCompatible().Any(elemento => getLands()[randomLand].TerrainType.getHabitatsSupported().Contains(elemento));
+
+                    if (canBePositioned)
+                    {
+                        getLands()[randomLand].Positionables.Add(positionable);
+                    }
                 }
+                //positionable.Position(getLands(map)[randomLand]);
             }
-            
-        }*/
+        }
+        public void SetPositionsOftems()
+        {
+            foreach (Item item in itemController.getItems())
+            {
+                int randomLand = random.Next(0, getLands().Count);
+                getLands()[randomLand].Items.Add(item);
+            }
+        }
+        public void SetPositionsOfFoods()
+        {
+            foreach (Food food in foodController.getFoods())
+            {
+                int randomLand = random.Next(0, getLands().Count);
+                getLands()[randomLand].Foods.Add(food);
+            }
+        }
 
+        public void SetPositionsOfEntities()
+        {
+            foreach (Entity entity in entityController.getEntities())
+            {
+                getLands()[GetRandomLandIndex(entity)].Entities.Add(entity);
+            }
+            /*foreach (Entity entity in entityController.getEntitiesP1())
+            {
+                getLands()[GetRandomLandIndex(entity)].P1entities.Add(entity);
+            }
+            foreach (Entity entity in entityController.getEntitiesP2())
+            {
+                getLands()[GetRandomLandIndex(entity)].P2entities.Add(entity);
+            }*/
+        }
+        public int GetRandomLandIndex(Entity entity)
+        {
+            int randomLand = 0;
+            bool canBePositioned = false;
+            while (!canBePositioned)
+            {
+                randomLand = random.Next(0, getLands().Count);
+                canBePositioned = entity.HabitatsCompatible().Any(elemento => getLands()[randomLand].TerrainType.getHabitatsSupported().Contains(elemento));
+            }
+            return randomLand;
+        }
+        public List<Item> GetItemsInLand(Land land)
+        {
+            return land.Items;
+        } 
         public List<IPositionable> GetPositionablesInLand(Land land)
         {
             return land.Positionables;

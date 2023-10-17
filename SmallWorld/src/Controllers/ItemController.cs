@@ -1,6 +1,8 @@
 ﻿using SmallWorld.src.Interfaces;
 using SmallWorld.src.Model;
+using SmallWorld.src.Model.Interactable.ItemEffects;
 using SmallWorld.src.Model.Interactuable;
+using SmallWorld.src.Static;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +13,12 @@ namespace SmallWorld.src.Controllers
 {
     internal class ItemController
     {
+        Random random = new Random();
         private static ItemController instance;
-        private readonly List<Item> Items = new List<Item>();
+        private readonly List<Item> Items = new List<Item>(); //TODO: terminar esto para que no haya buenos o malos
+        private static List<IEffectStrategy> EffectsAvailables = new List<IEffectStrategy>(){
+            new FillCurrentLife(), new GodMode(), new MaxAttackPoints(), new MysteriousItem(), new AtomicBombLauncher()
+        };
         private ItemController() { }
 
         public static ItemController GetInstance()
@@ -29,6 +35,25 @@ namespace SmallWorld.src.Controllers
         {
             Item ItemToAdd = new Item(effectStrategies, name);
             Items.Add(ItemToAdd);
+        }
+
+        public void AddRandomItems(int num)
+        {
+            int totalGoodItems = random.Next(1, num);
+
+            for (int i = 0; i < num; i++)
+            {
+                Items.Add(new Item());
+            }
+
+            for (int i = 0; i < totalGoodItems; i++)
+            {
+                Items.Add(new Item(InterfacesImplementations.GetGoodRandomEffects(), $"item n{i + 1}"));
+            }
+            for (int i = totalGoodItems; i < totalGoodItems - num; i++)
+            {
+                Items.Add(new Item(InterfacesImplementations.GetBadRandomEffects(), $"item n{i + 1}"));
+            }
         }
 
 
@@ -69,6 +94,10 @@ namespace SmallWorld.src.Controllers
                 Items[index] = itemModified;
 
             }
+        }
+        public Item FindItem(int id)
+        {
+            return Items.Find(i => i.Id == id);
         }
     }
 }

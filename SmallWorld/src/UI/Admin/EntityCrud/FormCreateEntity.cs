@@ -72,7 +72,7 @@ namespace SmallWorld.src.UI.Admin.EntityCrud
                 try
                 {
                     int totalEntitiesToCreate = Convert.ToInt32(txtRandomsNumber.Text);
-                    await entityController.AddRandomsEntitiesAsync(totalEntitiesToCreate);
+                    await entityController.AddRandomsEntitiesAsync(totalEntitiesToCreate, 50);
                     MessageBox.Show("Creados con éxito");
                     this.Close();
                     /*for (int i = 0; i <= Convert.ToInt32(txtRandomsNumber.Text); i++)

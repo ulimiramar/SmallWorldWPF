@@ -4,20 +4,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml.Linq;
 
 namespace SmallWorld.src.Model.Interactable.ItemEffects
 {
-    internal class Kill : IEffectStrategy
+    internal class AtomicBombLauncher : IEffectStrategy
     {
-        private string name = "Auto-Matarse";
+        private string name = "Lanzador Bomba Atómica";
         public void Effect(Entity entity)
         {
-            entity.DieStatus = true;
+            entity.TrowAtomicBomb();
         }
         public override bool Equals(object obj)
         {
-            if (obj is Kill other)
+            if (obj is AtomicBombLauncher other)
             {
                 return name == other.name;
             }

@@ -12,7 +12,7 @@ namespace SmallWorld.src.Model.Interactable.ItemEffects
         private string name = "Ataque al máximo";
         public void Effect(Entity entity)
         {
-            entity.AttackPoints = 100;
+            entity.AttackPoints = 9999;
         }
         public override bool Equals(object obj)
         {
