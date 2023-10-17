@@ -80,6 +80,10 @@ namespace SmallWorld.src.Controllers
 
             }
         }
+        public Food FindFood(int id)
+        {
+            return Foods.Find(f => f.Id == id);
+        }
 
     }
 }

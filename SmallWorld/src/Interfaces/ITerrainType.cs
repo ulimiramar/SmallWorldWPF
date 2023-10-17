@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SmallWorld.src.Interfaces
 {
-    internal interface ITerrainType
+    public interface ITerrainType
     {
         Color getColor();
         List<IHabitat> getHabitatsSupported();

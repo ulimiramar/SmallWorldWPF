@@ -17,7 +17,7 @@ namespace SmallWorld.src.Controllers
         private static ItemController instance;
         private readonly List<Item> Items = new List<Item>(); //TODO: terminar esto para que no haya buenos o malos
         private static List<IEffectStrategy> EffectsAvailables = new List<IEffectStrategy>(){
-            new FillCurrentLife(), new GodMode(), new MaxAttackPoints(), new MysteriousItem(), new AtomicBombLauncher()
+            new FillCurrentLife(), new GodMode(), new MaxAttackPoints(), /* MysteriousItem()*/ new AtomicBombLauncher()
         };
         private ItemController() { }
 
@@ -39,21 +39,21 @@ namespace SmallWorld.src.Controllers
 
         public void AddRandomItems(int num)
         {
-            int totalGoodItems = random.Next(1, num);
+            //int totalGoodItems = random.Next(1, num);
 
             for (int i = 0; i < num; i++)
             {
-                Items.Add(new Item());
+                Items.Add(new Item(getRandomEffect(), $"item n {i+1}"));
             }
 
-            for (int i = 0; i < totalGoodItems; i++)
+            /*for (int i = 0; i < totalGoodItems; i++)
             {
                 Items.Add(new Item(InterfacesImplementations.GetGoodRandomEffects(), $"item n{i + 1}"));
             }
             for (int i = totalGoodItems; i < totalGoodItems - num; i++)
             {
                 Items.Add(new Item(InterfacesImplementations.GetBadRandomEffects(), $"item n{i + 1}"));
-            }
+            }*/
         }
 
 
@@ -98,6 +98,15 @@ namespace SmallWorld.src.Controllers
         public Item FindItem(int id)
         {
             return Items.Find(i => i.Id == id);
+        }
+
+        public List<IEffectStrategy> getRandomEffect()
+        {
+            int maxCount = EffectsAvailables.Count;
+            int count = random.Next(1, maxCount + 1);
+            List<IEffectStrategy> shuffledEffects = EffectsAvailables.OrderBy(x => random.Next()).ToList();
+            List<IEffectStrategy> randomEffectsList = shuffledEffects.Take(count).ToList();
+            return randomEffectsList;
         }
     }
 }

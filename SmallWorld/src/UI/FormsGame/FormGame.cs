@@ -26,6 +26,10 @@ namespace SmallWorld.src.UI.FormsGame
         List<HexagonControl> hexagons = new List<HexagonControl>();
         List<Land> lands = new List<Land>();
         int indexOfSelectedHexagon;
+        int playerTurn = 0;
+        Entity currentPlayerEntity;
+        Entity waitingPlayerEntity;
+        HexagonControl selectedHexagon = null;
         public FormGame()
         {
             InitializeComponent();
@@ -86,7 +90,7 @@ namespace SmallWorld.src.UI.FormsGame
         {
             HexagonControl clickedHexagon = sender as HexagonControl;
             int index = hexagons.IndexOf(clickedHexagon);
-            ChangeColorOfSelectedHexagonAndTheirBorderingHexagons(lands[index]); 
+            ChangeColorOfSelectedHexagonAndTheirBorderingHexagons(lands[index]);
 
             if (!clickedHexagon.IsSelected)
             {
@@ -98,10 +102,10 @@ namespace SmallWorld.src.UI.FormsGame
                 clickedHexagon.IsSelected = true;
                 indexOfSelectedHexagon = hexagons.IndexOf(clickedHexagon);
                 FillDgvs(indexOfSelectedHexagon);
-
             }
+            
         }
-        private void ChangeColorOfSelectedHexagonAndTheirBorderingHexagons(Land land)
+    private void ChangeColorOfSelectedHexagonAndTheirBorderingHexagons(Land land)
         {
             ResetHexagonBorderColor();
             hexagons[land.Id].BorderColor = Color.HotPink;
@@ -181,16 +185,17 @@ namespace SmallWorld.src.UI.FormsGame
 
         private void btnAttack_Click(object sender, EventArgs e)
         {
+            SetCurrentAndWaitingPlayer();
             if (dgvP1Entities.SelectedRows.Count > 0 && dgvP2Entities.SelectedRows.Count > 0)
             {
                 //TODO: aca será entityCurrentPlayer y entityWaitingPlayer
-                Entity entity1 = entityController.FindEntity(Convert.ToInt32(dgvP1Entities.SelectedRows[0].Cells["IdEntity"].Value));
-                Entity entity2 = entityController.FindEntity(Convert.ToInt32(dgvP2Entities.SelectedRows[0].Cells["IdEntity2"].Value));
+                //Entity entity1 = entityController.FindEntity(Convert.ToInt32(dgvP1Entities.SelectedRows[0].Cells["IdEntity"].Value));
+                //Entity entity2 = entityController.FindEntity(Convert.ToInt32(dgvP2Entities.SelectedRows[0].Cells["IdEntity2"].Value));
                 
 
                 try
                 {
-                    entityController.Attack(entity1, entity2);
+                    entityController.Attack(currentPlayerEntity, waitingPlayerEntity);
                     FillDgvs(indexOfSelectedHexagon);
                 }
                 catch (Exception ex)
@@ -205,9 +210,81 @@ namespace SmallWorld.src.UI.FormsGame
         private void btnUseItem_Click(object sender, EventArgs e)
         {
             Item item = itemController.FindItem(Convert.ToInt32(dgvItems.SelectedRows[0].Cells[0].Value));
-            Entity entity1 = entityController.FindEntity(Convert.ToInt32(dgvP1Entities.SelectedRows[0].Cells["IdEntity"].Value));
-            item.ExecuteEffectStrategy(entity1);
-            FillDgvs(indexOfSelectedHexagon);
+            SetCurrentAndWaitingPlayer();
+            try
+            {
+                //Entity entity1 = entityController.FindEntity(Convert.ToInt32(dgvP1Entities.SelectedRows[0].Cells["IdEntity"].Value));
+                item.ExecuteEffectStrategy(currentPlayerEntity);
+                FillDgvs(indexOfSelectedHexagon);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnEat_Click(object sender, EventArgs e)
+        {
+            SetCurrentAndWaitingPlayer();
+            Food food = foodController.FindFood(Convert.ToInt32(dgvFood.SelectedRows[0].Cells[0].Value));
+            try
+            {
+                entityController.Eat(currentPlayerEntity, food);
+                FillDgvs(indexOfSelectedHexagon);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void rbPlayer1Turn_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbPlayer1Turn_Click(object sender, EventArgs e)
+        {
+            playerTurn = 1;
+        }
+
+        private void rbPlayer2Turn_Click(object sender, EventArgs e)
+        {
+            playerTurn = 2;
+        }
+
+        private void SetCurrentAndWaitingPlayer()
+        {
+            if (playerTurn == 1)
+            {
+                currentPlayerEntity = entityController.FindEntity(Convert.ToInt32(dgvP1Entities.SelectedRows[0].Cells[0].Value));
+                waitingPlayerEntity = entityController.FindEntity(Convert.ToInt32(dgvP2Entities.SelectedRows[0].Cells[0].Value));
+            }
+            if (playerTurn == 2)
+            {
+                currentPlayerEntity = entityController.FindEntity(Convert.ToInt32(dgvP2Entities.SelectedRows[0].Cells[0].Value));
+                waitingPlayerEntity = entityController.FindEntity(Convert.ToInt32(dgvP1Entities.SelectedRows[0].Cells[0].Value));
+            }
+        }
+
+        private void btnMove_Click(object sender, EventArgs e)
+        {
+            if (currentPlayerEntity != null)
+            {
+                new FormMove(lands[indexOfSelectedHexagon], currentPlayerEntity).ShowDialog();
+                FillDgvs(indexOfSelectedHexagon);
+            }
+            else MessageBox.Show("asegurese de seleccionar tierra de origen y la entidad a mover");
+        }
+
+        private void dgvP1Entities_SelectionChanged(object sender, EventArgs e)
+        {
+            SetCurrentAndWaitingPlayer();
+        }
+
+        private void dgvP2Entities_SelectionChanged(object sender, EventArgs e)
+        {
+            SetCurrentAndWaitingPlayer();
         }
     }
 }

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SmallWorld.src.Model.Terrain
 {
-    internal class Land
+    public class Land
     {
         private static int lastId = 0;
         private ITerrainType terrainType;
@@ -22,7 +22,7 @@ namespace SmallWorld.src.Model.Terrain
 
         #region Properties
         public int Id { get; private set; }
-        internal ITerrainType TerrainType { get => terrainType; set => terrainType = value; }
+        public ITerrainType TerrainType { get => terrainType; set => terrainType = value; }
         public string TerrainTypeName { get => terrainType.ToString(); }
         internal List<Land> BorderingLands { get => borderingLands; set => borderingLands = value; }
         internal List<IPositionable> Positionables { get => positionables; set => positionables = value; }
