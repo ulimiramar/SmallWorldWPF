@@ -8,7 +8,7 @@ namespace SmallWorld.src.Model.Game
 {
     public class Game
     {
-        private int p1EntitiesNum, p2EntitiesNum, itemsNum, foodNum;
+        private int p1EntitiesNum, p2EntitiesNum, itemsNum, foodNum, timeGame, timeTurn;
         public int P1EntitiesNum
         {
             get => p1EntitiesNum;
@@ -46,12 +46,17 @@ namespace SmallWorld.src.Model.Game
             }
         }
 
-        public Game(int p1EntitiesNum, int p2EntitiesNum, int itemsNum, int foodNum)
+        public int TimeGame { get => timeGame; set => timeGame = value; }
+        public int TimeTurn { get => timeTurn; set => timeTurn = value; }
+
+        public Game(int p1EntitiesNum, int p2EntitiesNum, int itemsNum, int foodNum, int timeGame, int timeTurn)
         {
             P1EntitiesNum = p1EntitiesNum;
             P2EntitiesNum = p2EntitiesNum;
             ItemsNum = itemsNum;
             FoodNum = foodNum;
+            TimeGame = timeGame;
+            TimeTurn = timeTurn;
         }
 
         public Game()

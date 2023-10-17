@@ -94,9 +94,9 @@ namespace SmallWorld.src.Controllers
         }
 
 
-        public List<Entity> getEntitiesP1()
+        public int CountEntitiesPerPlayer(int numPlayer)
         {
-            return p1Entities;
+            return Entities.Count(e => e.NumPlayer == numPlayer && e.DieStatus == false);
         }
         public List<Entity> getEntitiesP2()
         {

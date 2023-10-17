@@ -1,5 +1,6 @@
 ﻿using SmallWorld.src.Controllers;
 using SmallWorld.src.Model;
+using SmallWorld.src.Model.Interactable;
 using SmallWorld.src.Model.Interactuable;
 using SmallWorld.src.Model.Map;
 using SmallWorld.src.Model.Terrain;
@@ -10,6 +11,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -23,6 +25,7 @@ namespace SmallWorld.src.UI.FormsGame
         FoodController foodController = FoodController.GetInstance();
         MapController mapController = MapController.GetInstance();
         FormController formController = FormController.GetInstance();
+        GameController gameController = GameController.GetInstance();
         List<HexagonControl> hexagons = new List<HexagonControl>();
         List<Land> lands = new List<Land>();
         int indexOfSelectedHexagon;
@@ -30,9 +33,12 @@ namespace SmallWorld.src.UI.FormsGame
         Entity currentPlayerEntity;
         Entity waitingPlayerEntity;
         HexagonControl selectedHexagon = null;
+        private int timeGame;
+        private int timeTurn;
         public FormGame()
         {
             InitializeComponent();
+            MessageBox.Show($"Cada jugador tiene{gameController.getGameOptions().TimeTurn} para hacer lo que quiera, gana el jugador que más entidades tenga al finalizar el tiempo del juego o en caso de eliminar todas las entidades enemigas","Instrucciones", MessageBoxButtons.OK);
             lands = mapController.getLands();
             AddHexagonsToList();
             foreach (var hexagon in hexagons)
@@ -41,7 +47,16 @@ namespace SmallWorld.src.UI.FormsGame
             }
             MapNumberLandsView();
             PaintHexagons();
-            
+            hexagon12.IsSelected = true;
+            indexOfSelectedHexagon = hexagons.IndexOf(hexagon12);
+            ChangeColorOfSelectedHexagonAndTheirBorderingHexagons(lands[hexagons.IndexOf(hexagon12)]);
+            lblResultWar.Text = $"Player1: {entityController.CountEntitiesPerPlayer(1)} vs Player2:{entityController.CountEntitiesPerPlayer(2)}";
+            FillDgvs(indexOfSelectedHexagon);
+            timeGame = gameController.getGameOptions().TimeGame;
+            timeTurn = gameController.getGameOptions().TimeTurn;
+            rbPlayer1Turn.Checked = true; //TODO: tirar dados para ver quien empieza.
+            timerGame.Start();
+            timerTurn.Start();
         }
         private void AddHexagonsToList()
         {
@@ -61,7 +76,7 @@ namespace SmallWorld.src.UI.FormsGame
             dgvP2Entities.Rows.Clear();
 
             Land land = mapController.getLands()[selectedHexagon];
-            
+
             foreach (Entity entity in land.Entities.Where(e => e.NumPlayer == 1 && e.DieStatus == false))
             {
                 dgvP1Entities.Rows.Add(entity.Id, entity.Name, entity.Kingdom,
@@ -69,7 +84,7 @@ namespace SmallWorld.src.UI.FormsGame
                     $"{entity.CurrentEnergy}/{entity.MaxEnergy}", entity.AttackPoints,
                     entity.DefensePoints);
             }
-            foreach(Entity entity in land.Entities.Where(e => e.NumPlayer == 2 && e.DieStatus == false))
+            foreach (Entity entity in land.Entities.Where(e => e.NumPlayer == 2 && e.DieStatus == false))
             {
                 dgvP2Entities.Rows.Add(entity.Id, entity.Name, entity.Kingdom,
                     entity.HabitatName, entity.Diet, $"{entity.CurrentLife}/{entity.MaxLife}",
@@ -77,14 +92,16 @@ namespace SmallWorld.src.UI.FormsGame
                     entity.DefensePoints);
             }
 
-            foreach(Item item in land.Items)
+            foreach (Item item in land.Items)
             {
                 dgvItems.Rows.Add(item.Id, item.StrategyNames);
             }
-            foreach(Food food in land.Foods)
+            foreach (Food food in land.Foods)
             {
                 dgvFood.Rows.Add(food.Id, food.DietNames, food.EnergyValue);
             }
+            lblResultWar.Text = $"Player1: {entityController.CountEntitiesPerPlayer(1)} vs Player2:{entityController.CountEntitiesPerPlayer(2)}";
+
         }
         private void Hexagon_Click(object sender, EventArgs e)
         {
@@ -103,9 +120,9 @@ namespace SmallWorld.src.UI.FormsGame
                 indexOfSelectedHexagon = hexagons.IndexOf(clickedHexagon);
                 FillDgvs(indexOfSelectedHexagon);
             }
-            
+
         }
-    private void ChangeColorOfSelectedHexagonAndTheirBorderingHexagons(Land land)
+        private void ChangeColorOfSelectedHexagonAndTheirBorderingHexagons(Land land)
         {
             ResetHexagonBorderColor();
             hexagons[land.Id].BorderColor = Color.HotPink;
@@ -154,7 +171,7 @@ namespace SmallWorld.src.UI.FormsGame
 
         private void ChangeLandsInfo<GenericList>(List<GenericList> ObjectsList)
         {
-            
+
             for (int i = 0; i < hexagons.Count(); i++)
             {
                 hexagons[i].HexagonText = $"{lands[i].Items}"; //TODO: resolver como mostrar los diferentes modos de mapa en una sola función
@@ -191,7 +208,7 @@ namespace SmallWorld.src.UI.FormsGame
                 //TODO: aca será entityCurrentPlayer y entityWaitingPlayer
                 //Entity entity1 = entityController.FindEntity(Convert.ToInt32(dgvP1Entities.SelectedRows[0].Cells["IdEntity"].Value));
                 //Entity entity2 = entityController.FindEntity(Convert.ToInt32(dgvP2Entities.SelectedRows[0].Cells["IdEntity2"].Value));
-                
+
 
                 try
                 {
@@ -238,32 +255,31 @@ namespace SmallWorld.src.UI.FormsGame
             }
         }
 
-        private void rbPlayer1Turn_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void rbPlayer1Turn_Click(object sender, EventArgs e)
         {
-            playerTurn = 1;
         }
 
         private void rbPlayer2Turn_Click(object sender, EventArgs e)
         {
-            playerTurn = 2;
+            
         }
 
         private void SetCurrentAndWaitingPlayer()
         {
-            if (playerTurn == 1)
+            if (dgvP1Entities.SelectedRows.Count > 0 && dgvP2Entities.SelectedRows.Count > 0)
             {
-                currentPlayerEntity = entityController.FindEntity(Convert.ToInt32(dgvP1Entities.SelectedRows[0].Cells[0].Value));
-                waitingPlayerEntity = entityController.FindEntity(Convert.ToInt32(dgvP2Entities.SelectedRows[0].Cells[0].Value));
-            }
-            if (playerTurn == 2)
-            {
-                currentPlayerEntity = entityController.FindEntity(Convert.ToInt32(dgvP2Entities.SelectedRows[0].Cells[0].Value));
-                waitingPlayerEntity = entityController.FindEntity(Convert.ToInt32(dgvP1Entities.SelectedRows[0].Cells[0].Value));
+                if (playerTurn == 1)
+                {
+                    currentPlayerEntity = entityController.FindEntity(Convert.ToInt32(dgvP1Entities.SelectedRows[0].Cells[0].Value));
+                    waitingPlayerEntity = entityController.FindEntity(Convert.ToInt32(dgvP2Entities.SelectedRows[0].Cells[0].Value));
+                }
+                if (playerTurn == 2)
+                {
+                    currentPlayerEntity = entityController.FindEntity(Convert.ToInt32(dgvP2Entities.SelectedRows[0].Cells[0].Value));
+                    waitingPlayerEntity = entityController.FindEntity(Convert.ToInt32(dgvP1Entities.SelectedRows[0].Cells[0].Value));
+                }
             }
         }
 
@@ -285,6 +301,52 @@ namespace SmallWorld.src.UI.FormsGame
         private void dgvP2Entities_SelectionChanged(object sender, EventArgs e)
         {
             SetCurrentAndWaitingPlayer();
+        }
+
+        private void timerGame_Tick(object sender, EventArgs e)
+        {
+            timeGame--;
+            lblTimeGame.Text = TimeSpan.FromSeconds(timeGame).ToString(@"mm\:ss");
+
+            if (timeGame <= 0)
+            {
+                timerGame.Stop();
+                // Realiza la acción que debas al finalizar el tiempo de 20 minutos.
+            }
+        }
+
+        private void timerTurn_Tick(object sender, EventArgs e)
+        {
+            timeTurn--;
+            lblTimeTurn.Text = TimeSpan.FromSeconds(timeTurn).ToString(@"mm\:ss");
+
+            if (timeTurn <= 0)
+            {
+                timerTurn.Stop();
+                if (playerTurn == 1)
+                    rbPlayer2Turn.Checked = true;  //.Checked = true;
+                else if (playerTurn == 2) 
+                    rbPlayer1Turn.Checked = true;
+                // Realiza la acción que debas al finalizar el tiempo de 2 minutos.
+            }
+        }
+        private void rbPlayer1Turn_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbPlayer1Turn.Checked)
+            {
+                playerTurn = 1;
+                timeTurn = gameController.getGameOptions().TimeTurn;
+                timerTurn.Start();
+            }
+        }
+        private void rbPlayer2Turn_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbPlayer2Turn.Checked)
+            {
+                playerTurn = 2;
+                timeTurn = gameController.getGameOptions().TimeTurn;
+                timerTurn.Start();
+            }
         }
     }
 }

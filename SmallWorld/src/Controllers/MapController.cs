@@ -318,8 +318,10 @@ namespace SmallWorld.src.Controllers
 
             if (canBeMoved)
             {
-                landDestiny.Positionables.Add(entity);
-                landOrigin.Positionables.Remove(entity);
+                //landDestiny.Positionables.Add(entity);
+                //landOrigin.Positionables.Remove(entity);
+                landDestiny.Entities.Add(entity);
+                landOrigin.Entities.Remove(entity);
             }
             else throw new Exception($"{entity} ({entity.HabitatName}) no es compatible con el tipo de terreno {landDestiny}");
 

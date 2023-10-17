@@ -28,18 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvP1Entities = new System.Windows.Forms.DataGridView();
             this.IdEntity = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,25 +73,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.button11 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            this.hexagon0 = new SmallWorld.src.UI.CustomControls.HexagonControl();
-            this.hexagon5 = new SmallWorld.src.UI.CustomControls.HexagonControl();
-            this.hexagon10 = new SmallWorld.src.UI.CustomControls.HexagonControl();
-            this.hexagon4 = new SmallWorld.src.UI.CustomControls.HexagonControl();
-            this.hexagon9 = new SmallWorld.src.UI.CustomControls.HexagonControl();
-            this.hexagon14 = new SmallWorld.src.UI.CustomControls.HexagonControl();
-            this.hexagon18 = new SmallWorld.src.UI.CustomControls.HexagonControl();
-            this.hexagon15 = new SmallWorld.src.UI.CustomControls.HexagonControl();
-            this.hexagon17 = new SmallWorld.src.UI.CustomControls.HexagonControl();
-            this.hexagon2 = new SmallWorld.src.UI.CustomControls.HexagonControl();
-            this.hexagon16 = new SmallWorld.src.UI.CustomControls.HexagonControl();
-            this.hexagon3 = new SmallWorld.src.UI.CustomControls.HexagonControl();
-            this.hexagon1 = new SmallWorld.src.UI.CustomControls.HexagonControl();
-            this.hexagon11 = new SmallWorld.src.UI.CustomControls.HexagonControl();
-            this.hexagon13 = new SmallWorld.src.UI.CustomControls.HexagonControl();
-            this.hexagon8 = new SmallWorld.src.UI.CustomControls.HexagonControl();
-            this.hexagon7 = new SmallWorld.src.UI.CustomControls.HexagonControl();
-            this.hexagon6 = new SmallWorld.src.UI.CustomControls.HexagonControl();
-            this.hexagon12 = new SmallWorld.src.UI.CustomControls.HexagonControl();
             this.dgvP2Entities = new System.Windows.Forms.DataGridView();
             this.IdEntity2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -110,6 +92,30 @@
             this.EnergyValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rbPlayer1Turn = new System.Windows.Forms.RadioButton();
             this.rbPlayer2Turn = new System.Windows.Forms.RadioButton();
+            this.timerGame = new System.Windows.Forms.Timer(this.components);
+            this.timerTurn = new System.Windows.Forms.Timer(this.components);
+            this.lblTimeGame = new System.Windows.Forms.Label();
+            this.lblTimeTurn = new System.Windows.Forms.Label();
+            this.lblResultWar = new System.Windows.Forms.Label();
+            this.hexagon0 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagon5 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagon10 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagon4 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagon9 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagon14 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagon18 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagon15 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagon17 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagon2 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagon16 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagon3 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagon1 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagon11 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagon13 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagon8 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagon7 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagon6 = new SmallWorld.src.UI.CustomControls.HexagonControl();
+            this.hexagon12 = new SmallWorld.src.UI.CustomControls.HexagonControl();
             ((System.ComponentModel.ISupportInitialize)(this.dgvP1Entities)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvP2Entities)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
@@ -128,19 +134,19 @@
             // dgvP1Entities
             // 
             this.dgvP1Entities.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.HotPink;
-            this.dgvP1Entities.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.HotPink;
+            this.dgvP1Entities.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvP1Entities.BackgroundColor = System.Drawing.Color.LightCoral;
             this.dgvP1Entities.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvP1Entities.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DeepPink;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DeepPink;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvP1Entities.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.DeepPink;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.DeepPink;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvP1Entities.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvP1Entities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvP1Entities.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdEntity,
@@ -152,14 +158,14 @@
             this.CurrentEnergy,
             this.AtkPoints,
             this.DefPoints});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DeepPink;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvP1Entities.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.DeepPink;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvP1Entities.DefaultCellStyle = dataGridViewCellStyle15;
             this.dgvP1Entities.EnableHeadersVisualStyles = false;
             this.dgvP1Entities.GridColor = System.Drawing.Color.LavenderBlush;
             this.dgvP1Entities.Location = new System.Drawing.Point(509, 74);
@@ -507,11 +513,298 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(29, 211);
+            this.label6.Location = new System.Drawing.Point(32, 9);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(127, 13);
             this.label6.TabIndex = 74;
             this.label6.Text = "RESULTADO GENERAL";
+            // 
+            // dgvP2Entities
+            // 
+            this.dgvP2Entities.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.dgvP2Entities.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            this.dgvP2Entities.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.dgvP2Entities.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvP2Entities.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvP2Entities.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            this.dgvP2Entities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvP2Entities.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdEntity2,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9});
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.LightSkyBlue;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvP2Entities.DefaultCellStyle = dataGridViewCellStyle18;
+            this.dgvP2Entities.EnableHeadersVisualStyles = false;
+            this.dgvP2Entities.GridColor = System.Drawing.Color.LavenderBlush;
+            this.dgvP2Entities.Location = new System.Drawing.Point(509, 253);
+            this.dgvP2Entities.MultiSelect = false;
+            this.dgvP2Entities.Name = "dgvP2Entities";
+            this.dgvP2Entities.ReadOnly = true;
+            this.dgvP2Entities.RowHeadersVisible = false;
+            this.dgvP2Entities.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvP2Entities.Size = new System.Drawing.Size(503, 150);
+            this.dgvP2Entities.TabIndex = 78;
+            this.dgvP2Entities.SelectionChanged += new System.EventHandler(this.dgvP2Entities_SelectionChanged);
+            // 
+            // IdEntity2
+            // 
+            this.IdEntity2.HeaderText = "IdEntity";
+            this.IdEntity2.Name = "IdEntity2";
+            this.IdEntity2.ReadOnly = true;
+            this.IdEntity2.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Reino";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Habitats";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Dieta";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Vida";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "Energía";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "Ataque";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            this.dataGridViewTextBoxColumn8.Width = 40;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.HeaderText = "Defensa";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            this.dataGridViewTextBoxColumn9.Width = 40;
+            // 
+            // dgvItems
+            // 
+            this.dgvItems.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.dgvItems.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle19;
+            this.dgvItems.BackgroundColor = System.Drawing.Color.Gold;
+            this.dgvItems.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvItems.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.NavajoWhite;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle20;
+            this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Effects});
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.NavajoWhite;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvItems.DefaultCellStyle = dataGridViewCellStyle21;
+            this.dgvItems.EnableHeadersVisualStyles = false;
+            this.dgvItems.GridColor = System.Drawing.Color.LavenderBlush;
+            this.dgvItems.Location = new System.Drawing.Point(29, 425);
+            this.dgvItems.MultiSelect = false;
+            this.dgvItems.Name = "dgvItems";
+            this.dgvItems.ReadOnly = true;
+            this.dgvItems.RowHeadersVisible = false;
+            this.dgvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvItems.Size = new System.Drawing.Size(282, 150);
+            this.dgvItems.TabIndex = 79;
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            // 
+            // Effects
+            // 
+            this.Effects.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Effects.HeaderText = "Efectos";
+            this.Effects.Name = "Effects";
+            this.Effects.ReadOnly = true;
+            // 
+            // dgvFood
+            // 
+            this.dgvFood.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.AntiqueWhite;
+            this.dgvFood.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
+            this.dgvFood.BackgroundColor = System.Drawing.Color.Gold;
+            this.dgvFood.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvFood.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.NavajoWhite;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFood.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            this.dgvFood.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFood.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn10,
+            this.DietNames,
+            this.EnergyValue});
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.NavajoWhite;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFood.DefaultCellStyle = dataGridViewCellStyle24;
+            this.dgvFood.EnableHeadersVisualStyles = false;
+            this.dgvFood.GridColor = System.Drawing.Color.LavenderBlush;
+            this.dgvFood.Location = new System.Drawing.Point(321, 425);
+            this.dgvFood.MultiSelect = false;
+            this.dgvFood.Name = "dgvFood";
+            this.dgvFood.ReadOnly = true;
+            this.dgvFood.RowHeadersVisible = false;
+            this.dgvFood.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvFood.Size = new System.Drawing.Size(312, 150);
+            this.dgvFood.TabIndex = 80;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            this.dataGridViewTextBoxColumn10.Visible = false;
+            // 
+            // DietNames
+            // 
+            this.DietNames.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DietNames.HeaderText = "Dietas";
+            this.DietNames.Name = "DietNames";
+            this.DietNames.ReadOnly = true;
+            // 
+            // EnergyValue
+            // 
+            this.EnergyValue.HeaderText = "Valor Energético";
+            this.EnergyValue.Name = "EnergyValue";
+            this.EnergyValue.ReadOnly = true;
+            this.EnergyValue.Width = 60;
+            // 
+            // rbPlayer1Turn
+            // 
+            this.rbPlayer1Turn.AutoSize = true;
+            this.rbPlayer1Turn.Location = new System.Drawing.Point(581, 53);
+            this.rbPlayer1Turn.Name = "rbPlayer1Turn";
+            this.rbPlayer1Turn.Size = new System.Drawing.Size(65, 17);
+            this.rbPlayer1Turn.TabIndex = 81;
+            this.rbPlayer1Turn.Text = "Tu turno";
+            this.rbPlayer1Turn.UseVisualStyleBackColor = true;
+            this.rbPlayer1Turn.CheckedChanged += new System.EventHandler(this.rbPlayer1Turn_CheckedChanged);
+            this.rbPlayer1Turn.Click += new System.EventHandler(this.rbPlayer1Turn_Click);
+            // 
+            // rbPlayer2Turn
+            // 
+            this.rbPlayer2Turn.AutoSize = true;
+            this.rbPlayer2Turn.Location = new System.Drawing.Point(580, 235);
+            this.rbPlayer2Turn.Name = "rbPlayer2Turn";
+            this.rbPlayer2Turn.Size = new System.Drawing.Size(65, 17);
+            this.rbPlayer2Turn.TabIndex = 82;
+            this.rbPlayer2Turn.Text = "Tu turno";
+            this.rbPlayer2Turn.UseVisualStyleBackColor = true;
+            this.rbPlayer2Turn.CheckedChanged += new System.EventHandler(this.rbPlayer2Turn_CheckedChanged);
+            this.rbPlayer2Turn.Click += new System.EventHandler(this.rbPlayer2Turn_Click);
+            // 
+            // timerGame
+            // 
+            this.timerGame.Enabled = true;
+            this.timerGame.Interval = 1000;
+            this.timerGame.Tick += new System.EventHandler(this.timerGame_Tick);
+            // 
+            // timerTurn
+            // 
+            this.timerTurn.Interval = 1000;
+            this.timerTurn.Tick += new System.EventHandler(this.timerTurn_Tick);
+            // 
+            // lblTimeGame
+            // 
+            this.lblTimeGame.AutoSize = true;
+            this.lblTimeGame.Location = new System.Drawing.Point(32, 274);
+            this.lblTimeGame.Name = "lblTimeGame";
+            this.lblTimeGame.Size = new System.Drawing.Size(35, 13);
+            this.lblTimeGame.TabIndex = 83;
+            this.lblTimeGame.Text = "label8";
+            // 
+            // lblTimeTurn
+            // 
+            this.lblTimeTurn.AutoSize = true;
+            this.lblTimeTurn.Location = new System.Drawing.Point(33, 329);
+            this.lblTimeTurn.Name = "lblTimeTurn";
+            this.lblTimeTurn.Size = new System.Drawing.Size(35, 13);
+            this.lblTimeTurn.TabIndex = 84;
+            this.lblTimeTurn.Text = "label9";
+            // 
+            // lblResultWar
+            // 
+            this.lblResultWar.AutoSize = true;
+            this.lblResultWar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResultWar.Location = new System.Drawing.Point(32, 22);
+            this.lblResultWar.Name = "lblResultWar";
+            this.lblResultWar.Size = new System.Drawing.Size(134, 17);
+            this.lblResultWar.TabIndex = 85;
+            this.lblResultWar.Text = "Player 1 vs Player 2";
             // 
             // hexagon0
             // 
@@ -760,255 +1053,6 @@
             this.hexagon12.Size = new System.Drawing.Size(70, 70);
             this.hexagon12.TabIndex = 25;
             // 
-            // dgvP2Entities
-            // 
-            this.dgvP2Entities.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.dgvP2Entities.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvP2Entities.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.dgvP2Entities.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvP2Entities.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvP2Entities.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvP2Entities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvP2Entities.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdEntity2,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.LightSkyBlue;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvP2Entities.DefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvP2Entities.EnableHeadersVisualStyles = false;
-            this.dgvP2Entities.GridColor = System.Drawing.Color.LavenderBlush;
-            this.dgvP2Entities.Location = new System.Drawing.Point(509, 253);
-            this.dgvP2Entities.MultiSelect = false;
-            this.dgvP2Entities.Name = "dgvP2Entities";
-            this.dgvP2Entities.ReadOnly = true;
-            this.dgvP2Entities.RowHeadersVisible = false;
-            this.dgvP2Entities.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvP2Entities.Size = new System.Drawing.Size(503, 150);
-            this.dgvP2Entities.TabIndex = 78;
-            this.dgvP2Entities.SelectionChanged += new System.EventHandler(this.dgvP2Entities_SelectionChanged);
-            // 
-            // IdEntity2
-            // 
-            this.IdEntity2.HeaderText = "IdEntity";
-            this.IdEntity2.Name = "IdEntity2";
-            this.IdEntity2.ReadOnly = true;
-            this.IdEntity2.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Reino";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Habitats";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Dieta";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "Vida";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "Energía";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            this.dataGridViewTextBoxColumn7.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.HeaderText = "Ataque";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            this.dataGridViewTextBoxColumn8.Width = 40;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.HeaderText = "Defensa";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            this.dataGridViewTextBoxColumn9.Width = 40;
-            // 
-            // dgvItems
-            // 
-            this.dgvItems.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.dgvItems.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvItems.BackgroundColor = System.Drawing.Color.Gold;
-            this.dgvItems.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvItems.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.NavajoWhite;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvItems.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.Effects});
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.NavajoWhite;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvItems.DefaultCellStyle = dataGridViewCellStyle9;
-            this.dgvItems.EnableHeadersVisualStyles = false;
-            this.dgvItems.GridColor = System.Drawing.Color.LavenderBlush;
-            this.dgvItems.Location = new System.Drawing.Point(29, 425);
-            this.dgvItems.MultiSelect = false;
-            this.dgvItems.Name = "dgvItems";
-            this.dgvItems.ReadOnly = true;
-            this.dgvItems.RowHeadersVisible = false;
-            this.dgvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItems.Size = new System.Drawing.Size(282, 150);
-            this.dgvItems.TabIndex = 79;
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
-            this.Id.Visible = false;
-            // 
-            // Effects
-            // 
-            this.Effects.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Effects.HeaderText = "Efectos";
-            this.Effects.Name = "Effects";
-            this.Effects.ReadOnly = true;
-            // 
-            // dgvFood
-            // 
-            this.dgvFood.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.AntiqueWhite;
-            this.dgvFood.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.dgvFood.BackgroundColor = System.Drawing.Color.Gold;
-            this.dgvFood.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvFood.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.NavajoWhite;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFood.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            this.dgvFood.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFood.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn10,
-            this.DietNames,
-            this.EnergyValue});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.NavajoWhite;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvFood.DefaultCellStyle = dataGridViewCellStyle12;
-            this.dgvFood.EnableHeadersVisualStyles = false;
-            this.dgvFood.GridColor = System.Drawing.Color.LavenderBlush;
-            this.dgvFood.Location = new System.Drawing.Point(321, 425);
-            this.dgvFood.MultiSelect = false;
-            this.dgvFood.Name = "dgvFood";
-            this.dgvFood.ReadOnly = true;
-            this.dgvFood.RowHeadersVisible = false;
-            this.dgvFood.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFood.Size = new System.Drawing.Size(312, 150);
-            this.dgvFood.TabIndex = 80;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            this.dataGridViewTextBoxColumn10.Visible = false;
-            // 
-            // DietNames
-            // 
-            this.DietNames.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DietNames.HeaderText = "Dietas";
-            this.DietNames.Name = "DietNames";
-            this.DietNames.ReadOnly = true;
-            // 
-            // EnergyValue
-            // 
-            this.EnergyValue.HeaderText = "Valor Energético";
-            this.EnergyValue.Name = "EnergyValue";
-            this.EnergyValue.ReadOnly = true;
-            this.EnergyValue.Width = 60;
-            // 
-            // rbPlayer1Turn
-            // 
-            this.rbPlayer1Turn.AutoSize = true;
-            this.rbPlayer1Turn.Location = new System.Drawing.Point(581, 53);
-            this.rbPlayer1Turn.Name = "rbPlayer1Turn";
-            this.rbPlayer1Turn.Size = new System.Drawing.Size(65, 17);
-            this.rbPlayer1Turn.TabIndex = 81;
-            this.rbPlayer1Turn.TabStop = true;
-            this.rbPlayer1Turn.Text = "Tu turno";
-            this.rbPlayer1Turn.UseVisualStyleBackColor = true;
-            this.rbPlayer1Turn.CheckedChanged += new System.EventHandler(this.rbPlayer1Turn_CheckedChanged);
-            this.rbPlayer1Turn.Click += new System.EventHandler(this.rbPlayer1Turn_Click);
-            // 
-            // rbPlayer2Turn
-            // 
-            this.rbPlayer2Turn.AutoSize = true;
-            this.rbPlayer2Turn.Location = new System.Drawing.Point(580, 235);
-            this.rbPlayer2Turn.Name = "rbPlayer2Turn";
-            this.rbPlayer2Turn.Size = new System.Drawing.Size(65, 17);
-            this.rbPlayer2Turn.TabIndex = 82;
-            this.rbPlayer2Turn.TabStop = true;
-            this.rbPlayer2Turn.Text = "Tu turno";
-            this.rbPlayer2Turn.UseVisualStyleBackColor = true;
-            this.rbPlayer2Turn.Click += new System.EventHandler(this.rbPlayer2Turn_Click);
-            // 
             // FormGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1016,6 +1060,9 @@
             this.BackColor = System.Drawing.Color.Beige;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1024, 600);
+            this.Controls.Add(this.lblResultWar);
+            this.Controls.Add(this.lblTimeTurn);
+            this.Controls.Add(this.lblTimeGame);
             this.Controls.Add(this.rbPlayer2Turn);
             this.Controls.Add(this.rbPlayer1Turn);
             this.Controls.Add(this.dgvFood);
@@ -1148,5 +1195,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CurrentEnergy;
         private System.Windows.Forms.DataGridViewTextBoxColumn AtkPoints;
         private System.Windows.Forms.DataGridViewTextBoxColumn DefPoints;
+        private System.Windows.Forms.Timer timerGame;
+        private System.Windows.Forms.Timer timerTurn;
+        private System.Windows.Forms.Label lblTimeGame;
+        private System.Windows.Forms.Label lblTimeTurn;
+        private System.Windows.Forms.Label lblResultWar;
     }
 }

@@ -11,7 +11,7 @@ namespace SmallWorld.src.Controllers
     internal class GameController
     {
         private static GameController instance;
-        private readonly Game game = new Game(200,200,200,200); //Default values if user not configure options.
+        private readonly Game game = new Game(200,200,200,200,600,30); //Default values if user not configure options.
         private GameController() { }
 
         public static GameController GetInstance()
