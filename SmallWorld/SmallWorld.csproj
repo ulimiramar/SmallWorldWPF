@@ -162,6 +162,12 @@
     <Compile Include="src\UI\Admin\MapGenerator\FormMapGenerator.Designer.cs">
       <DependentUpon>FormMapGenerator.cs</DependentUpon>
     </Compile>
+    <Compile Include="src\UI\CustomControls\RoundButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\UI\CustomControls\RoundButton.Designer.cs">
+      <DependentUpon>RoundButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\UI\CustomControls\HexagonControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -246,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="src\UI\Admin\MapGenerator\FormMapGenerator.resx">
       <DependentUpon>FormMapGenerator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\UI\CustomControls\RoundButton.resx">
+      <DependentUpon>RoundButton.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="src\UI\FormsGame\FormGameOptions.resx">
       <DependentUpon>FormGameOptions.cs</DependentUpon>

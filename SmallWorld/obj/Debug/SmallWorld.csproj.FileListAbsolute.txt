@@ -68,3 +68,4 @@ C:\Users\uli\Desktop\SmallWorld-mio\SmallWorld\SmallWorld\bin\Debug\Newtonsoft.J
 C:\Users\uli\Desktop\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.csproj.CopyComplete
 C:\Users\uli\Desktop\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.src.UI.FormsGame.FormGame.resources
 C:\Users\uli\Desktop\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.src.UI.FormsGame.FormMove.resources
+C:\Users\uli\Desktop\SmallWorld-mio\SmallWorld\SmallWorld\obj\Debug\SmallWorld.src.UI.CustomControls.RoundButton.resources

@@ -15,6 +15,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
 
 namespace SmallWorld.src.UI.FormsGame
 {
@@ -54,9 +55,32 @@ namespace SmallWorld.src.UI.FormsGame
             FillDgvs(indexOfSelectedHexagon);
             timeGame = gameController.getGameOptions().TimeGame;
             timeTurn = gameController.getGameOptions().TimeTurn;
-            rbPlayer1Turn.Checked = true; //TODO: tirar dados para ver quien empieza.
+            SetWhichPlayerStarts();
+            //rbPlayer1Turn.Checked = true; //TODO: tirar dados para ver quien empieza.
             timerGame.Start();
             timerTurn.Start();
+        }
+        private void SetWhichPlayerStarts()
+        {
+            int diceP1 = 0;
+            int diceP2 = 0;
+            while (diceP1 == diceP2)
+            {
+                diceP1 = Dice.TrowDice(6);
+                diceP2 = Dice.TrowDice(6);
+            }
+            
+            if (diceP1 > diceP2)
+            {
+                MessageBox.Show($"Resultado de dados: Jugador1: {diceP1} | Jugador2: {diceP2}. Comienza el jugador1");
+
+                rbPlayer1Turn.Checked = true;
+            }
+            else if (diceP1 < diceP2)
+            {
+                MessageBox.Show($"Resultado de dados: Jugador1: {diceP1} | Jugador2: {diceP2}. Comienza el jugador2");
+                rbPlayer2Turn.Checked = true;
+            }
         }
         private void AddHexagonsToList()
         {
@@ -125,24 +149,24 @@ namespace SmallWorld.src.UI.FormsGame
         private void ChangeColorOfSelectedHexagonAndTheirBorderingHexagons(Land land)
         {
             ResetHexagonBorderColor();
-            hexagons[land.Id].BorderColor = Color.HotPink;
+            hexagons[land.Id].BackColor = Color.Gold;
             for (int i = 0; i < land.BorderingLands.Count(); i++)
             {
-                hexagons[land.BorderingLands[i].Id].BorderColor = Color.Red;
+                hexagons[land.BorderingLands[i].Id].BackColor = Color.NavajoWhite;
             }
         }
         private void ResetHexagonBorderColor()
         {
             foreach (var hexagon in hexagons)
             {
-                hexagon.BorderColor = SystemColors.ControlText; // O utiliza el color original del borde
+                hexagon.BackColor = Color.Transparent; // O utiliza el color original del borde
             }
         }
         private void PaintHexagons()
         {
             for (int i = 0; i < hexagons.Count(); i++)
             {
-                hexagons[i].BackColor = lands[i].TerrainType.getColor();
+                hexagons[i].BorderColor = lands[i].TerrainType.getColor();
             }
         }
 
@@ -334,6 +358,7 @@ namespace SmallWorld.src.UI.FormsGame
         {
             if (rbPlayer1Turn.Checked)
             {
+                //rbPlayer2Turn.Enabled = false;
                 playerTurn = 1;
                 timeTurn = gameController.getGameOptions().TimeTurn;
                 timerTurn.Start();
@@ -343,6 +368,7 @@ namespace SmallWorld.src.UI.FormsGame
         {
             if (rbPlayer2Turn.Checked)
             {
+                //rbPlayer1Turn.Enabled = false;
                 playerTurn = 2;
                 timeTurn = gameController.getGameOptions().TimeTurn;
                 timerTurn.Start();
