@@ -1,9 +1,11 @@
 ﻿using SmallWorld.src.Controllers;
+using SmallWorld.src.UI.CustomForms;
 using SmallWorld.src.UI.FormsGame;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -40,7 +42,36 @@ namespace SmallWorld.src.UI.Game
             itemController.AddRandomItems(gameController.getGameOptions().ItemsNum);
             foodController.AddRandomFoods(gameController.getGameOptions().FoodNum);
             mapController.GenerateUniqueMap();
+            this.Enabled = false;
             new FormsGame.FormGame().Show();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnCodeView_Click(object sender, EventArgs e)
+        {
+            string url = "https://github.com/ulisesbasualdo/SmallWorldGame";
+
+            try
+            {
+                Process.Start(url);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo abrir el navegador: " + ex.Message);
+            }
+        }
+
+        private void btnInstructions_Click(object sender, EventArgs e)
+        {
+            new CustomMessageBoxForm($"Cada jugador tiene {gameController.getGameOptions().TimeTurn} \n" +
+                $"segundos para hacer lo que quiera, \n" +
+                $"gana el jugador que más entidades tenga al \n" +
+                $"finalizar el tiempo del juego o en caso de \n" +
+                $"eliminar todas las entidades enemigas").ShowDialog();
         }
     }
 }

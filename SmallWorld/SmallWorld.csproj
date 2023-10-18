@@ -171,6 +171,12 @@
     <Compile Include="src\UI\CustomControls\HexagonControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="src\UI\CustomForms\CustomMessageBoxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\UI\CustomForms\CustomMessageBoxForm.Designer.cs">
+      <DependentUpon>CustomMessageBoxForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="src\UI\FormsGame\FormGameOptions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +262,9 @@
     <EmbeddedResource Include="src\UI\CustomControls\RoundButton.resx">
       <DependentUpon>RoundButton.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="src\UI\CustomForms\CustomMessageBoxForm.resx">
+      <DependentUpon>CustomMessageBoxForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="src\UI\FormsGame\FormGameOptions.resx">
       <DependentUpon>FormGameOptions.cs</DependentUpon>
     </EmbeddedResource>
@@ -309,6 +318,7 @@
     <None Include="Resources\EarthGreen.jpg" />
     <None Include="Resources\flechaBlanca.png" />
     <None Include="Resources\backgroundImage1.jpg" />
+    <None Include="Resources\Configuration.png" />
     <Content Include="Resources\HexagonEarth.png" />
     <Content Include="Resources\HexagonWater.png" />
   </ItemGroup>

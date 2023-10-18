@@ -177,7 +177,7 @@ namespace SmallWorld.src.Controllers
             {
                 entity.CurrentEnergy += food.EnergyValue;
             }
-            else throw new Exception($"no es compatible con la dieta. {food.Name} {food.DietNames} != {entity.Name} {entity.Diet}");
+            else throw new Exception($"no es compatible con la dieta.");
         }
 
         public async Task<string> RandomName()
@@ -231,7 +231,7 @@ namespace SmallWorld.src.Controllers
                             randomNames.Add(firstName);
                         }
                     }
-                    else throw new Exception("Error al realizar la solicitud HTTP. Código de estado: " + response.StatusCode);
+                    else throw new Exception("Error al realizar la solicitud\n HTTP. Código de estado: " + response.StatusCode);
 
                 }
                 catch (HttpRequestException e)
@@ -259,7 +259,7 @@ namespace SmallWorld.src.Controllers
                 if (AttackResult > 0)
                 {
                     AttackingEntity.CurrentLife -= AttackResult;
-                    throw new Exception("Ganó la defensa, se te quitaron puntos de vida.");
+                    throw new Exception("Ganó la defensa, \nse te quitaron puntos de vida.");
                 }
 
             }
@@ -303,7 +303,7 @@ namespace SmallWorld.src.Controllers
             if (Action > entity.CurrentEnergy)
             {
                 needEnergy = true;
-                throw new Exception($"{entity.Name}necesita descansar y así recuperar energía antes de hacer esta acción");
+                throw new Exception($"{entity.Name} Necesita descansar y \nasí recuperar energía antes \nde hacer esta acción");
             }
             return needEnergy;
         }

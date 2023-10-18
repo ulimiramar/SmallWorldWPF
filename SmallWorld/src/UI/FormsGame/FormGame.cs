@@ -16,6 +16,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Drawing2D;
+using SmallWorld.src.UI.CustomForms;
 
 namespace SmallWorld.src.UI.FormsGame
 {
@@ -39,7 +40,6 @@ namespace SmallWorld.src.UI.FormsGame
         public FormGame()
         {
             InitializeComponent();
-            MessageBox.Show($"Cada jugador tiene{gameController.getGameOptions().TimeTurn} para hacer lo que quiera, gana el jugador que más entidades tenga al finalizar el tiempo del juego o en caso de eliminar todas las entidades enemigas","Instrucciones", MessageBoxButtons.OK);
             lands = mapController.getLands();
             AddHexagonsToList();
             foreach (var hexagon in hexagons)
@@ -51,7 +51,7 @@ namespace SmallWorld.src.UI.FormsGame
             hexagon12.IsSelected = true;
             indexOfSelectedHexagon = hexagons.IndexOf(hexagon12);
             ChangeColorOfSelectedHexagonAndTheirBorderingHexagons(lands[hexagons.IndexOf(hexagon12)]);
-            lblResultWar.Text = $"Player1: {entityController.CountEntitiesPerPlayer(1)} vs Player2:{entityController.CountEntitiesPerPlayer(2)}";
+            lblResultWar.Text = $"Jugador1: {entityController.CountEntitiesPerPlayer(1)} vs Jugador2: {entityController.CountEntitiesPerPlayer(2)}";
             FillDgvs(indexOfSelectedHexagon);
             timeGame = gameController.getGameOptions().TimeGame;
             timeTurn = gameController.getGameOptions().TimeTurn;
@@ -72,13 +72,13 @@ namespace SmallWorld.src.UI.FormsGame
             
             if (diceP1 > diceP2)
             {
-                MessageBox.Show($"Resultado de dados: Jugador1: {diceP1} | Jugador2: {diceP2}. Comienza el jugador1");
+                new CustomMessageBoxForm($"Tiramos dados para comenzar: \nJugador1: {diceP1} | Jugador2: {diceP2}. \nComienza el jugador1").ShowDialog();
 
                 rbPlayer1Turn.Checked = true;
             }
             else if (diceP1 < diceP2)
             {
-                MessageBox.Show($"Resultado de dados: Jugador1: {diceP1} | Jugador2: {diceP2}. Comienza el jugador2");
+                new CustomMessageBoxForm($"Tiramos dados para comenzar: \nJugador1: {diceP1} | Jugador2: {diceP2}. \nComienza el jugador2").ShowDialog();
                 rbPlayer2Turn.Checked = true;
             }
         }
@@ -124,8 +124,8 @@ namespace SmallWorld.src.UI.FormsGame
             {
                 dgvFood.Rows.Add(food.Id, food.DietNames, food.EnergyValue);
             }
-            lblResultWar.Text = $"Player1: {entityController.CountEntitiesPerPlayer(1)} vs Player2:{entityController.CountEntitiesPerPlayer(2)}";
-
+            lblResultWar.Text = $"Jugador1: {entityController.CountEntitiesPerPlayer(1)} vs Jugador2: {entityController.CountEntitiesPerPlayer(2)}";
+            VerifyWinner();
         }
         private void Hexagon_Click(object sender, EventArgs e)
         {
@@ -150,9 +150,11 @@ namespace SmallWorld.src.UI.FormsGame
         {
             ResetHexagonBorderColor();
             hexagons[land.Id].BackColor = Color.Gold;
+            hexagons[land.Id].ForeColor = Color.Black;
             for (int i = 0; i < land.BorderingLands.Count(); i++)
             {
                 hexagons[land.BorderingLands[i].Id].BackColor = Color.NavajoWhite;
+                hexagons[land.BorderingLands[i].Id].ForeColor = Color.Black;
             }
         }
         private void ResetHexagonBorderColor()
@@ -160,6 +162,7 @@ namespace SmallWorld.src.UI.FormsGame
             foreach (var hexagon in hexagons)
             {
                 hexagon.BackColor = Color.Transparent; // O utiliza el color original del borde
+                hexagon.ForeColor = Color.White;
             }
         }
         private void PaintHexagons()
@@ -241,11 +244,11 @@ namespace SmallWorld.src.UI.FormsGame
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    new CustomMessageBoxForm(ex.Message).ShowDialog();
                     FillDgvs(indexOfSelectedHexagon);
                 }
             }
-            else { MessageBox.Show($"Error, debe seleccionar su Entidad y la entidad a atacar"); }
+            else { new CustomMessageBoxForm($"Error, debe seleccionar su Entidad\n y la entidad a atacar").ShowDialog(); }
         }
 
         private void btnUseItem_Click(object sender, EventArgs e)
@@ -260,7 +263,7 @@ namespace SmallWorld.src.UI.FormsGame
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                new CustomMessageBoxForm(ex.Message).ShowDialog();
             }
         }
 
@@ -275,7 +278,7 @@ namespace SmallWorld.src.UI.FormsGame
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                new CustomMessageBoxForm(ex.Message).ShowDialog();
             }
         }
 
@@ -314,7 +317,7 @@ namespace SmallWorld.src.UI.FormsGame
                 new FormMove(lands[indexOfSelectedHexagon], currentPlayerEntity).ShowDialog();
                 FillDgvs(indexOfSelectedHexagon);
             }
-            else MessageBox.Show("asegurese de seleccionar tierra de origen y la entidad a mover");
+            else new CustomMessageBoxForm("asegurese de seleccionar tierra de origen y la entidad a mover").ShowDialog();
         }
 
         private void dgvP1Entities_SelectionChanged(object sender, EventArgs e)
@@ -335,7 +338,18 @@ namespace SmallWorld.src.UI.FormsGame
             if (timeGame <= 0)
             {
                 timerGame.Stop();
-                // Realiza la acción que debas al finalizar el tiempo de 20 minutos.
+                if (entityController.CountEntitiesPerPlayer(1) > entityController.CountEntitiesPerPlayer(2))
+                {
+                    new CustomMessageBoxForm("Ganador Jugador 1").ShowDialog();
+                }
+                else if (entityController.CountEntitiesPerPlayer(2) > entityController.CountEntitiesPerPlayer(1))
+                {
+                    new CustomMessageBoxForm("Ganador Jugador 2").ShowDialog();
+                }
+                else if (entityController.CountEntitiesPerPlayer(2) == entityController.CountEntitiesPerPlayer(1))
+                {
+                    new CustomMessageBoxForm("Hay un empate").ShowDialog();
+                }
             }
         }
 
@@ -348,9 +362,15 @@ namespace SmallWorld.src.UI.FormsGame
             {
                 timerTurn.Stop();
                 if (playerTurn == 1)
+                {
                     rbPlayer2Turn.Checked = true;  //.Checked = true;
-                else if (playerTurn == 2) 
+                    rbPlayer1Turn.Checked = false;
+                }
+                else if (playerTurn == 2)
+                {
                     rbPlayer1Turn.Checked = true;
+                    rbPlayer2Turn.Checked = false;
+                }
                 // Realiza la acción que debas al finalizar el tiempo de 2 minutos.
             }
         }
@@ -362,6 +382,8 @@ namespace SmallWorld.src.UI.FormsGame
                 playerTurn = 1;
                 timeTurn = gameController.getGameOptions().TimeTurn;
                 timerTurn.Start();
+                picColorTurnP1.BackColor = Color.PaleGreen;
+                picColorTurnP2.BackColor = Color.Gray;
             }
         }
         private void rbPlayer2Turn_CheckedChanged(object sender, EventArgs e)
@@ -372,7 +394,49 @@ namespace SmallWorld.src.UI.FormsGame
                 playerTurn = 2;
                 timeTurn = gameController.getGameOptions().TimeTurn;
                 timerTurn.Start();
+                picColorTurnP1.BackColor = Color.Gray;
+                picColorTurnP2.BackColor = Color.PaleGreen;
             }
+        }
+
+        private void btnRest_Click(object sender, EventArgs e)
+        {
+            if (currentPlayerEntity != null)
+            {
+                entityController.Rest(currentPlayerEntity);
+            }
+            else new CustomMessageBoxForm("Debe seleccionar una entidad").ShowDialog();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Application.Exit();
+        }
+
+        private void btnInstructions_Click(object sender, EventArgs e)
+        {
+            new CustomMessageBoxForm($"Cada jugador tiene {gameController.getGameOptions().TimeTurn} \n" +
+                $"segundos para hacer lo que quiera, \n" +
+                $"gana el jugador que más entidades tenga al \n" +
+                $"finalizar el tiempo del juego o en caso de \n" +
+                $"eliminar todas las entidades enemigas").ShowDialog();
+        }
+        private void VerifyWinner()
+        {
+            if (entityController.CountEntitiesPerPlayer(1) == 0)
+            {
+                new CustomMessageBoxForm("Ganador Jugador 2").ShowDialog();
+            }
+            if (entityController.CountEntitiesPerPlayer(2) == 0)
+            {
+                new CustomMessageBoxForm("Ganador Jugador 1").ShowDialog();
+            }
+        }
+
+        private void FormGame_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

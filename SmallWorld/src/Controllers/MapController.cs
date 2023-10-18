@@ -323,7 +323,7 @@ namespace SmallWorld.src.Controllers
                 landDestiny.Entities.Add(entity);
                 landOrigin.Entities.Remove(entity);
             }
-            else throw new Exception($"{entity} ({entity.HabitatName}) no es compatible con el tipo de terreno {landDestiny}");
+            else throw new Exception($"no se puede mover,\n no es compatible con el tipo de tierra");
 
 
             /*foreach (var habitat in entity.HabitatList)

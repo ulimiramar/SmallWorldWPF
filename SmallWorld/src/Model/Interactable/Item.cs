@@ -22,6 +22,8 @@ namespace SmallWorld.src.Model.Interactuable
 
         private string name;
 
+        IEffectStrategy effectStrategy;
+
         List<IEffectStrategy> effectStrategies;
 
         //properties
@@ -41,6 +43,7 @@ namespace SmallWorld.src.Model.Interactuable
             }
         }
 
+        public IEffectStrategy EffectStrategy { get => effectStrategy; set => effectStrategy = value; }
 
         public Item(List<IEffectStrategy> effectStrategies, string name)
         {
@@ -49,7 +52,13 @@ namespace SmallWorld.src.Model.Interactuable
             EffectStrategies = effectStrategies;
             Name = name;
         }
-
+        public Item(IEffectStrategy effecStrategy, string name)
+        {
+            lastId++;
+            Id = lastId;
+            EffectStrategy = effectStrategy;
+            Name = name;
+        }
         
 
         public Item() { }

@@ -43,7 +43,7 @@ namespace SmallWorld.src.Controllers
 
             for (int i = 0; i < num; i++)
             {
-                Items.Add(new Item(getRandomEffect(), $"item n {i+1}"));
+                Items.Add(new Item(getOneRandomEffectInList(), $"item n {i+1}"));
             }
 
             /*for (int i = 0; i < totalGoodItems; i++)
@@ -100,13 +100,28 @@ namespace SmallWorld.src.Controllers
             return Items.Find(i => i.Id == id);
         }
 
-        public List<IEffectStrategy> getRandomEffect()
+        public List<IEffectStrategy> getRandomEffectList()
         {
             int maxCount = EffectsAvailables.Count;
             int count = random.Next(1, maxCount + 1);
             List<IEffectStrategy> shuffledEffects = EffectsAvailables.OrderBy(x => random.Next()).ToList();
             List<IEffectStrategy> randomEffectsList = shuffledEffects.Take(count).ToList();
             return randomEffectsList;
+        }
+
+        public List<IEffectStrategy> getOneRandomEffectInList()
+        {
+            int maxCount = EffectsAvailables.Count;
+            int count = random.Next(0, maxCount);
+            List<IEffectStrategy> randomEffectsList = new List<IEffectStrategy>() { EffectsAvailables[count] };
+            return randomEffectsList;
+        }
+
+        public IEffectStrategy getRandomEffect()
+        {
+            int maxCount = EffectsAvailables.Count;
+            int count = random.Next(0, maxCount);
+            return EffectsAvailables[count];
         }
     }
 }

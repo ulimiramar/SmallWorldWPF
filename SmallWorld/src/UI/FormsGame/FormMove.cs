@@ -1,6 +1,7 @@
 ﻿using SmallWorld.src.Controllers;
 using SmallWorld.src.Model;
 using SmallWorld.src.Model.Terrain;
+using SmallWorld.src.UI.CustomForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -43,7 +44,7 @@ namespace SmallWorld.src.UI.FormsGame
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                new CustomMessageBoxForm(ex.Message). ShowDialog();
             }
             this.Close();
         }
