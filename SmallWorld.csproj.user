@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="src\UI\Admin\EntityCrud\FormCreateEntity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="src\UI\Admin\EntityCrud\FormEditEntity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="src\UI\Admin\EntityCrud\FormEntityCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="src\UI\Admin\FoodCrud\FormCreateFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="src\UI\Admin\FoodCrud\FormEditFood.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="src\UI\Admin\FoodCrud\FormFoodCrudHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="src\UI\Admin\ItemsCrud\FormCreateItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="src\UI\Admin\ItemsCrud\FormEditItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="src\UI\Admin\ItemsCrud\FormItemsCrudHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="src\UI\Admin\MapGenerator\FormMapGenerator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="src\UI\CustomControls\HexagonControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="src\UI\CustomControls\RoundButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="src\UI\CustomForms\CustomMessageBoxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="src\UI\FormsGame\FormGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="src\UI\FormsGame\FormGameOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="src\UI\FormsGame\FormMove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="src\UI\FormsGame\FormWelcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
